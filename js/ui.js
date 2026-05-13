@@ -5,19 +5,16 @@
     const isCase = window.location.pathname.includes('/cases/');
     const root = isCase ? '../' : '';
 
-    const navLinks = isCase
-      ? `<a href="${root}index.html" class="btn btn-outline">← Назад</a>
-         <a href="https://t.me/bogdan_alekseev" class="btn btn-telegram" target="_blank">Telegram</a>`
-      : `<a href="#" class="btn btn-outline">CV</a>
-         <a href="https://t.me/bogdan_alekseev" class="btn btn-telegram" target="_blank">Telegram</a>`;
-
     const header = document.createElement('header');
     header.innerHTML = `
-      <div class="header-name">
+      <a class="header-name" href="${root}index.html">
         <img src="${root}images/avatar.png" alt="Богдан Алексеев" class="avatar">
         <span>Богдан Алексеев</span>
-      </div>
-      <nav>${navLinks}</nav>
+      </a>
+      <nav>
+        <a href="#" class="btn btn-outline">CV</a>
+        <a href="https://t.me/bogdan_alekseev" class="btn btn-telegram" target="_blank">Telegram</a>
+      </nav>
     `;
     document.body.prepend(header);
   }
@@ -45,11 +42,10 @@
     nav.className = 'floating-nav';
     nav.id = 'floating-nav';
 
-    nav.innerHTML = isCase
-      ? `<a href="../index.html" class="btn btn-dark">← Назад</a>
-         <a href="https://t.me/bogdan_alekseev" class="btn btn-telegram" target="_blank">Telegram</a>`
-      : `<a href="#" class="btn btn-dark">CV</a>
-         <a href="https://t.me/bogdan_alekseev" class="btn btn-telegram" target="_blank">Telegram</a>`;
+    nav.innerHTML = `
+      <a href="#" class="btn btn-dark">CV</a>
+      <a href="https://t.me/bogdan_alekseev" class="btn btn-telegram" target="_blank">Telegram</a>
+    `;
 
     document.body.appendChild(nav);
 
