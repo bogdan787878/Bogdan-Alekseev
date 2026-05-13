@@ -82,14 +82,6 @@ nav {
   color: #fff;
 }
 
-.btn-case {
-  background: #111;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 500;
-  padding: 12px 24px;
-  border-radius: var(--radius-btn);
-}
 
 /* ── HERO ── */
 .hero {
@@ -123,6 +115,8 @@ nav {
   flex-direction: column;
   gap: 20px;
   min-width: 0;
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Image */
