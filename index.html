@@ -119,10 +119,6 @@
 
   <div id="custom-cursor"></div>
 
-  <div class="floating-nav" id="floating-nav">
-    <a href="#" class="btn btn-outline">CV</a>
-    <a href="https://t.me/bogdan_alekseev" class="btn btn-telegram" target="_blank">Telegram</a>
-  </div>
 
   <script>
     // Cursor
@@ -135,19 +131,6 @@
       card.addEventListener('mouseenter', () => cursor.classList.add('visible'));
       card.addEventListener('mouseleave', () => cursor.classList.remove('visible'));
     });
-
-    // Floating nav scroll behaviour
-    const floatingNav = document.getElementById('floating-nav');
-    let lastY = window.scrollY;
-    window.addEventListener('scroll', () => {
-      const currentY = window.scrollY;
-      if (currentY > lastY && currentY > 60) {
-        floatingNav.classList.add('hidden');
-      } else {
-        floatingNav.classList.remove('hidden');
-      }
-      lastY = currentY;
-    }, { passive: true });
 
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {

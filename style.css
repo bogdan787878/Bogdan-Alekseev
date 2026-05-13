@@ -247,11 +247,6 @@ nav {
   cursor: none;
 }
 
-/* ── FLOATING NAV ── */
-.floating-nav {
-  display: none;
-}
-
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   :root { --side: clamp(16px, 4vw, 44px); }
@@ -263,34 +258,11 @@ nav {
 
 @media (max-width: 640px) {
   .card-row { grid-template-columns: 1fr; }
-  .cases { gap: 24px; padding-bottom: 100px; }
+  .cases { gap: 24px; }
   .tag { font-size: 12px; padding: 5px 10px; }
   .card { padding-top: 32px; }
   .card-image { border-radius: 16px; aspect-ratio: unset; }
   .card-image img { height: auto; object-fit: unset; }
   .card--full .card-footer { max-width: 100%; }
 
-  .header-name span { display: none; }
-  header nav { display: none; }
-
-  .floating-nav {
-    display: flex;
-    gap: 8px;
-    position: fixed;
-    bottom: 24px;
-    left: 16px;
-    right: 16px;
-    z-index: 200;
-    transition: transform 0.35s ease, opacity 0.35s ease;
-  }
-
-  .floating-nav .btn {
-    flex: 1;
-  }
-
-  .floating-nav.hidden {
-    transform: translateY(calc(100% + 32px));
-    opacity: 0;
-    pointer-events: none;
-  }
 }
