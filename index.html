@@ -127,33 +127,14 @@
   <script>
     const cursor = document.getElementById('custom-cursor');
     const cards = document.querySelectorAll('.card');
-    let mouseX = 0, mouseY = 0;
-    let cursorX = 0, cursorY = 0;
-    let visible = false;
-
     document.addEventListener('mousemove', e => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
+      cursor.style.transform = `translate(${e.clientX - 28}px, ${e.clientY - 28}px)`;
     });
 
     cards.forEach(card => {
-      card.addEventListener('mouseenter', () => {
-        visible = true;
-        cursor.classList.add('visible');
-      });
-      card.addEventListener('mouseleave', () => {
-        visible = false;
-        cursor.classList.remove('visible');
-      });
+      card.addEventListener('mouseenter', () => cursor.classList.add('visible'));
+      card.addEventListener('mouseleave', () => cursor.classList.remove('visible'));
     });
-
-    function animate() {
-      cursorX += (mouseX - cursorX) * 0.12;
-      cursorY += (mouseY - cursorY) * 0.12;
-      cursor.style.transform = `translate(${cursorX - 28}px, ${cursorY - 28}px)`;
-      requestAnimationFrame(animate);
-    }
-    animate();
   </script>
 
 </body>

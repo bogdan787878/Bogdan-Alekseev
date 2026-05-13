@@ -216,7 +216,8 @@ nav {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: rgba(35, 38, 45, 0.35);
+  background: rgba(255, 255, 255, 0.35);
+  border: 1.5px solid rgba(255, 255, 255, 0.80);
   pointer-events: none;
   z-index: 9999;
   opacity: 0;
