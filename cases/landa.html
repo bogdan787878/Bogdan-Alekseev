@@ -4,10 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Landa Research. AI сервис для анализа UX-тестов с точностью 94% — Богдан Алексеев</title>
-  <link rel="stylesheet" id="maincss" href="../style.css">
   <script>
-    const v = new Date().toISOString().slice(0,10).replace(/-/g,"");
-    document.getElementById("maincss").href = "../style.css?v=" + v;
+    const _v = new Date().toISOString().slice(0,13).replace(/[-T:]/g,"");
+    document.write("<link rel=\"stylesheet\" href=\"../style.css?v=" + _v + "\">");
   </script>
   <link rel="stylesheet" href="case.css">
 </head>
