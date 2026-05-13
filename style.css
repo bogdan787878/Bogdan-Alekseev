@@ -97,9 +97,9 @@ nav {
 }
 
 .hero h1 {
-  font-size: 72px;
+  font-size: clamp(32px, 6vw, 72px);
   font-weight: 900;
-  line-height: 76px;
+  line-height: clamp(36px, 6.5vw, 76px);
   letter-spacing: -0.5px;
 }
 
@@ -147,21 +147,19 @@ nav {
 }
 
 .card-footer h2 {
-  font-size: 40px;
+  font-size: clamp(22px, 3.5vw, 40px);
   font-weight: 900;
-  line-height: 40px;
+  line-height: clamp(24px, 3.8vw, 40px);
   color: var(--text);
 }
 
 /* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  :root { --side: clamp(16px, 4vw, 44px); }
+  .card-row { gap: 16px; }
+}
+
 @media (max-width: 640px) {
-  :root { --side: 16px; }
-
-  .hero h1 { font-size: 36px; line-height: 40px; }
-  .card-footer h2 { font-size: 24px; line-height: 28px; }
-
   .card-row { grid-template-columns: 1fr; }
-
-  .card--full .card-image,
-  .card--half .card-image { height: 400px; }
+  .cases { gap: 24px; }
 }
