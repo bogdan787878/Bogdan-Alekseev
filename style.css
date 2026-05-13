@@ -100,7 +100,7 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding: 0 var(--side) 60px;
+  padding: 80px var(--side) 60px;
 }
 
 .card-row {
