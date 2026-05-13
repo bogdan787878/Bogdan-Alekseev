@@ -29,7 +29,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px var(--side);
+  padding: 8px var(--side);
   background: var(--bg);
   position: sticky;
   top: 0;
