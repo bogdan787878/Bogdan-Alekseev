@@ -124,46 +124,7 @@ nav {
   gap: 20px;
 }
 
-/* Media block — colored bg, rounded corners, contains tags + image */
-.card-media {
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.card--dark  { background: #1A1A1A; color: #fff; }
-.card--blue  { background: #1A3FCB; color: #fff; }
-.card--green { background: #1A7A3C; color: #fff; }
-.card--light { background: #F0F0F0; color: #111; }
-
-/* Tags */
-.card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  padding: 16px 16px 0;
-}
-
-.tag {
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: var(--radius-tag);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.2px;
-}
-
-.tag--purple { background: #7C3AED; color: #fff; }
-.tag--blue   { background: #2563EB; color: #fff; }
-.tag--orange { background: #EA580C; color: #fff; }
-.tag--teal   { background: #0D9488; color: #fff; }
-.tag--green  { background: #16A34A; color: #fff; }
-.tag--gray   { background: rgba(255,255,255,0.15); color: inherit; }
-
-.card--light .tag--gray { background: rgba(0,0,0,0.08); }
-
-/* Image placeholder — plain gray, no extra classes needed */
+/* Image */
 .card-image {
   width: 100%;
   background: #AFAFB5;
