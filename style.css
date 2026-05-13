@@ -37,15 +37,15 @@ header {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 900;
 }
 
-.avatar-placeholder {
-  width: 28px;
-  height: 28px;
+.avatar {
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  background: #111;
+  object-fit: cover;
   flex-shrink: 0;
 }
 
@@ -62,8 +62,8 @@ nav {
   padding: 7px 14px;
   border-radius: var(--radius-btn);
   font-family: var(--font);
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 500;
   text-decoration: none;
   cursor: pointer;
   border: none;
