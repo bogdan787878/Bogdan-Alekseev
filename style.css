@@ -117,15 +117,14 @@ nav {
   min-width: 0;
   text-decoration: none;
   color: inherit;
-  transition: opacity 0.25s ease;
-}
-
-.card:hover {
-  opacity: 0.75;
 }
 
 .card * {
   text-decoration: none;
+}
+
+.card--full .card-footer {
+  max-width: calc(50% - 12px);
 }
 
 /* Image */
