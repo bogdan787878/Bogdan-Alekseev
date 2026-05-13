@@ -128,18 +128,18 @@ nav {
 .card-image {
   width: 100%;
   background: #AFAFB5;
-  margin-top: 16px;
+  border-radius: 32px;
+  overflow: hidden;
 }
 
-.card--full .card-image  { height: 800px; }
-.card--half .card-image  { height: 800px; }
+.card--full .card-image { height: 800px; }
+.card--half .card-image { height: 800px; }
 
 .card-image img {
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
-  object-position: top;
+  object-fit: contain;
 }
 
 /* Footer — title + button, no border radius, sits below card-media */
