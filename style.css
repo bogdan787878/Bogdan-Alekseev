@@ -119,6 +119,10 @@ nav {
   color: inherit;
 }
 
+.card * {
+  text-decoration: none;
+}
+
 /* Image */
 .card-image {
   width: 100%;
