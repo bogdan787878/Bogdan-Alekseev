@@ -5,7 +5,7 @@
 /* ── CASE BLOCK ── */
 .case-block {
   border-radius: 32px;
-  background: linear-gradient(-36deg, #190A01, #B24708);
+  background: linear-gradient(-36deg, #B24708, #190A01);
   position: relative;
   overflow: hidden;
   isolation: isolate;
