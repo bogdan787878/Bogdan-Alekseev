@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;900&display=swap');
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -5,16 +7,17 @@
 }
 
 :root {
-  --bg: #EAEAEA;
-  --text: #111111;
+  --bg: #D8D8DD;
+  --text: #23262D;
   --radius-card: 16px;
   --radius-tag: 100px;
   --radius-btn: 100px;
-  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font: 'Fira Sans', sans-serif;
 }
 
 body {
   font-family: var(--font);
+  font-weight: 400;
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
@@ -92,7 +95,7 @@ nav {
 
 .hero h1 {
   font-size: clamp(26px, 6vw, 36px);
-  font-weight: 800;
+  font-weight: 900;
   line-height: 1.2;
   letter-spacing: -0.5px;
   max-width: 600px;
@@ -190,7 +193,7 @@ nav {
 
 .card-footer h2 {
   font-size: clamp(14px, 3.5vw, 18px);
-  font-weight: 700;
+  font-weight: 900;
   line-height: 1.3;
 }
 
