@@ -59,17 +59,20 @@
 
   /* ── SCROLL REVEAL ──────────────────────────────────────────────── */
   function initScrollReveal() {
-    const cards = document.querySelectorAll('.card');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('card--visible');
+          if (entry.target.classList.contains('case-block')) {
+            entry.target.classList.add('case-block--visible');
+          } else {
+            entry.target.classList.add('card--visible');
+          }
           observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.08 });
 
-    cards.forEach(card => observer.observe(card));
+    document.querySelectorAll('.card, .case-block').forEach(el => observer.observe(el));
 
     document.querySelectorAll('.card-row').forEach(row => {
       row.querySelectorAll('.card').forEach((card, i) => {
