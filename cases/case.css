@@ -47,6 +47,7 @@
   line-height: clamp(38px, 6.5vw, 76px);
   letter-spacing: -0.5px;
   color: #fff;
+  max-width: 70%;
 }
 
 .case-block-desc {
