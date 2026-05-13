@@ -210,11 +210,11 @@ nav {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.35);
-  border: 1.5px solid rgba(255, 255, 255, 0.80);
+  background: #fff;
   pointer-events: none;
   z-index: 9999;
   opacity: 0;
+  mix-blend-mode: difference;
   transition: opacity 0.2s ease;
   will-change: transform;
 }
