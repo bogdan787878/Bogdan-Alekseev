@@ -5,23 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CASE_TITLE — Богдан Алексеев</title>
   <script>
-    const _v = new Date().toISOString().slice(0,13).replace(/[-T:]/g,"");
-    document.write("<link rel=\"stylesheet\" href=\"../style.css?v=" + _v + "\">");
+    const _v = new Date().toISOString().slice(0,13).replace(/[-T:]/g,'');
+    ['tokens','base','buttons','tags','cards','layout','effects','responsive'].forEach(function(n) {
+      document.write('<link rel="stylesheet" href="../styles/' + n + '.css?v=' + _v + '">');
+    });
   </script>
   <link rel="stylesheet" href="case.css">
 </head>
 <body>
-
-  <header>
-    <div class="header-name">
-      <div class="avatar-placeholder"></div>
-      <span>Богдан Алексеев</span>
-    </div>
-    <nav>
-      <a href="../index.html" class="btn btn-outline">← Назад</a>
-      <a href="https://t.me/bogdan_alekseev" class="btn btn-telegram" target="_blank">Telegram</a>
-    </nav>
-  </header>
 
   <main class="case-main">
     <div class="case-tags">
@@ -30,11 +21,12 @@
     <h1 class="case-title">CASE_TITLE</h1>
     <div class="case-cover case-cover--placeholder"></div>
 
-    <!-- Контент кейса будет здесь -->
     <div class="case-body">
       <p class="case-placeholder-text">Контент кейса появится здесь</p>
     </div>
   </main>
+
+  <script src="../js/ui.js"></script>
 
 </body>
 </html>

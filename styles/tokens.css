@@ -1,0 +1,9 @@
+:root {
+  --bg: #D8D8DD;
+  --text: #23262D;
+  --radius-card: 16px;
+  --radius-tag: 100px;
+  --radius-btn: 100px;
+  --font: 'Fira Sans', sans-serif;
+  --side: 44px;
+}

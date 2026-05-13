@@ -1,0 +1,23 @@
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #fff;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  mix-blend-mode: difference;
+  transition: opacity 0.2s ease;
+  will-change: transform;
+}
+
+#custom-cursor.visible {
+  opacity: 1;
+}
+
+.floating-nav {
+  display: none;
+}

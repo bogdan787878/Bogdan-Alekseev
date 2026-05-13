@@ -6,21 +6,12 @@
   <title>Богдан Алексеев — Дизайн-менеджер</title>
   <script>
     const _v = new Date().toISOString().slice(0,13).replace(/[-T:]/g,'');
-    document.write('<link rel="stylesheet" href="style.css?v=' + _v + '">');
+    ['tokens','base','buttons','tags','cards','layout','effects','responsive'].forEach(function(n) {
+      document.write('<link rel="stylesheet" href="styles/' + n + '.css?v=' + _v + '">');
+    });
   </script>
 </head>
 <body>
-
-  <header>
-    <div class="header-name">
-      <img src="images/avatar.png" alt="Богдан Алексеев" class="avatar">
-      <span>Богдан Алексеев</span>
-    </div>
-    <nav>
-      <a href="#" class="btn btn-outline">CV</a>
-      <a href="https://t.me/bogdan_alekseev" class="btn btn-telegram" target="_blank">Telegram</a>
-    </nav>
-  </header>
 
   <main>
     <section class="hero">
@@ -117,58 +108,7 @@
     </section>
   </main>
 
-  <div id="custom-cursor"></div>
-
-  <div class="floating-nav" id="floating-nav">
-    <a href="#" class="btn btn-glass" style="--glass: rgba(17,17,17,0.55)">CV</a>
-    <a href="https://t.me/bogdan_alekseev" class="btn btn-glass" style="--glass: rgba(34,158,217,0.55)" target="_blank">Telegram</a>
-  </div>
-
-
-  <script>
-    // Cursor
-    const cursor = document.getElementById('custom-cursor');
-    const cards = document.querySelectorAll('.card');
-    document.addEventListener('mousemove', e => {
-      cursor.style.transform = `translate(${e.clientX - 28}px, ${e.clientY - 28}px)`;
-    });
-    cards.forEach(card => {
-      card.addEventListener('mouseenter', () => cursor.classList.add('visible'));
-      card.addEventListener('mouseleave', () => cursor.classList.remove('visible'));
-    });
-
-    // Floating nav scroll behaviour
-    const floatingNav = document.getElementById('floating-nav');
-    let lastY = window.scrollY;
-    window.addEventListener('scroll', () => {
-      const currentY = window.scrollY;
-      if (currentY > lastY && currentY > 60) {
-        floatingNav.classList.add('hidden');
-      } else {
-        floatingNav.classList.remove('hidden');
-      }
-      lastY = currentY;
-    }, { passive: true });
-
-    // Scroll reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('card--visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08 });
-
-    cards.forEach(card => observer.observe(card));
-
-    // Stagger cards inside rows
-    document.querySelectorAll('.card-row').forEach(row => {
-      row.querySelectorAll('.card').forEach((card, i) => {
-        card.style.transitionDelay = (i * 0.12) + 's';
-      });
-    });
-  </script>
+  <script src="js/ui.js"></script>
 
 </body>
 </html>
