@@ -117,6 +117,14 @@ nav {
   min-width: 0;
   text-decoration: none;
   color: inherit;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.card.card--visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card * {
@@ -239,9 +247,14 @@ nav {
 @media (max-width: 900px) {
   :root { --side: clamp(16px, 4vw, 44px); }
   .card-row { gap: 16px; }
+  .tag { font-size: 14px; padding: 6px 12px; }
 }
 
 @media (max-width: 640px) {
   .card-row { grid-template-columns: 1fr; }
   .cases { gap: 24px; }
+  .tag { font-size: 12px; padding: 5px 10px; }
+  .card-image { aspect-ratio: 4 / 3; }
+  .card-image img { height: 100%; object-fit: cover; }
+  .card--full .card-footer { max-width: 100%; }
 }

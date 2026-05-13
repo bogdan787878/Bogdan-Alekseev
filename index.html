@@ -120,6 +120,7 @@
   <div id="custom-cursor"></div>
 
   <script>
+    // Cursor
     const cursor = document.getElementById('custom-cursor');
     const cards = document.querySelectorAll('.card');
     document.addEventListener('mousemove', e => {
@@ -128,6 +129,25 @@
     cards.forEach(card => {
       card.addEventListener('mouseenter', () => cursor.classList.add('visible'));
       card.addEventListener('mouseleave', () => cursor.classList.remove('visible'));
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('card--visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    cards.forEach(card => observer.observe(card));
+
+    // Stagger cards inside rows
+    document.querySelectorAll('.card-row').forEach(row => {
+      row.querySelectorAll('.card').forEach((card, i) => {
+        card.style.transitionDelay = (i * 0.12) + 's';
+      });
     });
   </script>
 
