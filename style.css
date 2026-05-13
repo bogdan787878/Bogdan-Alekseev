@@ -252,13 +252,16 @@ nav {
   :root { --side: clamp(16px, 4vw, 44px); }
   .card-row { gap: 16px; }
   .tag { font-size: 14px; padding: 6px 12px; }
+  .card { padding-top: 48px; }
+  .card-image { border-radius: 24px; }
 }
 
 @media (max-width: 640px) {
   .card-row { grid-template-columns: 1fr; }
   .cases { gap: 24px; }
   .tag { font-size: 12px; padding: 5px 10px; }
-  .card-image { aspect-ratio: 4 / 3; }
-  .card-image img { height: 100%; object-fit: cover; }
+  .card { padding-top: 32px; }
+  .card-image { border-radius: 16px; aspect-ratio: unset; }
+  .card-image img { height: auto; object-fit: unset; }
   .card--full .card-footer { max-width: 100%; }
 }
