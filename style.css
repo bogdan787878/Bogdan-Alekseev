@@ -208,6 +208,30 @@ nav {
   color: var(--text);
 }
 
+/* ── CUSTOM CURSOR ── */
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(35, 38, 45, 0.35);
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  will-change: transform;
+}
+
+#custom-cursor.visible {
+  opacity: 1;
+}
+
+.card {
+  cursor: none;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   :root { --side: clamp(16px, 4vw, 44px); }
