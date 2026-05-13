@@ -10,9 +10,9 @@
 }
 
 .case-title {
-  font-size: clamp(22px, 5vw, 32px);
+  font-size: 72px;
   font-weight: 900;
-  line-height: 1.25;
+  line-height: 76px;
   letter-spacing: -0.5px;
   margin-bottom: 24px;
   max-width: 680px;
@@ -38,6 +38,13 @@
 
 .case-body {
   max-width: 680px;
+}
+
+.case-body h2 {
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 40px;
+  margin-bottom: 16px;
 }
 
 .case-placeholder-text {
