@@ -162,15 +162,14 @@ nav {
   color: rgba(255, 255, 255, 0.95);
   letter-spacing: 0.1px;
 
-  /* Liquid glass — цвет из --glass переменной карточки */
-  background: var(--glass, rgba(107, 94, 86, 0.70));
-  backdrop-filter: blur(20px) saturate(180%) brightness(1.1);
-  -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(1.1);
-  border: 1px solid rgba(255, 255, 255, 0.30);
+  /* Liquid glass — прозрачный, фон просвечивает через blur */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px) saturate(160%) brightness(0.85);
+  -webkit-backdrop-filter: blur(20px) saturate(160%) brightness(0.85);
+  border: 1px solid rgba(255, 255, 255, 0.20);
   box-shadow:
-    inset 0 1.5px 0 rgba(255, 255, 255, 0.45),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.10),
-    0 4px 20px rgba(0, 0, 0, 0.20);
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Footer — title + button, no border radius, sits below card-media */
