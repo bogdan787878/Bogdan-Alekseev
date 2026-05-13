@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;900&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -13,6 +13,7 @@
   --radius-tag: 100px;
   --radius-btn: 100px;
   --font: 'Fira Sans', sans-serif;
+  --side: 32px;
 }
 
 body {
@@ -28,7 +29,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 20px;
+  padding: 16px var(--side);
   background: var(--bg);
 }
 
@@ -60,6 +61,7 @@ nav {
   justify-content: center;
   padding: 7px 14px;
   border-radius: var(--radius-btn);
+  font-family: var(--font);
   font-size: 13px;
   font-weight: 600;
   text-decoration: none;
@@ -83,14 +85,15 @@ nav {
 .btn-case {
   background: #111;
   color: #fff;
-  font-size: 13px;
-  padding: 9px 16px;
-  margin-top: 12px;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 12px 24px;
+  border-radius: var(--radius-btn);
 }
 
 /* ── HERO ── */
 .hero {
-  padding: 24px 20px 32px;
+  padding: 32px var(--side) 40px;
 }
 
 .hero h1 {
@@ -104,18 +107,25 @@ nav {
 .cases {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 0 12px 40px;
+  gap: 40px;
+  padding: 0 var(--side) 60px;
 }
 
 .card-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 24px;
 }
 
 /* ── CARD ── */
 .card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Media block — colored bg, rounded corners, contains tags + image */
+.card-media {
   border-radius: var(--radius-card);
   overflow: hidden;
   display: flex;
@@ -153,52 +163,48 @@ nav {
 
 .card--light .tag--gray { background: rgba(0,0,0,0.08); }
 
-/* Image */
+/* Image placeholder — plain gray, no extra classes needed */
 .card-image {
   width: 100%;
+  background: #AFAFB5;
   margin-top: 16px;
 }
 
+.card--full .card-image  { height: 800px; }
+.card--half .card-image  { height: 800px; }
+
 .card-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   object-fit: cover;
   object-position: top;
 }
 
-/* Placeholders */
-.card-image--placeholder {
-  background: #111;
-  height: 340px;
-}
-
-.card-image--half {
-  height: 220px;
-}
-
-.card-image--light {
-  background: #222;
-}
-
-/* Footer */
+/* Footer — title + button, no border radius, sits below card-media */
 .card-footer {
-  padding: 16px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 4px;
+  gap: 16px;
 }
 
 .card-footer h2 {
   font-size: 40px;
   font-weight: 900;
   line-height: 40px;
+  color: var(--text);
 }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 480px) {
-  .card-row {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 640px) {
+  :root { --side: 16px; }
+
+  .hero h1 { font-size: 36px; line-height: 40px; }
+  .card-footer h2 { font-size: 24px; line-height: 28px; }
+
+  .card-row { grid-template-columns: 1fr; }
+
+  .card--full .card-image,
+  .card--half .card-image { height: 400px; }
 }
