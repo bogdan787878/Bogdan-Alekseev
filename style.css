@@ -100,7 +100,7 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding: 80px var(--side) 60px;
+  padding: 0 var(--side) 60px;
 }
 
 .card-row {
@@ -117,6 +117,7 @@ nav {
   min-width: 0;
   text-decoration: none;
   color: inherit;
+  padding-top: 80px;
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.55s ease, transform 0.55s ease;
