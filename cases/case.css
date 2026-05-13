@@ -19,7 +19,7 @@
   inset: 0;
   background: rgba(128, 128, 128, 1);
   filter: url(#grain);
-  opacity: 0.12;
+  opacity: 0.06;
   mix-blend-mode: overlay;
   pointer-events: none;
   z-index: 0;
@@ -101,6 +101,13 @@
   font-weight: 500;
   color: rgba(255, 255, 255, 0.7);
   letter-spacing: 0.3px;
+}
+
+.case-block-mockup {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
 }
 
 /* ── RESPONSIVE ── */
