@@ -3,38 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landa Research. AI сервис для анализа UX-тестов с точностью 94% — Богдан Алексеев</title>
+  <title>Landa Research — Богдан Алексеев</title>
   <script>
-    const _v = new Date().toISOString().slice(0,13).replace(/[-T:]/g,"");
-    document.write("<link rel=\"stylesheet\" href=\"../style.css?v=" + _v + "\">");
+    const _v = new Date().toISOString().slice(0,13).replace(/[-T:]/g,'');
+    ['tokens','base','buttons','tags','cards','layout','effects','responsive'].forEach(function(n) {
+      document.write('<link rel="stylesheet" href="../styles/' + n + '.css?v=' + _v + '">');
+    });
   </script>
   <link rel="stylesheet" href="case.css">
 </head>
 <body>
 
-  <header>
-    <div class="header-name">
-      <div class="avatar-placeholder"></div>
-      <span>Богдан Алексеев</span>
-    </div>
-    <nav>
-      <a href="../index.html" class="btn btn-outline">← Назад</a>
-      <a href="https://t.me/bogdan_alekseev" class="btn btn-telegram" target="_blank">Telegram</a>
-    </nav>
-  </header>
-
   <main class="case-main">
-    <div class="case-tags">
-      <span class="tag tag--purple">AI</span><span class="tag tag--blue">SaaS</span><span class="tag tag--orange">B2B</span><span class="tag tag--gray">2023-2025</span><span class="tag tag--green">Art-Director/Product Owner</span>
-    </div>
-    <h1 class="case-title">Landa Research. AI сервис для анализа UX-тестов с точностью 94%</h1>
-    <div class="case-cover case-cover--placeholder"></div>
 
-    <!-- Контент кейса будет здесь -->
-    <div class="case-body">
-      <p class="case-placeholder-text">Контент кейса появится здесь</p>
+    <div class="case-hero">
+      <h1 class="case-title">Landa Research. AI&#8209;сервис для&nbsp;анализа UX&#8209;тестов c&nbsp;точностью&nbsp;94%</h1>
+
+      <div class="case-desc">
+        <div class="case-meta">
+          <div class="case-meta-row">
+            <span class="case-meta-label">Роль</span>
+            <span class="case-meta-value">Art-Director / Product Owner</span>
+          </div>
+          <div class="case-meta-row">
+            <span class="case-meta-label">Период</span>
+            <span class="case-meta-value">2023–2025</span>
+          </div>
+          <div class="case-meta-row">
+            <span class="case-meta-label">Тип</span>
+            <span class="case-meta-value">AI · SaaS · B2B</span>
+          </div>
+        </div>
+        <p class="case-summary">Landa Research — платформа для&nbsp;автоматического анализа UX&#8209;интервью и&nbsp;тестов с&nbsp;помощью ИИ. Я&nbsp;отвечал за&nbsp;продуктовое направление и&nbsp;дизайн от&nbsp;нулевой версии до&nbsp;коммерческого запуска.</p>
+      </div>
     </div>
+
+    <div class="case-cover" style="--glass: rgba(107,94,86,0.70)">
+      <img src="../images/landa.png" alt="Landa Research">
+      <div class="card-tags">
+        <span class="tag">✦ AI</span>
+        <span class="tag">SaaS</span>
+        <span class="tag">B2B</span>
+        <span class="tag">2023–2025</span>
+        <span class="tag">Art-Director / Product Owner</span>
+      </div>
+    </div>
+
   </main>
+
+  <script src="../js/ui.js"></script>
 
 </body>
 </html>
