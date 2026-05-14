@@ -111,14 +111,16 @@
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
-  .case-block-content { padding: 36px; }
-  .case-block-title { max-width: 80%; }
+  .case-block-content { padding: 36px 36px 0; }
+  .case-block-title { max-width: 85%; }
+  .case-block-title br { display: none; }
 }
 
 @media (max-width: 640px) {
   .case-block { border-radius: 16px; }
-  .case-block-content { padding: 24px; gap: 24px; }
+  .case-block-content { padding: 24px 24px 0; gap: 20px; }
   .case-block-head { flex-direction: column-reverse; gap: 16px; }
   .case-block-title { max-width: 100%; }
+  .case-block-title span[style] { white-space: normal; }
   .case-block-desc { font-size: 16px; }
 }
