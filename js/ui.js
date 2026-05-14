@@ -7,7 +7,7 @@
 
     const header = document.createElement('header');
     header.innerHTML = `
-      <a class="header-name" href="${root}index.html">
+      <a class="header-name" href="/">
         <img src="${root}images/avatar.png" alt="Богдан Алексеев" class="avatar">
         <span>Богдан Алексеев</span>
       </a>
