@@ -123,5 +123,5 @@
   .case-block-head { flex-direction: column-reverse; gap: 16px; }
   .case-block-title { max-width: 100%; }
   .case-block-title span[style] { white-space: normal; }
-  .case-block-desc { font-size: 16px; }
+  .case-block-desc { font-size: 16px; max-width: 100%; }
 }
