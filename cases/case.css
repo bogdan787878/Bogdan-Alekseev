@@ -28,6 +28,25 @@
   opacity: 0.65;
 }
 
+.case-block--overlay {
+  background: none;
+  position: relative;
+}
+
+.case-block--overlay .case-block-bg-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 32px;
+}
+
+.case-block--overlay .case-block-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
 /* Noise texture */
 .case-block::after {
   content: '';
