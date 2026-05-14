@@ -46,6 +46,6 @@ nav {
 .cases {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 4px;
   padding: 0 var(--side) 60px;
 }

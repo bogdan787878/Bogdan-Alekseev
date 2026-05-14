@@ -1,7 +1,7 @@
 .card-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: 4px;
 }
 
 .card {
@@ -11,7 +11,6 @@
   min-width: 0;
   text-decoration: none;
   color: inherit;
-  padding-top: 80px;
   cursor: none;
   opacity: 0;
   transform: translateY(28px);
@@ -33,7 +32,7 @@
 
 .card-image {
   width: 100%;
-  background: #AFAFB5;
+  background: #EEEEF2;
   border-radius: 32px;
   overflow: hidden;
   position: relative;
