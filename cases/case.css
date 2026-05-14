@@ -452,6 +452,20 @@
   margin-top: auto;
 }
 
+.ds-card-asset {
+  position: relative;
+  flex: 1;
+}
+
+.ds-card-asset img {
+  position: absolute;
+  height: 100%;
+  width: auto;
+  right: -24px;
+  bottom: -24px;
+  margin-top: 0;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .ds-card-title { font-size: 40px; }
