@@ -51,6 +51,10 @@
   right: 0;
 }
 
+.case-block--overlay .case-block-mockup {
+  padding-top: 180px;
+}
+
 /* Noise texture */
 .case-block::after {
   content: '';
@@ -456,6 +460,8 @@
 }
 
 @media (max-width: 640px) {
+  .case-block--overlay .case-block-mockup { padding-top: 56px; }
+
   .case-block,
   .case-stat,
   .case-col,
