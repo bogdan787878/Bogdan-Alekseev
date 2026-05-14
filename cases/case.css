@@ -404,69 +404,25 @@
 .ds-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 4px;
+  gap: 24px;
   padding-top: 24px;
 }
 
 .ds-card {
+  grid-column: span 1;
   border-radius: 24px;
-  padding: 28px;
-  min-height: 280px;
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
 }
 
-.ds-card--tokens {
-  grid-column: span 1;
-  background: linear-gradient(135deg, #000510 0%, #060E35 100%);
-  height: 640px;
-}
-
-.ds-card--layout {
-  grid-column: span 2;
-  background: linear-gradient(135deg, #060E35 0%, #1535E8 100%);
-}
-
+.ds-card--layout,
 .ds-card--guidlines {
   grid-column: span 2;
-  background: linear-gradient(135deg, #050D30 0%, #1030C8 100%);
-}
-
-.ds-card--components {
-  grid-column: span 1;
-  background: linear-gradient(135deg, #1030C8 0%, #2535F5 100%);
-}
-
-.ds-card-title {
-  font-size: 56px;
-  font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: -0.5px;
-  color: #fff;
 }
 
 .ds-card img {
   width: 100%;
   height: auto;
   display: block;
-  margin-top: auto;
-}
-
-.ds-card-asset {
-  flex: 1;
-  margin: 16px -28px -28px 0;
-}
-
-.ds-card-asset--shift {
-  margin-left: 32px;
-}
-
-.ds-card-asset img {
-  width: auto;
-  height: 100%;
-  display: block;
-  margin-top: 0;
 }
 
 /* ── RESPONSIVE ── */
