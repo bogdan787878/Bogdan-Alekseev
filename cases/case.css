@@ -169,7 +169,7 @@
 
 .case-stat {
   background: #EEEEF2;
-  border-radius: 16px;
+  border-radius: 32px;
   padding: 24px;
 }
 
@@ -234,7 +234,7 @@
 
 .case-col {
   background: #EEEEF2;
-  border-radius: 16px;
+  border-radius: 32px;
   padding: 24px;
 }
 
@@ -264,7 +264,7 @@
 
 .case-image {
   width: 100%;
-  border-radius: 24px;
+  border-radius: 32px;
   background: var(--case-gradient, linear-gradient(160deg, #1a1a1a, #0d0d0d));
   overflow: hidden;
   padding-top: 56px;
@@ -285,7 +285,7 @@
 
 .case-highlight {
   border: 1px solid rgba(128, 128, 128, 0.2);
-  border-radius: 16px;
+  border-radius: 32px;
   padding: 24px 28px;
   display: flex;
   flex-direction: column;
@@ -316,7 +316,7 @@
 
 .case-feature {
   background: #EEEEF2;
-  border-radius: 16px;
+  border-radius: 32px;
   padding: 24px;
 }
 
@@ -343,7 +343,7 @@
 
 .case-testimonial {
   background: #EEEEF2;
-  border-radius: 16px;
+  border-radius: 32px;
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -410,7 +410,7 @@
 }
 
 .ds-card {
-  border-radius: 24px;
+  border-radius: 32px;
   overflow: hidden;
   position: relative;
 }
@@ -456,7 +456,12 @@
 }
 
 @media (max-width: 640px) {
-  .case-block { border-radius: 16px; }
+  .case-block,
+  .case-stat,
+  .case-col,
+  .case-image,
+  .case-feature,
+  .case-testimonial { border-radius: 16px; }
   .case-block-content { padding: 24px; gap: 16px; }
   .case-block-head { flex-direction: column-reverse; gap: 16px; }
   .case-block-title { max-width: 100%; font-size: clamp(28px, 7vw, 44px); }
