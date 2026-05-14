@@ -420,6 +420,7 @@
 .ds-card--tokens {
   grid-column: span 1;
   background: linear-gradient(135deg, #000510 0%, #060E35 100%);
+  height: 640px;
 }
 
 .ds-card--layout {
@@ -454,15 +455,15 @@
 
 .ds-card-asset {
   flex: 1;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  margin: 16px -28px -28px;
+  margin-top: 16px;
+  margin-right: -28px;
+  margin-bottom: -28px;
 }
 
 .ds-card-asset img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
+  max-height: 480px;
   display: block;
   margin-top: 0;
 }
