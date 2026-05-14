@@ -179,9 +179,8 @@
 .case-section-desc {
   font-size: 20px;
   font-weight: 400;
-  line-height: 1.65;
-  color: var(--text);
-  opacity: 0.65;
+  line-height: 24px;
+  color: #23262D;
   max-width: 680px;
 }
 
@@ -198,21 +197,17 @@
 }
 
 .case-col-label {
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  color: var(--text);
-  opacity: 0.4;
+  font-size: 24px;
+  font-weight: 900;
+  color: #FF5C22;
   margin-bottom: 12px;
 }
 
 .case-col-text {
   font-size: 20px;
   font-weight: 400;
-  line-height: 1.65;
-  color: var(--text);
-  opacity: 0.75;
+  line-height: 24px;
+  color: #23262D;
 }
 
 .case-image {
@@ -259,18 +254,17 @@
 }
 
 .case-feature-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--text);
+  font-size: 24px;
+  font-weight: 900;
+  color: #FF5C22;
   margin-bottom: 8px;
 }
 
 .case-feature-text {
   font-size: 20px;
   font-weight: 400;
-  line-height: 1.6;
-  color: var(--text);
-  opacity: 0.55;
+  line-height: 24px;
+  color: #23262D;
 }
 
 .case-testimonials {
@@ -309,6 +303,12 @@
   object-fit: cover;
 }
 
+.case-testimonial-company {
+  font-size: 24px;
+  font-weight: 900;
+  color: #FF5C22;
+}
+
 .case-testimonial-name {
   font-size: 14px;
   font-weight: 600;
@@ -323,10 +323,10 @@
 }
 
 .case-testimonial-text {
-  font-size: 14px;
-  line-height: 1.65;
-  color: var(--text);
-  opacity: 0.7;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #23262D;
 }
 
 /* ── RESPONSIVE ── */
