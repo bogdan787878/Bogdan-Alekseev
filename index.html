@@ -81,7 +81,7 @@
           </div>
         </a>
 
-        <a class="card card--half" href="/growfood/">
+        <a class="card card--half" href="#" data-modal="https://www.figma.com/proto/Ku4b8JugSI8FalOk3FDdmU/Bogdan-Alekseev?node-id=12950-17009&viewport=-862%2C245%2C0.14&t=O37Abt0sPDjIS7mI-9&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=12950%3A17009&show-proto-sidebar=1&page-id=12950%3A16626">
           <div class="card-image" style="--glass: rgba(86,107,92,0.70)">
             <img src="images/growfood.webp" alt="Grow Food">
             <div class="card-tags">
@@ -99,7 +99,7 @@
 
       </div>
 
-      <a class="card card--full" href="/alfabank/">
+      <a class="card card--full" href="#" data-modal="https://www.figma.com/proto/Ku4b8JugSI8FalOk3FDdmU/Bogdan-Alekseev?node-id=12950-17341&viewport=-862%2C245%2C0.14&t=O37Abt0sPDjIS7mI-9&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=12950%3A17341&show-proto-sidebar=1&page-id=12950%3A16626">
         <div class="card-image" style="--glass: rgba(107,86,86,0.70)">
           <img src="images/alfabank.webp" alt="Альфа-Банк">
           <div class="card-tags">
@@ -118,6 +118,34 @@
 
     </section>
   </main>
+
+  <!-- Modal -->
+  <div id="case-modal" style="display:none; position:fixed; inset:0; z-index:1000; background:rgba(0,0,0,0.55); backdrop-filter:blur(6px); align-items:center; justify-content:center; padding:24px;">
+    <div style="background:#fff; border-radius:32px; padding:48px; max-width:560px; width:100%; position:relative;">
+      <button onclick="closeModal()" style="position:absolute; top:20px; right:20px; background:none; border:none; font-size:24px; cursor:pointer; color:#999; line-height:1;">×</button>
+      <p style="font-size:40px; font-weight:900; line-height:1.1; letter-spacing:-0.3px; color:#1a1a1a; margin-bottom:32px;">
+        Кейс уже вайбкодится<br>и переезжает с Тильды.<br>Посмотреть кейс можно<br>в <a id="modal-figma-link" href="#" target="_blank" style="color:#3A85FF; text-decoration:none;">Figma</a> или вживую<br>на интервью
+      </p>
+      <a href="https://t.me/al_bogdan" target="_blank" class="btn btn-telegram" style="display:inline-flex;">Пригласить на интервью</a>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('[data-modal]').forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('modal-figma-link').href = el.dataset.modal;
+        var modal = document.getElementById('case-modal');
+        modal.style.display = 'flex';
+      });
+    });
+    function closeModal() {
+      document.getElementById('case-modal').style.display = 'none';
+    }
+    document.getElementById('case-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+  </script>
 
   <script src="js/ui.js"></script>
 
