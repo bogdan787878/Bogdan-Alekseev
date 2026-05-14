@@ -179,7 +179,7 @@
 .case-section-desc {
   font-size: 20px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 28px;
   color: #23262D;
   max-width: 680px;
 }
@@ -204,9 +204,9 @@
 }
 
 .case-col-text {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 28px;
   color: #23262D;
 }
 
@@ -261,9 +261,9 @@
 }
 
 .case-feature-text {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 28px;
   color: #23262D;
 }
 
@@ -323,9 +323,10 @@
 }
 
 .case-testimonial-text {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 24px;
+  font-style: italic;
+  line-height: 28px;
   color: #23262D;
 }
 
