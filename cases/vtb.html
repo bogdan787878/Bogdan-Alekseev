@@ -3,38 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ВТБ. Цифровая витрина продуктов в омниканальной платформе T2M в 30 дней — Богдан Алексеев</title>
+  <title>ВТБ — Богдан Алексеев</title>
   <script>
-    const _v = new Date().toISOString().slice(0,13).replace(/[-T:]/g,"");
-    document.write("<link rel=\"stylesheet\" href=\"../style.css?v=" + _v + "\">");
+    const _v = new Date().toISOString().slice(0,13).replace(/[-T:]/g,'');
+    ['tokens','base','buttons','tags','cards','layout','effects','responsive'].forEach(function(n) {
+      document.write('<link rel="stylesheet" href="../styles/' + n + '.css?v=' + _v + '">');
+    });
   </script>
   <link rel="stylesheet" href="case.css">
 </head>
 <body>
-
-  <header>
-    <div class="header-name">
-      <div class="avatar-placeholder"></div>
-      <span>Богдан Алексеев</span>
-    </div>
-    <nav>
-      <a href="../index.html" class="btn btn-outline">← Назад</a>
-      <a href="https://t.me/bogdan_alekseev" class="btn btn-telegram" target="_blank">Telegram</a>
-    </nav>
-  </header>
+  <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <filter id="grain">
+        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" result="noise"/>
+        <feColorMatrix type="saturate" values="0" in="noise"/>
+      </filter>
+    </defs>
+  </svg>
 
   <main class="case-main">
-    <div class="case-tags">
-      <span class="tag tag--gray">web</span><span class="tag tag--teal">fintech</span><span class="tag tag--orange">B2B/B2E</span><span class="tag tag--gray">2020-2026</span><span class="tag tag--green">Design Director</span>
-    </div>
-    <h1 class="case-title">ВТБ. Цифровая витрина продуктов в омниканальной платформе T2M в 30 дней</h1>
-    <div class="case-cover case-cover--placeholder"></div>
 
-    <!-- Контент кейса будет здесь -->
-    <div class="case-body">
-      <p class="case-placeholder-text">Контент кейса появится здесь</p>
+    <div class="case-block" style="background: linear-gradient(-36deg, #050329, #2731DA)">
+      <div class="case-block-content">
+
+        <div class="case-block-head">
+          <h1 class="case-block-title">ВТБ. Цифровая витрина продуктов в&nbsp;омниканальной платформе T2M в&nbsp;30&nbsp;дней</h1>
+        </div>
+
+        <p class="case-block-desc">Запуск цифровой витрины продуктов для&nbsp;крупнейшего госбанка России в&nbsp;рамках омниканальной платформы T2M. От&nbsp;концепции до&nbsp;релиза за&nbsp;30 дней.</p>
+
+        <div class="case-block-tags">
+          <span class="tag">web</span>
+          <span class="tag">fintech</span>
+          <span class="tag">B2B/B2E</span>
+          <span class="tag">2020–2026</span>
+          <span class="tag">Design Director</span>
+        </div>
+
+        <!-- Mockup — загрузим отдельно -->
+
+      </div>
     </div>
+
   </main>
+
+  <script src="../js/ui.js"></script>
 
 </body>
 </html>

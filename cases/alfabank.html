@@ -3,38 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Альфа-Банк. Пользовательское исследование и редизайн раздела Аналитика для iOS — Богдан Алексеев</title>
+  <title>Альфа-Банк — Богдан Алексеев</title>
   <script>
-    const _v = new Date().toISOString().slice(0,13).replace(/[-T:]/g,"");
-    document.write("<link rel=\"stylesheet\" href=\"../style.css?v=" + _v + "\">");
+    const _v = new Date().toISOString().slice(0,13).replace(/[-T:]/g,'');
+    ['tokens','base','buttons','tags','cards','layout','effects','responsive'].forEach(function(n) {
+      document.write('<link rel="stylesheet" href="../styles/' + n + '.css?v=' + _v + '">');
+    });
   </script>
   <link rel="stylesheet" href="case.css">
 </head>
 <body>
-
-  <header>
-    <div class="header-name">
-      <div class="avatar-placeholder"></div>
-      <span>Богдан Алексеев</span>
-    </div>
-    <nav>
-      <a href="../index.html" class="btn btn-outline">← Назад</a>
-      <a href="https://t.me/bogdan_alekseev" class="btn btn-telegram" target="_blank">Telegram</a>
-    </nav>
-  </header>
+  <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <filter id="grain">
+        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" result="noise"/>
+        <feColorMatrix type="saturate" values="0" in="noise"/>
+      </filter>
+    </defs>
+  </svg>
 
   <main class="case-main">
-    <div class="case-tags">
-      <span class="tag tag--teal">fintech</span><span class="tag tag--gray">mobile</span><span class="tag tag--orange">B2C</span><span class="tag tag--gray">UX/UI</span><span class="tag tag--gray">2019</span><span class="tag tag--green">Product Designer</span>
-    </div>
-    <h1 class="case-title">Альфа-Банк. Пользовательское исследование и редизайн раздела Аналитика для iOS</h1>
-    <div class="case-cover case-cover--placeholder"></div>
 
-    <!-- Контент кейса будет здесь -->
-    <div class="case-body">
-      <p class="case-placeholder-text">Контент кейса появится здесь</p>
+    <div class="case-block" style="background: linear-gradient(128deg, #060000, #FE0000)">
+      <div class="case-block-content">
+
+        <div class="case-block-head">
+          <h1 class="case-block-title">Альфа-Банк. Пользовательское исследование и&nbsp;редизайн раздела Аналитика для&nbsp;iOS</h1>
+        </div>
+
+        <p class="case-block-desc">UX-исследование и&nbsp;редизайн раздела финансовой аналитики в&nbsp;мобильном приложении Альфа-Банка. Глубинные интервью, анализ паттернов, прототипирование.</p>
+
+        <div class="case-block-tags">
+          <span class="tag">fintech</span>
+          <span class="tag">mobile</span>
+          <span class="tag">B2C</span>
+          <span class="tag">UX/UI</span>
+          <span class="tag">2019</span>
+          <span class="tag">Product Designer</span>
+        </div>
+
+        <!-- Mockup — загрузим отдельно -->
+
+      </div>
     </div>
+
   </main>
+
+  <script src="../js/ui.js"></script>
 
 </body>
 </html>
