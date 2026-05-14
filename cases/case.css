@@ -33,6 +33,10 @@
   position: relative;
 }
 
+.case-block--overlay::after {
+  display: none;
+}
+
 .case-block--overlay .case-block-bg-img {
   width: 100%;
   height: auto;
@@ -174,7 +178,7 @@
   font-weight: 900;
   line-height: 1;
   letter-spacing: -1.5px;
-  color: #FF5C22;
+  color: var(--case-accent, #FF5C22);
 }
 
 .case-stat-label {
@@ -247,7 +251,7 @@
 .case-col-label {
   font-size: 24px;
   font-weight: 900;
-  color: #FF5C22;
+  color: var(--case-accent, #FF5C22);
   margin-bottom: 12px;
 }
 
@@ -319,7 +323,7 @@
 .case-feature-title {
   font-size: 24px;
   font-weight: 900;
-  color: #FF5C22;
+  color: var(--case-accent, #FF5C22);
   margin-bottom: 8px;
 }
 
@@ -370,7 +374,7 @@
 .case-testimonial-company {
   font-size: 24px;
   font-weight: 900;
-  color: #FF5C22;
+  color: var(--case-accent, #FF5C22);
 }
 
 .case-testimonial-name {
