@@ -458,6 +458,10 @@
   margin: 16px -28px -28px 0;
 }
 
+.ds-card-asset--shift {
+  margin-left: 32px;
+}
+
 .ds-card-asset img {
   width: auto;
   height: 100%;
