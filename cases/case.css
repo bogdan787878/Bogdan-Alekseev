@@ -455,9 +455,7 @@
 
 .ds-card-asset {
   flex: 1;
-  margin-top: 16px;
-  margin-right: -28px;
-  margin-bottom: -28px;
+  margin: 16px -28px -28px 0;
 }
 
 .ds-card-asset img {
