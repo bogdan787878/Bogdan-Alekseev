@@ -113,7 +113,6 @@
 @media (max-width: 900px) {
   .case-block-content { padding: 36px 36px 0; }
   .case-block-title { max-width: 85%; }
-  .case-block-title br { display: none; }
 }
 
 @media (max-width: 640px) {
