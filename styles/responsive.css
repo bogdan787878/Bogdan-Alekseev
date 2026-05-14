@@ -7,8 +7,6 @@
 }
 
 @media (max-width: 640px) {
-  .card-footer h3 { font-size: 24px; }
-
   .card-row { grid-template-columns: 1fr; }
   .cases { gap: 24px; padding-bottom: 100px; }
   .card { padding-top: 32px; }
