@@ -2,7 +2,7 @@
 
   /* ── HEADER ─────────────────────────────────────────────────────── */
   function renderHeader() {
-    const isCase = window.location.pathname.includes('/cases/');
+    const isCase = window.location.pathname !== '/' && !window.location.pathname.endsWith('index.html');
     const root = isCase ? '../' : '';
 
     const header = document.createElement('header');
@@ -37,7 +37,7 @@
 
   /* ── FLOATING NAV ───────────────────────────────────────────────── */
   function initFloatingNav() {
-    const isCase = window.location.pathname.includes('/cases/');
+    const isCase = window.location.pathname !== '/' && !window.location.pathname.endsWith('index.html');
     const nav = document.createElement('div');
     nav.className = 'floating-nav';
     nav.id = 'floating-nav';
