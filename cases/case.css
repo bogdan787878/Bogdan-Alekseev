@@ -55,7 +55,8 @@
   padding-top: 180px;
 }
 
-.case-block--overlay .case-block-title {
+.case-block--overlay .case-block-title,
+.case-block--overlay .case-block-desc {
   max-width: 50%;
 }
 
