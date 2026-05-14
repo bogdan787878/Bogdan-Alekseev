@@ -109,6 +109,8 @@
   height: auto;
   display: block;
   margin-top: 8px;
+  position: relative;
+  z-index: 1;
 }
 
 /* ── RESPONSIVE ── */
