@@ -236,6 +236,11 @@
   display: block;
 }
 
+.case-image--plain {
+  background: none;
+  padding-top: 0;
+}
+
 .case-highlight {
   border: 1px solid rgba(128, 128, 128, 0.2);
   border-radius: 16px;
