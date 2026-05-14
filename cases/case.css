@@ -453,16 +453,17 @@
 }
 
 .ds-card-asset {
-  position: relative;
   flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin: 16px -28px -28px;
 }
 
 .ds-card-asset img {
-  position: absolute;
-  height: 100%;
-  width: auto;
-  right: -24px;
-  bottom: -24px;
+  width: 100%;
+  height: auto;
+  display: block;
   margin-top: 0;
 }
 
