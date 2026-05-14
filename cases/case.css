@@ -63,6 +63,10 @@
   max-width: 50%;
 }
 
+.case-content .case-block--overlay {
+  margin-top: 56px;
+}
+
 /* Noise texture */
 .case-block::after {
   content: '';
