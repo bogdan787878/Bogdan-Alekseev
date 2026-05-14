@@ -12,8 +12,8 @@
         <span>Богдан Алексеев</span>
       </a>
       <nav>
-        <a href="#" class="btn btn-outline">CV</a>
-        <a href="https://t.me/bogdan_alekseev" class="btn btn-telegram" target="_blank">Telegram</a>
+        <a href="https://docs.google.com/document/d/1da54qDzXx4MLuOIPf5lLActD1l6MFjKnCuzuBfiZKY0/edit?usp=sharing" class="btn btn-outline" target="_blank">CV</a>
+        <a href="https://t.me/al_bogdan" class="btn btn-telegram" target="_blank">Telegram</a>
       </nav>
     `;
     document.body.prepend(header);
@@ -43,8 +43,8 @@
     nav.id = 'floating-nav';
 
     nav.innerHTML = `
-      <a href="#" class="btn btn-dark">CV</a>
-      <a href="https://t.me/bogdan_alekseev" class="btn btn-telegram" target="_blank">Telegram</a>
+      <a href="https://docs.google.com/document/d/1da54qDzXx4MLuOIPf5lLActD1l6MFjKnCuzuBfiZKY0/edit?usp=sharing" class="btn btn-dark" target="_blank">CV</a>
+      <a href="https://t.me/al_bogdan" class="btn btn-telegram" target="_blank">Telegram</a>
     `;
 
     document.body.appendChild(nav);
