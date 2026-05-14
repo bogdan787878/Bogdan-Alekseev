@@ -124,6 +124,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 4px;
+  padding-top: 24px;
 }
 
 .case-stat {
@@ -188,6 +189,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4px;
+  padding-top: 24px;
 }
 
 .case-col {
@@ -251,6 +253,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4px;
+  padding-top: 24px;
 }
 
 .case-feature {
@@ -277,6 +280,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4px;
+  padding-top: 24px;
 }
 
 .case-testimonial {
