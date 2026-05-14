@@ -317,8 +317,8 @@
 }
 
 .case-testimonial-avatar {
-  width: 72px;
-  height: 72px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: rgba(128, 128, 128, 0.15);
   flex-shrink: 0;
@@ -403,5 +403,5 @@
   .case-testimonial-text { font-size: 16px; }
   .case-testimonial-name,
   .case-testimonial-role { font-size: 16px; }
-  .case-testimonial-avatar { width: 48px; height: 48px; }
+  .case-testimonial-avatar { width: 40px; height: 40px; }
 }
