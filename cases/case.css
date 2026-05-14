@@ -439,7 +439,7 @@
   position: absolute;
   top: 32px;
   left: 32px;
-  font-size: 56px;
+  font-size: clamp(24px, 4vw, 56px);
   font-weight: 900;
   line-height: 1.05;
   letter-spacing: -0.5px;
