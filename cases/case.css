@@ -347,15 +347,46 @@
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
-  .case-block-content { padding: 36px 36px 0; }
+  .case-block-content { padding: 40px; }
   .case-block-title { max-width: 85%; }
+
+  .case-section-title { font-size: 40px; }
+  .case-stat-value { font-size: 40px; }
+
+  .case-stats { grid-template-columns: 1fr 1fr; }
+  .case-features { grid-template-columns: 1fr 1fr; }
+  .case-testimonials { grid-template-columns: 1fr; }
+
+  .case-content { gap: 56px; }
+  .case-section { padding-top: 24px; gap: 24px; }
 }
 
 @media (max-width: 640px) {
   .case-block { border-radius: 16px; }
-  .case-block-content { padding: 24px 24px 0; gap: 20px; }
+  .case-block-content { padding: 24px; gap: 16px; }
   .case-block-head { flex-direction: column-reverse; gap: 16px; }
-  .case-block-title { max-width: 100%; }
-  .case-block-title span[style] { white-space: normal; }
+  .case-block-title { max-width: 100%; font-size: clamp(28px, 7vw, 44px); }
   .case-block-desc { font-size: 16px; max-width: 100%; }
+
+  .case-section-title { font-size: 28px; max-width: 100%; }
+  .case-section-label { font-size: 14px; }
+  .case-stat-value { font-size: 36px; }
+  .case-stat-label { font-size: 14px; }
+  .case-section-desc { font-size: 16px; }
+
+  .case-stats { grid-template-columns: 1fr 1fr; }
+  .case-cols { grid-template-columns: 1fr; }
+  .case-features { grid-template-columns: 1fr; }
+  .case-testimonials { grid-template-columns: 1fr; }
+
+  .case-content { gap: 40px; padding-top: 32px; }
+  .case-section { padding-top: 16px; gap: 16px; }
+
+  .case-col-text { font-size: 16px; }
+  .case-cols--plain .case-col-text { font-size: 16px; }
+  .case-feature-text { font-size: 16px; }
+  .case-testimonial-text { font-size: 16px; }
+  .case-testimonial-name,
+  .case-testimonial-role { font-size: 16px; }
+  .case-testimonial-avatar { width: 48px; height: 48px; }
 }
