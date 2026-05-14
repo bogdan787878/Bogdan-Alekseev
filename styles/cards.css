@@ -1,7 +1,7 @@
 .card-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4px;
+  gap: 24px;
 }
 
 .card {
@@ -11,6 +11,7 @@
   min-width: 0;
   text-decoration: none;
   color: inherit;
+  padding-top: 80px;
   cursor: none;
   opacity: 0;
   transform: translateY(28px);
