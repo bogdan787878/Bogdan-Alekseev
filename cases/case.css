@@ -410,7 +410,7 @@
 
 .ds-card {
   border-radius: 24px;
-  padding: 28px;
+  padding: 32px;
   min-height: 280px;
   display: flex;
   flex-direction: column;
@@ -455,11 +455,11 @@
 
 .ds-card-asset {
   flex: 1;
-  margin: 16px -28px -28px 0;
+  margin: 16px -32px -32px -32px;
 }
 
 .ds-card-asset--shift {
-  margin-left: 32px;
+  margin-left: 0;
 }
 
 .ds-card-asset img {
