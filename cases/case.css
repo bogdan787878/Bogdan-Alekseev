@@ -483,10 +483,10 @@
   .case-testimonial { border-radius: 16px; }
   .case-block-content { padding: 24px; gap: 16px; }
   .case-block-head { flex-direction: column-reverse; gap: 16px; }
-  .case-block-title { max-width: 100%; font-size: clamp(28px, 7vw, 44px); }
+  .case-block-title { max-width: 100%; font-size: clamp(40px, 8vw, 56px); }
   .case-block-desc { font-size: 16px; max-width: 100%; }
 
-  .case-section-title { font-size: 28px; max-width: 100%; }
+  .case-section-title { font-size: 24px; max-width: 100%; }
   .case-section-label { font-size: 14px; }
   .case-stat-value { font-size: 36px; }
   .case-stat-label { font-size: 14px; }

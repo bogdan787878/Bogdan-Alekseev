@@ -3,7 +3,7 @@
   .card-row { gap: 16px; }
   .tag { font-size: 14px; padding: 6px 12px; }
   .card { padding-top: 48px; }
-  .card-image { border-radius: 24px; }
+  .card-image { border-radius: 16px; }
 }
 
 @media (max-width: 640px) {
@@ -15,6 +15,8 @@
   .card-image img { height: auto; object-fit: unset; }
   .card--full .card-footer { max-width: 100%; }
   .card-tags { top: 12px; left: 12px; right: 12px; gap: 4px; }
+
+  .card-footer h3 { font-size: 24px; line-height: 1.2; letter-spacing: -0.2px; }
 
   header nav { display: none; }
   #custom-cursor { display: none; }
