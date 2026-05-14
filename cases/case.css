@@ -124,16 +124,14 @@
 .case-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0;
+  gap: 4px;
 }
 
 .case-stat {
-  padding: 0 32px;
-  border-right: 1px solid rgba(128, 128, 128, 0.18);
+  background: #EEEEF2;
+  border-radius: 16px;
+  padding: 24px;
 }
-
-.case-stat:first-child { padding-left: 0; }
-.case-stat:last-child  { border-right: none; }
 
 .case-stat-value {
   font-size: clamp(36px, 4.5vw, 60px);
@@ -190,7 +188,13 @@
 .case-cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 4px;
+}
+
+.case-col {
+  background: #EEEEF2;
+  border-radius: 16px;
+  padding: 24px;
 }
 
 .case-col-label {
@@ -245,7 +249,13 @@
 .case-features {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  gap: 4px;
+}
+
+.case-feature {
+  background: #EEEEF2;
+  border-radius: 16px;
+  padding: 24px;
 }
 
 .case-feature-title {
