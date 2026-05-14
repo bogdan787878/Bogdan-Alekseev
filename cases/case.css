@@ -55,6 +55,10 @@
   padding-top: 180px;
 }
 
+.case-block--overlay .case-block-title {
+  max-width: 50%;
+}
+
 /* Noise texture */
 .case-block::after {
   content: '';
