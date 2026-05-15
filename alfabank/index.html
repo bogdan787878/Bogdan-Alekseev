@@ -17,7 +17,28 @@
       --case-gradient: linear-gradient(45deg, #060000, #EF3124);
     }
     .ab-frame-big {
-      background: linear-gradient(to top, #EF3124, #060000 55%);
+      background: radial-gradient(ellipse at 100% 100%, #8B0000 0%, #060000 65%);
+    }
+    .ab-label {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      font-size: 18px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.8);
+      pointer-events: none;
+      z-index: 2;
+    }
+    @media (max-width: 640px) {
+      .ab-label {
+        top: 12px;
+        left: 12px;
+        font-size: 13px;
+        background: rgba(0, 0, 0, 0.4);
+        border-radius: 100px;
+        padding: 4px 10px;
+        backdrop-filter: blur(4px);
+      }
     }
     .ab-frame-big,
     .ab-frame-small {
@@ -127,9 +148,11 @@
         <p class="case-section-desc">Линейный график показывал тенденцию только за&nbsp;месяц и&nbsp;ничего не&nbsp;давал для&nbsp;принятия решений. Заменил на&nbsp;столбчатую диаграмму за&nbsp;4&nbsp;месяца, вывел категории наружу как&nbsp;фильтры.</p>
         <div class="ds-grid" style="grid-template-columns: 1fr 2fr; grid-auto-rows: auto;">
           <div class="ds-card ab-frame-small" style="background: #060000;">
+            <span class="ab-label">Было</span>
             <img src="../images/alfabank-mockup-4.webp" alt="Альфа-Банк диаграмма до">
           </div>
           <div class="ds-card ab-frame-big">
+            <span class="ab-label">Стало</span>
             <img src="../images/alfabank-mockup-5.webp" alt="Альфа-Банк диаграмма после">
           </div>
         </div>
