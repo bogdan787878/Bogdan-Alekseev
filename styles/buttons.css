@@ -2,8 +2,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 7px 14px;
-  border-radius: var(--radius-btn);
+  padding: 16px 24px;
+  border-radius: 16px;
   font-family: var(--font);
   font-size: 18px;
   font-weight: 500;
@@ -15,9 +15,8 @@
 .btn:hover { opacity: 0.8; }
 
 .btn-outline {
-  background: transparent;
-  border: 1.5px solid #111;
-  color: #111;
+  background: #EEEEF2;
+  color: #23262D;
 }
 
 .btn-telegram {
