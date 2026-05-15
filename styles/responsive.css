@@ -13,6 +13,8 @@
   .tag { font-size: 12px; padding: 5px 10px; }
   .card-image { border-radius: 16px; aspect-ratio: unset; }
   .card-image img { height: auto; object-fit: unset; }
+  .card-image--gradient { height: auto !important; }
+  .card-mockup { position: relative; inset: auto; width: 100%; height: auto; }
   .card--full .card-footer { max-width: 100%; }
   .card-tags { top: 12px; left: 12px; right: 12px; gap: 4px; }
 
