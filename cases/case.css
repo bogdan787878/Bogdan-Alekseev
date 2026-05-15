@@ -431,7 +431,7 @@
   display: block;
   text-decoration: none;
   color: inherit;
-  padding-top: 80px;
+  margin-top: 80px;
 }
 
 .case-next-inner {
@@ -549,8 +549,8 @@
   .case-features { grid-template-columns: 1fr; }
   .case-testimonials { grid-template-columns: 1fr; }
 
-  .case-next { padding-top: 40px; }
-  .case-next-inner { padding: 32px 32px 0; min-height: unset; flex-direction: column; align-items: flex-start; }
+  .case-next { margin-top: 40px; }
+  .case-next-inner { padding: 32px 32px 0; min-height: unset; flex-direction: column; align-items: flex-start; border-radius: 16px; }
   .case-next-text { padding-bottom: 32px; }
   .case-next-mockup { width: 100%; height: auto; align-self: unset; object-fit: contain; }
 
