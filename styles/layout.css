@@ -63,15 +63,15 @@ footer {
   align-items: center;
   gap: 8px;
   background: #EEEEF2;
-  border-radius: 24px;
+  border-radius: 16px;
   padding: 16px 24px 16px 12px;
   text-decoration: none;
   color: inherit;
 }
 
 .footer-icon {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   flex-shrink: 0;
   background: #D8D8DC;
@@ -90,7 +90,7 @@ footer {
 }
 
 .footer-link-name {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   color: #23262D;
 }
