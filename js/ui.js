@@ -88,21 +88,21 @@
     const footer = document.createElement('footer');
     footer.innerHTML = `
       <a class="footer-link" href="https://t.me/designfintech" target="_blank">
-        <img src="${root}images/icon-df.webp" class="footer-icon" alt="DesignFintech">
+        <img src="${root}images/icon-df.svg" class="footer-icon" alt="DesignFintech">
         <div class="footer-link-text">
           <span class="footer-link-label">Веду тг-канал про дизайн в финтехе</span>
           <span class="footer-link-name">@designfintech</span>
         </div>
       </a>
       <a class="footer-link" href="https://dsgners.ru/bogdan-alekseev" target="_blank">
-        <img src="${root}images/icon-dsgners.webp" class="footer-icon" alt="Dsgners">
+        <img src="${root}images/icon-dsgners.svg" class="footer-icon" alt="Dsgners">
         <div class="footer-link-text">
           <span class="footer-link-label">Пишу статьи про дизайн</span>
           <span class="footer-link-name">dsgners.ru</span>
         </div>
       </a>
       <a class="footer-link" href="https://www.linkedin.com/in/bogdan-al/" target="_blank">
-        <img src="${root}images/icon-linkedin.webp" class="footer-icon" alt="LinkedIn">
+        <img src="${root}images/icon-linkedin.svg" class="footer-icon" alt="LinkedIn">
         <div class="footer-link-text">
           <span class="footer-link-label">Добавить в контакт</span>
           <span class="footer-link-name">linkedin</span>
