@@ -53,7 +53,7 @@ nav {
 /* ── FOOTER ── */
 footer {
   display: flex;
-  gap: 8px;
+  gap: 4px;
   padding: 0 var(--side) 80px;
   margin-top: 124px;
 }
