@@ -17,6 +17,9 @@
       </nav>
     `;
     document.body.prepend(header);
+    header.querySelector('a[href*="docs.google"]').addEventListener('click', () => {
+      if (typeof ym === 'function') ym(99984431, 'reachGoal', 'cv_click');
+    });
   }
 
   /* ── CURSOR ─────────────────────────────────────────────────────── */
@@ -48,6 +51,9 @@
     `;
 
     document.body.appendChild(nav);
+    nav.querySelector('a[href*="docs.google"]').addEventListener('click', () => {
+      if (typeof ym === 'function') ym(99984431, 'reachGoal', 'cv_click');
+    });
 
     let lastY = window.scrollY;
     window.addEventListener('scroll', () => {
@@ -107,6 +113,128 @@
       </div>
     `;
     document.body.appendChild(footer);
+    const goals = {
+      'designfintech': 'footer_designfintech',
+      'dsgners.ru':    'footer_dsgners',
+      'linkedin.com':  'footer_linkedin',
+    };
+    footer.querySelectorAll('.footer-link').forEach(link => {
+      const goal = Object.entries(goals).find(([key]) => link.href.includes(key));
+      if (goal) link.addEventListener('click', () => {
+        if (typeof ym === 'function') ym(99984431, 'reachGoal', goal[1]);
+      });
+    });
+  }
+
+  /* ── LIKE ───────────────────────────────────────────────────────── */
+  function initLike() {
+    const isCase = window.location.pathname !== '/' && !window.location.pathname.endsWith('index.html');
+    if (!isCase) return;
+
+    const key = 'like_' + window.location.pathname;
+    const countKey = 'likeCount_' + window.location.pathname;
+
+    let liked = localStorage.getItem(key) === '1';
+    let count = parseInt(localStorage.getItem(countKey) || '0', 10);
+
+    const frame = document.createElement('div');
+    frame.className = 'like-frame';
+    frame.innerHTML = `
+      <button class="like-btn${liked ? ' liked' : ''}" aria-label="Поставить лайк">
+        <svg class="like-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        <span class="like-count">${count}</span>
+      </button>
+    `;
+    document.body.appendChild(frame);
+
+    const btn = frame.querySelector('.like-btn');
+    const countEl = frame.querySelector('.like-count');
+
+    const footer = document.querySelector('footer');
+    window.addEventListener('scroll', () => {
+      const past = window.scrollY + window.innerHeight > document.body.scrollHeight * 0.5;
+      frame.classList.toggle('visible', past);
+      if (footer) {
+        const footerTop = footer.getBoundingClientRect().top;
+        const gap = 32;
+        if (footerTop < window.innerHeight) {
+          frame.style.bottom = (window.innerHeight - footerTop + gap) + 'px';
+        } else {
+          frame.style.bottom = gap + 'px';
+        }
+      }
+    }, { passive: true });
+
+    btn.addEventListener('click', () => {
+      if (liked) return;
+      liked = true;
+      count++;
+      localStorage.setItem(key, '1');
+      localStorage.setItem(countKey, String(count));
+      btn.classList.add('liked');
+      countEl.textContent = count;
+      burstHearts(btn);
+      if (typeof ym === 'function') {
+        const caseId = window.location.pathname.replace(/\//g, '') || 'index';
+        ym(99984431, 'reachGoal', 'like', { case: caseId });
+      }
+    });
+  }
+
+  function burstHearts(btn) {
+    const rect = btn.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    const count = 6;
+    const spread = 70;
+    for (let i = 0; i < count; i++) {
+      const el = document.createElement('span');
+      el.className = 'heart-particle';
+      el.textContent = '♥';
+      const angleDeg = -90 + (-spread / 2 + (i / (count - 1)) * spread);
+      const angleRad = angleDeg * Math.PI / 180;
+      const dist = 140 + Math.random() * 60;
+      el.style.setProperty('--tx', Math.round(Math.cos(angleRad) * dist) + 'px');
+      el.style.setProperty('--ty', Math.round(Math.sin(angleRad) * dist) + 'px');
+      el.style.left = cx + 'px';
+      el.style.top = cy + 'px';
+      el.style.animationDelay = (i * 0.05) + 's';
+      document.body.appendChild(el);
+      el.addEventListener('animationend', () => el.remove());
+    }
+  }
+
+  /* ── PUBLICATIONS SHOW MORE ────────────────────────────────────── */
+  function initPublications() {
+    const cards = document.querySelectorAll('.pub-card');
+    const btn = document.getElementById('pub-more-btn');
+    if (!btn || !cards.length) return;
+
+    function isMobile() { return window.innerWidth <= 640; }
+
+    function applyMobile() {
+      if (!isMobile()) {
+        cards.forEach(c => c.classList.remove('pub-visible'));
+        btn.classList.add('pub-more--hidden');
+        return;
+      }
+      let shown = 0;
+      cards.forEach(c => {
+        if (shown < 3) { c.classList.add('pub-visible'); shown++; }
+        else { c.classList.remove('pub-visible'); }
+      });
+      btn.classList.toggle('pub-more--hidden', cards.length <= 3);
+    }
+
+    btn.addEventListener('click', () => {
+      cards.forEach(c => c.classList.add('pub-visible'));
+      btn.classList.add('pub-more--hidden');
+    });
+
+    applyMobile();
+    window.addEventListener('resize', applyMobile, { passive: true });
   }
 
   /* ── INIT ───────────────────────────────────────────────────────── */
@@ -116,6 +244,8 @@
     initCursor();
     initFloatingNav();
     initScrollReveal();
+    initPublications();
+    initLike();
   }
 
   if (document.readyState === 'loading') {
