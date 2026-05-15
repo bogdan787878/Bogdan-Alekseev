@@ -16,6 +16,15 @@
       --case-accent: #8181E1;
       --case-gradient: linear-gradient(45deg, #0F1D28, #1C3A52);
     }
+    @media (max-width: 640px) {
+      .ds-grid--player {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto !important;
+      }
+      .ds-grid--player .ds-card[style*="grid-column: span 2"] {
+        grid-column: span 1 !important;
+      }
+    }
   </style>
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
@@ -141,7 +150,7 @@
         <span class="case-section-label">Решение 3</span>
         <h2 class="case-section-title">Внутренний плеер для&nbsp;удержания</h2>
         <p class="case-section-desc">Реализовал внутри приложения встроенный файл-менеджер и&nbsp;аудио/видео-плеер, чтобы пользователи могли управлять скачанным контентом без&nbsp;перехода в&nbsp;сторонние сервисы. Это сделало сценарий потребления контента бесшовным и&nbsp;повысило удержание пользователей внутри приложения.</p>
-        <div class="ds-grid" style="grid-template-columns: 1fr 1fr; grid-template-rows: auto 665px;">
+        <div class="ds-grid ds-grid--player" style="grid-template-columns: 1fr 1fr; grid-template-rows: auto 665px;">
           <div class="ds-card" style="grid-column: span 2; background: linear-gradient(90deg, #02101E, #9FA7BA);">
             <img src="../images/savefrom-mockup-5.webp" alt="Savefrom mockup 5" style="object-fit: contain;">
           </div>
