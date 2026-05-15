@@ -12,8 +12,8 @@
         <span>Богдан Алексеев</span>
       </a>
       <nav>
-        <a href="https://docs.google.com/document/d/1da54qDzXx4MLuOIPf5lLActD1l6MFjKnCuzuBfiZKY0/edit?usp=sharing" class="btn btn-outline" target="_blank">CV</a>
-        <a href="https://t.me/al_bogdan" class="btn btn-telegram" target="_blank">Telegram</a>
+        <a href="https://docs.google.com/document/d/1da54qDzXx4MLuOIPf5lLActD1l6MFjKnCuzuBfiZKY0/edit?usp=sharing" class="btn btn-pill" target="_blank">CV</a>
+        <a href="https://t.me/al_bogdan" class="btn btn-pill" target="_blank">Telegram</a>
       </nav>
     `;
     document.body.prepend(header);

@@ -30,6 +30,13 @@
   color: #fff;
 }
 
+.btn-pill {
+  background: #EEEEF2;
+  color: #23262D;
+  border-radius: 24px;
+  font-weight: 700;
+}
+
 .btn-glass {
   background: var(--glass, rgba(255, 255, 255, 0.08));
   backdrop-filter: blur(8px) saturate(160%) brightness(0.85);
