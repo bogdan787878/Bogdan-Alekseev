@@ -61,7 +61,7 @@ footer {
 .footer-link {
   display: inline-flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
   background: #EEEEF2;
   border-radius: 24px;
   padding: 16px 20px;
