@@ -103,7 +103,7 @@
       </div>
       <div class="footer-copy">
         <span>© 2026 Bogdan Alekseev</span>
-        <span>Moscow, GMT +3</span>
+        <span>Moscow, GMT+3</span>
       </div>
     `;
     document.body.appendChild(footer);
