@@ -45,6 +45,35 @@
   display: block;
 }
 
+.card-image--gradient {
+  min-height: 480px;
+  isolation: isolate;
+}
+
+.card-image--gradient::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(128, 128, 128, 1);
+  filter: url(#grain);
+  opacity: 0.6;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card-mockup {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: auto;
+  max-width: 60%;
+  object-fit: contain;
+  object-position: right bottom;
+  z-index: 1;
+}
+
 .card-tags {
   position: absolute;
   top: 24px;
