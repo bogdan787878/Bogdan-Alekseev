@@ -540,6 +540,12 @@
   .case-block--overlay .case-block-title,
   .case-block--overlay .case-block-desc { max-width: 100%; }
 
+  .case-main { padding-bottom: 120px; }
+
+  .case-stats { grid-template-columns: 1fr 1fr !important; }
+
+  .case-block-title { overflow-wrap: break-word; }
+
   .case-block,
   .case-stat,
   .case-col,
