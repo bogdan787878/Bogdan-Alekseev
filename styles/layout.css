@@ -53,9 +53,15 @@ nav {
 /* ── FOOTER ── */
 footer {
   display: flex;
-  gap: 4px;
+  align-items: center;
+  justify-content: space-between;
   padding: 0 var(--side) 80px;
   margin-top: 124px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 4px;
 }
 
 .footer-link {
@@ -77,29 +83,31 @@ footer {
   background: #D8D8DC;
 }
 
-.footer-link-text {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.footer-link-label {
-  font-size: 14px;
-  font-weight: 400;
-  color: #717681;
-}
-
 .footer-link-name {
   font-size: 16px;
   font-weight: 500;
   color: #23262D;
 }
 
+.footer-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #717681;
+}
+
 @media (max-width: 640px) {
   footer {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
     margin-top: 48px;
     margin-bottom: 80px;
     padding-bottom: 0;
   }
+  .footer-links { flex-direction: column; }
+  .footer-copy { align-items: flex-start; }
 }
