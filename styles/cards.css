@@ -69,3 +69,33 @@
   letter-spacing: -0.3px;
   color: var(--text);
 }
+
+/* ── GRADIENT CARDS (index-v2) ── */
+.card-image--gradient {
+  isolation: isolate;
+}
+
+.card-image--gradient::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(128, 128, 128, 1);
+  filter: url(#grain);
+  opacity: 0.6;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-mockup {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 2;
+}
+
+.card-image--gradient .card-tags {
+  z-index: 3;
+}
