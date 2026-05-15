@@ -466,7 +466,7 @@
   flex-direction: column;
   gap: 16px;
   padding-bottom: 56px;
-  flex: 1;
+  max-width: 55%;
 }
 
 .case-next-label {
@@ -487,15 +487,15 @@
 }
 
 .case-next-mockup {
-  position: relative;
-  z-index: 1;
-  width: 36%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 42%;
   height: 100%;
   object-fit: cover;
-  object-position: top;
-  display: block;
-  flex-shrink: 0;
-  align-self: stretch;
+  object-position: left top;
+  z-index: 1;
 }
 
 /* ── RESPONSIVE ── */
@@ -550,9 +550,9 @@
   .case-testimonials { grid-template-columns: 1fr; }
 
   .case-next { margin-top: 80px; }
-  .case-next-inner { padding: 32px 32px 0; min-height: unset; flex-direction: column; align-items: flex-start; border-radius: 16px; }
-  .case-next-text { padding-bottom: 32px; }
-  .case-next-mockup { width: 100%; height: auto; align-self: unset; object-fit: contain; }
+  .case-next-inner { padding: 32px 32px 0; min-height: unset; border-radius: 16px; }
+  .case-next-text { max-width: 100%; padding-bottom: 24px; }
+  .case-next-mockup { position: static; width: 100%; height: auto; object-fit: contain; }
 
   .case-content { gap: 40px; padding-top: 32px; }
   .case-section { padding-top: 16px; gap: 16px; }
