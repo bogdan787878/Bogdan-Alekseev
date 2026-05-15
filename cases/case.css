@@ -440,7 +440,7 @@
   position: relative;
   isolation: isolate;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 40px;
   padding: 56px 64px 0;
@@ -483,22 +483,19 @@
   color: #fff;
   line-height: 1.1;
   letter-spacing: -0.3px;
-  max-width: 480px;
+  max-width: 600px;
 }
 
 .case-next-mockup {
   position: relative;
   z-index: 1;
   width: 36%;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
   display: block;
   flex-shrink: 0;
-  transition: transform 0.5s ease;
-}
-
-.case-next:hover .case-next-mockup {
-  transform: translateY(-12px);
+  align-self: stretch;
 }
 
 /* ── RESPONSIVE ── */
