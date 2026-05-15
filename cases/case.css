@@ -571,8 +571,8 @@
   .case-testimonials { grid-template-columns: 1fr; }
 
   .case-next { margin-top: 80px; }
-  .case-next-inner { padding: 32px 32px 0; min-height: unset; border-radius: 16px; }
-  .case-next-text { max-width: 100%; padding-bottom: 24px; }
+  .case-next-inner { padding: 32px 32px 0; min-height: unset; border-radius: 16px; flex-direction: column; }
+  .case-next-text { max-width: 100%; padding-bottom: 0; }
   .case-next-mockup { position: static; width: 100%; height: auto; object-fit: contain; }
 
   .case-content { gap: 40px; padding-top: 32px; }
