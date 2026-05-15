@@ -73,6 +73,7 @@
 /* ── GRADIENT CARDS (index-v2) ── */
 .card-image--gradient {
   isolation: isolate;
+  min-height: 480px;
 }
 
 .card-image--gradient::after {
