@@ -29,7 +29,7 @@
       cursor.style.transform = `translate(${e.clientX - 28}px, ${e.clientY - 28}px)`;
     });
 
-    document.querySelectorAll('.card').forEach(card => {
+    document.querySelectorAll('.card, .case-next').forEach(card => {
       card.addEventListener('mouseenter', () => cursor.classList.add('visible'));
       card.addEventListener('mouseleave', () => cursor.classList.remove('visible'));
     });
