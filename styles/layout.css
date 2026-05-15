@@ -98,6 +98,8 @@ footer {
 @media (max-width: 640px) {
   footer {
     flex-direction: column;
-    padding-bottom: 48px;
+    margin-top: 48px;
+    margin-bottom: 80px;
+    padding-bottom: 0;
   }
 }
