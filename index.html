@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Богдан Алексеев — Дизайн-менеджер</title>
-  <script>
-    const _v = new Date().toISOString().slice(0,13).replace(/[-T:]/g,'');
-    ['tokens','base','buttons','tags','cards','layout','effects','responsive'].forEach(function(n) {
-      document.write('<link rel="stylesheet" href="styles/' + n + '.css?v=' + _v + '">');
-    });
-  </script>
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/buttons.css">
+  <link rel="stylesheet" href="styles/tags.css">
+  <link rel="stylesheet" href="styles/cards.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/effects.css">
+  <link rel="stylesheet" href="styles/responsive.css">
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -49,7 +51,7 @@
 
       <a class="card card--full" href="/vtb/">
         <div class="card-image" style="--glass: rgba(86,86,107,0.70)">
-          <img src="images/vtb.webp" alt="ВТБ">
+          <img src="images/vtb.webp" loading="lazy" alt="ВТБ">
           <div class="card-tags">
             <span class="tag">web</span>
             <span class="tag">fintech</span>
@@ -67,7 +69,7 @@
 
         <a class="card card--half" href="/savefrom/">
           <div class="card-image" style="--glass: rgba(86,86,107,0.70)">
-            <img src="images/savefrom.webp" alt="Savefrom">
+            <img src="images/savefrom.webp" loading="lazy" alt="Savefrom">
             <div class="card-tags">
               <span class="tag">media</span>
               <span class="tag">mobile</span>
@@ -83,7 +85,7 @@
 
         <a class="card card--half" href="/growfood/">
           <div class="card-image" style="--glass: rgba(86,107,92,0.70)">
-            <img src="images/growfood.webp" alt="Grow Food">
+            <img src="images/growfood.webp" loading="lazy" alt="Grow Food">
             <div class="card-tags">
               <span class="tag">ecomm</span>
               <span class="tag">mobile</span>
@@ -101,7 +103,7 @@
 
       <a class="card card--full" href="/alfabank/">
         <div class="card-image" style="--glass: rgba(107,86,86,0.70)">
-          <img src="images/alfabank.webp" alt="Альфа-Банк">
+          <img src="images/alfabank.webp" loading="lazy" alt="Альфа-Банк">
           <div class="card-tags">
             <span class="tag">fintech</span>
             <span class="tag">mobile</span>
