@@ -18,6 +18,17 @@
 
   .card-footer h3 { font-size: 24px; line-height: 1.2; letter-spacing: -0.2px; }
 
+  .card--anchored .card-image {
+    aspect-ratio: 17 / 20;
+  }
+  .card--anchored .card-mockup {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+
   header nav { display: none; }
   #custom-cursor { display: none; }
 

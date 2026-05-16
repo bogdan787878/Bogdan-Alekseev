@@ -212,6 +212,7 @@
     const btn = document.getElementById('pub-more-btn');
     if (!btn || !cards.length) return;
 
+    let expanded = false;
     function isMobile() { return window.innerWidth <= 640; }
 
     function applyMobile() {
@@ -220,6 +221,7 @@
         btn.classList.add('pub-more--hidden');
         return;
       }
+      if (expanded) return;
       let shown = 0;
       cards.forEach(c => {
         if (shown < 3) { c.classList.add('pub-visible'); shown++; }
@@ -229,6 +231,7 @@
     }
 
     btn.addEventListener('click', () => {
+      expanded = true;
       cards.forEach(c => c.classList.add('pub-visible'));
       btn.classList.add('pub-more--hidden');
     });
