@@ -19,7 +19,7 @@
   .card-footer h3 { font-size: 24px; line-height: 1.2; letter-spacing: -0.2px; }
 
   .card--anchored .card-image {
-    aspect-ratio: 17 / 20;
+    aspect-ratio: 4 / 3;
   }
   .card--anchored .card-mockup {
     position: absolute;
