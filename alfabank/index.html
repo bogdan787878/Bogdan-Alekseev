@@ -31,6 +31,28 @@
       pointer-events: none;
       z-index: 2;
     }
+    .ab-scroll-wrap {
+      margin-top: 24px;
+    }
+    .ab-scroll-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    @media (max-width: 640px) {
+      .ab-scroll-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-left: calc(-1 * var(--side));
+        margin-right: calc(-1 * var(--side));
+        padding-left: var(--side);
+        padding-right: var(--side);
+      }
+      .ab-scroll-img {
+        width: 600px;
+        height: auto;
+      }
+    }
     @media (max-width: 640px) {
       .ab-label {
         top: 12px;
@@ -137,9 +159,9 @@
         <span class="case-section-label">Решение 1</span>
         <h2 class="case-section-title">Уведомления о&nbsp;расходах на&nbsp;категорию</h2>
         <p class="case-section-desc">Из интервью узнали, что люди регулярно перетрачивают и&nbsp;потом не&nbsp;могут дожить до&nbsp;зарплаты. Спроектировал пуш-уведомления: &gt;3&nbsp;транзакций в&nbsp;категории + &gt;5% остатка&nbsp;= предупреждение. Если баланс всё-таки ушёл в&nbsp;минус — точка для&nbsp;предложения овердрафта.</p>
-        <div class="ds-grid" style="grid-template-columns: 1fr; grid-auto-rows: auto;">
+        <div class="ds-grid" style="grid-template-columns: 1fr; grid-auto-rows: auto; padding-top: 24px;">
           <div class="ds-card ab-frame-big">
-            <img src="../images/alfabank-mockup-3.webp" alt="Альфа-Банк уведомления" loading="lazy">
+            <img src="../images/alfabank-new-mockup-2.webp" alt="Альфа-Банк уведомления" loading="lazy">
           </div>
         </div>
       </div>
@@ -149,15 +171,8 @@
         <span class="case-section-label">Решение 2</span>
         <h2 class="case-section-title">Столбчатая диаграмма со&nbsp;свайпом вместо 4&nbsp;тапов и&nbsp;фильтрами</h2>
         <p class="case-section-desc">Линейный график показывал тенденцию только за&nbsp;месяц и&nbsp;ничего не&nbsp;давал для&nbsp;принятия решений. Заменил на&nbsp;столбчатую диаграмму за&nbsp;4&nbsp;месяца, вывел категории наружу как&nbsp;фильтры.</p>
-        <div class="ds-grid" style="grid-template-columns: 1fr 2fr; grid-auto-rows: auto;">
-          <div class="ds-card ab-frame-small" style="background: #060000;">
-            <span class="ab-label">Было</span>
-            <img src="../images/alfabank-mockup-4.webp" alt="Альфа-Банк диаграмма до" loading="lazy">
-          </div>
-          <div class="ds-card ab-frame-big">
-            <span class="ab-label">Стало</span>
-            <img src="../images/alfabank-mockup-5.webp" alt="Альфа-Банк диаграмма после" loading="lazy">
-          </div>
+        <div class="ab-scroll-wrap">
+          <img src="../images/alfabank-new-mockup-2.svg" alt="Альфа-Банк диаграмма" loading="lazy" class="ab-scroll-img">
         </div>
       </div>
 
@@ -166,10 +181,8 @@
         <span class="case-section-label">Решение 3</span>
         <h2 class="case-section-title">Контроль подписок и&nbsp;автоплатежей</h2>
         <p class="case-section-desc">Исследование показало, что проблема шире подписок: за&nbsp;годы копится десяток автосписаний — связь, интернет, коммунальные. Сделали тег «Автоплатёж» для&nbsp;идентификации и&nbsp;кнопку «Запретить автопополнение» прямо на&nbsp;странице платежа.</p>
-        <div class="ds-grid" style="grid-template-columns: 1fr; grid-auto-rows: auto;">
-          <div class="ds-card ab-frame-big">
-            <img src="../images/alfabank-mockup-6.webp" alt="Альфа-Банк подписки" loading="lazy">
-          </div>
+        <div class="ab-scroll-wrap">
+          <img src="../images/alfabank-new-mockup-3.svg" alt="Альфа-Банк подписки" loading="lazy" class="ab-scroll-img">
         </div>
       </div>
 

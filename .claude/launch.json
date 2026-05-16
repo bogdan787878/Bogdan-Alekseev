@@ -4,8 +4,8 @@
     {
       "name": "portfolio",
       "runtimeExecutable": "/usr/bin/python3",
-      "runtimeArgs": ["-m", "http.server", "8765", "--directory", "/Users/bogdanalekseeev/Desktop/portfolio"],
-      "port": 8765
+      "runtimeArgs": ["-m", "http.server", "8766", "--directory", "/Users/bogdanalekseeev/Desktop/portfolio"],
+      "port": 8766
     }
   ]
 }
