@@ -59,6 +59,10 @@ nav {
   margin-top: 56px;
 }
 
+.hero-logos-inner {
+  display: none;
+}
+
 .hero-logos-track {
   display: contents;
 }
@@ -95,7 +99,12 @@ nav {
     margin-left: calc(-1 * var(--side));
     margin-right: calc(-1 * var(--side));
     justify-content: flex-start;
-    gap: 0;
+  }
+
+  .hero-logos-inner {
+    display: flex;
+    animation: marquee 12s linear infinite;
+    will-change: transform;
   }
 
   .hero-logos-track {
@@ -104,7 +113,6 @@ nav {
     gap: 32px;
     padding-right: 32px;
     flex-shrink: 0;
-    animation: marquee 12s linear infinite;
   }
 
   .hero-logos-track:last-child {
