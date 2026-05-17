@@ -8,7 +8,7 @@
 
 @media (max-width: 640px) {
   .card-row { grid-template-columns: 1fr; }
-  .cases { margin-top: 48px; gap: 16px; padding-bottom: 80px; }
+  .cases { margin-top: 48px; gap: 16px; }
   .card { padding-top: 32px; }
   .tag { font-size: 12px; padding: 5px 10px; }
   .card-image { border-radius: 16px; aspect-ratio: unset; }
