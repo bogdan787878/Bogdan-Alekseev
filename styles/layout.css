@@ -114,7 +114,7 @@ nav {
 }
 
 .other-cases-item {
-  padding: 20px 0;
+  padding: 24px 0;
   border-bottom: 1px solid var(--text);
 }
 
@@ -123,11 +123,19 @@ nav {
 }
 
 .other-cases-name {
-  font-size: 20px;
+  font-size: 32px;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.2;
   color: var(--text);
   margin: 0;
+  max-width: 55%;
+}
+
+@media (max-width: 640px) {
+  .other-cases-name {
+    font-size: 22px;
+    max-width: 100%;
+  }
 }
 
 .cases {
@@ -142,7 +150,7 @@ nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4px;
-  padding: 40px var(--side) 0;
+  padding: 56px var(--side) 0;
 }
 
 .publications-title {
