@@ -60,7 +60,7 @@ nav {
 }
 
 .hero-logos-inner {
-  display: none;
+  display: contents;
 }
 
 .hero-logos-track {
