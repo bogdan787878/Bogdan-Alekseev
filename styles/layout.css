@@ -40,8 +40,8 @@ nav {
   font-size: 20px;
   font-weight: 400;
   line-height: 1.5;
-  color: #717681;
-  max-width: 560px;
+  color: var(--text);
+  max-width: 680px;
   margin-top: 16px;
 }
 
