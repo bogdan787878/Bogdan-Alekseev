@@ -127,6 +127,14 @@ nav {
 .other-cases-item {
   padding: 24px 0;
   border-bottom: 1px solid var(--text);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.other-cases-item--visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .other-cases-item:first-child {
@@ -198,7 +206,14 @@ nav {
   padding: 24px;
   text-decoration: none;
   color: inherit;
-  transition: background 0.2s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease, background 0.2s ease;
+}
+
+.pub-card--visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .pub-card:hover {
@@ -245,6 +260,13 @@ nav {
 
   .pub-card.pub-visible {
     display: flex;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .pub-card.pub-visible.pub-card--visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .pub-card--fill {

@@ -70,6 +70,10 @@
         if (entry.isIntersecting) {
           if (entry.target.classList.contains('case-block')) {
             entry.target.classList.add('case-block--visible');
+          } else if (entry.target.classList.contains('other-cases-item')) {
+            entry.target.classList.add('other-cases-item--visible');
+          } else if (entry.target.classList.contains('pub-card')) {
+            entry.target.classList.add('pub-card--visible');
           } else {
             entry.target.classList.add('card--visible');
           }
@@ -84,6 +88,16 @@
       row.querySelectorAll('.card').forEach((card, i) => {
         card.style.transitionDelay = (i * 0.12) + 's';
       });
+    });
+
+    document.querySelectorAll('.other-cases-item').forEach((el, i) => {
+      el.style.transitionDelay = (i * 0.08) + 's';
+      observer.observe(el);
+    });
+
+    document.querySelectorAll('.pub-card').forEach((el, i) => {
+      el.style.transitionDelay = (i * 0.07) + 's';
+      observer.observe(el);
     });
   }
 
