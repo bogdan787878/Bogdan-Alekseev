@@ -79,8 +79,18 @@ nav {
 }
 
 @media (max-width: 640px) {
+  .hero {
+    padding-top: 20px;
+    padding-bottom: 28px;
+  }
+
+  .hero-desc {
+    margin-top: 20px;
+  }
+
   .hero-logos {
     overflow: hidden;
+    margin-top: 32px;
     margin-left: calc(-1 * var(--side));
     margin-right: calc(-1 * var(--side));
     justify-content: flex-start;
@@ -132,8 +142,16 @@ nav {
 }
 
 @media (max-width: 640px) {
+  .other-cases {
+    margin-top: 48px;
+  }
+
+  .other-cases-item {
+    padding: 16px 0;
+  }
+
   .other-cases-name {
-    font-size: 22px;
+    font-size: 20px;
     max-width: 100%;
   }
 }
@@ -213,6 +231,7 @@ nav {
 @media (max-width: 640px) {
   .publications {
     grid-template-columns: 1fr;
+    margin-top: 48px;
   }
 
   .publications-col {
