@@ -585,6 +585,7 @@
   .case-section { padding-top: 16px; gap: 16px; }
 
   .case-image { padding-top: 24px; margin-top: 16px; }
+  .case-col-label { font-size: 20px; }
   .case-col-text { font-size: 16px; }
   .case-cols--plain .case-col-text { font-size: 16px; }
   .case-feature-text { font-size: 16px; }
