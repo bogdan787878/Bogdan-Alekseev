@@ -177,7 +177,7 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding: 0 var(--side) 60px;
+  padding: 0 var(--side);
   margin-top: 80px;
 }
 
