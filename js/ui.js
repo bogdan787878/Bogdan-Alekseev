@@ -236,9 +236,14 @@
         return;
       }
       if (expanded) return;
-      let shown = 0;
-      cards.forEach(c => {
-        if (shown < 3) { c.classList.add('pub-visible'); shown++; }
+      // Sort by data-mobile-order: priority cards first, then the rest in DOM order
+      const sorted = [...cards].sort((a, b) => {
+        const oa = a.dataset.mobileOrder ? parseInt(a.dataset.mobileOrder) : 999;
+        const ob = b.dataset.mobileOrder ? parseInt(b.dataset.mobileOrder) : 999;
+        return oa - ob;
+      });
+      sorted.forEach((c, i) => {
+        if (i < 3) { c.classList.add('pub-visible'); }
         else { c.classList.remove('pub-visible'); }
       });
       btn.classList.toggle('pub-more--hidden', cards.length <= 3);
