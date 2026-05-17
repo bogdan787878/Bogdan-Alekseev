@@ -586,7 +586,7 @@
 
   .case-image { padding-top: 24px; margin-top: 16px; }
   .case-col-label { font-size: 20px; }
-  .case-col-text { font-size: 16px; }
+  .case-col-text { font-size: 16px; line-height: 20px; }
   .case-cols--plain .case-col-text { font-size: 16px; }
   .case-feature-text { font-size: 16px; }
   .case-testimonial-text { font-size: 16px; }
