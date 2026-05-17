@@ -55,16 +55,50 @@ nav {
 .hero-logos {
   display: flex;
   align-items: center;
-  gap: 32px;
+  justify-content: space-between;
   margin-top: 40px;
-  flex-wrap: wrap;
+}
+
+.hero-logos-track {
+  display: contents;
+}
+
+.hero-logos-track:last-child {
+  display: none;
 }
 
 .hero-logo {
   height: 28px;
   width: auto;
-  opacity: 0.4;
   flex-shrink: 0;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (max-width: 640px) {
+  .hero-logos {
+    overflow: hidden;
+    margin-left: calc(-1 * var(--side));
+    margin-right: calc(-1 * var(--side));
+    justify-content: flex-start;
+    gap: 0;
+  }
+
+  .hero-logos-track {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding-right: 32px;
+    flex-shrink: 0;
+    animation: marquee 12s linear infinite;
+  }
+
+  .hero-logos-track:last-child {
+    display: flex;
+  }
 }
 
 .cases {
