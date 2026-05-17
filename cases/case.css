@@ -588,8 +588,10 @@
   .case-col-label { font-size: 20px; }
   .case-col-text { font-size: 16px; line-height: 20px; }
   .case-cols--plain .case-col-text { font-size: 16px; }
-  .case-feature-text { font-size: 16px; }
-  .case-testimonial-text { font-size: 16px; }
+  .case-feature-title { font-size: 20px; }
+  .case-feature-text { font-size: 16px; line-height: 20px; }
+  .case-testimonial-company { font-size: 20px; }
+  .case-testimonial-text { font-size: 16px; line-height: 20px; }
   .case-testimonial-name,
   .case-testimonial-role { font-size: 16px; }
   .case-testimonial-avatar { width: 40px; height: 40px; }
