@@ -52,6 +52,21 @@ nav {
   letter-spacing: -0.5px;
 }
 
+.hero-logos {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.hero-logo {
+  height: 28px;
+  width: auto;
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+
 .cases {
   display: flex;
   flex-direction: column;
