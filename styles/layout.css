@@ -104,7 +104,7 @@ nav {
 /* ── OTHER CASES ── */
 .other-cases {
   padding: 0 var(--side);
-  margin-top: 4px;
+  margin-top: 80px;
 }
 
 .other-cases-list {
@@ -143,6 +143,7 @@ nav {
   flex-direction: column;
   gap: 40px;
   padding: 0 var(--side) 60px;
+  margin-top: 80px;
 }
 
 /* ── PUBLICATIONS ── */
@@ -150,7 +151,8 @@ nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4px;
-  padding: 56px var(--side) 0;
+  padding: 0 var(--side);
+  margin-top: 80px;
 }
 
 .publications-title {
@@ -211,7 +213,6 @@ nav {
 @media (max-width: 640px) {
   .publications {
     grid-template-columns: 1fr;
-    padding-top: 24px;
   }
 
   .publications-col {
