@@ -74,6 +74,8 @@
             entry.target.classList.add('other-cases-item--visible');
           } else if (entry.target.classList.contains('pub-card')) {
             entry.target.classList.add('pub-card--visible');
+          } else if (entry.target.classList.contains('bias-card')) {
+            entry.target.classList.add('bias-card--visible');
           } else {
             entry.target.classList.add('card--visible');
           }
@@ -96,6 +98,11 @@
     });
 
     document.querySelectorAll('.pub-card').forEach((el, i) => {
+      el.style.transitionDelay = (i * 0.07) + 's';
+      observer.observe(el);
+    });
+
+    document.querySelectorAll('.bias-card').forEach((el, i) => {
       el.style.transitionDelay = (i * 0.07) + 's';
       observer.observe(el);
     });
