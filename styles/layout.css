@@ -443,12 +443,18 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  align-items: flex-start;
+}
+
+.bookshelf-category > .tag {
+  color: var(--text);
 }
 
 .bookshelf-row {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 8px;
+  width: 100%;
 }
 
 .book-card {
