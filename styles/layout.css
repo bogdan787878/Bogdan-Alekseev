@@ -335,11 +335,12 @@ nav {
 @media (max-width: 640px) {
   .bias-section {
     margin-top: 24px;
-    padding: 0 var(--side);
+    padding: 0;
   }
 
   .bias-quote {
     max-width: 100%;
+    margin: 0 var(--side) 28px;
   }
 
   .publications {
@@ -393,8 +394,6 @@ nav {
     overflow-y: visible;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    margin-left: calc(-1 * var(--side));
-    margin-right: calc(-1 * var(--side));
     padding-left: var(--side);
     padding-right: var(--side);
     gap: 8px;
