@@ -285,7 +285,7 @@ nav {
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
-  color: #717681;
+  color: var(--text);
   margin: 0;
 }
 
