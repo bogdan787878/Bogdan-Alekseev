@@ -175,7 +175,7 @@ nav {
 
 .other-cases-item {
   padding: 24px 0;
-  border-bottom: 1px solid var(--text);
+  border-bottom: 1px solid rgba(35, 38, 45, 0.5);
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
@@ -187,7 +187,7 @@ nav {
 }
 
 .other-cases-item:first-child {
-  border-top: 1px solid var(--text);
+  border-top: 1px solid rgba(35, 38, 45, 0.5);
 }
 
 .other-cases-name {
