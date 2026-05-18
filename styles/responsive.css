@@ -1,5 +1,5 @@
 @media (max-width: 900px) {
-  :root { --side: clamp(16px, 4vw, 44px); }
+  :root { --side: 32px; }
   .card-row { gap: 16px; }
   .tag { font-size: 14px; padding: 6px 12px; }
   .card { padding-top: 48px; }
