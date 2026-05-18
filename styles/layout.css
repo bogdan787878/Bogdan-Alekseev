@@ -50,13 +50,43 @@ nav {
   font-weight: 900;
   line-height: clamp(36px, 6.5vw, 76px);
   letter-spacing: -0.5px;
+  max-width: 680px;
+}
+
+.hero-hobby {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+.hero-hobby-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #717681;
+  line-height: 1.4;
+}
+
+.hero-hobby-photos {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.hero-hobby-photo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .hero-logos {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 56px;
+  margin-top: 0;
 }
 
 .hero-logos-inner {
@@ -93,9 +123,17 @@ nav {
     font-size: 16px;
   }
 
+  .hero-hobby {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+
   .hero-logos {
     overflow: hidden;
-    margin-top: 32px;
+    margin-top: 0;
     margin-left: calc(-1 * var(--side));
     margin-right: calc(-1 * var(--side));
     justify-content: flex-start;
