@@ -28,9 +28,17 @@
     cursor.id = 'custom-cursor';
     document.body.appendChild(cursor);
 
+    let mouseX = 0, mouseY = 0, rafId = null;
     document.addEventListener('mousemove', e => {
-      cursor.style.transform = `translate(${e.clientX - 28}px, ${e.clientY - 28}px)`;
-    });
+      mouseX = e.clientX - 28;
+      mouseY = e.clientY - 28;
+      if (!rafId) {
+        rafId = requestAnimationFrame(() => {
+          cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+          rafId = null;
+        });
+      }
+    }, { passive: true });
 
     document.querySelectorAll('.card, .case-next').forEach(card => {
       card.addEventListener('mouseenter', () => cursor.classList.add('visible'));
