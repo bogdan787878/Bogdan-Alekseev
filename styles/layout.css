@@ -436,6 +436,7 @@ nav {
     -webkit-overflow-scrolling: touch;
     margin: 0 calc(-1 * var(--side));
     padding: 0 var(--side);
+    padding-left: 32px;
     gap: 8px;
     scrollbar-width: none;
   }
@@ -529,6 +530,7 @@ nav {
 
   .bookshelf-title {
     padding: 0 var(--side);
+    padding-left: 32px;
   }
 
   .bookshelf-category {
@@ -536,7 +538,7 @@ nav {
   }
 
   .bookshelf-category > .tag {
-    margin-left: var(--side);
+    margin-left: 32px;
   }
 
   .bookshelf-row {
@@ -546,6 +548,7 @@ nav {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     padding: 0 var(--side);
+    padding-left: 32px;
     gap: 8px;
     scrollbar-width: none;
     grid-template-columns: unset;
