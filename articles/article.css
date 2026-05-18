@@ -1,39 +1,16 @@
-/* ── ARTICLE LAYOUT ─────────────────────────────────────────────── */
+/* ── ARTICLE OUTER LAYOUT ───────────────────────────────────────── */
 
 .article-main {
-  padding: 0 0 120px;
+  padding-bottom: 120px;
 }
 
-.article-hero {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 64px var(--side) 72px;
-}
-
-.article-hero h1 {
-  font-size: clamp(36px, 5vw, 56px);
-  font-weight: 900;
-  line-height: 1.1;
-  letter-spacing: -0.5px;
-  color: var(--text);
-}
-
-.article-lead {
-  font-size: 18px;
-  line-height: 1.65;
-  color: #717681;
-  margin-top: 20px;
-}
-
-/* ── TWO-COLUMN LAYOUT ── */
-
-.article-layout {
+.article-outer {
   display: grid;
-  grid-template-columns: 160px minmax(0, 600px);
-  gap: 80px;
-  max-width: 900px;
+  grid-template-columns: 180px minmax(0, 720px);
+  column-gap: 80px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 var(--side) 80px;
+  padding: 0 var(--side);
   align-items: start;
 }
 
@@ -45,6 +22,7 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+  padding-top: 64px;
 }
 
 .article-toc-title {
@@ -79,12 +57,40 @@
   border-left-color: var(--text);
 }
 
+/* ── CONTENT COLUMN ── */
+
+.article-content {
+  min-width: 0;
+}
+
+/* ── HERO ── */
+
+.article-hero {
+  padding: 64px 0 72px;
+}
+
+.article-hero h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  color: var(--text);
+}
+
+.article-lead {
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--text);
+  margin-top: 20px;
+}
+
 /* ── BODY ── */
 
 .article-body {
   display: flex;
   flex-direction: column;
   gap: 64px;
+  padding-bottom: 80px;
 }
 
 /* ── SECTION ── */
@@ -124,7 +130,7 @@
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #717681;
+  color: var(--text);
 }
 
 .article-entry h3 {
@@ -138,7 +144,7 @@
 .article-entry p {
   font-size: 16px;
   line-height: 1.7;
-  color: #23262D;
+  color: var(--text);
   margin-top: 8px;
 }
 
@@ -167,12 +173,20 @@
 .article-review-text {
   font-size: 16px;
   line-height: 1.7;
-  color: #23262D;
+  color: var(--text);
 }
 
 /* ── MOBILE ── */
 
-@media (max-width: 640px) {
+@media (max-width: 760px) {
+  .article-outer {
+    grid-template-columns: 1fr;
+  }
+
+  .article-toc {
+    display: none;
+  }
+
   .article-hero {
     padding-top: 40px;
     padding-bottom: 48px;
@@ -184,16 +198,6 @@
 
   .article-lead {
     font-size: 16px;
-  }
-
-  .article-layout {
-    grid-template-columns: 1fr;
-    gap: 0;
-    padding-top: 0;
-  }
-
-  .article-toc {
-    display: none;
   }
 
   .article-section-label {

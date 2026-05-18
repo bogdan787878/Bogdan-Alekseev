@@ -261,10 +261,10 @@
 
   /* ── ARTICLE TOC ────────────────────────────────────────────────── */
   function initArticleTOC() {
-    const body = document.querySelector('.article-body');
-    if (!body) return;
+    const articleMain = document.querySelector('.article-main');
+    if (!articleMain) return;
 
-    const sections = body.querySelectorAll('.article-section');
+    const sections = articleMain.querySelectorAll('.article-section');
     if (!sections.length) return;
 
     // Add IDs to sections
@@ -293,12 +293,19 @@
       toc.appendChild(a);
     });
 
-    // Wrap body in layout
-    const layout = document.createElement('div');
-    layout.className = 'article-layout';
-    body.parentNode.insertBefore(layout, body);
-    layout.appendChild(toc);
-    layout.appendChild(body);
+    // Wrap all article content (hero + body) in .article-content
+    const content = document.createElement('div');
+    content.className = 'article-content';
+    while (articleMain.firstChild) {
+      content.appendChild(articleMain.firstChild);
+    }
+
+    // Create outer grid
+    const outer = document.createElement('div');
+    outer.className = 'article-outer';
+    outer.appendChild(toc);
+    outer.appendChild(content);
+    articleMain.appendChild(outer);
 
     // Active section on scroll
     const links = toc.querySelectorAll('a');
