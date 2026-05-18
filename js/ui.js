@@ -76,6 +76,8 @@
             entry.target.classList.add('pub-card--visible');
           } else if (entry.target.classList.contains('bias-card')) {
             entry.target.classList.add('bias-card--visible');
+          } else if (entry.target.classList.contains('book-card')) {
+            entry.target.classList.add('book-card--visible');
           } else {
             entry.target.classList.add('card--visible');
           }
@@ -104,6 +106,11 @@
 
     document.querySelectorAll('.bias-card').forEach((el, i) => {
       el.style.transitionDelay = (i * 0.07) + 's';
+      observer.observe(el);
+    });
+
+    document.querySelectorAll('.book-card').forEach((el, i) => {
+      el.style.transitionDelay = (i % 5 * 0.08) + 's';
       observer.observe(el);
     });
   }
