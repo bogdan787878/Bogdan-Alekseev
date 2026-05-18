@@ -176,6 +176,33 @@
   color: var(--text);
 }
 
+/* ── SOURCES ── */
+
+.article-sources {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.article-source {
+  display: block;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #717681;
+  text-decoration: none;
+  padding: 14px 0;
+  border-top: 1px solid #D8D8DC;
+  transition: color 0.2s;
+}
+
+.article-source:last-child {
+  border-bottom: 1px solid #D8D8DC;
+}
+
+.article-source:hover {
+  color: var(--text);
+}
+
 /* ── MOBILE ── */
 
 @media (max-width: 760px) {
