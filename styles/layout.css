@@ -177,7 +177,7 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding: 0 var(--side);
+  padding: 0 var(--side) 60px;
   margin-top: 80px;
 }
 
@@ -187,7 +187,7 @@ nav {
   grid-template-columns: repeat(3, 1fr);
   gap: 4px;
   padding: 0 var(--side);
-  margin-top: 80px;
+  margin-top: 140px;
 }
 
 .publications-title {
