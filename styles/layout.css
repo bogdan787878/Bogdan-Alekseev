@@ -295,7 +295,7 @@ nav {
 }
 
 .bias-card {
-  background: #23262D;
+  background: #1F2125;
   border-radius: 32px;
   padding: 24px;
   text-decoration: none;
@@ -318,7 +318,7 @@ nav {
 }
 
 .bias-card-img {
-  height: 180px;
+  height: 280px;
   background-size: contain;
   background-position: center bottom;
   background-repeat: no-repeat;
