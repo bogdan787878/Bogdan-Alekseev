@@ -321,6 +321,11 @@ footer {
   padding: 16px 24px 16px 12px;
   text-decoration: none;
   color: inherit;
+  transition: opacity 0.15s;
+}
+
+.footer-link:hover {
+  opacity: 0.8;
 }
 
 .footer-icon {
