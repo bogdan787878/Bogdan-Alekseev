@@ -144,6 +144,7 @@
   function initLike() {
     const isCase = window.location.pathname !== '/' && !window.location.pathname.endsWith('index.html');
     if (!isCase) return;
+    if (document.querySelector('.article-main')) return;
 
     const key = 'like_' + window.location.pathname;
     const countKey = 'likeCount_' + window.location.pathname;
