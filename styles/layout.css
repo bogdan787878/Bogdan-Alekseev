@@ -318,10 +318,11 @@ nav {
 }
 
 .bias-card-img {
-  flex: 1;
+  height: 180px;
   background-size: contain;
   background-position: center bottom;
   background-repeat: no-repeat;
+  flex-shrink: 0;
 }
 
 @media (max-width: 640px) {
