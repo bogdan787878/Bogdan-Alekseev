@@ -210,7 +210,7 @@ nav {
   flex-direction: column;
   gap: 8px;
   background: #EEEEF2;
-  border-radius: 16px;
+  border-radius: 32px;
   padding: 24px;
   text-decoration: none;
   color: inherit;
