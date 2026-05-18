@@ -531,7 +531,7 @@ nav {
 
   .bookshelf-title {
     padding: 0 var(--side);
-    padding-left: 32px;
+    padding-left: var(--scroll-indent);
   }
 
   .bookshelf-category {
@@ -539,7 +539,7 @@ nav {
   }
 
   .bookshelf-category > .tag {
-    margin-left: 32px;
+    margin-left: var(--scroll-indent);
   }
 
   .bookshelf-row {
