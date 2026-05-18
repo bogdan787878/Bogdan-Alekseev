@@ -564,19 +564,18 @@
   }
 
   .case-block--overlay .case-block-bg-img {
-    position: static;
-    border-radius: 16px !important;
-    width: 100%;
-    height: auto;
-    order: 2;
+    display: none;
   }
 
   .case-block--overlay .case-block-content {
     order: 1;
+    background: #EEEEF2;
+    border-radius: 16px;
+    padding: 24px 24px 0;
   }
 
   .case-block--overlay .case-block-mockup {
-    display: none;
+    padding-top: 24px;
   }
 
   .case-main { padding-bottom: 120px; }
