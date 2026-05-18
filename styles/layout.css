@@ -436,7 +436,8 @@ nav {
     -webkit-overflow-scrolling: touch;
     margin: 0 calc(-1 * var(--side));
     padding: 0 var(--side);
-    padding-left: 32px;
+    padding-left: var(--scroll-indent);
+    scroll-padding-left: var(--scroll-indent);
     gap: 8px;
     scrollbar-width: none;
   }
@@ -548,7 +549,8 @@ nav {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     padding: 0 var(--side);
-    padding-left: 32px;
+    padding-left: var(--scroll-indent);
+    scroll-padding-left: var(--scroll-indent);
     gap: 8px;
     scrollbar-width: none;
     grid-template-columns: unset;

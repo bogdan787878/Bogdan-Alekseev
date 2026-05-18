@@ -7,6 +7,7 @@
 }
 
 @media (max-width: 640px) {
+  :root { --scroll-indent: 32px; }
   .card-row { grid-template-columns: 1fr; }
   .cases { margin-top: 48px; gap: 16px; }
   .card { padding-top: 32px; }
