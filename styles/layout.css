@@ -397,13 +397,20 @@ nav {
   }
 
   .bias-card {
-    flex: 0 0 72vw;
+    flex: 0 0 56vw;
     min-height: 0;
     scroll-snap-align: start;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .bias-card-img {
+    background-position: center center;
   }
 
   .bias-card-title {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
