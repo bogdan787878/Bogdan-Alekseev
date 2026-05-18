@@ -259,6 +259,62 @@
     window.addEventListener('resize', applyMobile, { passive: true });
   }
 
+  /* ── ARTICLE TOC ────────────────────────────────────────────────── */
+  function initArticleTOC() {
+    const body = document.querySelector('.article-body');
+    if (!body) return;
+
+    const sections = body.querySelectorAll('.article-section');
+    if (!sections.length) return;
+
+    // Add IDs to sections
+    sections.forEach(section => {
+      const label = section.querySelector('.article-section-label');
+      if (label && !section.id) {
+        section.id = 'section-' + label.textContent.trim().toLowerCase().replace(/\s+/g, '-').replace(/[^a-zа-яё0-9-]/gi, '');
+      }
+    });
+
+    // Build TOC
+    const toc = document.createElement('nav');
+    toc.className = 'article-toc';
+
+    const title = document.createElement('div');
+    title.className = 'article-toc-title';
+    title.textContent = 'Содержание';
+    toc.appendChild(title);
+
+    sections.forEach(section => {
+      const label = section.querySelector('.article-section-label');
+      if (!label) return;
+      const a = document.createElement('a');
+      a.href = '#' + section.id;
+      a.textContent = label.textContent.trim();
+      toc.appendChild(a);
+    });
+
+    // Wrap body in layout
+    const layout = document.createElement('div');
+    layout.className = 'article-layout';
+    body.parentNode.insertBefore(layout, body);
+    layout.appendChild(toc);
+    layout.appendChild(body);
+
+    // Active section on scroll
+    const links = toc.querySelectorAll('a');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          links.forEach(l => l.classList.remove('toc-active'));
+          const active = toc.querySelector('a[href="#' + entry.target.id + '"]');
+          if (active) active.classList.add('toc-active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+  }
+
   /* ── INIT ───────────────────────────────────────────────────────── */
   function init() {
     renderHeader();
@@ -268,6 +324,7 @@
     initScrollReveal();
     initPublications();
     initLike();
+    initArticleTOC();
   }
 
   if (document.readyState === 'loading') {
