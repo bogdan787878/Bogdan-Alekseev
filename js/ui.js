@@ -265,36 +265,60 @@
     const articleMain = document.querySelector('.article-main');
     if (!articleMain) return;
 
-    const sections = articleMain.querySelectorAll('.article-section');
-    if (!sections.length) return;
+    const articles = [
+      { title: 'Эффект ореола',                           desc: 'Первое впечатление',          href: '/haloeffect/' },
+      { title: 'Эффект Фрейминга',                        desc: 'Сила контекста',               href: '/framing/' },
+      { title: 'Эффект обладания',                        desc: 'Цена владения',                href: '/endowment/' },
+      { title: 'Эффект Конкорда',                         desc: 'Ловушка вложений',             href: '/sunkcoast/' },
+      { title: 'Склонность к подтверждению точки зрения', desc: 'Избирательное внимание',       href: '/confirmationbias/' },
+      { title: 'Эффект приманки',                         desc: 'Третий вариант',               href: '/decoyeffect/' },
+    ];
 
-    // Add IDs to sections
-    sections.forEach(section => {
-      const label = section.querySelector('.article-section-label');
-      if (label && !section.id) {
-        section.id = 'section-' + label.textContent.trim().toLowerCase().replace(/\s+/g, '-').replace(/[^a-zа-яё0-9-]/gi, '');
-      }
-    });
+    const current = window.location.pathname.replace(/\/$/, '') || '/';
 
-    // Build TOC
+    // Build sidebar
     const toc = document.createElement('nav');
     toc.className = 'article-toc';
 
-    const title = document.createElement('div');
-    title.className = 'article-toc-title';
-    title.textContent = 'Содержание';
-    toc.appendChild(title);
+    const tocTitle = document.createElement('div');
+    tocTitle.className = 'article-toc-title';
+    tocTitle.textContent = 'Когнитивные искажения';
+    toc.appendChild(tocTitle);
 
-    sections.forEach(section => {
-      const label = section.querySelector('.article-section-label');
-      if (!label) return;
+    articles.forEach(art => {
       const a = document.createElement('a');
-      a.href = '#' + section.id;
-      a.textContent = label.textContent.trim();
+      a.href = art.href;
+
+      const name = document.createElement('span');
+      name.className = 'article-toc-name';
+      name.textContent = art.title;
+
+      const desc = document.createElement('span');
+      desc.className = 'article-toc-desc';
+      desc.textContent = art.desc;
+
+      a.appendChild(name);
+      a.appendChild(desc);
+
+      const artPath = art.href.replace(/\//g, '');
+      if (current.replace(/\//g, '') === artPath) {
+        a.classList.add('toc-active');
+      }
+
       toc.appendChild(a);
     });
 
-    // Wrap all article content (hero + body) in .article-content
+    // Add back button above h1
+    const hero = articleMain.querySelector('.article-hero');
+    if (hero) {
+      const back = document.createElement('a');
+      back.href = '/';
+      back.className = 'article-back';
+      back.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Назад';
+      hero.insertBefore(back, hero.firstChild);
+    }
+
+    // Wrap all article content in .article-content
     const content = document.createElement('div');
     content.className = 'article-content';
     while (articleMain.firstChild) {
@@ -307,20 +331,6 @@
     outer.appendChild(toc);
     outer.appendChild(content);
     articleMain.appendChild(outer);
-
-    // Active section on scroll
-    const links = toc.querySelectorAll('a');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          links.forEach(l => l.classList.remove('toc-active'));
-          const active = toc.querySelector('a[href="#' + entry.target.id + '"]');
-          if (active) active.classList.add('toc-active');
-        }
-      });
-    }, { rootMargin: '-20% 0px -70% 0px' });
-
-    sections.forEach(s => observer.observe(s));
   }
 
   /* ── INIT ───────────────────────────────────────────────────────── */
