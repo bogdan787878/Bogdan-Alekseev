@@ -263,7 +263,7 @@ nav {
 
 .bias-quote {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   gap: 12px;
   background: #EEEEF2;
   border-radius: 24px 24px 24px 0;
