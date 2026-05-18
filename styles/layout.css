@@ -136,7 +136,7 @@ nav {
 
   .hero-logos {
     overflow: hidden;
-    margin-top: 0;
+    margin-top: 56px;
     margin-left: calc(-1 * var(--side));
     margin-right: calc(-1 * var(--side));
     justify-content: flex-start;
