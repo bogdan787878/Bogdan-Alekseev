@@ -205,17 +205,25 @@
     }, { passive: true });
 
     btn.addEventListener('click', () => {
-      if (liked) return;
-      liked = true;
-      count++;
-      localStorage.setItem(key, '1');
-      localStorage.setItem(countKey, String(count));
-      btn.classList.add('liked');
-      countEl.textContent = count;
-      burstHearts(btn);
-      if (typeof ym === 'function') {
-        const caseId = window.location.pathname.replace(/\//g, '') || 'index';
-        ym(99984431, 'reachGoal', 'like', { case: caseId });
+      if (liked) {
+        liked = false;
+        count = Math.max(0, count - 1);
+        localStorage.setItem(key, '0');
+        localStorage.setItem(countKey, String(count));
+        btn.classList.remove('liked');
+        countEl.textContent = count;
+      } else {
+        liked = true;
+        count++;
+        localStorage.setItem(key, '1');
+        localStorage.setItem(countKey, String(count));
+        btn.classList.add('liked');
+        countEl.textContent = count;
+        burstHearts(btn);
+        if (typeof ym === 'function') {
+          const caseId = window.location.pathname.replace(/\//g, '') || 'index';
+          ym(99984431, 'reachGoal', 'like', { case: caseId });
+        }
       }
     });
   }
