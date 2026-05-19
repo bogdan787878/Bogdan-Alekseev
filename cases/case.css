@@ -328,6 +328,45 @@
   padding-top: 24px;
 }
 
+/* ── FAN DECK ── */
+.case-testimonials-fan {
+  position: relative;
+  height: 460px;
+  margin-top: 24px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.case-testimonials-fan .case-testimonial {
+  position: absolute;
+  width: 360px;
+  left: 50%;
+  bottom: 0;
+  margin-left: -180px;
+  transform-origin: bottom center;
+  background: #fff;
+  border-radius: 28px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  will-change: transform;
+  gap: 12px;
+}
+
+.case-testimonials-fan .case-testimonial:last-child {
+  box-shadow: 0 12px 48px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.case-testimonials-fan .case-testimonial:last-child:hover {
+  box-shadow: 0 16px 56px rgba(0,0,0,0.22), 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.case-testimonials-hint {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+  color: #717681;
+}
+
 .case-testimonial {
   background: #EEEEF2;
   border-radius: 32px;
@@ -613,6 +652,15 @@
   .case-cols { grid-template-columns: 1fr; }
   .case-features { grid-template-columns: 1fr; }
   .case-testimonials { grid-template-columns: 1fr; }
+
+  .case-testimonials-fan {
+    height: 420px;
+  }
+
+  .case-testimonials-fan .case-testimonial {
+    width: calc(100vw - 64px);
+    margin-left: calc(-50vw + 32px);
+  }
 
   .case-next { margin-top: 80px; }
   .case-next-inner { padding: 32px 32px 0; min-height: unset; border-radius: 16px; flex-direction: column; }
