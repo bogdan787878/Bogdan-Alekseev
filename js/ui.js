@@ -362,7 +362,7 @@
 
     const cards = [...fan.querySelectorAll('.case-testimonial')];
     const n = cards.length;
-    const spread = 38;
+    const spread = 30;
 
     cards.forEach((card, i) => {
       const angle = -spread / 2 + (spread / (n - 1)) * i;

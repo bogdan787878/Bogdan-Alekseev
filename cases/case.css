@@ -331,32 +331,36 @@
 /* ── FAN DECK ── */
 .case-testimonials-fan {
   position: relative;
-  height: 460px;
+  height: 480px;
   margin-top: 24px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .case-testimonials-fan .case-testimonial {
   position: absolute;
-  width: 360px;
-  left: 50%;
+  width: 340px;
+  height: 340px;
   bottom: 0;
-  margin-left: -180px;
-  transform-origin: bottom center;
+  left: 50%;
+  margin-left: -170px;
+  transform-origin: 50% 160%;
   background: #fff;
   border-radius: 28px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
-  transition: opacity 0.25s ease, box-shadow 0.25s ease;
-  will-change: opacity;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
+  transition: opacity 0.2s ease;
+  overflow: hidden;
   gap: 12px;
 }
 
 .case-testimonials-fan:hover .case-testimonial {
-  opacity: 0.35;
+  opacity: 0.4;
 }
 
 .case-testimonials-fan .case-testimonial:hover {
   opacity: 1 !important;
-  box-shadow: 0 12px 48px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.16), 0 2px 8px rgba(0,0,0,0.08);
   z-index: 10 !important;
 }
 
@@ -647,11 +651,12 @@
   .case-testimonials { grid-template-columns: 1fr; }
 
   .case-testimonials-fan {
-    height: 420px;
+    height: 380px;
   }
 
   .case-testimonials-fan .case-testimonial {
     width: calc(100vw - 64px);
+    height: 300px;
     margin-left: calc(-50vw + 32px);
   }
 
