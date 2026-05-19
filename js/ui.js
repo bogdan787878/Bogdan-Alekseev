@@ -364,20 +364,10 @@
     const n = cards.length;
     const spread = 38;
 
-    function applyPositions() {
-      cards.forEach((card, i) => {
-        const angle = -spread / 2 + (spread / (n - 1)) * i;
-        card.style.transform = `rotate(${angle}deg)`;
-        card.style.zIndex = i + 1;
-      });
-    }
-
-    applyPositions();
-
-    fan.addEventListener('click', () => {
-      const last = cards.pop();
-      cards.unshift(last);
-      applyPositions();
+    cards.forEach((card, i) => {
+      const angle = -spread / 2 + (spread / (n - 1)) * i;
+      card.style.transform = `rotate(${angle}deg)`;
+      card.style.zIndex = i + 1;
     });
   }
 

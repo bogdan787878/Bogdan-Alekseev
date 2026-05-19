@@ -333,8 +333,6 @@
   position: relative;
   height: 460px;
   margin-top: 24px;
-  cursor: pointer;
-  user-select: none;
 }
 
 .case-testimonials-fan .case-testimonial {
@@ -347,24 +345,19 @@
   background: #fff;
   border-radius: 28px;
   box-shadow: 0 8px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
-  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
-  will-change: transform;
+  transition: opacity 0.25s ease, box-shadow 0.25s ease;
+  will-change: opacity;
   gap: 12px;
 }
 
-.case-testimonials-fan .case-testimonial:last-child {
+.case-testimonials-fan:hover .case-testimonial {
+  opacity: 0.35;
+}
+
+.case-testimonials-fan .case-testimonial:hover {
+  opacity: 1 !important;
   box-shadow: 0 12px 48px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.08);
-}
-
-.case-testimonials-fan .case-testimonial:last-child:hover {
-  box-shadow: 0 16px 56px rgba(0,0,0,0.22), 0 2px 8px rgba(0,0,0,0.08);
-}
-
-.case-testimonials-hint {
-  text-align: center;
-  margin-top: 16px;
-  font-size: 14px;
-  color: #717681;
+  z-index: 10 !important;
 }
 
 .case-testimonial {
