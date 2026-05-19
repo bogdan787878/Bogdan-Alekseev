@@ -328,6 +328,36 @@
   padding-top: 24px;
 }
 
+.case-testimonials-fan {
+  position: relative;
+  height: 380px;
+  margin-top: 24px;
+  overflow: visible;
+}
+
+.case-testimonials-fan .case-testimonial {
+  position: absolute;
+  width: 260px;
+  bottom: 0;
+  transform-origin: bottom center;
+  transform: translateY(var(--ty, 0px)) rotate(var(--rot, 0deg));
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.case-testimonials-fan .case-testimonial:nth-child(1) { left: 0; --rot: -15deg; --ty: 24px; z-index: 1; }
+.case-testimonials-fan .case-testimonial:nth-child(2) { left: calc((100% - 260px) / 3); --rot: -5deg; --ty: 6px; z-index: 2; }
+.case-testimonials-fan .case-testimonial:nth-child(3) { left: calc((100% - 260px) / 3 * 2); --rot: 5deg; --ty: 6px; z-index: 3; }
+.case-testimonials-fan .case-testimonial:nth-child(4) { left: calc(100% - 260px); --rot: 15deg; --ty: 24px; z-index: 4; }
+
+.case-testimonials-fan:hover .case-testimonial { opacity: 0.4; }
+.case-testimonials-fan .case-testimonial:hover {
+  opacity: 1 !important;
+  transform: translateY(calc(var(--ty, 0px) - 20px)) rotate(var(--rot, 0deg)) !important;
+  z-index: 10 !important;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.16), 0 2px 8px rgba(0,0,0,0.08);
+}
+
 
 .case-testimonial {
   background: #EEEEF2;
