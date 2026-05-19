@@ -41,7 +41,7 @@ nav {
   font-weight: 400;
   line-height: 1.5;
   color: var(--text);
-  max-width: 680px;
+  max-width: 620px;
   margin-top: 32px;
 }
 
@@ -59,7 +59,7 @@ nav {
   gap: 16px;
   margin-top: 32px;
   margin-bottom: 32px;
-  max-width: 680px;
+  max-width: 620px;
 }
 
 .hero-hobby-text {
