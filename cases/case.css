@@ -332,6 +332,20 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
+.case-testimonials--4 .case-testimonial {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.case-testimonials--4:hover .case-testimonial {
+  opacity: 0.4;
+}
+
+.case-testimonials--4 .case-testimonial:hover {
+  opacity: 1;
+  transform: translateY(-12px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+}
+
 
 .case-testimonial {
   background: #EEEEF2;
