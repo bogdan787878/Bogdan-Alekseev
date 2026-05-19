@@ -331,27 +331,32 @@
 /* ── FAN DECK ── */
 .case-testimonials-fan {
   position: relative;
-  height: 480px;
+  height: 420px;
   margin-top: 24px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
 }
 
 .case-testimonials-fan .case-testimonial {
   position: absolute;
-  width: 340px;
-  height: 340px;
+  width: 280px;
+  height: 320px;
   bottom: 0;
-  left: 50%;
-  margin-left: -170px;
-  transform-origin: 50% 160%;
   background: #fff;
-  border-radius: 28px;
+  border-radius: 24px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
-  transition: opacity 0.2s ease;
-  overflow: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform-origin: bottom center;
   gap: 12px;
+}
+
+.case-testimonials-fan .case-testimonial:nth-child(1) { left: 0%;   --rot: -18deg; --ty: 18px; z-index: 1; }
+.case-testimonials-fan .case-testimonial:nth-child(2) { left: 14%;  --rot: -10deg; --ty: 8px;  z-index: 2; }
+.case-testimonials-fan .case-testimonial:nth-child(3) { left: 28%;  --rot: -3deg;  --ty: 2px;  z-index: 3; }
+.case-testimonials-fan .case-testimonial:nth-child(4) { left: 42%;  --rot: 4deg;   --ty: 2px;  z-index: 4; }
+.case-testimonials-fan .case-testimonial:nth-child(5) { left: 56%;  --rot: 11deg;  --ty: 8px;  z-index: 5; }
+.case-testimonials-fan .case-testimonial:nth-child(6) { left: 70%;  --rot: 18deg;  --ty: 18px; z-index: 6; }
+
+.case-testimonials-fan .case-testimonial {
+  transform: translateY(var(--ty, 0px)) rotate(var(--rot, 0deg));
 }
 
 .case-testimonials-fan:hover .case-testimonial {
@@ -360,8 +365,9 @@
 
 .case-testimonials-fan .case-testimonial:hover {
   opacity: 1 !important;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.16), 0 2px 8px rgba(0,0,0,0.08);
+  transform: translateY(calc(var(--ty, 0px) - 14px)) rotate(var(--rot, 0deg)) !important;
   z-index: 10 !important;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.16), 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .case-testimonial {
@@ -651,13 +657,27 @@
   .case-testimonials { grid-template-columns: 1fr; }
 
   .case-testimonials-fan {
-    height: 380px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: visible;
+    height: auto;
+    gap: 8px;
+    padding: 0 var(--case-side, 32px) 8px;
+    margin: 0 calc(-1 * var(--case-side, 32px));
+    scrollbar-width: none;
   }
 
+  .case-testimonials-fan::-webkit-scrollbar { display: none; }
+
   .case-testimonials-fan .case-testimonial {
-    width: calc(100vw - 64px);
-    height: 300px;
-    margin-left: calc(-50vw + 32px);
+    position: static;
+    flex: 0 0 72vw;
+    height: auto;
+    width: auto;
+    transform: none !important;
+    opacity: 1 !important;
+    z-index: auto !important;
   }
 
   .case-next { margin-top: 80px; }
