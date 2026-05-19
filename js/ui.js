@@ -170,9 +170,11 @@
 
     const key = 'like_' + window.location.pathname;
     const countKey = 'likeCount_' + window.location.pathname;
+    const trackedKey = 'likeTracked_' + window.location.pathname;
 
     let liked = localStorage.getItem(key) === '1';
     let count = parseInt(localStorage.getItem(countKey) || '0', 10);
+    let tracked = localStorage.getItem(trackedKey) === '1';
 
     const frame = document.createElement('div');
     frame.className = 'like-frame';
@@ -220,7 +222,9 @@
         btn.classList.add('liked');
         countEl.textContent = count;
         burstHearts(btn);
-        if (typeof ym === 'function') {
+        if (!tracked && typeof ym === 'function') {
+          tracked = true;
+          localStorage.setItem(trackedKey, '1');
           const caseId = window.location.pathname.replace(/\//g, '') || 'index';
           ym(99984431, 'reachGoal', 'like', { case: caseId });
         }
