@@ -171,11 +171,15 @@ nav {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .other-cases-item {
-  padding: 24px 0;
-  border-bottom: 1px solid rgba(35, 38, 45, 0.5);
+  padding: 24px 32px;
+  background: #EEEEF2;
+  border-radius: 32px;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
@@ -184,10 +188,6 @@ nav {
 .other-cases-item--visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-.other-cases-item:first-child {
-  border-top: 1px solid rgba(35, 38, 45, 0.5);
 }
 
 .other-cases-name {
@@ -205,7 +205,8 @@ nav {
   }
 
   .other-cases-item {
-    padding: 16px 0;
+    padding: 16px 20px;
+    border-radius: 20px;
   }
 
   .other-cases-name {
