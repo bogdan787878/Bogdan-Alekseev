@@ -48,14 +48,7 @@
 }
 
 @media (max-width: 640px) {
-  .sf-scroll-wrap,
-  .gf-scroll-wrap,
-  .vtb-scroll-wrap {
-    animation: scroll-hint 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s both;
-  }
-  .sf-scroll-wrap.scrolled,
-  .gf-scroll-wrap.scrolled,
-  .vtb-scroll-wrap.scrolled {
-    animation: none;
+  .scroll-hint-active {
+    animation: scroll-hint 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
 }

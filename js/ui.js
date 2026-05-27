@@ -371,12 +371,30 @@
   /* ── SCROLL HINT ────────────────────────────────────────────────── */
   function initScrollHint() {
     if (window.innerWidth > 640) return;
-    document.querySelectorAll('.sf-scroll-wrap, .gf-scroll-wrap, .vtb-scroll-wrap').forEach(el => {
-      el.addEventListener('scroll', function onScroll() {
-        el.classList.add('scrolled');
-        el.removeEventListener('scroll', onScroll);
-      }, { passive: true });
-    });
+    const wraps = document.querySelectorAll('.sf-scroll-wrap, .gf-scroll-wrap, .vtb-scroll-wrap');
+    if (!wraps.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        observer.unobserve(el);
+
+        const timer = setTimeout(() => {
+          el.classList.add('scroll-hint-active');
+          el.addEventListener('animationend', () => {
+            el.classList.remove('scroll-hint-active');
+          }, { once: true });
+        }, 1200);
+
+        el.addEventListener('scroll', () => {
+          clearTimeout(timer);
+          el.classList.remove('scroll-hint-active');
+        }, { passive: true, once: true });
+      });
+    }, { threshold: 0.6 });
+
+    wraps.forEach(el => observer.observe(el));
   }
 
   /* ── INIT ───────────────────────────────────────────────────────── */
