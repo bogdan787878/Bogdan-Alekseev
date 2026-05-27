@@ -23,11 +23,9 @@
       border-radius: 32px;
       padding: 48px;
     }
-    .vtb-ai-label { color: rgba(255,255,255,0.5); }
     .vtb-ai-title { color: #fff; }
     .vtb-ai-desc { color: rgba(255,255,255,0.75); }
     .vtb-ai-steps { padding-top: 32px; }
-    .vtb-ai-steps .case-feature-title { color: rgba(255,255,255,0.35); font-size: 18px; }
     .vtb-ai-video {
       margin-top: 24px;
       width: 100%;
@@ -36,6 +34,22 @@
     }
     @media (max-width: 640px) {
       .vtb-ai-block { padding: 24px 20px; border-radius: 20px; }
+      .vtb-ai-steps {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 8px;
+        margin: 16px calc(-1 * var(--side)) 0;
+        padding: 0 var(--side) 8px;
+        padding-left: var(--scroll-indent, 20px);
+        scroll-padding-left: var(--scroll-indent, 20px);
+      }
+      .vtb-ai-steps::-webkit-scrollbar { display: none; }
+      .vtb-ai-steps .case-feature { flex: 0 0 72vw; scroll-snap-align: start; }
+      .vtb-ai-video { border-radius: 16px; }
     }
     .vtb-scroll-wrap { margin-top: 24px; }
     .vtb-scroll-img { width: 100%; height: auto; display: block; border-radius: 24px; }
@@ -135,20 +149,16 @@
 
       <!-- AI Прототипирование -->
       <div class="case-section vtb-ai-block">
-        <span class="case-section-label vtb-ai-label">AI</span>
         <h2 class="case-section-title vtb-ai-title">Ускорил прототипирование в&nbsp;5&nbsp;раз с&nbsp;помощью AI</h2>
         <p class="case-section-desc vtb-ai-desc">Перевёл создание прототипов на AI-генерацию: вместо статичных макетов в Figma дизайнеры теперь презентуют решения как полноценные работающие продукты. В 13 командах внедрил пайплайн, который позволяет демонстрировать вижн в нативной среде — без привлечения разработчиков. Итог: скорость прототипирования выросла в 5 раз, а руководство видит продукт живым до начала разработки.</p>
         <div class="case-features vtb-ai-steps">
           <div class="case-feature">
-            <p class="case-feature-title">01</p>
             <p class="case-feature-text"><strong>AI-слепок системы</strong><br>Подключили Figma MCP к макетам и корпоративному UI-киту — AI получил контекст реального продукта.</p>
           </div>
           <div class="case-feature">
-            <p class="case-feature-title">02</p>
             <p class="case-feature-text"><strong>Сборка лэйаута</strong><br>Вынесли оболочку в отдельный сервис — каждая команда работает со своей частью, не дублируя общий каркас.</p>
           </div>
           <div class="case-feature">
-            <p class="case-feature-title">03</p>
             <p class="case-feature-text"><strong>Пайплайн для команд</strong><br>Дизайнеры коммитят и пушат в GitHub по принципу микросервисов — асинхронно, локально, не ломая соседние части.</p>
           </div>
         </div>
