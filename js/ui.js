@@ -398,6 +398,19 @@
     wraps.forEach(el => observer.observe(el));
   }
 
+  /* ── VIDEO TRACKING ─────────────────────────────────────────────── */
+  function initVideoTracking() {
+    document.querySelectorAll('video').forEach(video => {
+      video.addEventListener('play', function onPlay() {
+        if (typeof ym === 'function') {
+          const caseId = window.location.pathname.replace(/\//g, '') || 'index';
+          ym(99984431, 'reachGoal', 'video_play', { case: caseId });
+        }
+        video.removeEventListener('play', onPlay);
+      });
+    });
+  }
+
   /* ── INIT ───────────────────────────────────────────────────────── */
   function init() {
     renderHeader();
@@ -409,6 +422,7 @@
     initLike();
     initArticleTOC();
     initScrollHint();
+    initVideoTracking();
   }
 
   if (document.readyState === 'loading') {
