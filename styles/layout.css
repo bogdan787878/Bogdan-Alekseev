@@ -376,7 +376,7 @@ nav {
 
 @media (max-width: 640px) {
   .bias-section {
-    margin-top: 24px;
+    margin-top: 64px;
     padding: 0 var(--side);
   }
 
