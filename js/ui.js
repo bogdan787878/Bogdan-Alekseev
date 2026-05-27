@@ -22,6 +22,21 @@
     });
   }
 
+  /* ── HEADER VISIBILITY ──────────────────────────────────────────── */
+  function initHeaderVisibility() {
+    const hero = document.getElementById('hero');
+    if (!hero) {
+      // На кейсах хедер всегда виден
+      document.querySelector('header')?.classList.add('header--visible');
+      return;
+    }
+    const header = document.querySelector('header');
+    const observer = new IntersectionObserver(([entry]) => {
+      header.classList.toggle('header--visible', !entry.isIntersecting);
+    }, { threshold: 0 });
+    observer.observe(hero);
+  }
+
   /* ── CURSOR ─────────────────────────────────────────────────────── */
   function initCursor() {
     const cursor = document.createElement('div');
@@ -414,6 +429,7 @@
   /* ── INIT ───────────────────────────────────────────────────────── */
   function init() {
     renderHeader();
+    initHeaderVisibility();
     renderFooter();
     initCursor();
     initFloatingNav();
