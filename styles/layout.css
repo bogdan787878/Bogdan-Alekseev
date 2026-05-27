@@ -238,7 +238,7 @@ nav {
   font-weight: 900;
   line-height: clamp(36px, 6.5vw, 76px);
   letter-spacing: -0.5px;
-  margin: 0 0 32px;
+  margin: 0 0 16px;
 }
 
 .publications-col {
@@ -376,7 +376,7 @@ nav {
 
 @media (max-width: 640px) {
   .bias-section {
-    margin-top: 64px;
+    margin-top: 48px;
     padding: 0 var(--side);
   }
 
