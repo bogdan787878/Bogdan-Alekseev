@@ -368,6 +368,17 @@
   }
 
 
+  /* ── SCROLL HINT ────────────────────────────────────────────────── */
+  function initScrollHint() {
+    if (window.innerWidth > 640) return;
+    document.querySelectorAll('.sf-scroll-wrap, .gf-scroll-wrap, .vtb-scroll-wrap').forEach(el => {
+      el.addEventListener('scroll', function onScroll() {
+        el.classList.add('scrolled');
+        el.removeEventListener('scroll', onScroll);
+      }, { passive: true });
+    });
+  }
+
   /* ── INIT ───────────────────────────────────────────────────────── */
   function init() {
     renderHeader();
@@ -378,6 +389,7 @@
     initPublications();
     initLike();
     initArticleTOC();
+    initScrollHint();
   }
 
   if (document.readyState === 'loading') {
