@@ -381,6 +381,7 @@
         observer.unobserve(el);
 
         const timer = setTimeout(() => {
+          if (el.scrollWidth <= el.clientWidth) return;
           el.classList.add('scroll-hint-active');
           el.addEventListener('animationend', () => {
             el.classList.remove('scroll-hint-active');
