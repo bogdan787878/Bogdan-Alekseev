@@ -25,12 +25,13 @@
   /* ── HEADER VISIBILITY ──────────────────────────────────────────── */
   function initHeaderVisibility() {
     const hero = document.getElementById('hero');
+    const header = document.querySelector('header');
     if (!hero) {
-      // На кейсах хедер всегда виден
-      document.querySelector('header')?.classList.add('header--visible');
+      // На кейсах — sticky, всегда виден
+      document.body.classList.add('is-case');
+      header?.classList.add('header--visible');
       return;
     }
-    const header = document.querySelector('header');
     const observer = new IntersectionObserver(([entry]) => {
       header.classList.toggle('header--visible', !entry.isIntersecting);
     }, { threshold: 0 });

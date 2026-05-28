@@ -21,6 +21,13 @@ header.header--visible {
   pointer-events: auto;
 }
 
+body.is-case header {
+  position: sticky;
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
 .header-name {
   display: flex;
   align-items: center;
