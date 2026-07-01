@@ -3,54 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Savefrom — Богдан Алексеев</title>
-  <script>
-    const _v = new Date().toISOString().slice(0,13).replace(/[-T:]/g,'');
-    ['tokens','base','buttons','tags','cards','layout','effects','responsive'].forEach(function(n) {
-      document.write('<link rel="stylesheet" href="../styles/' + n + '.css?v=' + _v + '">');
-    });
-  </script>
+  <title>Savefrom — кейс</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;900&display=swap">
+  <link rel="stylesheet" href="../styles/vtb-v2.css?v=25">
   <link rel="stylesheet" href="case.css">
-  <style>
-    :root {
-      --case-accent: #8181E1;
-      --case-gradient: linear-gradient(45deg, #0F1D28, #1C3A52);
-    }
-    .ds-card img { object-fit: contain; }
-  </style>
-  <!-- Yandex.Metrika counter -->
-  <script type="text/javascript">
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-    m[i].l=1*new Date();
-    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-    ym(99984431, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
-  </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/99984431" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-  <!-- /Yandex.Metrika counter -->
 </head>
 <body>
-  <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
-    <defs>
-      <filter id="grain">
-        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" result="noise"/>
-        <feColorMatrix type="saturate" values="0" in="noise"/>
-      </filter>
-    </defs>
-  </svg>
 
-  <main class="case-main">
+  <header class="v2-header">
+    <div class="v2-header-identity">
+      <span class="v2-header-avatar"></span>
+      <span class="v2-header-name">Богдан Алексеев</span>
+    </div>
+    <nav class="v2-header-nav">
+      <a href="../index.html">Все работы</a>
+    </nav>
+    <div class="v2-header-actions">
+      <a href="https://docs.google.com/document/d/1da54qDzXx4MLuOIPf5lLActD1l6MFjKnCuzuBfiZKY0/edit?usp=sharing" target="_blank" class="h-btn h-btn--outline h-btn--sm">Открыть CV</a>
+      <a href="https://t.me/al_bogdan" target="_blank" class="h-btn h-btn--dark h-btn--sm">Telegram</a>
+    </div>
+  </header>
 
-    <div class="case-block" style="background: linear-gradient(45deg, #0F1D28 55%, #A0A7BA)">
+  <!-- HERO -->
+  <div style="padding: 32px var(--side) 0;">
+    <div class="case-block case-block--visible" style="background: linear-gradient(45deg, #0F1D28 55%, #A0A7BA);">
       <div class="case-block-content">
-
         <div class="case-block-head">
           <h1 class="case-block-title">Savefrom. Запуск приложения на&nbsp;рынок Индии для&nbsp;сервиса с&nbsp;50&nbsp;млн MAU по&nbsp;всему миру</h1>
         </div>
-
         <p class="case-block-desc">Локализация и&nbsp;запуск мобильного приложения для&nbsp;скачивания видео на&nbsp;крупнейший рынок Азии. Адаптация продукта под&nbsp;локальные паттерны поведения.</p>
-
         <div class="case-block-tags">
           <span class="tag">media</span>
           <span class="tag">mobile</span>
@@ -58,108 +41,122 @@
           <span class="tag">2020</span>
           <span class="tag">Product Designer</span>
         </div>
-
       </div>
-      <img src="../images/savefrom-mockup-1.webp" alt="Savefrom mockup" class="case-block-mockup">
+    </div>
+  </div>
+
+  <!-- TASK -->
+  <section class="v2-case-intro v2-wrap">
+    <div class="v2-beat">
+      <div></div>
+      <div class="v2-beat-content">
+        <h3 class="v2-beat-heading">Задача</h3>
+        <p class="v2-beat-body" style="margin-top:12px;">Запустить приложение для&nbsp;пользователей Индии и&nbsp;протестировать переход с&nbsp;рекламной на&nbsp;подписную модель монетизации.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="case-content">
+
+    <!-- Статистика -->
+    <div class="case-stats" style="grid-template-columns: repeat(3, 1fr)">
+      <div class="case-stat">
+        <div class="case-stat-value">5 млн</div>
+        <div class="case-stat-label">Трафик в месяц</div>
+      </div>
+      <div class="case-stat">
+        <div class="case-stat-value">×1,5</div>
+        <div class="case-stat-label">Привлечения через лендинг</div>
+      </div>
+      <div class="case-stat">
+        <div class="case-stat-value">82,3%</div>
+        <div class="case-stat-label">Пользователей скачивают видео</div>
+      </div>
     </div>
 
-    <div class="case-content">
-
-      <!-- Статистика -->
-      <div class="case-stats" style="grid-template-columns: repeat(3, 1fr)">
-        <div class="case-stat">
-          <div class="case-stat-value">5 млн</div>
-          <div class="case-stat-label">Трафик в месяц</div>
-        </div>
-        <div class="case-stat">
-          <div class="case-stat-value">×1,5</div>
-          <div class="case-stat-label">Привлечения через лендинг</div>
-        </div>
-        <div class="case-stat">
-          <div class="case-stat-value">82,3%</div>
-          <div class="case-stat-label">Пользователей скачивают видео</div>
+    <!-- Исследования -->
+    <div class="case-section">
+      <span class="case-section-label">Исследования</span>
+      <h2 class="case-section-title">Анализ текущих воронок и&nbsp;метрик</h2>
+      <p class="case-section-desc">Провёл серию UX-исследований и&nbsp;коридорных тестов, чтобы понять, почему пользователи не&nbsp;доходят до&nbsp;скачивания видео. Выяснил, что большинство новых пользователей не&nbsp;понимали, как скопировать ссылку из&nbsp;YouTube — это блокировало ключевой сценарий и&nbsp;снижало конверсию в&nbsp;активацию.</p>
+      <div class="ds-grid" style="grid-template-columns: 1fr; grid-auto-rows: auto;">
+        <div class="ds-card" style="background: #F3F1F5;">
+          <img src="../images/sf-mockup-new-1.webp" alt="Savefrom исследования">
         </div>
       </div>
-
-      <!-- Задача -->
-      <div class="case-section">
-        <span class="case-section-label">Задача</span>
-        <h2 class="case-section-title">Запустить приложение для&nbsp;пользователей Индии и&nbsp;протестировать переход с&nbsp;рекламной на&nbsp;подписную модель</h2>
-      </div>
-
-      <!-- Исследования -->
-      <div class="case-section">
-        <span class="case-section-label">Исследования</span>
-        <h2 class="case-section-title">Анализ текущих воронок и&nbsp;метрик</h2>
-        <p class="case-section-desc">Провёл серию UX-исследований и&nbsp;коридорных тестов, чтобы понять, почему пользователи не&nbsp;доходят до&nbsp;скачивания видео. Выяснил, что большинство новых пользователей не&nbsp;понимали, как скопировать ссылку из&nbsp;YouTube — это блокировало ключевой сценарий и&nbsp;снижало конверсию в&nbsp;активацию.</p>
-      </div>
-
-      <!-- Скрины после исследований -->
-      <div class="case-section">
-        <div class="ds-grid" style="grid-template-columns: 1fr 2fr; grid-auto-rows: auto;">
-          <div class="ds-card" style="background: #F3F1F5;">
-            <img src="../images/savefrom-mockup-1b.webp" alt="Savefrom mockup 1">
-          </div>
-          <div class="ds-card" style="background: #F3F1F5;">
-            <img src="../images/savefrom-mockup-2.webp" alt="Savefrom mockup 2">
-          </div>
-        </div>
-      </div>
-
-      <!-- Решение 1 -->
-      <div class="case-section">
-        <span class="case-section-label">Решение 1</span>
-        <h2 class="case-section-title">Пошаговый онбординг vs&nbsp;анимация</h2>
-        <p class="case-section-desc">Большинство новичков блокировались на&nbsp;первом шаге — не&nbsp;знали, как скопировать ссылку из&nbsp;YouTube. Протестировал два варианта: GIF-инструкцию и&nbsp;пошаговый туториал. Ключевой инсайт — нужно показать альтернативный путь через кнопку Share: скачивание в&nbsp;2 клика. Спроектировал пошаговый онбординг, который ведёт к&nbsp;этому сценарию.</p>
-        <div class="ds-grid" style="grid-template-columns: 1fr; grid-auto-rows: auto;">
-          <div class="ds-card" style="background: linear-gradient(45deg, #02101E, #9FA7BA);">
-            <img src="../images/savefrom-mockup-3.webp" alt="Savefrom onboarding">
-          </div>
-        </div>
-      </div>
-
-      <!-- Решение 2 -->
-      <div class="case-section">
-        <span class="case-section-label">Решение 2</span>
-        <h2 class="case-section-title">Новый флоу монетизации</h2>
-        <p class="case-section-desc">Исследовал воронки монетизации конкурентов. Ключевая гипотеза — показать выбор форматов и&nbsp;качества на&nbsp;одном экране крупно. После вставки ссылки пользователь сразу видит все доступные форматы без&nbsp;скролла — минимум фрикшена между намерением и&nbsp;скачиванием.</p>
-      </div>
-
-      <!-- Скрины -->
-      <div class="case-section">
-        <div class="ds-grid" style="grid-template-columns: 2fr 1fr; grid-auto-rows: auto;">
-          <div class="ds-card" style="background: linear-gradient(45deg, #02101E, #9FA7BA);">
-            <img src="../images/savefrom-mockup-1.webp" alt="Savefrom mockup">
-          </div>
-          <div class="ds-card" style="background: linear-gradient(-45deg, #02101E, #9FA7BA);">
-            <img src="../images/savefrom-mockup-4.svg" alt="Savefrom mockup 4">
-          </div>
-        </div>
-      </div>
-
-      <!-- Решение 3 -->
-      <div class="case-section">
-        <span class="case-section-label">Решение 3</span>
-        <h2 class="case-section-title">Внутренний плеер для&nbsp;удержания</h2>
-        <p class="case-section-desc">Реализовал внутри приложения встроенный файл-менеджер и&nbsp;аудио/видео-плеер, чтобы пользователи могли управлять скачанным контентом без&nbsp;перехода в&nbsp;сторонние сервисы. Это сделало сценарий потребления контента бесшовным и&nbsp;повысило удержание пользователей внутри приложения.</p>
-        <div class="ds-grid ds-grid--player" style="grid-template-columns: 1fr 1fr; grid-auto-rows: auto;">
-          <div class="ds-card" style="grid-column: span 2; background: linear-gradient(90deg, #02101E, #9FA7BA);">
-            <img src="../images/savefrom-mockup-5.webp" alt="Savefrom mockup 5" style="object-fit: contain;">
-          </div>
-          <div class="ds-card" style="background: linear-gradient(45deg, #02101E, #2B3F55);">
-            <img src="../images/savefrom-mockup-6.webp" alt="Savefrom mockup 6" style="object-fit: contain;">
-          </div>
-          <div class="ds-card" style="background: linear-gradient(135deg, #9FA7BA, #02101E);">
-            <img src="../images/savefrom-mockup-7.webp" alt="Savefrom mockup 7" style="object-fit: contain;">
-          </div>
-        </div>
-      </div>
-
     </div>
 
-  </main>
+    <!-- Решение 1 -->
+    <div class="case-section">
+      <span class="case-section-label">Решение 1</span>
+      <h2 class="case-section-title">Пошаговый онбординг vs&nbsp;анимация</h2>
+      <p class="case-section-desc">Большинство новичков блокировались на&nbsp;первом шаге — не&nbsp;знали, как скопировать ссылку из&nbsp;YouTube. Протестировал два варианта: GIF-инструкцию и&nbsp;пошаговый туториал. Ключевой инсайт — нужно показать альтернативный путь через кнопку Share: скачивание в&nbsp;2 клика. Спроектировал пошаговый онбординг, который ведёт к&nbsp;этому сценарию.</p>
+      <div class="ds-grid" style="grid-template-columns: 1fr; grid-auto-rows: auto;">
+        <div class="ds-card" style="background: linear-gradient(45deg, #02101E, #9FA7BA);">
+          <img src="../images/sf-mockup-new-2.webp" alt="Savefrom онбординг">
+        </div>
+      </div>
+    </div>
 
-  <script src="../js/ui.js"></script>
+    <!-- Решение 2 -->
+    <div class="case-section">
+      <span class="case-section-label">Решение 2</span>
+      <h2 class="case-section-title">Новый флоу монетизации</h2>
+      <p class="case-section-desc">Исследовал воронки монетизации конкурентов. Ключевая гипотеза — показать выбор форматов и&nbsp;качества на&nbsp;одном экране крупно. После вставки ссылки пользователь сразу видит все доступные форматы без&nbsp;скролла — минимум фрикшена между намерением и&nbsp;скачиванием.</p>
+      <div class="ds-grid" style="grid-template-columns: 1fr; grid-auto-rows: auto;">
+        <div class="ds-card" style="background: linear-gradient(45deg, #02101E, #9FA7BA);">
+          <img src="../images/sf-mockup-new-3.webp" alt="Savefrom монетизация">
+        </div>
+      </div>
+    </div>
+
+    <!-- Решение 3 -->
+    <div class="case-section">
+      <span class="case-section-label">Решение 3</span>
+      <h2 class="case-section-title">Внутренний плеер для&nbsp;удержания</h2>
+      <p class="case-section-desc">Реализовал внутри приложения встроенный файл-менеджер и&nbsp;аудио/видео-плеер, чтобы пользователи могли управлять скачанным контентом без&nbsp;перехода в&nbsp;сторонние сервисы. Это сделало сценарий потребления контента бесшовным и&nbsp;повысило удержание пользователей внутри приложения.</p>
+      <div class="ds-grid" style="grid-template-columns: 1fr; grid-auto-rows: auto;">
+        <div class="ds-card" style="background: linear-gradient(45deg, #02101E, #9FA7BA);">
+          <img src="../images/sf-mockup-new-4.webp" alt="Savefrom плеер">
+        </div>
+      </div>
+    </div>
+
+    <!-- Решение 4 -->
+    <div class="case-section">
+      <span class="case-section-label">Решение 4</span>
+      <h2 class="case-section-title">Локализация веба для&nbsp;Индии</h2>
+      <p class="case-section-desc">Часть аудитории основного сайта использовала кнопочный телефон с&nbsp;дешёвым интернетом. Дополнительно локализировал сервис под&nbsp;кнопочные телефоны в&nbsp;регионе.</p>
+      <div class="ds-grid" style="grid-template-columns: 1fr; grid-auto-rows: auto;">
+        <div class="ds-card" style="background: linear-gradient(45deg, #0F1D28, #A0A7BA);">
+          <img src="../images/sf-mockup-sol-6.webp" alt="Savefrom локализация">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="h-footer">
+    <div class="h-footer-links">
+      <a class="h-footer-link" href="https://t.me/designfintech" target="_blank">
+        <img src="../images/icon-df.svg" class="h-footer-icon" alt="DesignFintech">
+        <span class="h-footer-link-name">@designfintech</span>
+      </a>
+      <a class="h-footer-link" href="https://dsgners.ru/bogdan-alekseev" target="_blank">
+        <img src="../images/icon-dsgners.svg" class="h-footer-icon" alt="Dsgners">
+        <span class="h-footer-link-name">dsgners.ru</span>
+      </a>
+      <a class="h-footer-link" href="https://www.linkedin.com/in/bogdan-al/" target="_blank">
+        <img src="../images/icon-linkedin.svg" class="h-footer-icon" alt="LinkedIn">
+        <span class="h-footer-link-name">linkedin</span>
+      </a>
+    </div>
+    <div class="h-footer-copy">
+      <span>© 2026 Bogdan Alekseev</span>
+      <span>Moscow, GMT+3</span>
+    </div>
+  </footer>
 
 </body>
 </html>

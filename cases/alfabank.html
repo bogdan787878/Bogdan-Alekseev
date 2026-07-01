@@ -3,47 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Альфа-Банк — Богдан Алексеев</title>
-  <script>
-    const _v = new Date().toISOString().slice(0,13).replace(/[-T:]/g,'');
-    ['tokens','base','buttons','tags','cards','layout','effects','responsive'].forEach(function(n) {
-      document.write('<link rel="stylesheet" href="../styles/' + n + '.css?v=' + _v + '">');
-    });
-  </script>
+  <title>Альфа-Банк — кейс</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;900&display=swap">
+  <link rel="stylesheet" href="../styles/vtb-v2.css?v=25">
   <link rel="stylesheet" href="case.css">
-  <!-- Yandex.Metrika counter -->
-  <script type="text/javascript">
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-    m[i].l=1*new Date();
-    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-    ym(99984431, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
-  </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/99984431" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-  <!-- /Yandex.Metrika counter -->
+  <style>
+    .ab-ph {
+      width: 100%;
+      border-radius: 24px;
+      background: #EEEEF2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(0,0,0,0.2);
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .ab-ph--wide { aspect-ratio: 16 / 7; }
+    .ab-ph--sq   { aspect-ratio: 1; }
+    .v2-sms-stage video { border-radius: 0; box-shadow: none; }
+  </style>
 </head>
 <body>
-  <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
-    <defs>
-      <filter id="grain">
-        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" result="noise"/>
-        <feColorMatrix type="saturate" values="0" in="noise"/>
-      </filter>
-    </defs>
-  </svg>
+<header class="v2-header">
+    <div class="v2-header-identity">
+      <span class="v2-header-avatar"></span>
+      <span class="v2-header-name">Богдан Алексеев</span>
+    </div>
+    <nav class="v2-header-nav">
+      <a href="../index.html">Все работы</a>
+    </nav>
+    <div class="v2-header-actions">
+      <a href="https://docs.google.com/document/d/1da54qDzXx4MLuOIPf5lLActD1l6MFjKnCuzuBfiZKY0/edit?usp=sharing" target="_blank" class="h-btn h-btn--outline h-btn--sm">Открыть CV</a>
+      <a href="https://t.me/al_bogdan" target="_blank" class="h-btn h-btn--dark h-btn--sm">Telegram</a>
+    </div>
+  </header>
 
-  <main class="case-main">
-
-    <div class="case-block" style="background: radial-gradient(ellipse at 100% 100%, #8B0000 0%, #060000 65%)">
+  <!-- HERO -->
+  <div style="padding: 32px var(--side) 0;">
+    <div class="case-block case-block--visible" style="background: radial-gradient(ellipse at 100% 100%, #8B0000 0%, #060000 65%);">
       <div class="case-block-content">
-
         <div class="case-block-head">
           <h1 class="case-block-title">Альфа-Банк. Пользовательское исследование и&nbsp;редизайн раздела Аналитика для&nbsp;iOS</h1>
         </div>
-
         <p class="case-block-desc">UX-исследование и&nbsp;редизайн раздела финансовой аналитики в&nbsp;мобильном приложении Альфа-Банка. Глубинные интервью, анализ паттернов, прототипирование.</p>
-
         <div class="case-block-tags">
           <span class="tag">fintech</span>
           <span class="tag">mobile</span>
@@ -52,14 +58,172 @@
           <span class="tag">2019</span>
           <span class="tag">Product Designer</span>
         </div>
-
       </div>
-      <img src="../images/alfabank-mockup-1.webp" alt="Альфа-Банк mockup" class="case-block-mockup">
+      <img src="../images/alfa-hero.webp" alt="Альфа-Банк Аналитика" class="case-block-mockup">
     </div>
+  </div>
 
-  </main>
+  <!-- TASK -->
+  <section class="v2-case-intro v2-wrap">
+    <div class="v2-beat">
+      <div></div>
+      <div class="v2-beat-content">
+        <h3 class="v2-beat-heading">Задача</h3>
+        <p class="v2-beat-body" style="margin-top:12px;">Провести пользовательское исследование раздела финансовой аналитики и&nbsp;предложить редизайн, который сделает данные читаемыми и&nbsp;полезными для&nbsp;клиентов банка.</p>
+      </div>
+    </div>
+  </section>
 
-  <script src="../js/ui.js"></script>
+  <!-- Исследование -->
+  <section class="v2-block v2-wrap">
+    <h2 class="v2-h">Провёл 15&nbsp;глубинных интервью с&nbsp;клиентами</h2>
+    <p class="v2-block-desc" style="max-width: 50%;">Текст — заменим на&nbsp;реальный. Описание методологии исследования, рекрутинга респондентов и&nbsp;ключевых вопросов глубинных интервью.</p>
+    <div class="v2-block-visual">
+      <img src="../images/alfa-research.webp" alt="Исследование Альфа-Банк" style="width:100%;border-radius:24px;display:block;">
+    </div>
+  </section>
 
+  <!-- Виджет аналитики: было / стало -->
+  <section class="v2-sms v2-wrap">
+    <div class="v2-sms-text">
+      <h2 class="v2-step-title">Виджет аналитики</h2>
+    </div>
+    <div class="v2-sms-frames">
+      <figure class="v2-sms-figure">
+        <div class="v2-sms-stage">
+          <span class="v2-badge v2-badge--bylo">Было</span>
+          <img src="../images/alfa-widget-before.webp" alt="Виджет до" style="width:284px;height:auto;aspect-ratio:auto;max-height:90%;border-radius:24px;display:block;outline:4px solid #23262D;">
+        </div>
+        <figcaption class="v2-sms-cap">Линейный график — тенденция только за&nbsp;месяц</figcaption>
+        <p class="v2-sms-cap-text">Линейный график показывал тенденцию только за&nbsp;месяц и&nbsp;ничего не&nbsp;давал для принятия решений.</p>
+      </figure>
+      <figure class="v2-sms-figure">
+        <div class="v2-sms-stage">
+          <span class="v2-badge v2-badge--stalo">Стало</span>
+          <video loop muted playsinline preload="auto" style="width:284px;border-radius:22px;display:block;">
+            <source src="../video/alfa-widget-after.webm" type="video/webm">
+          </video>
+        </div>
+        <figcaption class="v2-sms-cap">Столбчатая диаграмма и&nbsp;быстрые фильтры</figcaption>
+        <p class="v2-sms-cap-text">Заменил на&nbsp;столбчатую диаграмму за&nbsp;год, вывел категории наружу как фильтры сразу на&nbsp;главную без&nbsp;лишних переходов.</p>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Фильтры: было / стало -->
+  <section class="v2-sms v2-wrap">
+    <div class="v2-sms-text">
+      <h2 class="v2-step-title">Фильтры</h2>
+    </div>
+    <div class="v2-sms-frames">
+      <figure class="v2-sms-figure">
+        <div class="v2-sms-stage">
+          <span class="v2-badge v2-badge--bylo">Было</span>
+          <video loop muted playsinline preload="auto" style="width:284px;border-radius:24px;display:block;outline:4px solid #23262D;">
+            <source src="../video/alfa-filters-before.webm" type="video/webm">
+          </video>
+        </div>
+        <figcaption class="v2-sms-cap">До фильтров не&nbsp;удобно тянуться и&nbsp;в&nbsp;шторке не&nbsp;было всех категорий</figcaption>
+      </figure>
+      <figure class="v2-sms-figure">
+        <div class="v2-sms-stage">
+          <span class="v2-badge v2-badge--stalo">Стало</span>
+          <video loop muted playsinline preload="auto" style="width:284px;border-radius:24px;display:block;outline:4px solid #23262D;">
+            <source src="../video/alfa-filters-after.webm" type="video/webm">
+          </video>
+        </div>
+        <figcaption class="v2-sms-cap">Новая удобная шторка фильтров</figcaption>
+        <p class="v2-sms-cap-text">Улучшил контролы, вывел все категории и&nbsp;быстрые фильтры.</p>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Отмена подписок и автоплатежей: 1 фрейм -->
+  <section class="v2-sms v2-wrap">
+    <div class="v2-sms-text">
+      <h2 class="v2-step-title">Отмена подписок и&nbsp;автоплатежей</h2>
+    </div>
+    <div class="v2-sms-frames">
+      <figure class="v2-sms-figure">
+        <div class="v2-sms-stage">
+          <video loop muted playsinline preload="auto" style="width:284px;border-radius:24px;display:block;outline:4px solid #23262D;">
+            <source src="../video/alfa-sub-cancel.webm" type="video/webm">
+          </video>
+        </div>
+        <figcaption class="v2-sms-cap">Тег «Автоплатёж» и&nbsp;кнопка отмены на&nbsp;странице платежа</figcaption>
+        <p class="v2-sms-cap-text">Исследование показало, что проблема шире подписок: за&nbsp;годы копится десяток автосписаний. Сделали тег «Автоплатёж» для&nbsp;идентификации и&nbsp;кнопку «Запретить автопополнение» прямо на&nbsp;странице платежа.</p>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Уведомления о расходах -->
+  <section class="v2-sms v2-wrap">
+    <div class="v2-sms-text">
+      <h2 class="v2-step-title">Уведомления о&nbsp;расходах на&nbsp;категорию</h2>
+    </div>
+    <div class="v2-sms-frames">
+      <figure class="v2-sms-figure">
+        <div class="v2-sms-stage">
+          <img src="../images/alfa-push.webp" alt="Уведомления о расходах" style="width:284px;height:auto;aspect-ratio:auto;max-height:90%;display:block;">
+        </div>
+        <figcaption class="v2-sms-cap">Пуш при&nbsp;превышении лимита в&nbsp;категории</figcaption>
+        <p class="v2-sms-cap-text">Из&nbsp;интервью узнали, что люди регулярно перетрачивают и&nbsp;потом не&nbsp;могут дожить до&nbsp;зарплаты. Спроектировал пуш-уведомления: &gt;3 транзакций в&nbsp;категории + &gt;5% остатка = предупреждение.</p>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ВЫВОДЫ -->
+  <section class="v2-case-intro v2-wrap">
+    <div class="v2-beat">
+      <span class="v2-beat-label">ВЫВОДЫ</span>
+      <div class="v2-beat-content">
+        <p class="v2-beat-challenge">Клиенты используют историю расходов не&nbsp;для статистики, а&nbsp;для конкретных задач: не&nbsp;перетратить, повторить платёж, отменить подписку, свести бюджет.</p>
+        <div class="v2-beat-body" style="margin-top: 32px;">
+          <p>Аналитика воспринималась как декорация: линейный график за&nbsp;месяц не&nbsp;давал ни&nbsp;сравнения, ни&nbsp;контекста для решений. Нужны были данные за&nbsp;несколько месяцев и&nbsp;быстрый срез по&nbsp;категориям.</p>
+          <p>Проблема подписок оказалась шире ожидаемого: за&nbsp;годы у&nbsp;клиентов накапливается по&nbsp;10–15 автосписаний, о&nbsp;части которых они уже забыли. Простой идентификации недостаточно&nbsp;— нужна отмена в&nbsp;одно касание.</p>
+          <p>Перерасход — хронический паттерн, а&nbsp;не&nbsp;исключение. Люди осознают проблему только постфактум. Превентивное уведомление на&nbsp;пороге перерасхода стало наиболее востребованным из&nbsp;предложенных решений.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="h-footer">
+    <div class="h-footer-links">
+      <a class="h-footer-link" href="https://t.me/designfintech" target="_blank">
+        <img src="../images/icon-df.svg" class="h-footer-icon" alt="DesignFintech">
+        <span class="h-footer-link-name">@designfintech</span>
+      </a>
+      <a class="h-footer-link" href="https://dsgners.ru/bogdan-alekseev" target="_blank">
+        <img src="../images/icon-dsgners.svg" class="h-footer-icon" alt="Dsgners">
+        <span class="h-footer-link-name">dsgners.ru</span>
+      </a>
+      <a class="h-footer-link" href="https://www.linkedin.com/in/bogdan-al/" target="_blank">
+        <img src="../images/icon-linkedin.svg" class="h-footer-icon" alt="LinkedIn">
+        <span class="h-footer-link-name">linkedin</span>
+      </a>
+    </div>
+    <div class="h-footer-copy">
+      <span>© 2026 Bogdan Alekseev</span>
+      <span>Moscow, GMT+3</span>
+    </div>
+  </footer>
+
+
+  <script>
+    (function () {
+      var vio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          var v = e.target;
+          if (e.isIntersecting && !v._started) {
+            v._started = true;
+            setTimeout(function () { v.play().catch(function(){}); }, 400);
+            vio.unobserve(v);
+          }
+        });
+      }, { threshold: 0.25 });
+      document.querySelectorAll('video').forEach(function (v) { vio.observe(v); });
+    })();
+  </script>
 </body>
 </html>

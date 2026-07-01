@@ -3,16 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Богдан Алексеев — Дизайн-менеджер</title>
-  <link rel="stylesheet" href="styles/tokens.css">
-  <link rel="stylesheet" href="styles/base.css">
-  <link rel="stylesheet" href="styles/buttons.css">
-  <link rel="stylesheet" href="styles/tags.css">
-  <link rel="stylesheet" href="styles/cards.css">
-  <link rel="stylesheet" href="styles/layout.css">
-  <link rel="stylesheet" href="styles/effects.css">
-  <link rel="stylesheet" href="styles/responsive.css">
-  <link rel="preload" as="image" href="images/landa-main.webp" fetchpriority="high">
+  <title>Богдан Алексеев — Design Director</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;900&display=swap">
+  <link rel="stylesheet" href="styles/vtb-v2.css?v=25">
+  <link rel="stylesheet" href="styles/home-v2.css?v=9">
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -27,241 +23,217 @@
 </head>
 <body>
 
-  <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
-    <defs>
-      <filter id="grain">
-        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" result="noise"/>
-        <feColorMatrix type="saturate" values="0" in="noise"/>
-      </filter>
-    </defs>
-  </svg>
+  <!-- HEADER -->
+  <header class="v2-header v2-header--home" id="mainHeader">
+    <div class="v2-header-identity">
+      <span class="v2-header-avatar"></span>
+      <span class="v2-header-name">Богдан Алексеев</span>
+    </div>
+    <nav class="v2-header-nav">
+      <a href="#projects">Проекты</a>
+      <a href="#about">Обо мне</a>
+      <a href="#books">Книги</a>
+    </nav>
+    <div class="v2-header-actions">
+      <a href="https://docs.google.com/document/d/1da54qDzXx4MLuOIPf5lLActD1l6MFjKnCuzuBfiZKY0/edit?usp=sharing" target="_blank" class="h-btn h-btn--outline h-btn--sm">Открыть CV</a>
+      <a href="https://t.me/al_bogdan" target="_blank" class="h-btn h-btn--dark h-btn--sm">Telegram</a>
+    </div>
+  </header>
 
-  <main>
-    <section class="hero" id="hero">
-      <div class="hero-identity">
-        <img src="images/avatar.webp" alt="Богдан Алексеев" class="avatar">
-        <span>Богдан Алексеев</span>
-      </div>
-      <h1>Дизайн-менеджер с&nbsp;9+&nbsp;лет опыта в&nbsp;fintech и&nbsp;digital products</h1>
-      <p class="hero-desc">Фокусируюсь на&nbsp;исследованиях, развитии CX и&nbsp;качестве продуктового дизайна. Внедряю AI в&nbsp;процессы discovery, анализа и&nbsp;прототипирования продуктовых решений.</p>
-      <div class="hero-actions">
-        <a href="https://docs.google.com/document/d/1da54qDzXx4MLuOIPf5lLActD1l6MFjKnCuzuBfiZKY0/edit?usp=sharing" class="btn btn-outline hero-btn" target="_blank">CV</a>
-        <a href="https://t.me/al_bogdan" class="btn btn-telegram hero-btn" target="_blank">Telegram</a>
-      </div>
-      <div class="hero-stories">
-        <img src="images/story-1.webp" alt="Kidkin" class="story-photo">
-        <img src="images/story-2.webp" alt="Dadaism Studio" class="story-photo">
-        <img src="images/story-3.webp" alt="Landa AI" class="story-photo">
-        <img src="images/story-4.webp" alt="VTB" class="story-photo">
-      </div>
-      <div class="hero-logos">
-        <div class="hero-logos-inner">
-          <div class="hero-logos-track">
-            <img src="images/vtb logo.svg" alt="ВТБ" class="hero-logo" style="width:76.38px;height:26.76px">
-            <img src="images/alfabank logo.svg" alt="Альфа-Банк" class="hero-logo" style="width:137.16px;height:27.56px">
-            <img src="images/aviasales logo.svg" alt="Aviasales" class="hero-logo" style="width:185.13px;height:38.19px">
-            <img src="images/mailru logo.svg" alt="Mail.ru" class="hero-logo" style="width:135.32px;height:44px">
-            <img src="images/growfood logo.svg" alt="GrowFood" class="hero-logo" style="width:104.73px;height:27.56px">
-            <img src="images/savefrom logo.svg" alt="SaveFrom" class="hero-logo" style="width:160.6px;height:33px">
+  <!-- HERO -->
+  <section class="h-hero v2-wrap" id="hero">
+    <div class="h-hero-name">
+      <span class="h-hero-avatar"></span>
+      <span class="h-hero-nametext">Богдан Алексеев</span>
+    </div>
+    <h1 class="h-hero-title">Дизайн-директор<br>с&nbsp;9+&nbsp;лет в&nbsp;AI, fintech<br>и&nbsp;digital products</h1>
+    <div class="h-hero-actions">
+      <a href="https://docs.google.com/document/d/1da54qDzXx4MLuOIPf5lLActD1l6MFjKnCuzuBfiZKY0/edit?usp=sharing" target="_blank" class="h-btn h-btn--outline">Открыть CV</a>
+      <a href="https://t.me/al_bogdan" target="_blank" class="h-btn h-btn--dark">Написать в&nbsp;Telegram</a>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="h-projects v2-wrap">
+
+    <!-- ВТБ — полная ширина -->
+    <a class="h-card h-card--full h-card--overlay" href="cases/vtb.html">
+      <div class="h-card-cover" style="background: linear-gradient(135deg, #050329 0%, #1B2FB5 55%, #2C6BFF 100%); overflow: hidden;">
+        <div class="h-card-overlay-text">
+          <div class="h-card-overlay-info">
+          <h2 class="h-card-overlay-title">ВТБ. Маркетплейс продуктов для&nbsp;более 1&nbsp;млн клиентов</h2>
+          <p class="h-card-overlay-desc">Как я&nbsp;перезапустил 50+ продуктов на&nbsp;новой визуальной архитектуре и&nbsp;объединил дизайн в&nbsp;единый опыт.</p>
+          <div class="h-card-overlay-tags">
+            <span class="h-card-overlay-tag">Design Director</span>
+            <span class="h-card-overlay-tag">2020-2026</span>
+            <span class="h-card-overlay-tag">mobile</span>
+            <span class="h-card-overlay-tag">fintech</span>
           </div>
-          <div class="hero-logos-track" aria-hidden="true">
-            <img src="images/vtb logo.svg" alt="" class="hero-logo" style="width:76.38px;height:26.76px">
-            <img src="images/alfabank logo.svg" alt="" class="hero-logo" style="width:137.16px;height:27.56px">
-            <img src="images/aviasales logo.svg" alt="" class="hero-logo" style="width:185.13px;height:38.19px">
-            <img src="images/mailru logo.svg" alt="" class="hero-logo" style="width:135.32px;height:44px">
-            <img src="images/growfood logo.svg" alt="" class="hero-logo" style="width:104.73px;height:27.56px">
-            <img src="images/savefrom logo.svg" alt="" class="hero-logo" style="width:160.6px;height:33px">
           </div>
+          <img src="images/vtb-hero.webp" alt="ВТБ" class="h-card-overlay-mockup">
         </div>
       </div>
-    </section>
+    </a>
 
-    <section class="cases">
-
-      <a class="card card--full card--anchored" href="/landa/">
-        <div class="card-image card-image--gradient" style="background: linear-gradient(-36deg, #B24708, #190A01); --glass: rgba(107,94,86,0.70)">
-          <img src="images/landa-main.webp" fetchpriority="high" alt="Landa Research" class="card-mockup">
-          <div class="card-tags">
-            <span class="tag">✦ AI</span>
-            <span class="tag">SaaS</span>
-            <span class="tag">B2B</span>
-            <span class="tag">2023-2026</span>
-            <span class="tag">Art-Director / Product Owner</span>
+    <!-- Landa Research — полная ширина -->
+    <a class="h-card h-card--full h-card--overlay" href="cases/landa.html">
+      <div class="h-card-cover" style="background: linear-gradient(135deg, #190A01 0%, #B24708 100%); overflow: hidden;">
+        <div class="h-card-overlay-text">
+          <div class="h-card-overlay-info">
+          <h2 class="h-card-overlay-title">Landa Research. AI инструмент для&nbsp;UX-исследований</h2>
+          <p class="h-card-overlay-desc">Внутренний AI-стартап в&nbsp;топ-3 банке РФ. С&nbsp;нуля — от&nbsp;идеи до&nbsp;пилотов с&nbsp;ВТБ, Госуслугами, Почтой России и&nbsp;Яндекс Практикумом.</p>
+          <div class="h-card-overlay-tags">
+            <span class="h-card-overlay-tag">Product Owner</span>
+            <span class="h-card-overlay-tag">2023-2026</span>
+            <span class="h-card-overlay-tag">martech</span>
+            <span class="h-card-overlay-tag">AI</span>
           </div>
-        </div>
-        <div class="card-footer">
-          <h3>Landa Research. AI сервис для&nbsp;анализа UX-тестов c&nbsp;точностью&nbsp;94%</h3>
-        </div>
-      </a>
-
-      <a class="card card--full card--anchored" href="/vtb/">
-        <div class="card-image card-image--gradient" style="background: linear-gradient(-36deg, #2731DA, #050329); --glass: rgba(86,86,107,0.70)">
-          <img src="images/vtb-main.webp" loading="lazy" alt="ВТБ" class="card-mockup">
-          <div class="card-tags">
-            <span class="tag">superapp</span>
-            <span class="tag">fintech</span>
-            <span class="tag">B2B/B2E</span>
-            <span class="tag">2020-2026</span>
-            <span class="tag">Design Director</span>
           </div>
+          <img src="images/landa-hero.webp" alt="Landa Research" class="h-card-overlay-mockup">
         </div>
-        <div class="card-footer">
-          <h3>ВТБ. Цифровая платформа для&nbsp;бизнеса c T2M продуктов 30&nbsp;дней</h3>
+      </div>
+    </a>
+
+    <!-- Альфа-Банк — полная ширина, сразу после Ланды -->
+    <a class="h-card h-card--full h-card--overlay" href="cases/alfabank.html">
+      <div class="h-card-cover" style="background: radial-gradient(ellipse at 100% 100%, #8B0000 0%, #060000 65%); overflow: hidden;">
+        <div class="h-card-overlay-text">
+          <div class="h-card-overlay-info">
+          <h2 class="h-card-overlay-title">Альфа-Банк. Продуктовое исследование для&nbsp;раздела аналитики</h2>
+          <p class="h-card-overlay-desc">UX-исследование и&nbsp;редизайн раздела финансовой аналитики в&nbsp;мобильном приложении Альфа-Банка. Глубинные интервью, анализ паттернов, прототипирование.</p>
+          <div class="h-card-overlay-tags">
+            <span class="h-card-overlay-tag">Consult</span>
+            <span class="h-card-overlay-tag">2019</span>
+            <span class="h-card-overlay-tag">fintech</span>
+            <span class="h-card-overlay-tag">mobile</span>
+          </div>
+          </div>
+          <img src="images/alfa-hero.webp" alt="Альфа-Банк" class="h-card-overlay-mockup">
         </div>
-      </a>
+      </div>
+    </a>
 
-      <div class="card-row">
-
-        <a class="card card--half" href="/savefrom/">
-          <div class="card-image card-image--gradient" style="background: linear-gradient(45deg, #0F1D28 55%, #A0A7BA); --glass: rgba(86,86,107,0.70)">
-            <img src="images/savefrom-main.webp" loading="lazy" alt="Savefrom" class="card-mockup">
-            <div class="card-tags">
-              <span class="tag">media</span>
-              <span class="tag">mobile</span>
-              <span class="tag">B2C</span>
-              <span class="tag">2020</span>
-              <span class="tag">Product Designer</span>
+    <!-- GrowFood -->
+    <a class="h-card h-card--full h-card--overlay" href="cases/growfood.html">
+      <div class="h-card-cover" style="background: linear-gradient(135deg, #0A251E 0%, #51CC8A 100%);">
+        <div class="h-card-overlay-text">
+          <div class="h-card-overlay-info">
+            <h2 class="h-card-overlay-title">Grow Food. Редизайн основной воронки для&nbsp;увеличения конверсии в&nbsp;заказ</h2>
+            <p class="h-card-overlay-desc">Переработка ключевого пользовательского пути в&nbsp;приложении доставки еды. Фокус на&nbsp;снижении отказов и&nbsp;росте конверсии в&nbsp;первый заказ.</p>
+            <div class="h-card-overlay-tags">
+              <span class="h-card-overlay-tag">Product Designer</span>
+              <span class="h-card-overlay-tag">2019—2020</span>
+              <span class="h-card-overlay-tag">mobile</span>
+              <span class="h-card-overlay-tag">ecomm</span>
             </div>
           </div>
-          <div class="card-footer">
-            <h3>Savefrom. Запуск приложения<br>на&nbsp;рынок Индии для&nbsp;сервиса<br>с&nbsp;50 млн MAU по&nbsp;всему миру</h3>
-          </div>
-        </a>
-
-        <a class="card card--half" href="/growfood/">
-          <div class="card-image card-image--gradient" style="background: linear-gradient(45deg, #0A251E 55%, #51CC8A); --glass: rgba(86,107,92,0.70)">
-            <img src="images/growfood-main.webp" loading="lazy" alt="Grow Food" class="card-mockup">
-            <div class="card-tags">
-              <span class="tag">ecomm</span>
-              <span class="tag">mobile</span>
-              <span class="tag">B2C</span>
-              <span class="tag">2019-2020</span>
-              <span class="tag">Product Designer</span>
-            </div>
-          </div>
-          <div class="card-footer">
-            <h3>Grow Food. Редизайн основной<br>воронки для&nbsp;увеличения<br>конверсии в&nbsp;заказ рациона</h3>
-          </div>
-        </a>
-
+          <img src="images/growfood-hero.webp" alt="Grow Food" class="h-card-overlay-mockup">
+        </div>
       </div>
+    </a>
 
-      <a class="card card--full card--anchored" href="/alfabank/">
-        <div class="card-image card-image--gradient" style="background: radial-gradient(ellipse at 100% 100%, #8B0000 0%, #060000 65%); --glass: rgba(107,86,86,0.70)">
-          <img src="images/alfabank-main.webp" loading="lazy" alt="Альфа-Банк" class="card-mockup">
-          <div class="card-tags">
-            <span class="tag">fintech</span>
-            <span class="tag">mobile</span>
-            <span class="tag">B2C</span>
-            <span class="tag">UX/UI</span>
-            <span class="tag">2019</span>
-            <span class="tag">Product Designer</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <h3>Альфа-Банк. Пользовательское исследование и&nbsp;редизайн раздела Аналитика для&nbsp;iOS</h3>
-        </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="h-about v2-wrap">
+    <div class="h-about-grid">
+      <div class="h-about-photos">
+        <img src="images/story-1.webp" alt="" class="h-about-photo">
+        <img src="images/story-2.webp" alt="" class="h-about-photo">
+        <img src="images/story-3.webp" alt="" class="h-about-photo">
+        <img src="images/story-4.webp" alt="" class="h-about-photo">
+      </div>
+      <div class="h-about-body">
+        <h2 class="h-about-title">Кто я&nbsp;такой?</h2>
+        <p>7&nbsp;лет занимался стрит-артом, по&nbsp;образованию журналист. Научился работать с&nbsp;самым главным элементом интерфейса&nbsp;— текст и&nbsp;смысл.</p>
+        <p>В&nbsp;2016 я&nbsp;начинал как продакт в&nbsp;стартапе. В&nbsp;2018 открыл с&nbsp;партнёром дизайн-студию, прогнал 20&nbsp;миллионов выручки с&nbsp;маржой в&nbsp;10%&nbsp;— и&nbsp;закрыл. Первый урок: не&nbsp;важно сколько ты&nbsp;зарабатываешь, важно сколько у&nbsp;тебя осталось.</p>
+        <p>Второй пришёл в&nbsp;ВТБ&nbsp;— там дизайн-функция работала по&nbsp;заданиям: «нарисуй&nbsp;— сдал», без данных, без влияния на&nbsp;продукт. 6&nbsp;лет я&nbsp;это менял: выстроил исследовательскую функцию в&nbsp;30+&nbsp;командах, создал продуктовый вижн для&nbsp;всей платформы и&nbsp;соосновал внутренний стартап Landa Research для&nbsp;пилотирования AI-проектов.</p>
+        <p>Сегодня даже работая в&nbsp;найме, я&nbsp;ощущаю себя как предприниматель. Делаю всё, чтобы видеть картину целиком&nbsp;— не&nbsp;только как работает дизайн, а&nbsp;как работает рынок, компания и&nbsp;продукты.</p>
+        <p>Такой подход позволяет мне фокусироваться на&nbsp;том, что в&nbsp;принципе способно дать результат, а&nbsp;не&nbsp;на&nbsp;том, что просто кому-то хочется поделать.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKS -->
+  <section id="books" class="h-books v2-wrap">
+    <h2 class="h-books-title">Книжная полка&nbsp;— база</h2>
+
+    <div class="h-books-group">
+      <div class="h-books-row">
+        <div class="h-book"><img src="images/book-d1.webp" alt="" loading="lazy"></div>
+        <div class="h-book"><img src="images/book-d2.webp" alt="" loading="lazy"></div>
+        <div class="h-book"><img src="images/book-d3.webp" alt="" loading="lazy"></div>
+        <div class="h-book"><img src="images/book-d4.webp" alt="" loading="lazy"></div>
+        <div class="h-book"><img src="images/book-d5.webp" alt="" loading="lazy"></div>
+      </div>
+    </div>
+
+    <div class="h-books-group">
+      <div class="h-books-row">
+        <div class="h-book"><img src="images/book-p1.webp" alt="" loading="lazy"></div>
+        <div class="h-book"><img src="images/book-p2.webp" alt="" loading="lazy"></div>
+        <div class="h-book"><img src="images/book-p3.webp" alt="" loading="lazy"></div>
+        <div class="h-book"><img src="images/book-p4.webp" alt="" loading="lazy"></div>
+      </div>
+    </div>
+
+    <div class="h-books-group">
+      <div class="h-books-row">
+        <div class="h-book"><img src="images/book-m1.webp" alt="" loading="lazy"></div>
+        <div class="h-book"><img src="images/book-m2.webp" alt="" loading="lazy"></div>
+        <div class="h-book"><img src="images/book-m3.webp" alt="" loading="lazy"></div>
+        <div class="h-book"><img src="images/book-m4.webp" alt="" loading="lazy"></div>
+        <div class="h-book"><img src="images/book-m5.webp" alt="" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="h-footer">
+    <div class="h-footer-links">
+      <a class="h-footer-link" href="https://t.me/designfintech" target="_blank">
+        <img src="images/icon-df.svg" class="h-footer-icon" alt="DesignFintech">
+        <span class="h-footer-link-name">@designfintech</span>
       </a>
+      <a class="h-footer-link" href="https://dsgners.ru/bogdan-alekseev" target="_blank">
+        <img src="images/icon-dsgners.svg" class="h-footer-icon" alt="Dsgners">
+        <span class="h-footer-link-name">dsgners.ru</span>
+      </a>
+      <a class="h-footer-link" href="https://www.linkedin.com/in/bogdan-al/" target="_blank">
+        <img src="images/icon-linkedin.svg" class="h-footer-icon" alt="LinkedIn">
+        <span class="h-footer-link-name">linkedin</span>
+      </a>
+    </div>
+    <div class="h-footer-copy">
+      <span>© 2026 Bogdan Alekseev</span>
+      <span>Moscow, GMT+3</span>
+    </div>
+  </footer>
 
-    </section>
+  <script>
+    (function () {
+      var hero = document.getElementById('hero');
+      var header = document.getElementById('mainHeader');
+      if (!hero || !header) return;
+      var observer = new IntersectionObserver(function (entries) {
+        header.classList.toggle('v2-header--scrolled', !entries[0].isIntersecting);
+      }, { threshold: 0 });
+      observer.observe(hero);
+    })();
 
-    <section class="other-cases">
-      <ul class="other-cases-list">
-        <li class="other-cases-item">
-          <h3 class="other-cases-name">Mail.ru Group. Анализ воронки и&nbsp;её улучшение для&nbsp;маркетплейса Pandao</h3>
-        </li>
-        <li class="other-cases-item">
-          <h3 class="other-cases-name">Aviasales. Креативная концепция на&nbsp;основе геймификации для&nbsp;промо проекта</h3>
-        </li>
-        <li class="other-cases-item">
-          <h3 class="other-cases-name">Arenum. Дизайн игрового события и&nbsp;профиля игрока iOS-приложения для&nbsp;геймеров</h3>
-        </li>
-        <li class="other-cases-item">
-          <h3 class="other-cases-name">Studlance. Редизайн пользовательского опыта фриланс биржи для&nbsp;студентов и&nbsp;преподавателей</h3>
-        </li>
-        <li class="other-cases-item">
-          <h3 class="other-cases-name">Legalbet. Дизайн страниц аналитики футбольных команд</h3>
-        </li>
-        <li class="other-cases-item">
-          <h3 class="other-cases-name">Kidkin. Проектирование партнёрского кабинета для&nbsp;маркетплейса детских занятий</h3>
-        </li>
-      </ul>
-    </section>
-
-    <section class="bias-section">
-      <h2 class="publications-title">Публикации</h2>
-      <div class="bias-quote">
-        <img src="images/avatar.webp" alt="Богдан Алексеев" class="bias-quote-avatar">
-        <p class="bias-quote-text">«Это не просто сборник когнитивных искажений, а вручную собранная исследовательская база, где каждое понятие прослежено через оригинальные источники и историю его развития — иногда вплоть до XVIII века»</p>
-      </div>
-      <div class="bias-grid">
-        <a href="/haloeffect/" class="bias-card">
-          <span class="bias-card-title">Эффект ореола</span>
-          <div class="bias-card-img" style="background-image: url('images/bias-halo.svg')"></div>
-        </a>
-        <a href="/framing/" class="bias-card">
-          <span class="bias-card-title">Эффект Фрейминга</span>
-          <div class="bias-card-img" style="background-image: url('images/bias-framing.svg')"></div>
-        </a>
-        <a href="/endowment/" class="bias-card">
-          <span class="bias-card-title">Эффект обладания</span>
-          <div class="bias-card-img" style="background-image: url('images/bias-endowment.svg')"></div>
-        </a>
-        <a href="/sunkcoast/" class="bias-card">
-          <span class="bias-card-title">Эффект Конкорда</span>
-          <div class="bias-card-img" style="background-image: url('images/bias-sunkcoast.svg')"></div>
-        </a>
-        <a href="/confirmationbias/" class="bias-card">
-          <span class="bias-card-title">Склонность к подтверждению точки зрения</span>
-          <div class="bias-card-img" style="background-image: url('images/bias-confirmation.svg')"></div>
-        </a>
-        <a href="/decoyeffect/" class="bias-card">
-          <span class="bias-card-title">Эффект приманки</span>
-          <div class="bias-card-img" style="background-image: url('images/bias-decoy.svg')"></div>
-        </a>
-      </div>
-    </section>
-
-    <section class="bookshelf">
-      <h2 class="bookshelf-title">Книжная полка — база</h2>
-
-      <div class="bookshelf-category">
-        <span class="tag">Дизайн</span>
-        <div class="bookshelf-row">
-          <div class="book-card"><img src="images/book-d1.webp" alt="Книга по дизайну 1" loading="lazy"></div>
-          <div class="book-card"><img src="images/book-d2.webp" alt="Книга по дизайну 2" loading="lazy"></div>
-          <div class="book-card"><img src="images/book-d3.webp" alt="Книга по дизайну 3" loading="lazy"></div>
-          <div class="book-card"><img src="images/book-d4.webp" alt="Книга по дизайну 4" loading="lazy"></div>
-          <div class="book-card"><img src="images/book-d5.webp" alt="Книга по дизайну 5" loading="lazy"></div>
-        </div>
-      </div>
-
-      <div class="bookshelf-category">
-        <span class="tag">Психология и UX</span>
-        <div class="bookshelf-row">
-          <div class="book-card"><img src="images/book-p1.webp" alt="Книга по психологии 1" loading="lazy"></div>
-          <div class="book-card"><img src="images/book-p2.webp" alt="Книга по психологии 2" loading="lazy"></div>
-          <div class="book-card"><img src="images/book-p3.webp" alt="Книга по психологии 3" loading="lazy"></div>
-          <div class="book-card"><img src="images/book-p4.webp" alt="Книга по психологии 4" loading="lazy"></div>
-        </div>
-      </div>
-
-      <div class="bookshelf-category">
-        <span class="tag">Менеджмент</span>
-        <div class="bookshelf-row">
-          <div class="book-card"><img src="images/book-m1.webp" alt="Книга по менеджменту 1" loading="lazy"></div>
-          <div class="book-card"><img src="images/book-m2.webp" alt="Книга по менеджменту 2" loading="lazy"></div>
-          <div class="book-card"><img src="images/book-m3.webp" alt="Книга по менеджменту 3" loading="lazy"></div>
-          <div class="book-card"><img src="images/book-m4.webp" alt="Книга по менеджменту 4" loading="lazy"></div>
-          <div class="book-card"><img src="images/book-m5.webp" alt="Книга по менеджменту 5" loading="lazy"></div>
-        </div>
-      </div>
-
-    </section>
-
-  </main>
-
-<script src="js/ui.js"></script>
+    (function () {
+      document.querySelectorAll('a[href*="docs.google.com"]').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (typeof ym === 'function') ym(99984431, 'reachGoal', 'cv_click');
+        });
+      });
+      document.querySelectorAll('a[href*="t.me/al_bogdan"]').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (typeof ym === 'function') ym(99984431, 'reachGoal', 'telegram_click');
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
