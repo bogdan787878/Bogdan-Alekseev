@@ -16,6 +16,16 @@
   --pin-top:  calc(var(--header-h) + 24px);
   --disp:   'Fira Sans', sans-serif;
   --text:   'Fira Sans', sans-serif;
+
+  /* ── Шкала отступов: единый источник для всех кейсов, авто-сжимается на мобильном ── */
+  --sp-1: 8px;
+  --sp-2: 16px;
+  --sp-3: 24px;
+  --sp-4: 32px;
+  --sp-5: 40px;
+  --sp-6: 56px;
+  --sp-7: 64px;
+  --sp-8: 80px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -79,7 +89,7 @@ img, video { display: block; max-width: 100%; }
 .h-btn--sm { font-size: 14px; padding: 8px 16px; border-radius: 10px; }
 
 /* ── Футер (единый для всех страниц) ── */
-.h-footer { display: flex; align-items: center; justify-content: space-between; padding: 0 var(--side) 32px; margin-top: 80px; flex-wrap: wrap; gap: 24px; }
+.h-footer { display: flex; align-items: center; justify-content: space-between; padding: 0 var(--side) var(--sp-4); margin-top: var(--sp-8); flex-wrap: wrap; gap: var(--sp-3); }
 .h-footer-links { display: flex; gap: 4px; }
 .h-footer-link { display: inline-flex; align-items: center; gap: 8px; background: #EEEEF2; border-radius: 16px; padding: 16px 24px 16px 12px; text-decoration: none; color: inherit; transition: opacity 0.15s; }
 .h-footer-link:hover { opacity: 0.8; }
@@ -99,6 +109,18 @@ img, video { display: block; max-width: 100%; }
 }
 
 @media (max-width: 860px) {
+  /* Сжатая шкала отступов — наследуется автоматически всеми компонентами ниже, без ручных правок под каждый кейс */
+  :root {
+    --sp-1: 6px;
+    --sp-2: 12px;
+    --sp-3: 16px;
+    --sp-4: 20px;
+    --sp-5: 24px;
+    --sp-6: 32px;
+    --sp-7: 36px;
+    --sp-8: 40px;
+  }
+
   .v2-header-nav { gap: 18px; font-size: 14px; }
   .v2-header-actions { display: none; }
 }
@@ -135,7 +157,7 @@ img, video { display: block; max-width: 100%; }
 }
 
 /* ── CASE INTRO: CONTEXT / SOLUTION (лейбл слева, контент справа) ── */
-.v2-case-intro { padding-top: 64px; padding-bottom: 64px; display: flex; flex-direction: column; gap: clamp(72px, 12vh, 140px); margin-bottom: 164px; }
+.v2-case-intro { padding-top: var(--sp-7); padding-bottom: var(--sp-7); display: flex; flex-direction: column; gap: clamp(72px, 12vh, 140px); margin-bottom: 164px; }
 .v2-beat { display: grid; grid-template-columns: minmax(0, 1fr) var(--frame); gap: clamp(32px, 5vw, 80px); align-items: start; }
 .v2-beat-label { font-family: var(--disp); font-weight: 600; font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); }
 .v2-beat-heading { font-family: var(--disp); font-weight: 600; font-size: 24px; line-height: 1; letter-spacing: -0.01em; color: var(--ink); margin: 0; }
@@ -189,11 +211,11 @@ img, video { display: block; max-width: 100%; }
 .v2-slider-label--before { top: 16px; left: 16px; background: rgba(0,0,0,0.45); color: #fff; }
 
 /* ── STACKED BLOCK (заголовок + большая картинка) ───────── */
-.v2-block { padding-top: 56px; padding-bottom: 56px; }
+.v2-block { padding-top: var(--sp-6); padding-bottom: var(--sp-6); }
 .v2-block .v2-h { max-width: 50%; }
 .v2-block-desc { margin-top: 18px; max-width: 80%; color: var(--ink); font-size: 20px; line-height: 24px; }
 .v2-block-desc--half { max-width: 50%; }
-.v2-block-visual { margin-top: 32px; border-radius: 20px; background: var(--panel); aspect-ratio: 16 / 9; overflow: hidden; }
+.v2-block-visual { margin-top: var(--sp-4); border-radius: 20px; background: var(--panel); aspect-ratio: 16 / 9; overflow: hidden; }
 .v2-block-visual img, .v2-block-visual video { width: 100%; height: 100%; object-fit: cover; display: block; }
 .v2-block-visual--data { aspect-ratio: auto; height: 760px; }
 .v2-block-visual--sm { padding: 64px; box-sizing: border-box; }
@@ -277,7 +299,7 @@ img, video { display: block; max-width: 100%; }
   align-items: start;
 }
 .v2-sms-text { position: sticky; top: var(--pin-top); height: calc(100vh - var(--pin-top)); display: flex; flex-direction: column; justify-content: center; }
-.v2-sms-frames { display: flex; flex-direction: column; gap: 56px; padding: 14vh 0; }
+.v2-sms-frames { display: flex; flex-direction: column; gap: var(--sp-6); padding: 14vh 0; }
 .v2-sms-figure { margin: 0; }
 .v2-sms-figure img, .v2-sms-ph { width: 100%; border-radius: 22px; background: var(--panel); aspect-ratio: 4 / 3; object-fit: cover; display: block; }
 .v2-sms-stage { width: 100%; border-radius: 22px; background: var(--panel); aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center; overflow: hidden; }
@@ -319,20 +341,19 @@ img, video { display: block; max-width: 100%; }
   .v2-dots { display: none; }
 
   .v2-fullbar-inner { aspect-ratio: 16 / 9; }
-  .v2-sms { grid-template-columns: 1fr; gap: 20px; }
+  .v2-sms { grid-template-columns: 1fr; gap: 20px; padding-top: var(--sp-7); }
   .v2-sms-text { position: static; height: auto; }
   .v2-sms-frames { padding: 0; gap: 24px; }
   .v2-launch-rail { display: none; }
-  .v2-row { grid-template-columns: 1fr; gap: 24px; }
+  .v2-row { grid-template-columns: 1fr; gap: 24px; padding-top: var(--sp-7); }
   .v2-fullbar { grid-template-columns: 1fr; }
   .v2-fullbar-cap { grid-column: 1; }
   .v2-block .v2-h { max-width: 100%; }
   .v2-block-desc, .v2-block-desc--half { max-width: 100%; }
-  .v2-sms--gap-top { padding-top: 40px; }
   .v2-block-visual--data { height: 253px; }
   .v2-block-visual--sm { padding: 24px; }
   .v2-hero-cover { height: 360px; }
-  .v2-cap-result, .v2-sms-cap, .v2-row-cap .v2-h3, .v2-fullbar-cap .v2-h3 { max-width: 100%; }
+  .v2-cap-result, .v2-sms-cap, .v2-row-cap .v2-h3, .v2-fullbar-cap .v2-h3, .v2-sms-cap-text { max-width: 100%; }
 }
 
 @media (max-width: 480px) {

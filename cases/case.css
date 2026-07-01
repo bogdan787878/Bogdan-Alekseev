@@ -83,17 +83,17 @@
 .case-block-content {
   position: relative;
   z-index: 1;
-  padding: 56px;
+  padding: var(--sp-6);
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: var(--sp-4);
 }
 
 .case-block-head {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 24px;
+  gap: var(--sp-3);
 }
 
 .case-block-title {
@@ -116,7 +116,7 @@
 .case-block-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--sp-1);
 }
 
 .case-block-mockup {
@@ -125,7 +125,7 @@
   display: block;
   position: relative;
   z-index: 1;
-  padding: 0 56px;
+  padding: 0 var(--side);
   box-sizing: border-box;
   margin-bottom: -20%;
 }
@@ -509,9 +509,7 @@
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
-  .case-block-content { padding: 40px; }
   .case-block-title { max-width: 85%; font-size: 40px; }
-  .case-block-mockup { padding: 0 40px; }
 
   .case-section-title { font-size: 40px; }
   .case-stat-value { font-size: 40px; }
@@ -579,11 +577,10 @@
   .case-image,
   .case-feature,
   .case-testimonial { border-radius: 16px; }
-  .case-block-content { padding: 24px; gap: 16px; }
-  .case-block-head { flex-direction: column-reverse; gap: 16px; }
+  .case-block-head { flex-direction: column-reverse; }
   .case-block-title { max-width: 100%; font-size: 32px; line-height: 1.1; }
   .case-block-desc { font-size: 16px; max-width: 100%; }
-  .case-block-mockup { padding: 0 16px; margin-bottom: -10%; }
+  .case-block-mockup { margin-bottom: -10%; }
 
   .case-section-title { font-size: 24px; max-width: 100%; line-height: 1.2; }
   .case-section-desc { line-height: 24px; }
