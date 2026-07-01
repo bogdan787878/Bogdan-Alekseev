@@ -330,6 +330,7 @@ img, video { display: block; max-width: 100%; }
   .v2-block-desc, .v2-block-desc--half { max-width: 100%; }
   .v2-sms--gap-top { padding-top: 40px; }
   .v2-block-visual--data { height: 253px; }
+  .v2-block-visual--sm { padding: 24px; }
   .v2-hero-cover { height: 360px; }
   .v2-cap-result, .v2-sms-cap, .v2-row-cap .v2-h3, .v2-fullbar-cap .v2-h3 { max-width: 100%; }
 }
