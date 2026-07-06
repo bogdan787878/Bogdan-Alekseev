@@ -8,7 +8,8 @@
         var els = document.querySelectorAll('[data-slot="' + slot + '"]');
         els.forEach(function (el) {
           el.style.backgroundImage = 'url(' + path + '?v=' + Date.now() + ')';
-          el.style.backgroundSize = 'cover';
+          el.style.backgroundSize = el.dataset.fit === 'contain' ? 'contain' : 'cover';
+          el.style.backgroundRepeat = 'no-repeat';
           el.style.backgroundPosition = 'center';
           el.textContent = '';
           el.classList.remove('gv-ph');

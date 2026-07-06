@@ -48,7 +48,8 @@
           // слот может повторяться на странице (например, одинаковые иконки на всех карточках)
           document.querySelectorAll('[data-slot="' + slot + '"]').forEach(function (target) {
             target.style.backgroundImage = 'url(' + data.path + '?v=' + Date.now() + ')';
-            target.style.backgroundSize = 'cover';
+            target.style.backgroundSize = target.dataset.fit === 'contain' ? 'contain' : 'cover';
+            target.style.backgroundRepeat = 'no-repeat';
             target.style.backgroundPosition = 'center';
             target.textContent = '';
           });

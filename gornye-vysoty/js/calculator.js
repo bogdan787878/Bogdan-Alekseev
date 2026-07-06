@@ -2,55 +2,49 @@
   var priceEl = document.getElementById('calc-price');
   var downEl = document.getElementById('calc-down');
   var termEl = document.getElementById('calc-term');
-  var rateEl = document.getElementById('calc-rate');
   if (!priceEl) return;
 
   var priceOut = document.getElementById('calc-price-out');
   var downOut = document.getElementById('calc-down-out');
   var termOut = document.getElementById('calc-term-out');
-  var rateOut = document.getElementById('calc-rate-out');
-  var loanOut = document.getElementById('calc-loan');
-  var overpayOut = document.getElementById('calc-overpay');
-  var monthlyOut = document.getElementById('calc-monthly');
 
-  function formatRub(n) {
-    return Math.round(n).toLocaleString('ru-RU') + ' ₽';
+  function formatNum(n) {
+    return Math.round(n).toLocaleString('ru-RU');
+  }
+
+  function yearsLabel(n) {
+    var mod10 = n % 10;
+    var mod100 = n % 100;
+    var word = 'лет';
+    if (mod100 < 11 || mod100 > 14) {
+      if (mod10 === 1) word = 'год';
+      else if (mod10 >= 2 && mod10 <= 4) word = 'года';
+    }
+    return n + ' ' + word;
   }
 
   function recalc() {
-    var price = Number(priceEl.value);
-    var downPct = Number(downEl.value);
-    var termYears = Number(termEl.value);
-    var ratePct = Number(rateEl.value);
-
-    var downSum = price * downPct / 100;
-    var loan = Math.max(price - downSum, 0);
-    var months = termYears * 12;
-    var monthlyRate = ratePct / 100 / 12;
-
-    var monthly;
-    if (monthlyRate === 0) {
-      monthly = loan / months;
-    } else {
-      var k = Math.pow(1 + monthlyRate, months);
-      monthly = loan * (monthlyRate * k) / (k - 1);
-    }
-    var total = monthly * months;
-    var overpay = total - loan;
-
-    priceOut.textContent = formatRub(price);
-    downOut.textContent = formatRub(downSum) + ' (' + downPct + '%)';
-    termOut.textContent = termYears + ' лет';
-    rateOut.textContent = ratePct.toFixed(1).replace('.', ',') + '%';
-
-    loanOut.textContent = formatRub(loan);
-    overpayOut.textContent = formatRub(overpay);
-    monthlyOut.textContent = formatRub(monthly) + '/мес.';
+    priceOut.textContent = formatNum(priceEl.value);
+    downOut.textContent = formatNum(downEl.value);
+    termOut.textContent = yearsLabel(Number(termEl.value));
   }
 
-  [priceEl, downEl, termEl, rateEl].forEach(function (el) {
+  [priceEl, downEl, termEl].forEach(function (el) {
     el.addEventListener('input', recalc);
   });
 
   recalc();
+})();
+
+(function () {
+  var tabs = document.getElementById('mortgage-tabs');
+  if (!tabs) return;
+  tabs.addEventListener('click', function (e) {
+    var btn = e.target.closest('.gv-chip');
+    if (!btn) return;
+    tabs.querySelectorAll('.gv-chip').forEach(function (c) {
+      c.classList.remove('is-active', 'gv-chip--dark');
+    });
+    btn.classList.add('is-active', 'gv-chip--dark');
+  });
 })();

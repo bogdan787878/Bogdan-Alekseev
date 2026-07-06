@@ -421,58 +421,60 @@
 
   <!-- КАЛЬКУЛЯТОР ИПОТЕКИ -->
   <section class="gv-section gv-wrap" id="calculator">
-    <h2 class="gv-h2 gv-section-title">Рассчитайте ипотеку</h2>
-    <p class="gv-body-l gv-section-desc">Ориентировочный расчёт ежемесячного платежа. Точные условия уточняйте у ипотечного брокера.</p>
+    <h2 class="gv-h2 gv-section-title">Подобрать ипотеку</h2>
 
-    <div class="gv-calc">
-      <div class="gv-calc-fields">
-        <div class="gv-calc-range">
-          <div class="gv-calc-range-top">
-            <span class="gv-field-label">Стоимость квартиры</span>
-            <span class="gv-title" id="calc-price-out">5 000 000 ₽</span>
-          </div>
-          <input class="gv-input" type="range" id="calc-price" min="3700000" max="12000000" step="50000" value="5000000">
+    <div class="gv-mortgage">
+      <div class="gv-mortgage-form">
+        <div class="gv-chip-row gv-mortgage-tabs" id="mortgage-tabs">
+          <button type="button" class="gv-chip gv-chip--dark is-active">Ипотека</button>
+          <button type="button" class="gv-chip">Военная ипотека</button>
+          <button type="button" class="gv-chip">Материнский капитал</button>
+          <button type="button" class="gv-chip">Наличные</button>
         </div>
 
-        <div class="gv-calc-range">
-          <div class="gv-calc-range-top">
-            <span class="gv-field-label">Первоначальный взнос</span>
-            <span class="gv-title" id="calc-down-out">1 000 000 ₽ (20%)</span>
+        <div class="gv-mortgage-field">
+          <div class="gv-mortgage-field-top">
+            <span class="gv-field-label">Стоимость, ₽</span>
+            <span class="gv-title" id="calc-price-out">3 700 000</span>
           </div>
-          <input class="gv-input" type="range" id="calc-down" min="0" max="90" step="1" value="20">
+          <input class="gv-mortgage-range" type="range" id="calc-price" min="3700000" max="12000000" step="50000" value="3700000">
         </div>
 
-        <div class="gv-calc-range">
-          <div class="gv-calc-range-top">
+        <div class="gv-mortgage-field">
+          <div class="gv-mortgage-field-top">
+            <span class="gv-field-label">Первый взнос, ₽</span>
+            <span class="gv-title" id="calc-down-out">1 000 000</span>
+          </div>
+          <input class="gv-mortgage-range" type="range" id="calc-down" min="0" max="6000000" step="50000" value="1000000">
+        </div>
+
+        <div class="gv-mortgage-field">
+          <div class="gv-mortgage-field-top">
             <span class="gv-field-label">Срок кредита</span>
-            <span class="gv-title" id="calc-term-out">20 лет</span>
+            <span class="gv-title" id="calc-term-out">1 год</span>
           </div>
-          <input class="gv-input" type="range" id="calc-term" min="5" max="30" step="1" value="20">
+          <input class="gv-mortgage-range" type="range" id="calc-term" min="1" max="30" step="1" value="1">
         </div>
 
-        <div class="gv-calc-range">
-          <div class="gv-calc-range-top">
-            <span class="gv-field-label">Ставка</span>
-            <span class="gv-title" id="calc-rate-out">7,5%</span>
-          </div>
-          <input class="gv-input" type="range" id="calc-rate" min="1" max="20" step="0.1" value="7.5">
+        <div class="gv-mortgage-field">
+          <span class="gv-field-label">Телефон</span>
+          <input class="gv-input" type="tel" id="calc-phone" placeholder="+7">
+        </div>
+
+        <label class="gv-mortgage-agree">
+          <input type="checkbox">
+          <span class="gv-body-s">Я согласен с <a href="#">условиями обработки персональных данных</a></span>
+        </label>
+
+        <button type="button" class="gv-btn gv-btn--m gv-mortgage-submit">Оставить заявку</button>
+
+        <div class="gv-mortgage-avatars" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
         </div>
       </div>
 
-      <div class="gv-calc-result">
-        <div class="gv-calc-result-row">
-          <span class="gv-calc-result-label">Сумма кредита</span>
-          <span class="gv-calc-result-value" id="calc-loan">4 000 000 ₽</span>
-        </div>
-        <div class="gv-calc-result-row">
-          <span class="gv-calc-result-label">Переплата</span>
-          <span class="gv-calc-result-value" id="calc-overpay">—</span>
-        </div>
-        <div class="gv-calc-result-row gv-calc-result-main">
-          <span class="gv-calc-result-label">Платёж в месяц</span>
-          <span class="gv-calc-result-value" id="calc-monthly">—</span>
-        </div>
-      </div>
+      <div class="gv-mortgage-media gv-ph" data-slot="mortgage-building">фото дома</div>
     </div>
   </section>
   <!-- FOOTER -->
