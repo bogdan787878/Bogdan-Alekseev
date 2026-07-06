@@ -4,6 +4,7 @@
   }).catch(function () {});
 
   function init() {
+    window.__gvEditMode = true;
     document.querySelectorAll('[data-slot]').forEach(function (el) {
       el.style.display = ''; // в режиме редактирования показываем даже пустые слоты (например, кружки-аватарки)
       el.style.cursor = 'pointer';
