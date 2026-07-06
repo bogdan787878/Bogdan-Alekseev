@@ -1,0 +1,160 @@
+/* ============================================================
+   Горные высоты — лендинг. Секции поверх uikit.css
+   ============================================================ */
+
+/* ── HEADER (лого + телефон, поверх хиро) ── */
+.gv-header {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 3;
+  display: flex; align-items: center; justify-content: center;
+  padding: var(--gv-sp-24) var(--gv-side);
+}
+
+/* ── HERO ── */
+.gv-hero {
+  position: relative;
+  min-height: 760px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(180deg, #2B3A40 0%, #1B2529 100%);
+}
+.gv-hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+}
+.gv-hero::after {
+  content: '';
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.45) 100%);
+}
+.gv-hero-content {
+  position: relative; z-index: 2;
+  padding: var(--gv-sp-outer) var(--gv-side) var(--gv-sp-56);
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center;
+}
+.gv-hero-logo {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  margin-bottom: var(--gv-sp-32);
+}
+.gv-hero-logo-name {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 26px; letter-spacing: 0.06em;
+  color: var(--gv-white);
+}
+.gv-hero-logo-sub {
+  font-family: var(--gv-font); font-weight: 400; font-size: 12px; letter-spacing: 0.3em;
+  color: rgba(255,255,255,0.7); text-transform: uppercase;
+}
+.gv-hero-title { color: var(--gv-white); margin-bottom: var(--gv-sp-24); }
+.gv-hero-price {
+  font-family: var(--gv-font); font-weight: 500; font-size: 24px; line-height: 1.3;
+  color: rgba(255,255,255,0.9); margin-bottom: var(--gv-sp-32);
+}
+.gv-hero-actions { margin-bottom: var(--gv-sp-56); }
+
+/* ── Плашки преимуществ (перекрывают нижний край хиро) ── */
+.gv-perks {
+  position: relative; z-index: 3;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gv-sp-16);
+  padding: 0 var(--gv-side);
+  margin-top: calc(-1 * var(--gv-sp-56));
+}
+.gv-perk {
+  background: rgba(58, 73, 81, 0.55);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: var(--gv-sp-24);
+  color: var(--gv-white);
+}
+.gv-perk-title { font-family: var(--gv-font); font-weight: 700; font-size: 20px; line-height: 1.2; margin-bottom: 6px; }
+.gv-perk-text { font-family: var(--gv-font); font-weight: 400; font-size: 14px; line-height: 1.35; color: rgba(255,255,255,0.75); }
+
+@media (max-width: 860px) {
+  .gv-hero { min-height: 560px; }
+  .gv-hero-content { padding-top: var(--gv-sp-56); }
+  .gv-perks { grid-template-columns: 1fr 1fr; margin-top: var(--gv-sp-24); }
+}
+@media (max-width: 560px) {
+  .gv-perks { grid-template-columns: 1fr; }
+}
+
+/* ── СЕКЦИЯ (обычный контентный блок, внешний отступ между секциями) ── */
+.gv-section { padding-top: var(--gv-sp-outer); padding-bottom: var(--gv-sp-outer); }
+.gv-section-title { margin-bottom: var(--gv-sp-32); }
+.gv-section-desc { max-width: 60ch; margin-bottom: var(--gv-sp-32); opacity: 0.75; }
+
+/* ── КАЛЬКУЛЯТОР ИПОТЕКИ ── */
+.gv-calc {
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--gv-sp-32);
+  background: var(--gv-white); border-radius: 24px;
+  padding: var(--gv-sp-32);
+}
+.gv-calc-fields { display: flex; flex-direction: column; gap: var(--gv-sp-32); }
+.gv-calc-range { display: flex; flex-direction: column; gap: var(--gv-sp-8); }
+.gv-calc-range-top { display: flex; align-items: baseline; justify-content: space-between; }
+.gv-calc-result {
+  background: var(--gv-bg); border-radius: 16px;
+  padding: var(--gv-sp-32);
+  display: flex; flex-direction: column; justify-content: center; gap: var(--gv-sp-16);
+}
+.gv-calc-result-row { display: flex; align-items: baseline; justify-content: space-between; }
+.gv-calc-result-label { font-family: var(--gv-font); font-size: 16px; opacity: 0.65; }
+.gv-calc-result-value { font-family: var(--gv-font); font-weight: 700; font-size: 24px; }
+.gv-calc-result-main { padding-top: var(--gv-sp-16); border-top: 1px solid var(--gv-line); }
+.gv-calc-result-main .gv-calc-result-value { font-size: 40px; color: var(--gv-accent); }
+
+@media (max-width: 860px) {
+  .gv-calc { grid-template-columns: 1fr; }
+}
+
+/* ── ПОДБОРЩИК ПЛАНИРОВОК ── */
+.gv-filters {
+  display: flex; flex-wrap: wrap; gap: var(--gv-sp-16);
+  margin-bottom: var(--gv-sp-32);
+  padding: var(--gv-sp-24);
+  background: var(--gv-white); border-radius: 20px;
+}
+.gv-filter { display: flex; flex-direction: column; gap: var(--gv-sp-4); min-width: 140px; flex: 1; }
+.gv-filter-label { font-size: 13px; opacity: 0.6; }
+.gv-filter select, .gv-filter-chip-row { font-family: var(--gv-font); }
+
+.gv-chip-row { display: flex; flex-wrap: wrap; gap: var(--gv-sp-8); }
+.gv-chip {
+  font-family: var(--gv-font); font-size: 14px; font-weight: 500;
+  padding: 8px 16px; border-radius: 100px;
+  background: var(--gv-bg); color: var(--gv-ink);
+  border: none; cursor: pointer; transition: background 0.15s ease, color 0.15s ease;
+}
+.gv-chip.is-active { background: var(--gv-accent); color: var(--gv-white); }
+
+.gv-plans-count { margin-bottom: var(--gv-sp-24); opacity: 0.6; }
+
+.gv-plans-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gv-sp-16);
+}
+.gv-plan-card {
+  background: var(--gv-white); border-radius: 20px; overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.gv-plan-card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(58,73,81,0.14); }
+.gv-plan-card-img { aspect-ratio: 1; }
+.gv-plan-card-body { padding: var(--gv-sp-16); display: flex; flex-direction: column; gap: var(--gv-sp-4); }
+.gv-plan-card-title { font-weight: 700; font-size: 18px; }
+.gv-plan-card-meta { font-size: 14px; opacity: 0.6; }
+.gv-plan-card-price { font-weight: 700; font-size: 18px; color: var(--gv-accent); margin-top: var(--gv-sp-4); }
+
+.gv-plans-empty { padding: var(--gv-sp-56) 0; text-align: center; opacity: 0.5; }
+
+@media (max-width: 1080px) { .gv-plans-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 760px)  { .gv-plans-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px)  { .gv-plans-grid { grid-template-columns: 1fr; } }
+
+/* ── FOOTER ── */
+.gv-footer {
+  padding: var(--gv-sp-32) var(--gv-side);
+  border-top: 1px solid var(--gv-line);
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--gv-sp-16);
+}
+.gv-footer-copy { font-size: 14px; opacity: 0.5; }

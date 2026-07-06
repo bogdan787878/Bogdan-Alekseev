@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Горные высоты — квартиры комфорт-плюс в Майкопе</title>
+  <link rel="stylesheet" href="styles/uikit.css">
+  <link rel="stylesheet" href="styles/landing.css">
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="gv-hero">
+    <div class="gv-hero-bg gv-ph" data-slot="hero" style="width:100%;height:100%;">фото дома</div>
+
+    <header class="gv-header">
+      <div class="gv-hero-logo" style="margin-bottom:0;">
+        <span class="gv-hero-logo-name">Горные высоты</span>
+        <span class="gv-hero-logo-sub">Микрорайон</span>
+      </div>
+    </header>
+
+    <div class="gv-hero-content">
+      <h1 class="gv-h1 gv-hero-title">Квартиры комфорт-плюс<br>в г. Майкоп — от 3,7 млн ₽</h1>
+      <p class="gv-hero-price">От 19 992 ₽/мес.</p>
+      <div class="gv-hero-actions">
+        <a href="#plans" class="gv-btn gv-btn--m">Подобрать квартиру</a>
+      </div>
+    </div>
+
+    <div class="gv-perks">
+      <div class="gv-perk">
+        <div class="gv-perk-title">Рассрочка</div>
+        <div class="gv-perk-text">От застройщика на 6 мес. без удорожания цены</div>
+      </div>
+      <div class="gv-perk">
+        <div class="gv-perk-title">Скидка 3%</div>
+        <div class="gv-perk-text">Для зарплатных клиентов Сбербанка</div>
+      </div>
+      <div class="gv-perk">
+        <div class="gv-perk-title">до 750 тыс. ₽</div>
+        <div class="gv-perk-text">Выгода на покупку квартиры</div>
+      </div>
+      <div class="gv-perk">
+        <div class="gv-perk-title">до 10 000 ₽/м²</div>
+        <div class="gv-perk-text">Скидка участникам СВО</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- КАЛЬКУЛЯТОР ИПОТЕКИ -->
+  <section class="gv-section gv-wrap" id="calculator">
+    <h2 class="gv-h2 gv-section-title">Рассчитайте ипотеку</h2>
+    <p class="gv-body-l gv-section-desc">Ориентировочный расчёт ежемесячного платежа. Точные условия уточняйте у ипотечного брокера.</p>
+
+    <div class="gv-calc">
+      <div class="gv-calc-fields">
+        <div class="gv-calc-range">
+          <div class="gv-calc-range-top">
+            <span class="gv-field-label">Стоимость квартиры</span>
+            <span class="gv-title" id="calc-price-out">5 000 000 ₽</span>
+          </div>
+          <input class="gv-input" type="range" id="calc-price" min="3700000" max="12000000" step="50000" value="5000000">
+        </div>
+
+        <div class="gv-calc-range">
+          <div class="gv-calc-range-top">
+            <span class="gv-field-label">Первоначальный взнос</span>
+            <span class="gv-title" id="calc-down-out">1 000 000 ₽ (20%)</span>
+          </div>
+          <input class="gv-input" type="range" id="calc-down" min="0" max="90" step="1" value="20">
+        </div>
+
+        <div class="gv-calc-range">
+          <div class="gv-calc-range-top">
+            <span class="gv-field-label">Срок кредита</span>
+            <span class="gv-title" id="calc-term-out">20 лет</span>
+          </div>
+          <input class="gv-input" type="range" id="calc-term" min="5" max="30" step="1" value="20">
+        </div>
+
+        <div class="gv-calc-range">
+          <div class="gv-calc-range-top">
+            <span class="gv-field-label">Ставка</span>
+            <span class="gv-title" id="calc-rate-out">7,5%</span>
+          </div>
+          <input class="gv-input" type="range" id="calc-rate" min="1" max="20" step="0.1" value="7.5">
+        </div>
+      </div>
+
+      <div class="gv-calc-result">
+        <div class="gv-calc-result-row">
+          <span class="gv-calc-result-label">Сумма кредита</span>
+          <span class="gv-calc-result-value" id="calc-loan">4 000 000 ₽</span>
+        </div>
+        <div class="gv-calc-result-row">
+          <span class="gv-calc-result-label">Переплата</span>
+          <span class="gv-calc-result-value" id="calc-overpay">—</span>
+        </div>
+        <div class="gv-calc-result-row gv-calc-result-main">
+          <span class="gv-calc-result-label">Платёж в месяц</span>
+          <span class="gv-calc-result-value" id="calc-monthly">—</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПОДБОРЩИК ПЛАНИРОВОК -->
+  <section class="gv-section gv-wrap" id="plans">
+    <h2 class="gv-h2 gv-section-title">Подберите планировку</h2>
+
+    <div class="gv-filters">
+      <div class="gv-filter">
+        <span class="gv-filter-label">Комнат</span>
+        <div class="gv-chip-row" id="filter-rooms">
+          <button class="gv-chip is-active" data-rooms="all">Все</button>
+          <button class="gv-chip" data-rooms="1">Студия/1</button>
+          <button class="gv-chip" data-rooms="2">2</button>
+          <button class="gv-chip" data-rooms="3">3</button>
+          <button class="gv-chip" data-rooms="4">4+</button>
+        </div>
+      </div>
+      <div class="gv-filter">
+        <span class="gv-filter-label">Площадь, м²</span>
+        <select class="gv-input" id="filter-area">
+          <option value="all">Любая</option>
+          <option value="0-40">до 40</option>
+          <option value="40-60">40—60</option>
+          <option value="60-80">60—80</option>
+          <option value="80-999">от 80</option>
+        </select>
+      </div>
+      <div class="gv-filter">
+        <span class="gv-filter-label">Бюджет, ₽</span>
+        <select class="gv-input" id="filter-price">
+          <option value="all">Любой</option>
+          <option value="0-4000000">до 4 млн</option>
+          <option value="4000000-6000000">4—6 млн</option>
+          <option value="6000000-8000000">6—8 млн</option>
+          <option value="8000000-999999999">от 8 млн</option>
+        </select>
+      </div>
+    </div>
+
+    <p class="gv-body-l gv-plans-count" id="plans-count"></p>
+    <div class="gv-plans-grid" id="plans-grid"></div>
+    <p class="gv-plans-empty" id="plans-empty" style="display:none;">По этим фильтрам планировок не найдено</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="gv-footer">
+    <span class="gv-body-s gv-footer-copy">© 2026 Горные высоты, микрорайон в г. Майкоп</span>
+    <span class="gv-body-s gv-footer-copy">Не является публичной офертой</span>
+  </footer>
+
+  <script src="js/calculator.js"></script>
+  <script src="js/plans.js"></script>
+  <script src="js/images.js"></script>
+  <script src="js/edit-mode.js"></script>
+</body>
+</html>

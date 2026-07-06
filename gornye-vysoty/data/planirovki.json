@@ -70,14 +70,5 @@
     "floor": 6,
     "price": 8900000,
     "title": "4-комн. 92,3 м²"
-  },
-  {
-    "id": "pl-009",
-    "image": "images/planirovki/pl-009.png",
-    "title": "ТЕСТ удалить",
-    "rooms": 2,
-    "area": 50.0,
-    "floor": 3,
-    "price": 5000000
   }
 ]
