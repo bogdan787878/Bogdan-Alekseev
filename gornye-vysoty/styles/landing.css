@@ -28,7 +28,6 @@
 }
 .gv-hero-content {
   position: relative; z-index: 2;
-  padding: var(--gv-sp-outer) var(--gv-side) var(--gv-sp-56);
   max-width: 900px;
   margin: 0 auto;
   display: flex; flex-direction: column; align-items: center;
@@ -50,32 +49,42 @@
   font-family: var(--gv-font); font-weight: 500; font-size: 24px; line-height: 1.3;
   color: rgba(255,255,255,0.9); margin-bottom: var(--gv-sp-24);
 }
-.gv-hero-actions { margin-bottom: var(--gv-sp-56); }
-
-/* ── Плашки преимуществ (перекрывают нижний край хиро) ── */
-.gv-perks {
-  position: relative; z-index: 3;
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gv-sp-16);
-  padding: 0 var(--gv-side);
-  margin-top: calc(-1 * var(--gv-sp-56));
-}
-.gv-perk {
-  background: rgba(240, 239, 235, 0.2);
-  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: var(--gv-sp-24);
-  color: var(--gv-white);
-}
-.gv-perk-title { font-family: var(--gv-font); font-weight: 700; font-size: 20px; line-height: 1.2; margin-bottom: 6px; }
-.gv-perk-text { font-family: var(--gv-font); font-weight: 400; font-size: 14px; line-height: 1.35; color: rgba(255,255,255,0.75); }
+.gv-hero-actions { margin-top: var(--gv-sp-56); }
 
 @media (max-width: 860px) {
   .gv-hero { min-height: 560px; }
   .gv-hero-content { padding-top: var(--gv-sp-56); }
-  .gv-perks { grid-template-columns: 1fr 1fr; margin-top: var(--gv-sp-24); }
 }
-@media (max-width: 560px) {
-  .gv-perks { grid-template-columns: 1fr; }
+
+/* ── АКЦИИ И СКИДКИ ── */
+#perks { background: var(--gv-white); }
+.gv-perks-track {
+  display: flex; gap: var(--gv-sp-16);
+  overflow-x: auto; scroll-snap-type: x mandatory;
+  scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  margin-right: calc(-1 * var(--gv-side)); padding-right: 0;
+}
+.gv-perks-track::-webkit-scrollbar { display: none; }
+.gv-perk-card {
+  flex: 0 0 auto; width: 320px; scroll-snap-align: start;
+  background: var(--gv-bg); border-radius: 20px;
+  padding: var(--gv-sp-24);
+  display: flex; flex-direction: column; justify-content: space-between;
+  min-height: 220px;
+}
+.gv-perk-card-title { font-family: var(--gv-font); font-weight: 700; font-size: 20px; line-height: 1.3; color: var(--gv-ink); }
+.gv-perk-card-title sup { font-size: 12px; font-weight: 500; opacity: 0.5; }
+.gv-perk-card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: var(--gv-sp-24); }
+.gv-perk-card-value { font-family: var(--gv-font); font-weight: 500; font-size: 28px; color: var(--gv-ink); }
+.gv-perk-card-arrow {
+  width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;
+  background: var(--gv-accent); color: var(--gv-white);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+}
+
+@media (max-width: 860px) {
+  .gv-perk-card { width: 260px; min-height: 180px; }
 }
 
 /* ── СЕКЦИЯ (обычный контентный блок, внешний отступ между секциями) ── */
@@ -146,13 +155,7 @@
 }
 
 /* ── ПОДБОРЩИК ПЛАНИРОВОК ── */
-.gv-filters {
-  display: flex; flex-wrap: wrap; gap: var(--gv-sp-16);
-  margin-bottom: var(--gv-sp-32);
-  padding: var(--gv-sp-24);
-  background: var(--gv-white); border-radius: 20px;
-}
-.gv-filter { display: flex; flex-direction: column; gap: var(--gv-sp-4); min-width: 140px; flex: 1; }
+.gv-filter { display: flex; flex-direction: column; gap: var(--gv-sp-4); min-width: 140px; flex: 1; margin-bottom: var(--gv-sp-32); }
 .gv-filter-label { font-size: 13px; opacity: 0.6; }
 .gv-filter select, .gv-filter-chip-row { font-family: var(--gv-font); }
 
@@ -271,7 +274,7 @@
 .gv-routes-nav { display: flex; gap: var(--gv-sp-8); }
 .gv-routes-arrow {
   width: 48px; height: 48px; border-radius: 50%;
-  background: var(--gv-white); border: none; cursor: pointer;
+  background: var(--gv-bg); border: none; cursor: pointer;
   font-family: var(--gv-font); font-size: 20px; color: var(--gv-ink);
   display: flex; align-items: center; justify-content: center;
   transition: opacity 0.15s ease;
@@ -304,6 +307,11 @@
   .gv-route-img { aspect-ratio: 4 / 3; }
   .gv-routes-head { margin-bottom: var(--gv-sp-16); }
 }
+
+/* ── ЛЕГАЛ ── */
+.gv-legal { padding-top: var(--gv-sp-32); padding-bottom: var(--gv-sp-32); border-top: 1px solid var(--gv-line); }
+.gv-legal-list { display: flex; flex-direction: column; gap: var(--gv-sp-16); padding-left: 18px; }
+.gv-legal-list li { font-family: var(--gv-font); font-size: 12px; line-height: 1.5; color: var(--gv-ink); opacity: 0.55; }
 
 /* ── FOOTER ── */
 .gv-footer {
