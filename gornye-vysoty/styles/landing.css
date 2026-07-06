@@ -88,7 +88,7 @@
 
 /* ── СЕКЦИЯ (обычный контентный блок, внешний отступ между секциями) ── */
 .gv-section { padding-top: var(--gv-sp-outer); padding-bottom: var(--gv-sp-outer); }
-.gv-section-title { margin-bottom: var(--gv-sp-32); }
+.gv-section-title { margin-bottom: var(--gv-sp-56); }
 .gv-section-desc { max-width: 60ch; margin-bottom: var(--gv-sp-32); opacity: 0.75; }
 
 /* ── КАЛЬКУЛЯТОР ИПОТЕКИ ── */
@@ -203,14 +203,14 @@
 .gv-catalog-col { display: flex; flex-direction: column; gap: var(--gv-sp-16); }
 .gv-catalog-feature { display: flex; align-items: center; gap: var(--gv-sp-16); }
 .gv-catalog-feature-icon {
-  width: 24px; height: 24px; flex-shrink: 0; border-radius: 6px;
+  width: 24px; height: 24px; flex-shrink: 0; border-radius: 0;
   font-size: 8px;
   background-size: cover; background-position: center;
 }
 .gv-catalog-footer { display: flex; align-items: center; justify-content: space-between; gap: var(--gv-sp-16); flex-wrap: wrap; }
 .gv-catalog-price-main { font-family: var(--gv-font); font-weight: 700; font-size: 24px; line-height: 32px; color: var(--gv-ink); }
-.gv-catalog-price-sub { font-family: var(--gv-font); font-size: 15px; color: var(--gv-ink); opacity: 0.55; margin-top: 4px; }
-.gv-catalog-actions { display: flex; gap: var(--gv-sp-16); flex-wrap: wrap; }
+.gv-catalog-price-sub { font-family: var(--gv-font); font-size: 15px; color: var(--gv-ink); opacity: 0.55; }
+.gv-catalog-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 
 @media (max-width: 860px) {
   .gv-catalog-card { grid-template-columns: 1fr; }
@@ -219,6 +219,57 @@
   .gv-catalog-footer { flex-direction: column; align-items: flex-start; }
   .gv-catalog-actions { flex-direction: column; width: 100%; }
   .gv-catalog-actions .gv-btn { width: 100%; }
+}
+
+/* ── РАЙОН ДЛЯ КОМФОРТНОЙ ЖИЗНИ ── */
+.gv-lifestyle-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gv-sp-24); }
+.gv-lifestyle-item { display: flex; flex-direction: column; gap: var(--gv-sp-16); }
+.gv-lifestyle-img { aspect-ratio: 16 / 10; border-radius: 20px; }
+.gv-lifestyle-caption { opacity: 0.85; }
+
+@media (max-width: 860px) {
+  .gv-lifestyle-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .gv-lifestyle-grid { grid-template-columns: 1fr; }
+}
+
+/* ── ПРЕИМУЩЕСТВА И НОВЫЕ МАРШРУТЫ ── */
+.gv-routes-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--gv-sp-32); }
+.gv-routes-nav { display: flex; gap: var(--gv-sp-8); }
+.gv-routes-arrow {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--gv-white); border: none; cursor: pointer;
+  font-family: var(--gv-font); font-size: 20px; color: var(--gv-ink);
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity 0.15s ease;
+}
+.gv-routes-arrow:hover { opacity: 0.7; }
+
+.gv-routes-track {
+  display: flex; gap: var(--gv-sp-16);
+  overflow-x: auto; scroll-snap-type: x mandatory;
+  scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  margin: 0 calc(-1 * var(--gv-side)); padding: 0 var(--gv-side);
+}
+.gv-routes-track::-webkit-scrollbar { display: none; }
+
+.gv-route-card {
+  flex: 0 0 auto; width: min(760px, 85vw); scroll-snap-align: start;
+  display: grid; grid-template-columns: 1fr 1fr;
+  background: var(--gv-white); border-radius: 24px; overflow: hidden;
+  min-height: 420px;
+}
+.gv-route-body {
+  padding: var(--gv-sp-32);
+  display: flex; flex-direction: column; justify-content: center; gap: var(--gv-sp-16);
+}
+.gv-route-img { height: 100%; }
+
+@media (max-width: 860px) {
+  .gv-route-card { grid-template-columns: 1fr; min-height: unset; width: 88vw; }
+  .gv-route-img { aspect-ratio: 4 / 3; }
+  .gv-routes-head { margin-bottom: var(--gv-sp-16); }
 }
 
 /* ── FOOTER ── */
