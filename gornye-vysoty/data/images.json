@@ -5,5 +5,9 @@
   "catalog-2k-1": "images/catalog-2k-1.webp",
   "catalog-3k-1": "images/catalog-3k-1.webp",
   "icon-mortgage-family": "images/icon-mortgage-family.svg",
-  "icon-renovation": "images/icon-renovation.svg"
+  "icon-renovation": "images/icon-renovation.svg",
+  "icon-cash-benefit": "images/icon-cash-benefit.svg",
+  "icon-mortgage-any": "images/icon-mortgage-any.svg",
+  "icon-svo-discount": "images/icon-svo-discount.svg",
+  "icon-salary-discount": "images/icon-salary-discount.svg"
 }

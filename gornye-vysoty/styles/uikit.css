@@ -121,8 +121,8 @@ img, video { display: block; max-width: 100%; }
 .gv-btn:hover { opacity: 0.85; }
 .gv-btn--outline { background: transparent; color: var(--gv-ink); box-shadow: inset 0 0 0 1.5px var(--gv-ink); }
 
-.gv-btn--s { font-size: 14px; line-height: 16px; padding: 10px 20px; }
-.gv-btn--m { font-size: 20px; line-height: 22px; padding: 16px 32px; }
+.gv-btn--s { font-size: 14px; line-height: 16px; padding: 16px 24px; }
+.gv-btn--m { font-size: 20px; line-height: 22px; padding: 16px 24px; }
 
 /* ── Инпуты ───────────────────────────────────────────────── */
 .gv-field { display: flex; flex-direction: column; gap: 6px; }

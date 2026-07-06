@@ -203,11 +203,12 @@
 .gv-catalog-col { display: flex; flex-direction: column; gap: var(--gv-sp-16); }
 .gv-catalog-feature { display: flex; align-items: center; gap: var(--gv-sp-16); }
 .gv-catalog-feature-icon {
-  width: 40px; height: 40px; flex-shrink: 0; border-radius: 10px;
-  font-size: 10px;
+  width: 24px; height: 24px; flex-shrink: 0; border-radius: 6px;
+  font-size: 8px;
+  background-size: cover; background-position: center;
 }
 .gv-catalog-footer { display: flex; align-items: center; justify-content: space-between; gap: var(--gv-sp-16); flex-wrap: wrap; }
-.gv-catalog-price-main { font-family: var(--gv-font); font-weight: 700; font-size: 28px; color: var(--gv-ink); }
+.gv-catalog-price-main { font-family: var(--gv-font); font-weight: 700; font-size: 24px; line-height: 32px; color: var(--gv-ink); }
 .gv-catalog-price-sub { font-family: var(--gv-font); font-size: 15px; color: var(--gv-ink); opacity: 0.55; margin-top: 4px; }
 .gv-catalog-actions { display: flex; gap: var(--gv-sp-16); flex-wrap: wrap; }
 
