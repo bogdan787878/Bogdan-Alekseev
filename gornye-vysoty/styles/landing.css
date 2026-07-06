@@ -91,8 +91,8 @@
 .gv-section { padding-top: var(--gv-sp-outer); padding-bottom: var(--gv-sp-outer); }
 
 /* ── БАННЕР ── */
-.gv-banner-section { padding-top: 0; }
-.gv-banner-img { width: 100%; aspect-ratio: 21 / 9; border-radius: 24px; }
+.gv-banner-section { padding-top: 0; background: var(--gv-bg); }
+.gv-banner-img { width: 100%; aspect-ratio: 16 / 9; border-radius: 24px; }
 @media (max-width: 860px) {
   .gv-banner-img { aspect-ratio: 4 / 3; }
 }
