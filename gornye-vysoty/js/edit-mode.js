@@ -27,10 +27,13 @@
     var input = document.createElement('input');
     input.type = 'file';
     input.accept = 'image/*';
+    input.style.position = 'fixed';
+    input.style.top = '-1000px';
     input.addEventListener('change', function () {
-      if (!input.files[0]) return;
-      uploadSlot(el.dataset.slot, input.files[0], el);
+      if (input.files[0]) uploadSlot(el.dataset.slot, input.files[0], el);
+      input.remove();
     });
+    document.body.appendChild(input);
     input.click();
   }
 

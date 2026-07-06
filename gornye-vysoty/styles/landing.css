@@ -23,6 +23,7 @@
 .gv-hero::after {
   content: '';
   position: absolute; inset: 0; z-index: 1;
+  pointer-events: none;
   background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.45) 100%);
 }
 .gv-hero-content {
