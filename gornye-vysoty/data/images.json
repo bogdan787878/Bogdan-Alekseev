@@ -1,3 +1,7 @@
 {
-  "hero": "images/hero.png"
+  "hero": "images/hero.png",
+  "catalog-studio-1": "images/catalog-studio-1.webp",
+  "catalog-1k-1": "images/catalog-1k-1.webp",
+  "catalog-2k-1": "images/catalog-2k-1.webp",
+  "catalog-3k-1": "images/catalog-3k-1.webp"
 }

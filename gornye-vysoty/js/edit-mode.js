@@ -45,10 +45,13 @@
       .then(function (r) { return r.json(); })
       .then(function (data) {
         if (data.ok) {
-          el.style.backgroundImage = 'url(' + data.path + '?v=' + Date.now() + ')';
-          el.style.backgroundSize = 'cover';
-          el.style.backgroundPosition = 'center';
-          el.textContent = '';
+          // слот может повторяться на странице (например, одинаковые иконки на всех карточках)
+          document.querySelectorAll('[data-slot="' + slot + '"]').forEach(function (target) {
+            target.style.backgroundImage = 'url(' + data.path + '?v=' + Date.now() + ')';
+            target.style.backgroundSize = 'cover';
+            target.style.backgroundPosition = 'center';
+            target.textContent = '';
+          });
           setStatus('Загружено, готово к публикации');
         } else {
           setStatus('Ошибка загрузки');

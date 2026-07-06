@@ -5,13 +5,14 @@
       Object.keys(map).forEach(function (slot) {
         var path = map[slot];
         if (!path) return;
-        var el = document.querySelector('[data-slot="' + slot + '"]');
-        if (!el) return;
-        el.style.backgroundImage = 'url(' + path + '?v=' + Date.now() + ')';
-        el.style.backgroundSize = 'cover';
-        el.style.backgroundPosition = 'center';
-        el.textContent = '';
-        el.classList.remove('gv-ph');
+        var els = document.querySelectorAll('[data-slot="' + slot + '"]');
+        els.forEach(function (el) {
+          el.style.backgroundImage = 'url(' + path + '?v=' + Date.now() + ')';
+          el.style.backgroundSize = 'cover';
+          el.style.backgroundPosition = 'center';
+          el.textContent = '';
+          el.classList.remove('gv-ph');
+        });
       });
     })
     .catch(function () {});
