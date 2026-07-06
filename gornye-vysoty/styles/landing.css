@@ -316,6 +316,12 @@
   .gv-routes-head { margin-bottom: var(--gv-sp-16); }
 }
 
+/* ── О ЗАСТРОЙЩИКЕ ── */
+#about { background: var(--gv-white); }
+.gv-about-title { margin-bottom: var(--gv-sp-16); }
+.gv-about-desc { max-width: 700px; margin-bottom: var(--gv-sp-56); opacity: 0.75; }
+.gv-about-img { width: 100%; aspect-ratio: 16 / 9; border-radius: 24px; }
+
 /* ── ЛЕГАЛ ── */
 .gv-legal { padding-top: var(--gv-sp-32); padding-bottom: var(--gv-sp-32); border-top: 1px solid var(--gv-line); }
 .gv-legal-list { display: flex; flex-direction: column; gap: var(--gv-sp-16); padding-left: 18px; }
