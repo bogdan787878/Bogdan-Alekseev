@@ -89,6 +89,13 @@
 
 /* ── СЕКЦИЯ (обычный контентный блок, внешний отступ между секциями) ── */
 .gv-section { padding-top: var(--gv-sp-outer); padding-bottom: var(--gv-sp-outer); }
+
+/* ── БАННЕР ── */
+.gv-banner-section { padding-top: 0; }
+.gv-banner-img { width: 100%; aspect-ratio: 21 / 9; border-radius: 24px; }
+@media (max-width: 860px) {
+  .gv-banner-img { aspect-ratio: 4 / 3; }
+}
 .gv-section-title { margin-bottom: var(--gv-sp-56); }
 .gv-section-desc { max-width: 60ch; margin-bottom: var(--gv-sp-32); opacity: 0.75; }
 
@@ -138,7 +145,7 @@
 .gv-mortgage-input:focus { outline: none; }
 
 .gv-mortgage-agree { display: flex; align-items: flex-start; gap: var(--gv-sp-8); }
-.gv-mortgage-agree input { margin-top: 3px; accent-color: var(--gv-accent); }
+.gv-mortgage-agree input { width: 22px; height: 22px; flex-shrink: 0; margin-top: 1px; accent-color: var(--gv-accent); cursor: pointer; }
 .gv-mortgage-agree a { color: var(--gv-ink); }
 
 .gv-mortgage-submit { width: 100%; }
@@ -279,6 +286,7 @@
   display: flex; align-items: center; justify-content: center;
   transition: opacity 0.15s ease;
 }
+#routes .gv-routes-arrow { background: var(--gv-white); }
 .gv-routes-arrow:hover { opacity: 0.7; }
 
 .gv-routes-track {
