@@ -161,7 +161,7 @@
         </div>
         <div class="gv-catalog-footer">
         <div class="gv-catalog-price">
-          <div class="gv-catalog-price-main">От 4,05 млн руб.*</div>
+          <div class="gv-catalog-price-main">От 5,6 млн руб.*</div>
           <div class="gv-catalog-price-sub">Платёж от 21 400 ₽ в месяц</div>
         </div>
           <div class="gv-catalog-actions">
@@ -222,7 +222,7 @@
         </div>
         <div class="gv-catalog-footer">
         <div class="gv-catalog-price">
-          <div class="gv-catalog-price-main">От 5,2 млн руб.*</div>
+          <div class="gv-catalog-price-main">От 7,7 млн руб.*</div>
           <div class="gv-catalog-price-sub">Платёж от 27 600 ₽ в месяц</div>
         </div>
           <div class="gv-catalog-actions">
@@ -283,7 +283,7 @@
         </div>
         <div class="gv-catalog-footer">
         <div class="gv-catalog-price">
-          <div class="gv-catalog-price-main">От 6,9 млн руб.*</div>
+          <div class="gv-catalog-price-main">От 11 млн руб.*</div>
           <div class="gv-catalog-price-sub">Платёж от 36 200 ₽ в месяц</div>
         </div>
           <div class="gv-catalog-actions">
@@ -385,31 +385,11 @@
         <span class="gv-filter-label">Комнат</span>
         <div class="gv-chip-row" id="filter-rooms">
           <button class="gv-chip is-active" data-rooms="all">Все</button>
-          <button class="gv-chip" data-rooms="1">Студия/1</button>
+          <button class="gv-chip" data-rooms="0">Студия</button>
+          <button class="gv-chip" data-rooms="1">1</button>
           <button class="gv-chip" data-rooms="2">2</button>
           <button class="gv-chip" data-rooms="3">3</button>
-          <button class="gv-chip" data-rooms="4">4+</button>
         </div>
-      </div>
-      <div class="gv-filter">
-        <span class="gv-filter-label">Площадь, м²</span>
-        <select class="gv-input" id="filter-area">
-          <option value="all">Любая</option>
-          <option value="0-40">до 40</option>
-          <option value="40-60">40—60</option>
-          <option value="60-80">60—80</option>
-          <option value="80-999">от 80</option>
-        </select>
-      </div>
-      <div class="gv-filter">
-        <span class="gv-filter-label">Бюджет, ₽</span>
-        <select class="gv-input" id="filter-price">
-          <option value="all">Любой</option>
-          <option value="0-4000000">до 4 млн</option>
-          <option value="4000000-6000000">4—6 млн</option>
-          <option value="6000000-8000000">6—8 млн</option>
-          <option value="8000000-999999999">от 8 млн</option>
-        </select>
       </div>
     </div>
 
@@ -433,32 +413,33 @@
         </div>
 
         <div class="gv-mortgage-field">
-          <div class="gv-mortgage-field-top">
-            <span class="gv-field-label">Стоимость, ₽</span>
-            <span class="gv-title" id="calc-price-out">3 700 000</span>
+          <span class="gv-field-label">Стоимость квартиры, ₽</span>
+          <div class="gv-mortgage-value-row">
+            <span class="gv-mortgage-value" id="calc-price-out">3 700 000 ₽</span>
           </div>
           <input class="gv-mortgage-range" type="range" id="calc-price" min="3700000" max="12000000" step="50000" value="3700000">
         </div>
 
         <div class="gv-mortgage-field">
-          <div class="gv-mortgage-field-top">
-            <span class="gv-field-label">Первый взнос, ₽</span>
-            <span class="gv-title" id="calc-down-out">1 000 000</span>
+          <span class="gv-field-label">Первый взнос, ₽</span>
+          <div class="gv-mortgage-value-row">
+            <span class="gv-mortgage-value" id="calc-down-out">1 000 000 ₽</span>
+            <span class="gv-mortgage-percent" id="calc-down-percent">27%</span>
           </div>
           <input class="gv-mortgage-range" type="range" id="calc-down" min="0" max="6000000" step="50000" value="1000000">
         </div>
 
         <div class="gv-mortgage-field">
-          <div class="gv-mortgage-field-top">
-            <span class="gv-field-label">Срок кредита</span>
-            <span class="gv-title" id="calc-term-out">1 год</span>
+          <span class="gv-field-label">Срок кредита</span>
+          <div class="gv-mortgage-value-row">
+            <span class="gv-mortgage-value" id="calc-term-out">1 год</span>
           </div>
           <input class="gv-mortgage-range" type="range" id="calc-term" min="1" max="30" step="1" value="1">
         </div>
 
-        <div class="gv-mortgage-field">
+        <div class="gv-mortgage-field gv-mortgage-field--phone">
           <span class="gv-field-label">Телефон</span>
-          <input class="gv-input" type="tel" id="calc-phone" placeholder="+7">
+          <input class="gv-mortgage-input" type="tel" id="calc-phone" placeholder="Введите номер">
         </div>
 
         <label class="gv-mortgage-agree">

@@ -32,6 +32,14 @@ IMAGES_MANIFEST = os.path.join(PROJECT_DIR, 'data', 'images.json')
 
 os.makedirs(IMAGES_DIR, exist_ok=True)
 
+# Цена — константа по количеству комнат (0 = студия), не вводится вручную
+PRICE_BY_ROOMS = {
+    0: 3700000,
+    1: 5600000,
+    2: 7700000,
+    3: 11000000,
+}
+
 
 # ── Работа с данными ──────────────────────────────────────────
 
@@ -130,15 +138,16 @@ ADMIN_PAGE = """<!DOCTYPE html>
     <label>Картинка планировки</label>
     <input type="file" name="image" accept="image/*" required>
     <label>Название</label>
-    <input type="text" name="title" placeholder="2-комн. 52,1 м²" required>
+    <input type="text" name="title" placeholder="2-комн. 58,4 м²" required>
     <label>Комнат</label>
-    <input type="number" name="rooms" min="0" max="10" required>
+    <select name="rooms" required>
+      <option value="0">Студия</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
     <label>Площадь, м²</label>
     <input type="number" name="area" step="0.1" required>
-    <label>Этаж</label>
-    <input type="number" name="floor" min="1" required>
-    <label>Цена, ₽</label>
-    <input type="number" name="price" step="1000" required>
     <button type="submit">Добавить планировку</button>
   </form>
 </div>
@@ -158,14 +167,14 @@ def render_plan_cards(plans):
         out.append(
             '<div class="plan">'
             '<img src="/{img}" alt="">'
-            '<div class="meta"><b>{title}</b><br>{area} м² · {floor} эт. · {price} ₽</div>'
+            '<div class="meta"><b>{title}</b><br>{area} м² · {price} ₽</div>'
             '<form method="POST" action="/admin/delete" style="margin:0;">'
             '<input type="hidden" name="id" value="{id}">'
             '<button class="danger" type="submit" onclick="return confirm(\'Удалить {id}?\')">Удалить</button>'
             '</form>'
             '</div>'.format(
                 img=img, title=p.get('title', ''), area=p.get('area', ''),
-                floor=p.get('floor', ''), price=p.get('price', 0), id=p.get('id', '')
+                price=p.get('price', 0), id=p.get('id', '')
             )
         )
     return '\n'.join(out) or '<p style="opacity:0.5">Пока нет планировок</p>'
@@ -289,14 +298,14 @@ class Handler(BaseHTTPRequestHandler):
         with open(fpath, 'wb') as f:
             f.write(image_field.file.read())
 
+        rooms = int(form.getvalue('rooms', 0))
         entry = {
             'id': pid,
             'image': 'images/planirovki/' + filename,
             'title': form.getvalue('title', ''),
-            'rooms': int(form.getvalue('rooms', 0)),
+            'rooms': rooms,
             'area': float(form.getvalue('area', 0)),
-            'floor': int(form.getvalue('floor', 0)),
-            'price': int(float(form.getvalue('price', 0))),
+            'price': PRICE_BY_ROOMS.get(rooms, 0),
         }
         plans.append(entry)
         save_json(DATA_FILE, plans)

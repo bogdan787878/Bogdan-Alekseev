@@ -85,35 +85,48 @@
 
 /* ── ПОДБОР ИПОТЕКИ ── */
 .gv-mortgage { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gv-sp-32); align-items: stretch; }
-.gv-mortgage-form { display: flex; flex-direction: column; gap: var(--gv-sp-24); }
+.gv-mortgage-form { display: flex; flex-direction: column; gap: var(--gv-sp-16); }
 
 .gv-mortgage-tabs { gap: var(--gv-sp-8); }
 .gv-chip--dark { background: var(--gv-ink); color: var(--gv-white); }
 .gv-chip--dark.is-active { background: var(--gv-ink); color: var(--gv-white); }
 
 .gv-mortgage-field {
-  background: var(--gv-white); border-radius: 12px;
-  padding: 14px 16px;
-  display: flex; flex-direction: column; gap: var(--gv-sp-8);
+  background: var(--gv-bg); border-radius: 20px;
+  padding: 16px 16px 0px;
+  display: flex; flex-direction: column; gap: 4px;
 }
+.gv-mortgage-field--phone { padding: 16px; }
 .gv-mortgage-field-top { display: flex; flex-direction: column; gap: 4px; }
+
+.gv-mortgage-field .gv-field-label { font-size: 14px; line-height: 16px; }
+.gv-mortgage-value-row { display: flex; align-items: baseline; justify-content: space-between; }
+.gv-mortgage-value { font-family: var(--gv-font); font-weight: 500; font-size: 16px; line-height: 20px; color: var(--gv-ink); }
+.gv-mortgage-percent { font-family: var(--gv-font); font-size: 14px; color: var(--gv-ink); opacity: 0.4; }
 
 .gv-mortgage-range {
   -webkit-appearance: none; appearance: none;
-  width: 100%; height: 4px; border-radius: 100px;
-  background: rgba(58,73,81,0.15);
+  width: 100%; height: 2px; border-radius: 0;
+  background: var(--gv-ink);
+  margin-top: 12px;
   cursor: pointer;
 }
 .gv-mortgage-range::-webkit-slider-thumb {
   -webkit-appearance: none; appearance: none;
-  width: 18px; height: 18px; border-radius: 50%;
-  background: var(--gv-accent); border: 3px solid var(--gv-white);
-  box-shadow: 0 0 0 1px var(--gv-accent);
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--gv-white); border: 2px solid var(--gv-ink);
 }
 .gv-mortgage-range::-moz-range-thumb {
-  width: 18px; height: 18px; border-radius: 50%; border: 3px solid var(--gv-white);
-  background: var(--gv-accent); box-shadow: 0 0 0 1px var(--gv-accent);
+  width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--gv-ink);
+  background: var(--gv-white);
 }
+
+.gv-mortgage-input {
+  font-family: var(--gv-font); font-weight: 500; font-size: 16px; line-height: 20px;
+  color: var(--gv-ink); background: transparent; border: none; padding: 0; width: 100%;
+}
+.gv-mortgage-input::placeholder { color: var(--gv-ink); opacity: 0.4; }
+.gv-mortgage-input:focus { outline: none; }
 
 .gv-mortgage-agree { display: flex; align-items: flex-start; gap: var(--gv-sp-8); }
 .gv-mortgage-agree input { margin-top: 3px; accent-color: var(--gv-accent); }
@@ -158,7 +171,7 @@
   display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gv-sp-16);
 }
 .gv-plan-card {
-  background: var(--gv-white); border-radius: 20px; overflow: hidden;
+  background: var(--gv-bg); border-radius: 20px; overflow: hidden;
   display: flex; flex-direction: column;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
@@ -168,6 +181,8 @@
 .gv-plan-card-title { font-weight: 700; font-size: 18px; }
 .gv-plan-card-meta { font-size: 14px; opacity: 0.6; }
 .gv-plan-card-price { font-weight: 700; font-size: 18px; color: var(--gv-accent); margin-top: var(--gv-sp-4); }
+.gv-plan-card-actions { display: flex; flex-direction: column; gap: 8px; margin-top: var(--gv-sp-8); }
+.gv-plan-card-actions .gv-btn { width: 100%; }
 
 .gv-plans-empty { padding: var(--gv-sp-56) 0; text-align: center; opacity: 0.5; }
 
@@ -176,7 +191,7 @@
 @media (max-width: 480px)  { .gv-plans-grid { grid-template-columns: 1fr; } }
 
 /* ── КАТАЛОГ КВАРТИР ── */
-#catalog { background: var(--gv-white); }
+#catalog, #calculator, #plans { background: var(--gv-white); }
 .gv-catalog-grid { display: flex; flex-direction: column; gap: var(--gv-sp-16); }
 .gv-catalog-card {
   display: grid; grid-template-columns: 42% 1fr;
@@ -267,7 +282,8 @@
   display: flex; gap: var(--gv-sp-16);
   overflow-x: auto; scroll-snap-type: x mandatory;
   scrollbar-width: none; -webkit-overflow-scrolling: touch;
-  margin: 0 calc(-1 * var(--gv-side)); padding: 0 var(--gv-side);
+  margin-right: calc(-1 * var(--gv-side));
+  padding-right: 0;
 }
 .gv-routes-track::-webkit-scrollbar { display: none; }
 

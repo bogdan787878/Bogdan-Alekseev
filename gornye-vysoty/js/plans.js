@@ -5,8 +5,6 @@
   var countEl = document.getElementById('plans-count');
   var emptyEl = document.getElementById('plans-empty');
   var roomsWrap = document.getElementById('filter-rooms');
-  var areaSelect = document.getElementById('filter-area');
-  var priceSelect = document.getElementById('filter-price');
 
   var allPlans = [];
   var activeRooms = 'all';
@@ -15,17 +13,8 @@
     return Math.round(n).toLocaleString('ru-RU') + ' ₽';
   }
 
-  function matchesRange(value, rangeStr) {
-    if (rangeStr === 'all') return true;
-    var parts = rangeStr.split('-');
-    var min = Number(parts[0]);
-    var max = Number(parts[1]);
-    return value >= min && value <= max;
-  }
-
   function matchesRooms(plan) {
     if (activeRooms === 'all') return true;
-    if (activeRooms === '4') return plan.rooms >= 4;
     return plan.rooms === Number(activeRooms);
   }
 
@@ -38,22 +27,19 @@
         img +
         '<div class="gv-plan-card-body">' +
           '<div class="gv-plan-card-title">' + plan.title + '</div>' +
-          '<div class="gv-plan-card-meta">' + plan.area + ' м² · ' + plan.floor + ' этаж</div>' +
+          '<div class="gv-plan-card-meta">' + plan.area + ' м²</div>' +
           '<div class="gv-plan-card-price">' + formatRub(plan.price) + '</div>' +
+          '<div class="gv-plan-card-actions">' +
+            '<a href="#calculator" class="gv-btn gv-btn--outline gv-btn--s">Рассчитать ипотеку</a>' +
+            '<a href="#" class="gv-btn gv-btn--s">Получить скидку</a>' +
+          '</div>' +
         '</div>' +
       '</article>'
     );
   }
 
   function render() {
-    var areaRange = areaSelect.value;
-    var priceRange = priceSelect.value;
-
-    var filtered = allPlans.filter(function (plan) {
-      return matchesRooms(plan) &&
-        matchesRange(plan.area, areaRange) &&
-        matchesRange(plan.price, priceRange);
-    });
+    var filtered = allPlans.filter(matchesRooms);
 
     countEl.textContent = 'Найдено планировок: ' + filtered.length;
     grid.innerHTML = filtered.map(cardHTML).join('');
@@ -69,8 +55,6 @@
     btn.classList.add('is-active');
     render();
   });
-  areaSelect.addEventListener('change', render);
-  priceSelect.addEventListener('change', render);
 
   fetch('data/planirovki.json')
     .then(function (r) { return r.json(); })
