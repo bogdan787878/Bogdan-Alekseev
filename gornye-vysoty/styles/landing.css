@@ -226,7 +226,7 @@
   position: absolute; inset: 0; opacity: 0; pointer-events: none;
   transition: opacity 0.3s ease;
 }
-.gv-catalog-slide.is-active { opacity: 1; pointer-events: auto; }
+.gv-catalog-slide.is-active { opacity: 1; pointer-events: auto; cursor: zoom-in; }
 .gv-catalog-dots {
   position: absolute; bottom: var(--gv-sp-16); left: 50%; transform: translateX(-50%); z-index: 2;
   display: flex; gap: 6px;
@@ -356,6 +356,37 @@
 .gv-legal { padding-top: var(--gv-sp-32); padding-bottom: var(--gv-sp-32); border-top: 1px solid var(--gv-line); }
 .gv-legal-list { display: flex; flex-direction: column; gap: var(--gv-sp-16); padding-left: 18px; }
 .gv-legal-list li { font-family: var(--gv-font); font-size: 12px; line-height: 1.5; color: var(--gv-ink); opacity: 0.55; }
+
+/* ── ЛАЙТБОКС (галерея) ── */
+.gv-lightbox {
+  position: fixed; inset: 0; z-index: 9998;
+  background: rgba(0,0,0,0.85);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.gv-lightbox.is-open { opacity: 1; pointer-events: auto; }
+.gv-lightbox-img { max-width: 90vw; max-height: 85vh; border-radius: 12px; object-fit: contain; }
+.gv-lightbox-close {
+  position: absolute; top: 24px; right: 24px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(255,255,255,0.15); color: var(--gv-white);
+  border: none; font-size: 26px; line-height: 1; cursor: pointer;
+}
+.gv-lightbox-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 48px; height: 48px; border-radius: 50%;
+  background: rgba(255,255,255,0.15); color: var(--gv-white);
+  border: none; display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+}
+.gv-lightbox-prev { left: 24px; }
+.gv-lightbox-next { right: 24px; }
+@media (max-width: 640px) {
+  .gv-lightbox-close { top: 12px; right: 12px; }
+  .gv-lightbox-prev { left: 8px; }
+  .gv-lightbox-next { right: 8px; }
+}
 
 /* ── FOOTER ── */
 .gv-footer {
