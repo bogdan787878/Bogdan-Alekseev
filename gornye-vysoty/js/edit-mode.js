@@ -5,6 +5,7 @@
 
   function init() {
     document.querySelectorAll('[data-slot]').forEach(function (el) {
+      el.style.display = ''; // в режиме редактирования показываем даже пустые слоты (например, кружки-аватарки)
       el.style.cursor = 'pointer';
       el.style.outline = '2px dashed rgba(58,73,81,0.5)';
       el.style.outlineOffset = '-2px';

@@ -15,6 +15,17 @@
           el.classList.remove('gv-ph');
         });
       });
+
+      // На публичном сайте (не в режиме редактирования) прячем пустые кружки-аватарки —
+      // видны только те, для которых реально загружена картинка. В самой админке
+      // (когда доступен /api/ping) оставляем все — чтобы было что кликнуть и загрузить.
+      fetch('/api/ping').then(function (r) { return r.ok; }).catch(function () { return false; })
+        .then(function (isEditMode) {
+          if (isEditMode) return;
+          document.querySelectorAll('.gv-mortgage-avatars [data-slot]').forEach(function (el) {
+            if (!el.style.backgroundImage) el.style.display = 'none';
+          });
+        });
     })
     .catch(function () {});
 })();
