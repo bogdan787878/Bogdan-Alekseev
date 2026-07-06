@@ -159,10 +159,12 @@
 @media (max-width: 480px)  { .gv-plans-grid { grid-template-columns: 1fr; } }
 
 /* ── КАТАЛОГ КВАРТИР ── */
+#catalog { background: var(--gv-white); }
 .gv-catalog-grid { display: flex; flex-direction: column; gap: var(--gv-sp-16); }
 .gv-catalog-card {
   display: grid; grid-template-columns: 42% 1fr;
   background: var(--gv-white); border-radius: 24px; overflow: hidden;
+  border: 1px solid var(--gv-line);
 }
 .gv-catalog-media { position: relative; background: var(--gv-white); }
 .gv-catalog-badges {
@@ -193,7 +195,7 @@
 .gv-catalog-dot.is-active { background: var(--gv-white); box-shadow: 0 0 0 1px rgba(58,73,81,0.3); }
 
 .gv-catalog-body {
-  background: var(--gv-white);
+  background: var(--gv-bg);
   padding: var(--gv-sp-32);
   display: flex; flex-direction: column; justify-content: center; gap: var(--gv-sp-24);
 }
@@ -204,6 +206,7 @@
   width: 40px; height: 40px; flex-shrink: 0; border-radius: 10px;
   font-size: 10px;
 }
+.gv-catalog-footer { display: flex; align-items: center; justify-content: space-between; gap: var(--gv-sp-16); flex-wrap: wrap; }
 .gv-catalog-price-main { font-family: var(--gv-font); font-weight: 700; font-size: 28px; color: var(--gv-ink); }
 .gv-catalog-price-sub { font-family: var(--gv-font); font-size: 15px; color: var(--gv-ink); opacity: 0.55; margin-top: 4px; }
 .gv-catalog-actions { display: flex; gap: var(--gv-sp-16); flex-wrap: wrap; }
@@ -212,7 +215,8 @@
   .gv-catalog-card { grid-template-columns: 1fr; }
   .gv-catalog-slider { aspect-ratio: 4 / 3; }
   .gv-catalog-features { grid-template-columns: 1fr; }
-  .gv-catalog-actions { flex-direction: column; }
+  .gv-catalog-footer { flex-direction: column; align-items: flex-start; }
+  .gv-catalog-actions { flex-direction: column; width: 100%; }
   .gv-catalog-actions .gv-btn { width: 100%; }
 }
 
