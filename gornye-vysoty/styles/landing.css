@@ -224,7 +224,7 @@
 /* ── РАЙОН ДЛЯ КОМФОРТНОЙ ЖИЗНИ ── */
 .gv-lifestyle-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gv-sp-24); }
 .gv-lifestyle-item { display: flex; flex-direction: column; gap: var(--gv-sp-16); }
-.gv-lifestyle-img { aspect-ratio: 16 / 10; border-radius: 20px; }
+.gv-lifestyle-img { aspect-ratio: 4 / 3; border-radius: 20px; }
 .gv-lifestyle-caption { opacity: 0.85; }
 
 @media (max-width: 860px) {
@@ -235,7 +235,7 @@
 }
 
 /* ── ПРЕИМУЩЕСТВА И НОВЫЕ МАРШРУТЫ ── */
-.gv-routes-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--gv-sp-32); }
+.gv-routes-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--gv-sp-56); }
 .gv-routes-nav { display: flex; gap: var(--gv-sp-8); }
 .gv-routes-arrow {
   width: 48px; height: 48px; border-radius: 50%;
