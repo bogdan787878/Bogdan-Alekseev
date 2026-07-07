@@ -2,11 +2,31 @@
    Горные высоты — лендинг. Секции поверх uikit.css
    ============================================================ */
 
-/* ── HEADER (лого + телефон, поверх хиро) ── */
+/* ── HEADER (лого + меню + телефон, поверх хиро) ── */
 .gv-header {
   position: absolute; top: 0; left: 0; right: 0; z-index: 3;
-  display: flex; align-items: center; justify-content: center;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--gv-sp-16);
   padding: var(--gv-sp-24) var(--gv-side);
+}
+.gv-header-nav { display: flex; align-items: center; gap: var(--gv-sp-24); }
+.gv-header-nav a {
+  font-family: var(--gv-font); font-size: 15px; color: var(--gv-white);
+  text-decoration: none; opacity: 0.85; transition: opacity 0.15s ease;
+}
+.gv-header-nav a:hover { opacity: 1; }
+.gv-header-contact { display: flex; align-items: center; gap: var(--gv-sp-16); }
+.gv-header-phone {
+  font-family: var(--gv-font); font-weight: 600; font-size: 16px;
+  color: var(--gv-white); text-decoration: none; white-space: nowrap;
+}
+
+@media (max-width: 960px) {
+  .gv-header-nav { display: none; }
+}
+@media (max-width: 640px) {
+  .gv-header-phone { display: none; }
+  .gv-logo { width: 160px; height: 40px; }
 }
 
 /* ── HERO ── */
