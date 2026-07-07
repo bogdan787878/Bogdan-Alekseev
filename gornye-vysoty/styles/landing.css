@@ -27,6 +27,14 @@
   transition: color 0.25s ease;
 }
 .gv-header--scrolled .gv-header-phone { color: var(--gv-ink); }
+.gv-header--scrolled .gv-logo {
+  background-image: none !important;
+  -webkit-mask-image: var(--logo-url); mask-image: var(--logo-url);
+  -webkit-mask-size: contain; mask-size: contain;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  -webkit-mask-position: center; mask-position: center;
+  background-color: #3A4951;
+}
 
 @media (max-width: 960px) {
   .gv-header-nav { display: none; }
@@ -279,7 +287,7 @@
 }
 .gv-catalog-footer { display: flex; align-items: center; justify-content: space-between; gap: var(--gv-sp-16); flex-wrap: wrap; }
 .gv-catalog-price-main { font-family: var(--gv-font); font-weight: 700; font-size: 24px; line-height: 32px; color: var(--gv-ink); }
-.gv-catalog-price-sub { font-family: var(--gv-font); font-size: 15px; color: var(--gv-ink); opacity: 0.55; }
+.gv-catalog-price-sub { font-family: var(--gv-font); font-size: 15px; color: #006E92; }
 .gv-catalog-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 
 @media (max-width: 860px) {

@@ -7,12 +7,15 @@
         if (!path) return;
         var els = document.querySelectorAll('[data-slot="' + slot + '"]');
         els.forEach(function (el) {
-          el.style.backgroundImage = 'url(' + path + '?v=' + Date.now() + ')';
+          var url = 'url(' + path + '?v=' + Date.now() + ')';
+          el.style.backgroundImage = url;
           el.style.backgroundSize = el.dataset.fit === 'contain' ? 'contain' : 'cover';
           el.style.backgroundRepeat = 'no-repeat';
           el.style.backgroundPosition = 'center';
           el.textContent = '';
           el.classList.remove('gv-ph');
+          // для лого — та же картинка доступна как маска (используется для перекраски на белом хедере)
+          if (slot === 'logo') el.style.setProperty('--logo-url', url);
         });
       });
 
