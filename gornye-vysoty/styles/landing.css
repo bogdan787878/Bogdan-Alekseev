@@ -27,14 +27,16 @@
   transition: color 0.25s ease;
 }
 .gv-header--scrolled .gv-header-phone { color: var(--gv-ink); }
-.gv-header--scrolled .gv-logo {
-  background-image: none !important;
-  -webkit-mask-image: var(--logo-url); mask-image: var(--logo-url);
-  -webkit-mask-size: contain; mask-size: contain;
-  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
-  -webkit-mask-position: center; mask-position: center;
+.gv-logo-tint {
+  position: absolute; inset: 0;
   background-color: #3A4951;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s ease;
+  mask-size: contain; -webkit-mask-size: contain;
+  mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat;
+  mask-position: center; -webkit-mask-position: center;
 }
+.gv-header--scrolled .gv-logo-tint { opacity: 1; }
 
 @media (max-width: 960px) {
   .gv-header-nav { display: none; }

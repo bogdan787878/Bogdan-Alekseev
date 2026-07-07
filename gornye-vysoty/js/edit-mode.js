@@ -47,13 +47,24 @@
       .then(function (r) { return r.json(); })
       .then(function (data) {
         if (data.ok) {
+          var url = 'url(' + data.path + '?v=' + Date.now() + ')';
           // слот может повторяться на странице (например, одинаковые иконки на всех карточках)
           document.querySelectorAll('[data-slot="' + slot + '"]').forEach(function (target) {
-            target.style.backgroundImage = 'url(' + data.path + '?v=' + Date.now() + ')';
+            target.style.backgroundImage = url;
             target.style.backgroundSize = target.dataset.fit === 'contain' ? 'contain' : 'cover';
             target.style.backgroundRepeat = 'no-repeat';
             target.style.backgroundPosition = 'center';
-            target.textContent = '';
+            // убираем только текстовый плейсхолдер, не трогая дочерние элементы (например, .gv-logo-tint)
+            Array.prototype.slice.call(target.childNodes).forEach(function (node) {
+              if (node.nodeType === 3) target.removeChild(node);
+            });
+            if (slot === 'logo') {
+              var tint = target.querySelector('.gv-logo-tint');
+              if (tint) {
+                tint.style.maskImage = url;
+                tint.style.webkitMaskImage = url;
+              }
+            }
           });
           setStatus('Загружено, готово к публикации');
         } else {

@@ -1,4 +1,12 @@
 (function () {
+  // Удаляет только текстовые узлы (плейсхолдер вроде "фото"/"лого"),
+  // не трогая дочерние элементы (например, .gv-logo-tint внутри лого).
+  function clearPlaceholderText(el) {
+    Array.prototype.slice.call(el.childNodes).forEach(function (node) {
+      if (node.nodeType === 3) el.removeChild(node);
+    });
+  }
+
   fetch('data/images.json')
     .then(function (r) { return r.ok ? r.json() : {}; })
     .then(function (map) {
@@ -12,10 +20,16 @@
           el.style.backgroundSize = el.dataset.fit === 'contain' ? 'contain' : 'cover';
           el.style.backgroundRepeat = 'no-repeat';
           el.style.backgroundPosition = 'center';
-          el.textContent = '';
+          clearPlaceholderText(el);
           el.classList.remove('gv-ph');
-          // для лого — та же картинка доступна как маска (используется для перекраски на белом хедере)
-          if (slot === 'logo') el.style.setProperty('--logo-url', url);
+          // для лого — та же картинка используется как маска на оверлее (перекраска на белом хедере)
+          if (slot === 'logo') {
+            var tint = el.querySelector('.gv-logo-tint');
+            if (tint) {
+              tint.style.maskImage = url;
+              tint.style.webkitMaskImage = url;
+            }
+          }
         });
       });
 
