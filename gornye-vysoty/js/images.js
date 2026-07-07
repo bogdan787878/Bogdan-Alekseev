@@ -16,14 +16,42 @@
         });
       });
 
-      // На публичном сайте (не в режиме редактирования) прячем пустые кружки-аватарки —
-      // видны только те, для которых реально загружена картинка. В самой админке
-      // (когда доступен /api/ping) оставляем все — чтобы было что кликнуть и загрузить.
+      // На публичном сайте (не в режиме редактирования) прячем пустые кружки-аватарки
+      // и пустые слайды/точки в слайдере каталога — видно только то, что реально загружено.
+      // В самой админке (когда доступен /api/ping) оставляем всё — чтобы было что загрузить.
       fetch('/api/ping').then(function (r) { return r.ok; }).catch(function () { return false; })
         .then(function (isEditMode) {
           if (isEditMode) return;
+
           document.querySelectorAll('.gv-mortgage-avatars [data-slot]').forEach(function (el) {
             if (!el.style.backgroundImage) el.style.display = 'none';
+          });
+
+          document.querySelectorAll('.gv-catalog-card').forEach(function (card) {
+            var slides = card.querySelectorAll('.gv-catalog-slide');
+            var dots = card.querySelectorAll('.gv-catalog-dot');
+            var visibleCount = 0;
+            slides.forEach(function (slide, i) {
+              if (slide.style.backgroundImage) {
+                visibleCount++;
+              } else {
+                slide.style.display = 'none';
+                if (dots[i]) dots[i].style.display = 'none';
+              }
+            });
+            // если активный слайд оказался скрыт — активируем первый видимый
+            var activeSlide = card.querySelector('.gv-catalog-slide.is-active');
+            if (activeSlide && activeSlide.style.display === 'none') {
+              for (var i = 0; i < slides.length; i++) {
+                if (slides[i].style.display !== 'none') {
+                  slides.forEach(function (s, j) { s.classList.toggle('is-active', j === i); });
+                  dots.forEach(function (d, j) { d.classList.toggle('is-active', j === i); });
+                  break;
+                }
+              }
+            }
+            var dotsWrap = card.querySelector('.gv-catalog-dots');
+            if (dotsWrap && visibleCount <= 1) dotsWrap.style.display = 'none';
           });
         });
     })

@@ -2,24 +2,31 @@
    Горные высоты — лендинг. Секции поверх uikit.css
    ============================================================ */
 
-/* ── HEADER (лого + меню + телефон, поверх хиро) ── */
+/* ── HEADER (лого по центру, меню + телефон по бокам, всегда закреплён) ── */
 .gv-header {
-  position: absolute; top: 0; left: 0; right: 0; z-index: 3;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
   display: flex; align-items: center; justify-content: space-between;
   gap: var(--gv-sp-16);
   padding: var(--gv-sp-24) var(--gv-side);
+  background: transparent;
+  transition: background 0.25s ease;
 }
+.gv-header--scrolled { background: var(--gv-white); box-shadow: 0 1px 0 var(--gv-line); }
+.gv-header .gv-logo { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 .gv-header-nav { display: flex; align-items: center; gap: var(--gv-sp-24); }
 .gv-header-nav a {
   font-family: var(--gv-font); font-size: 15px; color: var(--gv-white);
-  text-decoration: none; opacity: 0.85; transition: opacity 0.15s ease;
+  text-decoration: none; opacity: 0.85; transition: opacity 0.15s ease, color 0.25s ease;
 }
 .gv-header-nav a:hover { opacity: 1; }
+.gv-header--scrolled .gv-header-nav a { color: var(--gv-ink); }
 .gv-header-contact { display: flex; align-items: center; gap: var(--gv-sp-16); }
 .gv-header-phone {
   font-family: var(--gv-font); font-weight: 600; font-size: 16px;
   color: var(--gv-white); text-decoration: none; white-space: nowrap;
+  transition: color 0.25s ease;
 }
+.gv-header--scrolled .gv-header-phone { color: var(--gv-ink); }
 
 @media (max-width: 960px) {
   .gv-header-nav { display: none; }
@@ -407,6 +414,9 @@
   .gv-lightbox-prev { left: 8px; }
   .gv-lightbox-next { right: 8px; }
 }
+
+/* якорные ссылки в шапке не должны прятать заголовок секции под фиксированным хедером */
+section[id], footer[id] { scroll-margin-top: 100px; }
 
 /* ── FOOTER ── */
 .gv-footer {
