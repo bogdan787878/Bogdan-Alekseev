@@ -4,9 +4,9 @@
 Запуск: python3 admin/server.py
 Открыть: http://localhost:8092/
 
-Вставляешь текст под конкретную вакансию/компанию — получаешь ссылку вида
-https://alekseevdesign.ru/?for=<slug>, которая на лету подменяет блок
-"Кто я такой?" на главной странице (js/about-override.js).
+Вставляешь заголовок хиро под конкретную вакансию/компанию — получаешь ссылку вида
+https://alekseevdesign.ru/?for=<slug>, которая на лету подменяет заголовок и роль на
+странице, полностью убирает блок "Кто я такой?" и меняет CV-ссылку (js/about-override.js).
 
 Ничего не пушится, пока не нажмёшь "Опубликовать".
 """
@@ -101,17 +101,16 @@ PAGE = """<!DOCTYPE html>
 </style>
 </head>
 <body>
-<h1>Персонализация блока "Обо мне"</h1>
+<h1>Персонализация страницы под вакансию</h1>
+<p style="opacity:0.6; font-size:13px; max-width:560px;">На подменной странице (по ссылке ?for=) блок "Кто я такой?" убирается целиком, а теги "Design Director" меняются на "Senior Product Designer" — это происходит автоматически, настраивать не нужно.</p>
 
 <div class="card">
   <label>Компания / вакансия (для ссылки)</label>
   <input id="slug" placeholder="например: yandex">
-  <label>Заголовок в хиро (необязательно, HTML с &lt;br&gt; можно)</label>
-  <input id="heroTitle" placeholder="Дизайн-директор&lt;br&gt;с 9+ лет в AI, fintech&lt;br&gt;и digital products">
-  <label>Заголовок блока "Обо мне" (необязательно, по умолчанию "Кто я такой?")</label>
-  <input id="title" placeholder="Кто я такой?">
-  <label>Текст (абзацы — через пустую строку)</label>
-  <textarea id="text" placeholder="Первый абзац...\\n\\nВторой абзац..."></textarea>
+  <label>Заголовок в хиро (HTML с &lt;br&gt; можно)</label>
+  <input id="heroTitle" placeholder="Senior Product Designer&lt;br&gt;с 9+ лет в AI, fintech&lt;br&gt;и digital products">
+  <label>Ссылка на CV (необязательно, если под вакансию нужен отдельный файл)</label>
+  <input id="cvUrl" placeholder="https://docs.google.com/document/d/...">
   <button onclick="save()">Сохранить</button>
   <button class="secondary" onclick="publish()">Опубликовать</button>
   <div class="status" id="status"></div>
@@ -143,8 +142,7 @@ function edit(slug) {{
     var entry = data[slug];
     document.getElementById('slug').value = slug;
     document.getElementById('heroTitle').value = entry.heroTitle || '';
-    document.getElementById('title').value = entry.title || '';
-    document.getElementById('text').value = (entry.paragraphs || []).join('\\n\\n');
+    document.getElementById('cvUrl').value = entry.cvUrl || '';
   }});
 }}
 
@@ -156,10 +154,9 @@ function remove(slug) {{
 function save() {{
   var slug = document.getElementById('slug').value.trim();
   var heroTitle = document.getElementById('heroTitle').value.trim();
-  var title = document.getElementById('title').value.trim();
-  var text = document.getElementById('text').value;
-  if (!slug || !text.trim()) {{ setStatus('Заполни slug и текст'); return; }}
-  fetch('/api/save', {{ method: 'POST', headers: {{'Content-Type':'application/json'}}, body: JSON.stringify({{slug: slug, heroTitle: heroTitle, title: title, text: text}}) }})
+  var cvUrl = document.getElementById('cvUrl').value.trim();
+  if (!slug || !heroTitle) {{ setStatus('Заполни slug и заголовок хиро'); return; }}
+  fetch('/api/save', {{ method: 'POST', headers: {{'Content-Type':'application/json'}}, body: JSON.stringify({{slug: slug, heroTitle: heroTitle, cvUrl: cvUrl}}) }})
     .then(r => r.json()).then(data => {{
       setStatus(data.ok ? ('Сохранено. Ссылка: ' + SITE_URL + '/?for=' + data.slug) : 'Ошибка сохранения');
       loadList();
@@ -222,11 +219,9 @@ class Handler(BaseHTTPRequestHandler):
         if path == '/api/save':
             slug = slugify(payload.get('slug', ''))
             hero_title = (payload.get('heroTitle') or '').strip()
-            title = (payload.get('title') or '').strip()
-            text = payload.get('text', '')
-            paragraphs = [p.strip() for p in text.split('\n\n') if p.strip()]
+            cv_url = (payload.get('cvUrl') or '').strip()
             data = load_overrides()
-            data[slug] = {'heroTitle': hero_title, 'title': title, 'paragraphs': paragraphs}
+            data[slug] = {'heroTitle': hero_title, 'cvUrl': cv_url}
             save_overrides(data)
             self._json({'ok': True, 'slug': slug})
         elif path == '/api/delete':
