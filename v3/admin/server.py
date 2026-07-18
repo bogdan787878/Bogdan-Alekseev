@@ -145,6 +145,10 @@ class Handler(BaseHTTPRequestHandler):
                 if image_bytes[:4].startswith(magic[:len(magic)]):
                     ext = e
                     break
+            else:
+                head = image_bytes[:256].lstrip()
+                if head.startswith(b'<?xml') or head.startswith(b'<svg'):
+                    ext = '.svg'
 
             filename = slot + ext
             fpath = os.path.join(IMAGES_DIR, filename)

@@ -11,32 +11,42 @@
 
   // Применяет картинку или видео (webm) в слот. Используется и здесь,
   // и в edit-mode.js сразу после загрузки файла.
+  //
+  // Внутри .v3-inset-box (телефон-мокап с фиксированной формой) медиа
+  // заполняет слот с кропом (object-fit), как раньше.
+  // В обычных блоках (.v3-split-media / .v3-full-media без инсета) слот
+  // получает настоящий <img>/<video> — высота на вебе подстраивается под
+  // реальные пропорции медиа, без кропа под фиксированный aspect-ratio.
   function applyMediaSlot(el, url, fit) {
     clearPlaceholderText(el);
     el.classList.remove('v3-ph');
     var isVideo = /\.webm(\?|$)/i.test(url);
-    var existingVideo = el.querySelector(':scope > video.v3-slot-video');
-    if (existingVideo) existingVideo.remove();
-    if (isVideo) {
+    var existing = el.querySelector(':scope > .v3-slot-media');
+    if (existing) existing.remove();
+
+    if (el.closest('.v3-inset-box')) {
       el.style.backgroundImage = '';
       el.style.position = el.style.position || 'relative';
       el.style.overflow = 'hidden';
-      var video = document.createElement('video');
-      video.className = 'v3-slot-video';
-      video.src = url;
-      video.autoplay = true;
-      video.muted = true;
-      video.loop = true;
-      video.playsInline = true;
-      video.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;' +
+      var fill = document.createElement(isVideo ? 'video' : 'img');
+      fill.className = 'v3-slot-media';
+      if (isVideo) { fill.autoplay = true; fill.muted = true; fill.loop = true; fill.playsInline = true; }
+      fill.src = url;
+      fill.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;' +
         'object-fit:' + (fit === 'contain' ? 'contain' : 'cover') + ';border-radius:inherit;';
-      el.appendChild(video);
-    } else {
-      el.style.backgroundImage = 'url(' + url + ')';
-      el.style.backgroundSize = fit === 'contain' ? 'contain' : 'cover';
-      el.style.backgroundRepeat = 'no-repeat';
-      el.style.backgroundPosition = 'center';
+      el.appendChild(fill);
+      return;
     }
+
+    el.style.backgroundImage = '';
+    el.style.aspectRatio = '';
+    el.style.height = '';
+    el.classList.add('v3-slot-loaded');
+    var media = document.createElement(isVideo ? 'video' : 'img');
+    media.className = 'v3-slot-media';
+    if (isVideo) { media.autoplay = true; media.muted = true; media.loop = true; media.playsInline = true; }
+    media.src = url;
+    el.appendChild(media);
   }
   window.v3ApplyMediaSlot = applyMediaSlot;
 

@@ -42,6 +42,8 @@
   --v3-split-media-h-mobile: 640px; /* высота картинки в split на мобилке (без стики) */
   --v3-inset-media-w: 260px;       /* ширина инсет-медиа внутри серого блока */
   --v3-inset-media-ratio: 9 / 19.5; /* пропорции инсет-медиа (телефон) */
+  --v3-hero-icon-w: 100px;          /* иконка над заголовком в хиро (веб) */
+  --v3-hero-icon-w-mobile: 80px;    /* иконка над заголовком в хиро (мобилка) */
 
   /* ── Sticky ──
      Отступ сверху, на котором залипает элемент, и высота его "окна".
@@ -89,6 +91,7 @@ img, video { display: block; max-width: 100%; }
 .v3-h2 { font-family: var(--v3-font); font-weight: 600; font-size: 40px; line-height: 40px; letter-spacing: -0.06em; }
 .v3-h3 { font-family: var(--v3-font); font-weight: 600; font-size: 32px; line-height: 32px; letter-spacing: -0.06em; }
 .v3-body-l { font-family: var(--v3-font); font-weight: 400; font-size: 24px; line-height: 28px; letter-spacing: -0.04em; }
+.v3-body-l2 { font-family: var(--v3-font); font-weight: 400; font-size: 20px; line-height: 24px; letter-spacing: -0.04em; }
 .v3-caption { font-family: var(--v3-font); font-weight: 400; font-size: 16px; line-height: 16px; }
 .v3-btn-text { font-family: var(--v3-font); font-weight: 500; font-size: 20px; line-height: 20px; }
 
@@ -136,6 +139,20 @@ img, video { display: block; max-width: 100%; }
 .v3-case-hero-desc { max-width: 62ch; color: var(--v3-primary-100); }
 .v3-case-hero-head .v3-tags { justify-content: center; }
 
+/* Иконка над заголовком — опциональная. Если картинка не загружена, в
+   финальной версии не показывается и не занимает места в лэйауте
+   (скрыта по умолчанию; видна только в режиме редактирования — см.
+   edit-mode.js — либо когда медиа реально загружено). */
+.v3-hero-icon.v3-ph {
+  display: none;
+  width: var(--v3-hero-icon-w); height: var(--v3-hero-icon-w);
+  flex: 0 0 auto;
+  border-radius: var(--v3-radius);
+}
+@media (max-width: 640px) {
+  .v3-hero-icon.v3-ph { width: var(--v3-hero-icon-w-mobile); height: var(--v3-hero-icon-w-mobile); }
+}
+
 /* ── БЛОК: текст + картинка по горизонтали ──
    Слева текстовая колонка (--v3-col-narrow), справа картинка (--v3-col-wide,
    --v3-col-wide-tablet на планшете), зазор между ними --v3-inner.
@@ -156,6 +173,14 @@ img, video { display: block; max-width: 100%; }
 .v3-split-media > [data-slot] {
   width: 100%; height: auto; aspect-ratio: var(--v3-split-media-ratio);
   border-radius: var(--v3-radius);
+}
+/* Реальная картинка/видео внутри слота (после загрузки) — на вебе высота
+   блока подстраивается под собственные пропорции медиа, без кропа под
+   фиксированный aspect-ratio (тот применяется только к плейсхолдеру). */
+.v3-slot-media { display: block; width: 100%; height: auto; border-radius: inherit; }
+@media (min-width: 861px) {
+  .v3-split-media .v3-slot-media,
+  .v3-split-media > [data-slot].v3-slot-loaded { aspect-ratio: auto; height: auto; }
 }
 
 /* Sticky-модификатор: текст залипает у верхнего края (на уровне первой
@@ -207,6 +232,9 @@ img, video { display: block; max-width: 100%; }
 .v3-full-media { padding: 0 var(--v3-side-media); }
 .v3-full-media img, .v3-full-media video,
 .v3-full-media > [data-slot] { width: 100%; height: auto; border-radius: var(--v3-radius); background: none; }
+@media (min-width: 641px) {
+  .v3-full-media > [data-slot].v3-slot-loaded { height: auto; }
+}
 
 @media (max-width: 640px) {
   .v3-full-media {
