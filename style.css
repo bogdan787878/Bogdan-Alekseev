@@ -1,9 +1,0 @@
-/* Entry point — imports all UI modules */
-@import url('styles/tokens.css');
-@import url('styles/base.css');
-@import url('styles/buttons.css');
-@import url('styles/tags.css');
-@import url('styles/cards.css');
-@import url('styles/layout.css');
-@import url('styles/effects.css');
-@import url('styles/responsive.css');
