@@ -325,7 +325,7 @@ img, video { display: block; max-width: 100%; }
 }
 .v3-cursor.v3-cursor--visible { opacity: 1; }
 @media (min-width: 861px) {
-  .v3-project { cursor: none; }
+  .v3-project .v3-split-media { cursor: none; }
 }
 @media (max-width: 860px) {
   .v3-cursor { display: none; }

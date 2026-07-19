@@ -1,5 +1,5 @@
 (function () {
-  var targets = document.querySelectorAll('.v3-project');
+  var targets = document.querySelectorAll('.v3-project .v3-split-media');
   if (!targets.length) return;
 
   var cursor = document.createElement('div');
