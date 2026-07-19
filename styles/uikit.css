@@ -1,0 +1,728 @@
+/* ============================================================
+   Портфолио v3 — UI-kit. Источник правды для цветов, типографики,
+   отступов и размеров блоков — всё через токены (:root).
+   Секции/страницы стилизуются поверх этого файла, значения нигде
+   не хардкодятся повторно — только меняем токен.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600&display=swap');
+
+:root {
+  /* ── Цвета ── */
+  --v3-primary-100: #28268B;
+  --v3-primary-50:  #8D8CBF;
+  --v3-bg-1: #F3F4F6;
+  --v3-bg-2: #E5E7EB;
+  --v3-white: #FFFFFF;
+
+  --v3-font: 'Fira Sans Extra Condensed', sans-serif;
+
+  /* ── Отступы (веб) ──
+     Боковой у текстовых блоков — 80px, у блоков только с картинкой — 16px.
+     Внешний (между блоками сверху/снизу) — 80px.
+     Внутренний базовый (гориз/вертик внутри блока) — 32px.
+     Внутренний между текстами — 24px. */
+  --v3-side: 80px;
+  --v3-side-media: 16px;
+  --v3-outer: 80px;
+  --v3-inner: 32px;
+  --v3-inner-text: 24px;
+  --v3-btn-py: 24px;
+  --v3-btn-px: 40px;
+  --v3-tag-gap: 8px;
+  --v3-tag-py: 8px;
+
+  /* ── Размеры блоков ── */
+  --v3-radius: 12px;
+  --v3-col-narrow: 448px;   /* левая колонка в split/text-block */
+  --v3-col-wide: 800px;     /* правая колонка на десктопе */
+  --v3-col-wide-tablet: 640px; /* правая колонка на планшете */
+  --v3-full-media-h-mobile: 340px;
+  --v3-split-media-ratio: 4 / 3;   /* пропорции картинки в split на десктопе/планшете */
+  --v3-split-media-h-mobile: 640px; /* высота картинки в split на мобилке (без стики) */
+  --v3-inset-media-w: 260px;       /* ширина инсет-медиа внутри серого блока */
+  --v3-inset-media-ratio: 9 / 19.5; /* пропорции инсет-медиа (телефон) */
+  --v3-hero-icon-w: 100px;          /* иконка над заголовком в хиро (веб) */
+  --v3-hero-icon-w-mobile: 80px;    /* иконка над заголовком в хиро (мобилка) */
+  --v3-metric-gap: 8px;             /* зазор между карточками метрик */
+  --v3-metric-p: 24px;              /* паддинг внутри карточки метрики */
+  --v3-about-photo-h: 640px;        /* высота фото "Обо мне" (веб) */
+  --v3-book-h: 413px;               /* высота обложки книги (веб) */
+
+  /* ── Sticky ──
+     Отступ сверху, на котором залипает элемент, и высота его "окна".
+     --v3-header-h — высота фиксированного хедера (.v3-header), чтобы
+     залипающий текст не уезжал под него. */
+  --v3-header-h: 80px;
+  --v3-sticky-gap: 24px;
+  --v3-sticky-top: calc(var(--v3-header-h) + var(--v3-sticky-gap));
+}
+
+@media (max-width: 640px) {
+  :root {
+    /* ── Отступы (мобилка) ── */
+    --v3-side: 16px;
+    --v3-side-media: 16px;
+    --v3-outer: 56px;
+    --v3-inner: 32px;
+    --v3-inner-text: 16px;
+    --v3-btn-py: 24px;
+    --v3-btn-px: 40px;
+    --v3-about-photo-h: 340px;
+    --v3-book-h: 243px;
+  }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+body {
+  background: var(--v3-bg-1);
+  color: var(--v3-primary-100);
+  font-family: var(--v3-font);
+}
+img, video { display: block; max-width: 100%; }
+
+.v3-wrap { width: 100%; padding: 0 var(--v3-side); }
+
+/* ── Плейсхолдер картинки/видео (data-slot) ──
+   Фон bg-2, пока не загружена картинка через локальную админку. */
+.v3-ph {
+  background: var(--v3-bg-2); display: flex; align-items: center; justify-content: center;
+  color: var(--v3-primary-50); font-family: var(--v3-font); font-size: 14px;
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+
+/* ── Типографика (веб) ── */
+.v3-h1 { font-family: var(--v3-font); font-weight: 600; font-size: 80px; line-height: 80px; letter-spacing: -0.06em; }
+.v3-h2 { font-family: var(--v3-font); font-weight: 600; font-size: 40px; line-height: 40px; letter-spacing: -0.06em; }
+.v3-h3 { font-family: var(--v3-font); font-weight: 600; font-size: 32px; line-height: 32px; letter-spacing: -0.06em; }
+.v3-body-l { font-family: var(--v3-font); font-weight: 400; font-size: 24px; line-height: 28px; letter-spacing: -0.04em; }
+.v3-body-l2 { font-family: var(--v3-font); font-weight: 400; font-size: 20px; line-height: 24px; letter-spacing: -0.04em; }
+.v3-body-xl { font-family: var(--v3-font); font-weight: 400; font-size: 40px; line-height: 40px; letter-spacing: -0.06em; }
+.v3-caption { font-family: var(--v3-font); font-weight: 400; font-size: 16px; line-height: 16px; }
+.v3-btn-text { font-family: var(--v3-font); font-weight: 500; font-size: 20px; line-height: 20px; }
+
+@media (max-width: 640px) {
+  .v3-h1 br { display: none; }
+  .v3-h1 { font-size: 40px; line-height: 40px; }
+  .v3-h2 { font-size: 32px; line-height: 32px; }
+  .v3-h3 { font-size: 24px; line-height: 24px; }
+  .v3-body-l { font-size: 20px; line-height: 24px; }
+  .v3-body-xl { font-size: 24px; line-height: 24px; }
+  .v3-caption { font-size: 16px; line-height: 16px; }
+}
+
+/* ── Кнопка ── */
+.v3-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--v3-font); font-weight: 500; font-size: 20px; line-height: 20px;
+  padding: var(--v3-btn-py) var(--v3-btn-px);
+  background: var(--v3-primary-100); color: var(--v3-white);
+  border: none; border-radius: 100px; cursor: pointer;
+  text-decoration: none; white-space: nowrap;
+  transition: opacity 0.18s ease;
+}
+.v3-btn:hover { opacity: 0.85; }
+.v3-btn--outline { background: transparent; color: var(--v3-primary-100); box-shadow: inset 0 0 0 1.5px var(--v3-primary-100); }
+
+/* Ряд кнопок одинаковой ширины (= ширина самой широкой кнопки) —
+   grid с 1fr-колонками внутри контейнера по размеру контента. */
+.v3-btn-row {
+  display: inline-grid; grid-auto-flow: column; grid-auto-columns: 1fr;
+  gap: 8px;
+}
+.v3-btn-row .v3-btn {
+  width: 100%; background: var(--v3-white); color: var(--v3-primary-100);
+  box-shadow: none; padding-left: 28px; padding-right: 28px;
+}
+@media (max-width: 640px) {
+  .v3-btn-row { width: 100%; }
+}
+
+/* ── Тег ── */
+.v3-tags { display: flex; flex-wrap: wrap; gap: var(--v3-tag-gap); }
+.v3-tag {
+  display: inline-flex; align-items: center;
+  font-family: var(--v3-font); font-weight: 400; font-size: 16px; line-height: 16px;
+  padding: var(--v3-tag-py); border-radius: 100px;
+  background: var(--v3-white); color: var(--v3-primary-100);
+}
+
+/* ── Секция (внешние отступы сверху/снизу) ── */
+.v3-section { padding-top: var(--v3-outer); padding-bottom: var(--v3-outer); }
+
+/* ── ХИРО КЕЙСА (одинаковый для всех страниц-кейсов) ──
+   H1 + описание + теги по центру, ниже — картинка на всю ширину. */
+.v3-case-hero { padding-top: var(--v3-outer); padding-bottom: var(--v3-outer); }
+.v3-case-hero-head {
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: var(--v3-inner);
+  margin-bottom: var(--v3-outer);
+}
+.v3-case-hero-desc { max-width: 62ch; color: var(--v3-primary-100); }
+.v3-case-hero-head .v3-tags { justify-content: center; }
+
+/* ── ХИРО ГЛАВНОЙ ──
+   Фото + имя + роль + описание + кнопки, всё по центру. */
+.v3-home-hero {
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: var(--v3-inner-text);
+}
+.v3-home-hero .v3-hero-icon { width: 124px; height: 124px; border-radius: 100px; }
+.v3-home-hero-title { display: flex; flex-direction: column; gap: 0; }
+.v3-home-hero .v3-btn-row { margin-top: calc(56px - var(--v3-inner-text)); }
+@media (max-width: 640px) {
+  /* На мобилке кнопки в хиро скрыты — их роль выполняет общий
+     фиксированный .v3-mobile-cta (виден на всех страницах). */
+  .v3-home-hero .v3-btn-row { display: none; }
+}
+.v3-home-hero-desc { max-width: 62ch; color: var(--v3-primary-100); }
+
+/* Иконка над заголовком — опциональная. Если картинка не загружена, в
+   финальной версии не показывается и не занимает места в лэйауте
+   (скрыта по умолчанию; видна только в режиме редактирования — см.
+   edit-mode.js — либо когда медиа реально загружено). */
+.v3-hero-icon.v3-ph { display: none; }
+.v3-hero-icon {
+  width: var(--v3-hero-icon-w); height: var(--v3-hero-icon-w);
+  flex: 0 0 auto; overflow: hidden;
+  border-radius: var(--v3-radius);
+}
+.v3-hero-icon .v3-slot-media { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 640px) {
+  .v3-hero-icon { width: var(--v3-hero-icon-w-mobile); height: var(--v3-hero-icon-w-mobile); }
+}
+
+/* ── БЛОК: текст + картинка по горизонтали ──
+   Слева текстовая колонка (--v3-col-narrow), справа картинка (--v3-col-wide,
+   --v3-col-wide-tablet на планшете), зазор между ними --v3-inner.
+   На мобилке — просто сверху вниз. */
+.v3-split {
+  display: flex; align-items: flex-start; gap: var(--v3-inner);
+  padding: 0 var(--v3-side-media) 0 var(--v3-side);
+}
+.v3-split-text {
+  flex: 0 0 var(--v3-col-narrow); max-width: var(--v3-col-narrow);
+  display: flex; flex-direction: column; gap: var(--v3-inner-text);
+}
+
+/* Модификатор: карточка проекта — тот же .v3-split (не sticky), но
+   как ссылка на кейс: заголовок, описание, теги и иконка 100×100 слева,
+   картинка 800px справа. */
+.v3-project { text-decoration: none; color: inherit; }
+.v3-split-media {
+  flex: 1 1 auto; min-width: 0;
+  max-width: var(--v3-col-wide);
+}
+.v3-split-media img, .v3-split-media video,
+.v3-split-media > [data-slot] {
+  width: 100%; height: auto; aspect-ratio: var(--v3-split-media-ratio);
+  border-radius: var(--v3-radius);
+}
+/* Реальная картинка/видео внутри слота (после загрузки) — на вебе высота
+   блока подстраивается под собственные пропорции медиа, без кропа под
+   фиксированный aspect-ratio (тот применяется только к плейсхолдеру). */
+.v3-slot-media { display: block; width: 100%; height: auto; border-radius: inherit; }
+
+/* Шиммер-скелетон, пока видео не готово к проигрыванию (снимается сразу
+   после события loadeddata — см. images.js). */
+@keyframes v3-shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+.v3-shimmer {
+  background: linear-gradient(90deg, var(--v3-bg-2) 25%, var(--v3-bg-1) 50%, var(--v3-bg-2) 75%);
+  background-size: 200% 100%;
+  animation: v3-shimmer 1.4s ease-in-out infinite;
+}
+@media (min-width: 861px) {
+  .v3-split-media .v3-slot-media,
+  .v3-split-media > [data-slot].v3-slot-loaded { aspect-ratio: auto; height: auto; }
+}
+
+/* Sticky-модификатор: текст залипает у верхнего края (на уровне первой
+   картинки), пока правая колонка скроллится мимо обычным потоком. */
+.v3-split--sticky { align-items: flex-start; }
+.v3-split--sticky .v3-split-text {
+  position: sticky; top: var(--v3-sticky-top);
+  height: calc(100vh - var(--v3-sticky-top));
+  justify-content: flex-start;
+}
+.v3-split--sticky .v3-split-media {
+  display: flex; flex-direction: column; gap: var(--v3-inner);
+  padding: 0 0 14vh;
+}
+
+/* ── Инсет-медиа: внутри серого блока — картинка/видео фиксированной
+   ширины (--v3-inset-media-w), по центру. Серый блок остаётся во всю
+   ширину/высоту колонки (как обычный .v3-split-media), плейсхолдер
+   внутри — уже свои размеры, одинаковые на вебе и мобиле. */
+.v3-inset-box {
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--v3-bg-2); border-radius: var(--v3-radius);
+  aspect-ratio: var(--v3-split-media-ratio);
+}
+.v3-inset-box > [data-slot] {
+  width: var(--v3-inset-media-w); max-width: 100%; height: auto;
+  aspect-ratio: var(--v3-inset-media-ratio);
+  border-radius: var(--v3-radius);
+}
+/* Модификатор: веб-мокап вместо телефонного кадра (740×428) — точечно,
+   не трогает токены --v3-inset-media-w/--v3-inset-media-ratio, которыми
+   пользуются остальные инсет-блоки (телефон). */
+.v3-inset-box--web { aspect-ratio: 740 / 428; }
+.v3-inset-box--web > [data-slot] { width: 740px; aspect-ratio: 740 / 428; }
+/* Бейдж-тег в левом верхнем углу инсет-блока (например «Было» / «Стало») */
+.v3-inset-badge { position: absolute; top: 16px; left: 16px; z-index: 2; }
+@media (max-width: 860px) {
+  .v3-inset-box { aspect-ratio: unset; height: var(--v3-split-media-h-mobile); }
+  /* Веб-мокап на мобилке — высота по пропорциям (740×428), а не
+     фиксированные 640px, как у телефонного кадра */
+  .v3-inset-box.v3-inset-box--web { aspect-ratio: 740 / 428; height: auto; }
+}
+
+@media (max-width: 1080px) {
+  .v3-split-media { max-width: var(--v3-col-wide-tablet); }
+}
+@media (max-width: 860px) {
+  .v3-split { flex-direction: column; align-items: stretch; padding: 0 var(--v3-side); gap: var(--v3-inner); }
+  .v3-split-text { flex-basis: auto; max-width: none; }
+  .v3-split-media { max-width: none; }
+  .v3-split-media img, .v3-split-media video,
+  .v3-split-media > [data-slot] { height: var(--v3-split-media-h-mobile); aspect-ratio: unset; }
+  .v3-split--sticky .v3-split-text { position: static; height: auto; }
+  .v3-split--sticky .v3-split-media { padding: 0; }
+}
+
+/* Карточка проекта на вебе — боковые отступы 80px с обеих сторон (как у
+   остальных блоков кита), а не асимметричные --v3-side-media/--v3-side
+   у обычного .v3-split. На мобилке — картинка идёт первой и скроллится
+   горизонтально (как у .v3-full-media), текст ниже с мобильными отступами. */
+.v3-project { padding: 0 var(--v3-side); }
+@media (max-width: 860px) {
+  .v3-project .v3-split-media {
+    order: -1; max-width: none; margin: 0 calc(-1 * var(--v3-side));
+    height: var(--v3-full-media-h-mobile); overflow-x: auto; overflow-y: hidden;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    display: flex; align-items: stretch;
+  }
+  .v3-project .v3-split-media::-webkit-scrollbar { display: none; }
+  .v3-project .v3-split-media img, .v3-project .v3-split-media video,
+  .v3-project .v3-split-media > [data-slot] {
+    height: 100%; width: auto; max-width: none; flex: 0 0 auto; aspect-ratio: unset; margin: 0 var(--v3-side);
+  }
+}
+
+/* Кастомный курсор "Перейти" при наведении на карточку проекта (веб) —
+   круг следует за мышью вместо стандартного курсора. См. js/cursor.js. */
+.v3-cursor {
+  position: fixed; top: 0; left: 0; z-index: 9999;
+  width: 96px; height: 96px; border-radius: 50%;
+  background: #28268B; color: var(--v3-white);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--v3-font); font-weight: 500; font-size: 15px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.2s ease;
+  will-change: transform;
+}
+.v3-cursor.v3-cursor--visible { opacity: 1; }
+@media (min-width: 861px) {
+  .v3-project { cursor: none; }
+}
+@media (max-width: 860px) {
+  .v3-cursor { display: none; }
+}
+
+/* ── БЛОК: картинка на всю ширину ──
+   На мобилке — горизонтальный скролл, фиксированная высота --v3-full-media-h-mobile. */
+.v3-full-media { padding: 0 var(--v3-side-media); }
+.v3-full-media img, .v3-full-media video,
+.v3-full-media > [data-slot] { width: 100%; height: auto; border-radius: var(--v3-radius); background: none; }
+@media (min-width: 641px) {
+  .v3-full-media > [data-slot].v3-slot-loaded { height: auto; }
+}
+
+@media (max-width: 640px) {
+  .v3-full-media {
+    height: var(--v3-full-media-h-mobile); overflow-x: auto; overflow-y: hidden;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    display: flex; align-items: stretch;
+  }
+  .v3-full-media::-webkit-scrollbar { display: none; }
+  .v3-full-media img, .v3-full-media video,
+  .v3-full-media > [data-slot] {
+    height: 100%; width: auto; max-width: none; flex: 0 0 auto; aspect-ratio: unset;
+  }
+}
+
+/* Модификатор: точечно отключает горизонтальный скролл на мобилке —
+   картинка/видео занимает всю ширину блока (с учётом --v3-side-media),
+   высота считается по реальным пропорциям медиа, как на вебе. */
+@media (max-width: 640px) {
+  .v3-full-media--fit {
+    height: auto; overflow: visible; display: block;
+  }
+  .v3-full-media--fit img, .v3-full-media--fit video,
+  .v3-full-media--fit > [data-slot] {
+    width: 100%; height: auto; max-width: 100%; flex: none; aspect-ratio: var(--v3-split-media-ratio);
+    object-fit: cover;
+  }
+  .v3-full-media--fit > [data-slot].v3-slot-loaded { height: auto; aspect-ratio: auto; }
+}
+
+/* Утилиты показа/скрытия по брейкпоинту (например — раздельные
+   десктопная/мобильная версии одной и той же картинки). */
+@media (max-width: 640px) { .v3-hide-mobile { display: none !important; } }
+@media (min-width: 641px) { .v3-hide-desktop { display: none !important; } }
+
+/* ── БЛОК: текстовый (H3 слева / H2 + описание справа) ──
+   Те же пропорции колонок, что у .v3-split. */
+.v3-text-block {
+  display: flex; gap: var(--v3-inner);
+  padding: 0 var(--v3-side);
+}
+.v3-text-block-label { flex: 0 0 var(--v3-col-narrow); max-width: var(--v3-col-narrow); }
+.v3-text-block-content {
+  flex: 1 1 auto; min-width: 0; max-width: var(--v3-col-wide);
+  display: flex; flex-direction: column; gap: var(--v3-inner-text);
+}
+
+@media (max-width: 1080px) {
+  .v3-text-block-content { max-width: var(--v3-col-wide-tablet); }
+}
+@media (max-width: 860px) {
+  .v3-text-block { flex-direction: column; padding: 0 var(--v3-side); gap: var(--v3-inner-text); }
+  .v3-text-block-label { flex-basis: auto; max-width: none; }
+  .v3-text-block-content { max-width: none; }
+}
+
+/* Группа из нескольких .v3-text-block подряд (например Challenge/Solution) */
+.v3-text-block-group { display: flex; flex-direction: column; gap: var(--v3-inner); }
+
+/* ── БЛОК: заголовок + метрики ──
+   Тот же .v3-text-block (ярлык слева), справа вместо текста — карточки
+   с цифрами: большая цифра (H2) + подпись (caption). Количество карточек
+   произвольное (зависит от кейса), они просто переносятся по строкам. */
+.v3-text-block-content.v3-metrics {
+  flex-direction: row; flex-wrap: wrap; gap: var(--v3-metric-gap);
+}
+.v3-metric-card {
+  flex: 1 1 160px;
+  padding: var(--v3-metric-p);
+  background: var(--v3-bg-2);
+  border-radius: var(--v3-radius);
+  display: flex; flex-direction: column; gap: 8px;
+}
+
+/* ── КАРТОЧКИ: отзывы ──
+   Полноширинный ряд карточек (не привязан к узкой колонке контента) —
+   компания, цитата, автор с фото. Переносятся по строкам на мобилке. */
+.v3-testimonials {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  padding: 0 var(--v3-side);
+}
+.v3-testimonial-card {
+  flex: 1 1 320px;
+  padding: var(--v3-metric-p);
+  background: var(--v3-white);
+  border-radius: var(--v3-radius);
+  display: flex; flex-direction: column; gap: var(--v3-inner-text);
+}
+.v3-testimonial-company { color: var(--v3-primary-50); text-transform: uppercase; letter-spacing: 0.04em; }
+.v3-testimonial-author { display: flex; align-items: center; gap: 12px; margin-top: auto; }
+.v3-testimonial-avatar { width: 48px; height: 48px; border-radius: 100px; flex: 0 0 auto; overflow: hidden; }
+.v3-testimonial-author-name { color: var(--v3-primary-100); }
+
+/* Акцент внутри заголовка/текста — часть текста светлее основного цвета.
+   Может быть ссылкой (<a>) — без подчёркивания, с ним только на hover. */
+.v3-highlight { color: var(--v3-primary-50); }
+a.v3-highlight { text-decoration: none; }
+a.v3-highlight:hover { text-decoration: underline; }
+
+/* ── БЛОК: бенто-галерея картинок ──
+   Асимметричная сетка скриншотов/иллюстраций. Раскладка задаётся через
+   grid-template-areas — у каждой картинки свой именованный слот. */
+.v3-bento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 200px 220px 220px;
+  grid-template-areas:
+    "chart card1 card2 side1"
+    "phone union union side2"
+    "phone bars  bars  side2";
+  gap: var(--v3-inner);
+  padding: 0 var(--v3-side-media);
+}
+.v3-bento > [data-slot] { border-radius: var(--v3-radius); width: 100%; height: 100%; }
+.v3-bento-chart { grid-area: chart; }
+.v3-bento-card1 { grid-area: card1; }
+.v3-bento-card2 { grid-area: card2; }
+.v3-bento-side1 { grid-area: side1; }
+.v3-bento-phone { grid-area: phone; }
+.v3-bento-union { grid-area: union; }
+.v3-bento-bars  { grid-area: bars; }
+.v3-bento-side2 { grid-area: side2; }
+
+@media (max-width: 860px) {
+  .v3-bento {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 200px);
+    grid-template-areas:
+      "chart card1"
+      "chart card2"
+      "phone union"
+      "phone union"
+      "phone bars"
+      "side1 side2";
+  }
+}
+@media (max-width: 640px) {
+  .v3-bento {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 220px);
+    grid-template-areas:
+      "chart"
+      "card1"
+      "card2"
+      "phone"
+      "union"
+      "bars"
+      "side1"
+      "side2";
+  }
+}
+
+/* ── БЛОК: книжная полка ──
+   Заголовок + несколько горизонтально скроллящихся рядов обложек книг
+   фиксированного размера (портированный блок из первой версии портфолио). */
+.v3-books-title { margin-bottom: var(--v3-inner); }
+.v3-books-group { margin-bottom: var(--v3-inner); }
+.v3-books-group:last-child { margin-bottom: 0; }
+.v3-books-row {
+  display: flex; gap: 8px; overflow-x: auto; overflow-y: hidden; padding: 0 var(--v3-side) 4px;
+  scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+.v3-books-row::-webkit-scrollbar { display: none; }
+.v3-book { flex: 0 0 auto; width: 240px; }
+@media (max-width: 640px) {
+  .v3-book { width: 141px; }
+}
+.v3-book .v3-ph { width: 100%; border-radius: var(--v3-radius); }
+
+/* ── ФУТЕР ──
+   Тёмная плашка на всю ширину: слева пилюли-ссылки (иконка + название),
+   справа копирайт. На одинаковом футере на всех страницах. */
+.v3-footer {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+  gap: var(--v3-inner-text);
+  background: var(--v3-primary-100);
+  padding: 32px var(--v3-side);
+}
+.v3-footer-links { display: flex; gap: 4px; flex-wrap: wrap; }
+.v3-footer-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--v3-bg-1); border-radius: 100px; padding: 12px 20px 12px 10px;
+  text-decoration: none; color: var(--v3-primary-100);
+  transition: opacity 0.15s ease;
+}
+.v3-footer-link:hover { opacity: 0.8; }
+.v3-footer-icon { width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0; display: block; }
+.v3-footer-link-name { font-family: var(--v3-font); font-weight: 500; font-size: 16px; }
+.v3-footer-copy { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+.v3-footer-copy span { font-family: var(--v3-font); font-weight: 400; font-size: 14px; color: var(--v3-primary-50); }
+@media (max-width: 640px) {
+  .v3-footer { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .v3-footer-copy { align-items: flex-start; }
+}
+
+/* ── ХЕДЕР ──
+   Фиксированный сверху. На главной: по центру навигация (Проекты/Обо
+   мне/Книги), имя слева и кнопки CV/Telegram справа появляются после
+   скролла мимо хиро (класс .v3-header--scrolled — см. js/header.js).
+   На мобилке имя всегда слева, навигация и кнопки уходят в бургер-меню.
+   В кейсе — модификатор .v3-header--case: только кнопка "назад". */
+.v3-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+  background: var(--v3-bg-1);
+}
+.v3-header-inner {
+  position: relative;
+  height: 80px;
+  display: flex; align-items: center; justify-content: center;
+}
+.v3-header-name {
+  position: absolute; left: var(--v3-side);
+  font-family: var(--v3-font); font-weight: 500; font-size: 24px; line-height: 24px; letter-spacing: -0.06em; color: var(--v3-primary-100);
+  opacity: 0; visibility: hidden; transition: opacity 0.2s ease;
+  white-space: nowrap; text-decoration: none;
+}
+.v3-header--scrolled .v3-header-name:hover { opacity: 0.7; }
+.v3-header--scrolled .v3-header-name { opacity: 1; visibility: visible; }
+.v3-header-nav { display: flex; gap: var(--v3-inner); }
+.v3-header-nav a {
+  font-family: var(--v3-font); font-weight: 400; font-size: 20px; line-height: 20px; letter-spacing: -0.06em;
+  color: var(--v3-primary-100); text-decoration: none;
+}
+.v3-header-nav a:hover { opacity: 0.7; }
+.v3-header-actions {
+  position: absolute; right: var(--v3-side); display: flex; gap: 8px;
+  opacity: 0; visibility: hidden; transition: opacity 0.2s ease;
+}
+.v3-header--scrolled .v3-header-actions { opacity: 1; visibility: visible; }
+/* Кнопки в хедере — как в хиро (белая заливка), но компактнее */
+.v3-header-actions .v3-btn {
+  padding: 20px 16px;
+  font-size: 16px; line-height: 16px; font-weight: 500;
+  background: var(--v3-white); color: var(--v3-primary-100); box-shadow: none;
+}
+
+.v3-header-burger {
+  display: none; position: absolute; right: var(--v3-side);
+  width: 32px; height: 32px; background: none; border: none; cursor: pointer; padding: 0;
+  flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+}
+.v3-header-burger span { width: 20px; height: 2px; background: var(--v3-primary-100); display: block; }
+
+.v3-header-mobile-menu {
+  display: none; flex-direction: column; gap: var(--v3-inner-text);
+  padding: 0 var(--v3-side) var(--v3-inner);
+  background: var(--v3-bg-1);
+}
+.v3-header-mobile-menu a {
+  font-family: var(--v3-font); font-weight: 500; font-size: 20px;
+  color: var(--v3-primary-100); text-decoration: none;
+}
+.v3-header--menu-open .v3-header-mobile-menu { display: flex; }
+
+@media (max-width: 860px) {
+  .v3-header-inner { justify-content: space-between; }
+  .v3-header-name { position: static; opacity: 1; visibility: visible; }
+  .v3-header-nav { display: none; }
+  .v3-header-actions { display: none; }
+  .v3-header-burger { display: flex; position: static; }
+}
+
+/* Хедер кейса — на вебе обычный хедер с пунктами (имя/навигация/кнопки
+   видны всегда, без скролл-зависимости, как на главной), на мобилке —
+   только кнопка "назад". */
+.v3-header--case .v3-header-name,
+.v3-header--case .v3-header-actions {
+  opacity: 1; visibility: visible;
+}
+.v3-header-back {
+  display: none; align-items: center; gap: 8px;
+  font-family: var(--v3-font); font-weight: 500; font-size: 16px;
+  color: var(--v3-primary-100); text-decoration: none;
+}
+.v3-header-back svg { width: 20px; height: 20px; display: block; }
+@media (max-width: 860px) {
+  .v3-header--case .v3-header-name,
+  .v3-header--case .v3-header-nav,
+  .v3-header--case .v3-header-actions { display: none; }
+  .v3-header--case .v3-header-back { display: inline-flex; }
+}
+
+/* Отступ под фиксированный хедер, чтобы контент не оказывался под ним */
+body { padding-top: 80px; }
+
+/* ── МОБИЛЬНЫЙ ФИКСИРОВАННЫЙ CTA (CV/Telegram) ──
+   Только на мобилке — на всех страницах (главная и кейсы). Без фона-
+   подложки под собой (только сами кнопки). Прячется при скролле вниз,
+   появляется при скролле вверх — см. js/mobile-cta.js. */
+.v3-mobile-cta { display: none; }
+@media (max-width: 640px) {
+  body:has(.v3-mobile-cta) { padding-bottom: 96px; }
+  .v3-mobile-cta {
+    display: block;
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 400;
+    padding: 16px var(--v3-side);
+    transition: transform 0.25s ease;
+  }
+  .v3-mobile-cta--hidden { transform: translateY(120%); }
+  .v3-mobile-cta .v3-btn-row { width: 100%; margin-top: 0; }
+}
+
+/* ── АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ ──
+   Портировано из первой версии портфолио (.card/.card--visible) —
+   элемент поднимается и проявляется, когда попадает в зону видимости.
+   См. js/reveal.js. */
+.v3-reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.v3-reveal.v3-reveal--visible { opacity: 1; transform: translateY(0); }
+@media (max-width: 640px) {
+  /* На мобилке у книг анимация появления отключена — сразу видны */
+  .v3-book.v3-reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ── JTBD-КАНВАС ──
+   Доска с горизонтальным скроллом: категории — колонки, внутри —
+   карточки джобов (заголовок, триггер, бейдж силы проблемы). Во вью
+   попадает 3–4 колонки, остальные уходят за рамку; нужная колонка
+   центрируется скриптом при загрузке (data-jtbd-center). */
+.v3-jtbd-board {
+  display: flex; align-items: flex-start; gap: 16px;
+  height: calc(100vh - var(--v3-header-h));
+  overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity;
+  padding: 24px var(--v3-side) 32px;
+  background:
+    radial-gradient(var(--v3-bg-2) 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+  background-color: var(--v3-bg-1);
+  scrollbar-width: none; -webkit-overflow-scrolling: touch;
+}
+.v3-jtbd-board::-webkit-scrollbar { display: none; }
+.v3-jtbd-col {
+  flex: 0 0 360px; scroll-snap-align: center;
+  display: flex; flex-direction: column; gap: 12px;
+  overflow-y: hidden;
+}
+.v3-jtbd-col-head {
+  background: var(--v3-primary-100); color: var(--v3-white);
+  border-radius: var(--v3-radius); padding: 16px;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.v3-jtbd-col-num { font-family: var(--v3-font); font-size: 14px; color: var(--v3-primary-50); }
+.v3-jtbd-col-title { font-family: var(--v3-font); font-weight: 600; font-size: 20px; line-height: 24px; letter-spacing: -0.02em; }
+.v3-jtbd-col-desc { font-family: var(--v3-font); font-size: 14px; line-height: 18px; color: var(--v3-bg-2); }
+.v3-jtbd-job {
+  background: var(--v3-white); border-radius: var(--v3-radius); padding: 16px;
+  display: flex; flex-direction: column; gap: 10px;
+  box-shadow: 0 1px 6px rgba(40, 38, 139, 0.08);
+}
+.v3-jtbd-job-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.v3-jtbd-job-title { font-family: var(--v3-font); font-weight: 600; font-size: 15px; line-height: 19px; color: var(--v3-primary-100); }
+.v3-jtbd-field { display: flex; flex-direction: column; gap: 2px; }
+.v3-jtbd-field-label {
+  font-family: var(--v3-font); font-size: 11px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.04em; color: var(--v3-primary-50);
+}
+.v3-jtbd-field-value { font-family: var(--v3-font); font-size: 13px; line-height: 17px; color: var(--v3-primary-100); }
+.v3-jtbd-sev {
+  flex: 0 0 auto; display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--v3-font); font-size: 12px; font-weight: 500;
+  padding: 3px 8px 3px 6px; border-radius: 100px;
+}
+.v3-jtbd-sev::before { content: ""; width: 6px; height: 6px; border-radius: 50%; }
+.v3-jtbd-sev--high { background: #FDE7E7; color: #C22222; }
+.v3-jtbd-sev--high::before { background: #E5484D; }
+.v3-jtbd-sev--mid { background: #FCEFDB; color: #A15C00; }
+.v3-jtbd-sev--mid::before { background: #F5A623; }
+.v3-jtbd-sev--low { background: #E1F5EA; color: #16794A; }
+.v3-jtbd-sev--low::before { background: #30A46C; }
+.v3-jtbd-sev--none { background: var(--v3-bg-2); color: var(--v3-primary-100); opacity: 0.55; }
+.v3-jtbd-sev--none::before { background: var(--v3-primary-50); }
+@media (max-width: 640px) {
+  /* Карточки канваса в 2 раза меньше на мобилке */
+  .v3-jtbd-board { gap: 8px; padding: 12px 16px 16px; }
+  .v3-jtbd-col { flex-basis: 180px; gap: 6px; }
+  .v3-jtbd-col-head { padding: 8px; gap: 2px; }
+  .v3-jtbd-col-num { font-size: 7px; }
+  .v3-jtbd-col-title { font-size: 10px; line-height: 12px; }
+  .v3-jtbd-col-desc { font-size: 7px; line-height: 9px; }
+  .v3-jtbd-job { padding: 8px; gap: 5px; }
+  .v3-jtbd-job-head { gap: 4px; }
+  .v3-jtbd-job-title { font-size: 8px; line-height: 10px; }
+  .v3-jtbd-field { gap: 1px; }
+  .v3-jtbd-field-label { font-size: 6px; }
+  .v3-jtbd-field-value { font-size: 7px; line-height: 9px; }
+  .v3-jtbd-sev { font-size: 6px; padding: 2px 4px 2px 3px; gap: 3px; }
+  .v3-jtbd-sev::before { width: 3px; height: 3px; }
+}

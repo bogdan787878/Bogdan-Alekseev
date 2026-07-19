@@ -1,73 +1,69 @@
 #!/usr/bin/env python3
 """
-Админка персонализированного "Обо мне" для портфолио.
+Локальная админка "Портфолио v3".
 Запуск: python3 admin/server.py
-Открыть: http://localhost:8092/
+Открыть:
+  http://localhost:8093/        — сайт в режиме редактирования
+                                   (клик по областям с пунктирной рамкой грузит картинку)
 
-Вставляешь заголовок хиро под конкретную вакансию/компанию — получаешь ссылку вида
-https://alekseevdesign.ru/?for=<slug>, которая на лету подменяет заголовок и роль на
-странице, полностью убирает блок "Кто я такой?" и меняет CV-ссылку (js/about-override.js).
-
-Ничего не пушится, пока не нажмёшь "Опубликовать".
+Всё, что вы загружаете, сохраняется локально и ставится в git (git add).
+Ничего не пушится, пока вы не нажмёте "Опубликовать" — тогда одним разом
+делается commit + push всех накопленных изменений.
 """
 
+import cgi
 import json
+import mimetypes
 import os
 import subprocess
+import sys
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import urlparse, parse_qs
 
-PORT = 8092
-SITE_URL = 'https://alekseevdesign.ru'
+PORT = 8093
 
 ADMIN_DIR = os.path.dirname(os.path.abspath(__file__))
-REPO_DIR = os.path.dirname(ADMIN_DIR)
-DATA_FILE = os.path.join(REPO_DIR, 'data', 'about-overrides.json')
+PROJECT_DIR = os.path.dirname(ADMIN_DIR)          # корень репозитория (сайт лежит прямо тут)
+REPO_DIR = PROJECT_DIR                            # git-репозиторий portfolio
+IMAGES_DIR = os.path.join(PROJECT_DIR, 'images')
+IMAGES_MANIFEST = os.path.join(PROJECT_DIR, 'data', 'images.json')
+
+os.makedirs(IMAGES_DIR, exist_ok=True)
 
 
-def load_overrides():
-    if not os.path.exists(DATA_FILE):
-        return {}
-    with open(DATA_FILE, encoding='utf-8') as f:
+# ── Работа с данными ──────────────────────────────────────────
+
+def load_json(path, default):
+    if not os.path.exists(path):
+        return default
+    with open(path, encoding='utf-8') as f:
         return json.load(f)
 
 
-def save_overrides(data):
-    with open(DATA_FILE, 'w', encoding='utf-8') as f:
+def save_json(path, data):
+    with open(path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
         f.write('\n')
 
 
-def slugify(text):
-    text = text.strip().lower()
-    out = []
-    for ch in text:
-        if ch.isalnum():
-            out.append(ch)
-        elif ch in (' ', '-', '_'):
-            out.append('-')
-    slug = ''.join(out)
-    while '--' in slug:
-        slug = slug.replace('--', '-')
-    return slug.strip('-') or 'company'
-
+# ── Git ────────────────────────────────────────────────────────
 
 def git(*args):
     return subprocess.run(['git', '-C', REPO_DIR] + list(args), capture_output=True, text=True)
 
 
 def git_pending_count():
-    r = git('status', '--porcelain', '--',
-            'data/about-overrides.json', 'index.html', 'js/about-override.js')
-    return len([l for l in r.stdout.splitlines() if l.strip()])
+    r = git('status', '--porcelain')
+    lines = [l for l in r.stdout.splitlines() if l.strip()]
+    return len(lines)
 
 
 def git_release():
     log = []
-    r = git('add', 'data/about-overrides.json', 'index.html', 'js/about-override.js')
-    log.append('$ git add ...\n' + r.stdout + r.stderr)
+    r = git('add', '-A')
+    log.append('$ git add -A\n' + r.stdout + r.stderr)
 
-    r = git('commit', '-m', 'Update personalized About text')
+    r = git('commit', '-m', 'Update v3 content (images)')
     log.append('$ git commit\n' + r.stdout + r.stderr)
     if r.returncode != 0 and 'nothing to commit' not in (r.stdout + r.stderr):
         return False, '\n'.join(log)
@@ -80,166 +76,115 @@ def git_release():
     return True, '\n'.join(log)
 
 
-PAGE = """<!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8">
-<title>Персонализация "Обо мне"</title>
-<style>
-  body {{ font-family: -apple-system, sans-serif; background:#EFEAE6; color:#222; margin:0; padding:32px; }}
-  h1 {{ font-size: 22px; margin-bottom: 24px; }}
-  .card {{ background:#fff; border-radius:16px; padding:24px; margin-bottom:24px; max-width:640px; }}
-  label {{ display:block; font-size:13px; opacity:0.6; margin-bottom:4px; margin-top:14px; }}
-  input, textarea {{ width:100%; padding:10px 12px; border-radius:8px; border:1px solid #ddd; font-size:15px; box-sizing:border-box; font-family:inherit; }}
-  textarea {{ min-height: 160px; resize: vertical; }}
-  button {{ margin-top:16px; background:#3A4951; color:#fff; border:none; border-radius:100px; padding:10px 20px; font-size:14px; cursor:pointer; }}
-  button.secondary {{ background:#748C74; }}
-  .row {{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 0; border-top:1px solid #eee; }}
-  .row a {{ font-size:13px; }}
-  .row-actions button {{ margin-top:0; padding:6px 14px; font-size:12px; }}
-  .status {{ margin-top:12px; font-size:13px; opacity:0.7; }}
-</style>
-</head>
-<body>
-<h1>Персонализация страницы под вакансию</h1>
-<p style="opacity:0.6; font-size:13px; max-width:560px;">На подменной странице (по ссылке ?for=) блок "Кто я такой?" убирается целиком, а теги "Design Director" меняются на "Senior Product Designer" — это происходит автоматически, настраивать не нужно.</p>
-
-<div class="card">
-  <label>Компания / вакансия (для ссылки)</label>
-  <input id="slug" placeholder="например: yandex">
-  <label>Заголовок в хиро (HTML с &lt;br&gt; можно)</label>
-  <input id="heroTitle" placeholder="Senior Product Designer&lt;br&gt;с 9+ лет в AI, fintech&lt;br&gt;и digital products">
-  <label>Ссылка на CV (необязательно, если под вакансию нужен отдельный файл)</label>
-  <input id="cvUrl" placeholder="https://docs.google.com/document/d/...">
-  <button onclick="save()">Сохранить</button>
-  <button class="secondary" onclick="publish()">Опубликовать</button>
-  <div class="status" id="status"></div>
-</div>
-
-<div class="card">
-  <div id="list">Загрузка…</div>
-</div>
-
-<script>
-var SITE_URL = "{site_url}";
-
-function loadList() {{
-  fetch('/api/list').then(r => r.json()).then(data => {{
-    var el = document.getElementById('list');
-    var keys = Object.keys(data);
-    if (!keys.length) {{ el.innerHTML = '<p style="opacity:0.5">Пока пусто</p>'; return; }}
-    el.innerHTML = keys.map(function (slug) {{
-      var link = SITE_URL + '/?for=' + slug;
-      return '<div class="row"><div><strong>' + slug + '</strong><br><a href="' + link + '" target="_blank">' + link + '</a></div>' +
-        '<div class="row-actions"><button onclick="edit(\\'' + slug + '\\')">Редактировать</button> ' +
-        '<button onclick="remove(\\'' + slug + '\\')">Удалить</button></div></div>';
-    }}).join('');
-  }});
-}}
-
-function edit(slug) {{
-  fetch('/api/list').then(r => r.json()).then(data => {{
-    var entry = data[slug];
-    document.getElementById('slug').value = slug;
-    document.getElementById('heroTitle').value = entry.heroTitle || '';
-    document.getElementById('cvUrl').value = entry.cvUrl || '';
-  }});
-}}
-
-function remove(slug) {{
-  fetch('/api/delete', {{ method: 'POST', headers: {{'Content-Type':'application/json'}}, body: JSON.stringify({{slug: slug}}) }})
-    .then(() => loadList());
-}}
-
-function save() {{
-  var slug = document.getElementById('slug').value.trim();
-  var heroTitle = document.getElementById('heroTitle').value.trim();
-  var cvUrl = document.getElementById('cvUrl').value.trim();
-  if (!slug || !heroTitle) {{ setStatus('Заполни slug и заголовок хиро'); return; }}
-  fetch('/api/save', {{ method: 'POST', headers: {{'Content-Type':'application/json'}}, body: JSON.stringify({{slug: slug, heroTitle: heroTitle, cvUrl: cvUrl}}) }})
-    .then(r => r.json()).then(data => {{
-      setStatus(data.ok ? ('Сохранено. Ссылка: ' + SITE_URL + '/?for=' + data.slug) : 'Ошибка сохранения');
-      loadList();
-    }});
-}}
-
-function publish() {{
-  setStatus('Публикую…');
-  fetch('/api/publish', {{ method: 'POST' }}).then(r => r.json()).then(data => {{
-    setStatus(data.ok ? 'Опубликовано ✓' : 'Ошибка публикации — см. терминал');
-  }});
-}}
-
-function setStatus(text) {{ document.getElementById('status').textContent = text; }}
-
-loadList();
-</script>
-</body>
-</html>"""
-
-
 class Handler(BaseHTTPRequestHandler):
-    def log_message(self, fmt, *args):
-        pass
-
     def _json(self, obj, status=200):
         body = json.dumps(obj, ensure_ascii=False).encode('utf-8')
         self.send_response(status)
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.send_header('Content-Length', str(len(body)))
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.end_headers()
+        self.wfile.write(body)
+
+    def _file(self, rel_path):
+        fpath = os.path.join(PROJECT_DIR, rel_path)
+        if not os.path.abspath(fpath).startswith(PROJECT_DIR) or not os.path.isfile(fpath):
+            self.send_response(404)
+            self.end_headers()
+            return
+        ctype = mimetypes.guess_type(fpath)[0] or 'application/octet-stream'
+        with open(fpath, 'rb') as f:
+            body = f.read()
+        self.send_response(200)
+        self.send_header('Content-Type', ctype)
+        self.send_header('Content-Length', str(len(body)))
         self.end_headers()
         self.wfile.write(body)
 
     def do_GET(self):
-        path = urlparse(self.path).path
-        if path == '/':
-            body = PAGE.format(site_url=SITE_URL).encode('utf-8')
-            self.send_response(200)
-            self.send_header('Content-Type', 'text/html; charset=utf-8')
-            self.send_header('Content-Length', str(len(body)))
-            self.end_headers()
-            self.wfile.write(body)
-        elif path == '/api/list':
-            self._json(load_overrides())
-        elif path == '/api/status':
+        parsed = urlparse(self.path)
+        path = parsed.path
+
+        if path == '/api/ping':
+            self._json({'ok': True})
+            return
+        if path == '/api/status':
             self._json({'pending': git_pending_count()})
-        else:
-            self.send_response(404)
-            self.end_headers()
+            return
+
+        rel = path.lstrip('/') or 'index.html'
+        # Чистые URL: /cases/vtb/ и /cases/vtb (без .html) отдают index.html
+        # из соответствующей папки — как это делает GitHub Pages.
+        if rel == '' or rel.endswith('/'):
+            rel = rel + 'index.html'
+        elif '.' not in os.path.basename(rel):
+            rel = rel + '/index.html'
+        self._file(rel)
 
     def do_POST(self):
-        path = urlparse(self.path).path
-        length = int(self.headers.get('Content-Length', 0))
-        raw = self.rfile.read(length) if length else b'{}'
-        try:
-            payload = json.loads(raw or b'{}')
-        except json.JSONDecodeError:
-            payload = {}
+        parsed = urlparse(self.path)
+        path = parsed.path
+        qs = parse_qs(parsed.query)
 
-        if path == '/api/save':
-            slug = slugify(payload.get('slug', ''))
-            hero_title = (payload.get('heroTitle') or '').strip()
-            cv_url = (payload.get('cvUrl') or '').strip()
-            data = load_overrides()
-            data[slug] = {'heroTitle': hero_title, 'cvUrl': cv_url}
-            save_overrides(data)
-            self._json({'ok': True, 'slug': slug})
-        elif path == '/api/delete':
-            slug = payload.get('slug', '')
-            data = load_overrides()
-            data.pop(slug, None)
-            save_overrides(data)
-            self._json({'ok': True})
-        elif path == '/api/publish':
+        if path == '/api/upload-slot':
+            slot = (qs.get('slot') or [''])[0]
+            if not slot:
+                self._json({'ok': False, 'error': 'no slot'}, 400)
+                return
+
+            ctype, pdict = cgi.parse_header(self.headers.get('Content-Type', ''))
+            if ctype != 'multipart/form-data':
+                self._json({'ok': False, 'error': 'bad content type'}, 400)
+                return
+            pdict['boundary'] = bytes(pdict['boundary'], 'utf-8')
+            pdict['CONTENT-LENGTH'] = int(self.headers.get('Content-Length', 0))
+            fields = cgi.parse_multipart(self.rfile, pdict)
+            image_data = fields.get('image')
+            if not image_data:
+                self._json({'ok': False, 'error': 'no image'}, 400)
+                return
+            image_bytes = image_data[0]
+
+            ext = '.webp'
+            for magic, e in ((b'\x89PNG', '.png'), (b'\xff\xd8\xff', '.jpg'), (b'GIF8', '.gif'),
+                             (b'\x1a\x45\xdf\xa3', '.webm')):
+                if image_bytes[:4].startswith(magic[:len(magic)]):
+                    ext = e
+                    break
+            else:
+                head = image_bytes[:256].lstrip()
+                if head.startswith(b'<?xml') or head.startswith(b'<svg'):
+                    ext = '.svg'
+
+            filename = slot + ext
+            fpath = os.path.join(IMAGES_DIR, filename)
+            with open(fpath, 'wb') as f:
+                f.write(image_bytes)
+
+            manifest = load_json(IMAGES_MANIFEST, {})
+            manifest[slot] = 'images/' + filename
+            save_json(IMAGES_MANIFEST, manifest)
+
+            git_stage = git('add',
+                             os.path.relpath(fpath, REPO_DIR),
+                             os.path.relpath(IMAGES_MANIFEST, REPO_DIR))
+
+            self._json({'ok': True, 'path': 'images/' + filename})
+            return
+
+        if path == '/api/release':
             ok, log = git_release()
             print(log)
             self._json({'ok': ok})
-        else:
-            self.send_response(404)
-            self.end_headers()
+            return
+
+        self._json({'ok': False, 'error': 'not found'}, 404)
+
+    def log_message(self, format, *args):
+        pass
 
 
 if __name__ == '__main__':
-    print('Админка "Обо мне": http://localhost:%d/' % PORT)
+    print('Админка v3: http://localhost:%d/' % PORT)
     print('Репозиторий: %s' % REPO_DIR)
     HTTPServer(('', PORT), Handler).serve_forever()
