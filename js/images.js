@@ -27,6 +27,17 @@
     observer.observe(video);
   }
 
+  // Шиммер-скелетон для любого медиа (картинка или видео), пока оно не
+  // загрузилось — снимается по load/loadeddata. onLoaded — доп. колбэк
+  // на то же событие (например, снять зарезервированные размеры плейсхолдера).
+  function addShimmer(media, isVideo, onLoaded) {
+    media.classList.add('v3-shimmer');
+    media.addEventListener(isVideo ? 'loadeddata' : 'load', function () {
+      media.classList.remove('v3-shimmer');
+      if (onLoaded) onLoaded();
+    }, { once: true });
+  }
+
   // Применяет картинку или видео (webm) в слот. Используется и здесь,
   // и в edit-mode.js сразу после загрузки файла.
   //
@@ -50,10 +61,9 @@
       el.style.overflow = 'hidden';
       var fill = document.createElement(isVideo ? 'video' : 'img');
       fill.className = 'v3-slot-media';
+      addShimmer(fill, isVideo);
       if (isVideo) {
         fill.muted = true; fill.loop = true; fill.playsInline = true;
-        fill.classList.add('v3-shimmer');
-        fill.addEventListener('loadeddata', function () { fill.classList.remove('v3-shimmer'); }, { once: true });
         if (el.closest('.v3-split--sticky')) {
           playWhenVisible(fill);
         } else {
@@ -68,15 +78,22 @@
     }
 
     el.style.backgroundImage = '';
-    el.style.aspectRatio = '';
-    el.style.height = '';
-    el.classList.add('v3-slot-loaded');
     var media = document.createElement(isVideo ? 'video' : 'img');
     media.className = 'v3-slot-media';
+    // Пока не загрузилось — заполняем зарезервированный бокс плейсхолдера
+    // целиком (height:100%), иначе картинка/видео без своих размеров
+    // схлопнется в 0 и шиммер будет не виден. Класс v3-slot-loaded
+    // (он отключает фиксированный aspect-ratio на десктопе) добавляем
+    // только после реальной загрузки — вместе с переходом на auto-высоту.
+    media.style.height = '100%';
+    addShimmer(media, isVideo, function () {
+      media.style.height = '';
+      el.style.aspectRatio = '';
+      el.style.height = '';
+      el.classList.add('v3-slot-loaded');
+    });
     if (isVideo) {
       media.autoplay = true; media.muted = true; media.loop = true; media.playsInline = true;
-      media.classList.add('v3-shimmer');
-      media.addEventListener('loadeddata', function () { media.classList.remove('v3-shimmer'); }, { once: true });
     }
     media.src = url;
     el.appendChild(media);

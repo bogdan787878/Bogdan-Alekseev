@@ -336,6 +336,11 @@ img, video { display: block; max-width: 100%; }
 .v3-full-media { padding: 0 var(--v3-side-media); }
 .v3-full-media img, .v3-full-media video,
 .v3-full-media > [data-slot] { width: 100%; height: auto; border-radius: var(--v3-radius); background: none; }
+/* Перебивает background:none выше — иначе градиент шиммера не виден */
+.v3-full-media img.v3-shimmer, .v3-full-media video.v3-shimmer {
+  background: linear-gradient(90deg, var(--v3-bg-2) 25%, var(--v3-bg-1) 50%, var(--v3-bg-2) 75%);
+  background-size: 200% 100%;
+}
 @media (min-width: 641px) {
   .v3-full-media > [data-slot].v3-slot-loaded { height: auto; }
 }
