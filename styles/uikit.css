@@ -49,7 +49,6 @@
   --v3-hero-icon-w-mobile: 80px;    /* иконка над заголовком в хиро (мобилка) */
   --v3-metric-gap: 8px;             /* зазор между карточками метрик */
   --v3-metric-p: 24px;              /* паддинг внутри карточки метрики */
-  --v3-about-photo-h: 640px;        /* высота фото "Обо мне" (веб) */
   --v3-book-h: 413px;               /* высота обложки книги (веб) */
 
   /* ── Sticky ──
@@ -71,7 +70,6 @@
     --v3-inner-text: 16px;
     --v3-btn-py: 24px;
     --v3-btn-px: 40px;
-    --v3-about-photo-h: 340px;
     --v3-book-h: 243px;
   }
 }
@@ -101,7 +99,7 @@ img, video { display: block; max-width: 100%; }
 .v3-h3 { font-family: var(--v3-font); font-weight: 600; font-size: 32px; line-height: 32px; letter-spacing: -0.06em; }
 .v3-body-l { font-family: var(--v3-font); font-weight: 400; font-size: 24px; line-height: 28px; letter-spacing: -0.04em; }
 .v3-body-l2 { font-family: var(--v3-font); font-weight: 400; font-size: 20px; line-height: 24px; letter-spacing: -0.04em; }
-.v3-body-xl { font-family: var(--v3-font); font-weight: 400; font-size: 40px; line-height: 40px; letter-spacing: -0.06em; }
+.v3-body-xl { font-family: var(--v3-font); font-weight: 400; font-size: 32px; line-height: 32px; letter-spacing: -0.06em; }
 .v3-caption { font-family: var(--v3-font); font-weight: 400; font-size: 16px; line-height: 16px; }
 .v3-btn-text { font-family: var(--v3-font); font-weight: 500; font-size: 20px; line-height: 20px; }
 
