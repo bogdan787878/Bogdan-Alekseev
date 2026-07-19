@@ -105,7 +105,11 @@
         if (!path) return;
         var els = document.querySelectorAll('[data-slot="' + slot + '"]');
         els.forEach(function (el) {
-          applyMediaSlot(el, BASE + path + '?v=' + Date.now(), el.dataset.fit);
+          // Без cache-busting — иначе браузер и CDN не могут закэшировать
+          // ни одну картинку/видео ни для одного посетителя. Уникальную
+          // ?v= ставит только edit-mode.js сразу после апдейта конкретного
+          // файла (там это оправданно).
+          applyMediaSlot(el, BASE + path, el.dataset.fit);
         });
       });
     })
