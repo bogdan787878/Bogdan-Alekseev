@@ -9,9 +9,9 @@
     });
   }
 
-  // В sticky-блоках кадры видео стоят друг под другом и скроллятся мимо
-  // залипшего текста — часть из них может быть далеко за пределами экрана.
-  // Вместо autoplay сразу запускаем/останавливаем видео по видимости.
+  // Любое видео на странице запускаем/останавливаем по видимости, а не
+  // через autoplay сразу — иначе видео вне экрана продолжает декодироваться
+  // в фоне и просаживает частоту кадров при скролле.
   function playWhenVisible(video) {
     video.autoplay = false;
     video.pause();
@@ -64,11 +64,7 @@
       addShimmer(fill, isVideo);
       if (isVideo) {
         fill.muted = true; fill.loop = true; fill.playsInline = true;
-        if (el.closest('.v3-split--sticky')) {
-          playWhenVisible(fill);
-        } else {
-          fill.autoplay = true;
-        }
+        playWhenVisible(fill);
       }
       fill.src = url;
       fill.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;' +
@@ -93,7 +89,8 @@
       el.classList.add('v3-slot-loaded');
     });
     if (isVideo) {
-      media.autoplay = true; media.muted = true; media.loop = true; media.playsInline = true;
+      media.muted = true; media.loop = true; media.playsInline = true;
+      playWhenVisible(media);
     }
     media.src = url;
     el.appendChild(media);
