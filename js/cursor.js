@@ -7,10 +7,14 @@
   cursor.textContent = 'Перейти';
   document.body.appendChild(cursor);
 
+  // Размер фикс, задан в CSS (.v3-cursor { width/height: 96px }) — не
+  // читаем offsetWidth/offsetHeight на каждый mousemove, это форсирует
+  // синхронный reflow на каждое событие и тормозит страницу.
+  var HALF = 48;
   var mouseX = 0, mouseY = 0, rafId = null;
   document.addEventListener('mousemove', function (e) {
-    mouseX = e.clientX - cursor.offsetWidth / 2;
-    mouseY = e.clientY - cursor.offsetHeight / 2;
+    mouseX = e.clientX - HALF;
+    mouseY = e.clientY - HALF;
     if (!rafId) {
       rafId = requestAnimationFrame(function () {
         cursor.style.transform = 'translate(' + mouseX + 'px,' + mouseY + 'px)';
