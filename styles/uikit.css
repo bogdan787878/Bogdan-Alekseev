@@ -665,7 +665,7 @@ body { padding-top: 80px; }
    центрируется скриптом при загрузке (data-jtbd-center). */
 .v3-jtbd-board {
   display: flex; align-items: flex-start; gap: 16px;
-  height: calc(100vh - var(--v3-header-h));
+  height: calc(100vh - var(--v3-header-h) + 15vh);
   overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity;
   padding: 24px var(--v3-side) 32px;
   background:
