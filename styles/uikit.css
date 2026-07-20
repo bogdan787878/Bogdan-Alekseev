@@ -273,6 +273,7 @@ img, video { display: block; max-width: 100%; }
 .v3-inset-box--web > [data-slot] { width: 740px; aspect-ratio: 740 / 428; }
 /* Бейдж-тег в левом верхнем углу инсет-блока (например «Было» / «Стало») */
 .v3-inset-badge { position: absolute; top: 16px; left: 16px; z-index: 2; }
+.v3-inset-badge--center { left: 50%; transform: translateX(-50%); }
 @media (max-width: 860px) {
   .v3-inset-box { aspect-ratio: unset; height: var(--v3-split-media-h-mobile); }
   /* Веб-мокап на мобилке — высота по пропорциям (740×428), а не
