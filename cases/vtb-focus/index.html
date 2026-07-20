@@ -62,22 +62,271 @@
     </div>
   </section>
 
-  <!-- RESEARCH: JTBD-канвас, один сфокусированный сценарий -->
+  <!-- RESEARCH: полный JTBD-канвас, наш сценарий выделен и центрирован -->
   <section class="v3-section" style="padding-top: 0;">
     <div class="v3-text-block" style="margin-bottom: var(--v3-inner);">
       <div class="v3-text-block-label"><h3 class="v3-h3">Research</h3></div>
       <div class="v3-text-block-content">
-        <p class="v3-body-l">Из общей карты JTBD-сценариев отдельно выделили тот, что напрямую объясняет проблему выше.</p>
+        <p class="v3-body-l">Полная карта JTBD-сценариев по продукту — категория «Проведение активностей» и есть работа с предложениями. Внутри неё отдельно выделен сценарий, который напрямую объясняет проблему выше, остальное — контекст масштаба.</p>
       </div>
     </div>
-    <div class="v3-jtbd-board">
-      <div class="v3-jtbd-col" style="flex-basis: 420px;">
+  <!-- JTBD-КАНВАС (карта сценариев из исследования) -->
+  <section class="v3-section" style="padding-top: 0;">
+    <div class="v3-jtbd-board v3-jtbd-board--dim" id="jtbdBoard">
+
+      <div class="v3-jtbd-col">
         <div class="v3-jtbd-col-head">
-          <span class="v3-jtbd-col-num">JTBD</span>
-          <span class="v3-jtbd-col-title">Рекомендации и cross-sell</span>
-          <span class="v3-jtbd-col-desc">Сценарий, из-за которого клиент получал повторный, несогласованный контакт от банка</span>
+          <span class="v3-jtbd-col-num">01</span>
+          <span class="v3-jtbd-col-title">Работа с лидами</span>
+          <span class="v3-jtbd-col-desc">Создание, обработка и ведение лидов</span>
         </div>
         <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Создать лид через сервис Продажи</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--mid">6</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">В начале рабочего дня или при появлении нового потенциального клиента</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">ПМ работает с базой проспектов, находит потенциального клиента, которого нет в системе как клиента банка. Нужно зафиксировать интерес и начать работу</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Появилась информация о потенциальном клиенте (рекомендация, холодный звонок, выгрузка из СПАРК)</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Умеренный оптимизм, готовность к работе. Некоторая неуверенность — клиент новый, непонятно, есть ли он в системе</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Лид создан, клиент закреплён за мной, могу планировать активности и отслеживать воронку продаж</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Лид отображается в сервисе Лиды ЮЛ, выбраны продукты, указано контактное лицо, запланирована следующая активность</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Необходимость переходить в ПКБ для закрепления клиента (разрыв процесса). Если по клиенту уже есть лид, система его найдёт — но не всегда очевидно, как действовать дальше</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Создать лид через карточку клиента</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--mid">7</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">Клиент обратился сам, дали рекомендацию, прозваниваем выгрузку из СПАРК</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">ПМ уже знает ИНН клиента, нужно быстро найти его в системе и создать лид для фиксации интереса</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Результативный контакт с клиентом состоялся, выявлены потребности</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Воодушевление от успешного контакта, желание быстро зафиксировать результат и не потерять клиента</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Лид создан из карточки клиента, коммерческое предложение оформлено, следующая активность запланирована</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Лид содержит выбранные продукты, контактное лицо, КП оформлено, результат активности отражён</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Много шагов: проверка лидов, проверка закрепления, редактирование клиентской команды, создание лида, оформление КП, планирование активности. Нужно переключаться между закладками</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Обработать тёплый навигированный лид</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--none">—</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">В течение рабочего дня, при поступлении нового лида в закладку «Нераспределённые»</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Лид поступил из внешнего канала (колл-центр, интернет-заявка, агентский канал). Клиент уже проявил интерес, нужно быстро связаться</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Появился лид в закладке «Нераспределённые лиды» / руководитель распределил лид на сотрудника</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Срочность, понимание что клиент «горячий». Лёгкий стресс — нужно быстро среагировать</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Лид взят в работу, проведена консультация, оформлено КП, запланирована следующая активность</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Результативный звонок совершён, результат активности зафиксирован, новая активность запланирована</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Не выявлены</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Создать лид при отработке маркетинговой кампании</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--mid">5</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">При отработке активностей из маркетинговой кампании</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Сотрудник работает с МК, клиент дал согласие на продукт. Нужно создать лид и зафиксировать согласие</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Клиент в рамках МК дал согласие (отклик «Согласие»)</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Удовлетворение от успешной отработки МК, желание быстро оформить согласие</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Лид создан из МК, активность отражена, можно продолжить работу</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Лид содержит информацию из МК, активность зафиксирована</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">После сохранения лида попадаем в сервис Лиды ЮЛ, а не обратно в МК. Кнопка «Вернуться» неочевидна</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Выгрузить закрытые лиды и пересоздать их</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--high">10</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">Каждое утро, в начале рабочего дня</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Лиды автоматически закрываются по истечении срока. Нужно найти закрытые вчера и пересоздать их для продолжения работы</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Начало рабочего дня, необходимость восстановить работу по клиентам</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Раздражение от рутинной операции, усталость от повторяющихся действий</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Закрытые лиды найдены, данные скопированы, новые лиды созданы</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Все релевантные закрытые лиды пересозданы, работа по клиентам продолжена</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">КРИТИЧЕСКАЯ ПРОБЛЕМА: все сотрудники делают это каждое утро вручную! Нет автоматического продления или массового пересоздания. Нужно входить в каждый закрытый лид, копировать данные, создавать новый</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Обработать активность через План подбора контактов</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--high">8</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">В течение рабочего дня, когда подошло время запланированной активности</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Была запланирована активность в лиде на сегодня. Нужно найти её и выполнить</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Наступила дата запланированной активности</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Сосредоточенность, понимание важности выполнения обязательств перед клиентом</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Активность найдена через Корзину, выполнена, результат зафиксирован</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Активность отработана, новая запланирована при необходимости</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Сервис «План подбора контактов» практически не используется в сети — сотрудники о нём не знают! После сохранения активности нет автоматического возврата в Кабинет</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Обработать активность через Лиды ЮЛ</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--mid">6</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">В течение рабочего дня — чаще всего используется в сети</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Есть запланированные активности на сегодня, нужно их найти и выполнить</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Начало рабочего дня, проверка плана на день</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Деловой настрой, желание выполнить план</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Все запланированные активности на сегодня выгружены, лиды обработаны</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Активности отмечены как выполненные, следующие шаги запланированы</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Нет единого дашборда с планом на день. Нужно вручную фильтровать активности</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="v3-jtbd-col" id="jtbdCenter">
+        <div class="v3-jtbd-col-head">
+          <span class="v3-jtbd-col-num">02</span>
+          <span class="v3-jtbd-col-title">Проведение активностей</span>
+          <span class="v3-jtbd-col-desc">Контакты с клиентами и отработка МК</span>
+        </div>
+        <div class="v3-jtbd-job v3-jtbd-job--highlight">
           <div class="v3-jtbd-job-head">
             <p class="v3-jtbd-job-title">Получить актуальное предложение сразу, а не отдельным звонком позже</p>
             <span class="v3-jtbd-sev v3-jtbd-sev--high">8</span>
@@ -111,8 +360,1114 @@
             <p class="v3-jtbd-field-value">Рекомендации жили в отдельной веб-системе, не встроенной в интерфейс воронки продаж — менеджер в моменте обслуживания их не видел и не мог предложить сам</p>
           </div>
         </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Обработать активность через Звонки</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--mid">6</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">В течение рабочего дня при работе с запланированными контактами</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">В разделе Звонки → Повторные отображаются запланированные контакты по лидам</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Наступило время запланированного контакта</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Готовность к работе, ожидание результативного контакта</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Активность в лиде выполнена, результат зафиксирован</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Контакт совершён, результат записан в лид, следующий шаг запланирован</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">После сохранения активности автоматически попадаем в Лиды ЮЛ, но возврата в Кабинет нет. Теряется контекст работы</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Обработать активность Звонок/Встреча вне лида</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--high">10</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">При работе с разделом Звонки → План на день</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Запланированы звонки или встречи, которые не привязаны к лидам</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Проверка плана на день</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Недоумение, растерянность — активность есть, но непонятно, с кем она запланирована</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Понять, с кем запланирован контакт, выполнить активность</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Активность идентифицирована, выполнена, результат зафиксирован</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">КРИТИЧЕСКАЯ ПРОБЛЕМА: запланированные звонки/встречи вне лида отображаются БЕЗ названия клиента! Внутри активности тоже нет информации. Сервис не работает!</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Отработать МК через План подбора контактов</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--high">8</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">При работе с маркетинговыми кампаниями через раздел Звонки</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Нужно отработать активности из МК, запланированные на сегодня</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Начало рабочего дня, план по МК</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Деловой настрой, понимание важности отработки МК</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Активности из МК перенесены в корзину, отработаны, результаты зафиксированы</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Все запланированные активности из МК отработаны, результаты сохранены</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Сервис практически не используется — сотрудники о нём не знают</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Отработать МК через сервис МК</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--mid">5</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">При работе с маркетинговыми кампаниями через Сервисы</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Нужно отработать конкретную маркетинговую кампанию</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">План по отработке МК, указание руководителя</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Сосредоточенность, готовность к массовой отработке</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">МК выбрана, предложения отработаны, результаты зафиксированы, лиды созданы при согласии</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Все предложения в МК обработаны, отклики зафиксированы</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Если создаём лид — попадаем в Лиды ЮЛ, если без лида — возвращаемся в МК. Разная логика навигации</p>
+          </div>
+        </div>
       </div>
+
+      <div class="v3-jtbd-col">
+        <div class="v3-jtbd-col-head">
+          <span class="v3-jtbd-col-num">03</span>
+          <span class="v3-jtbd-col-title">Работа с задачами</span>
+          <span class="v3-jtbd-col-desc">Системные, ДСФ, управленческие задачи</span>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Просмотреть план задач на день</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--none">—</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">В начале рабочего дня</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">ПМ начинает рабочий день и хочет увидеть все задачи на сегодня</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Авторизация в ФРКК, переход на главную страницу</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Деловой настрой, желание спланировать день</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Увидеть полный список задач на сегодня</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Все задачи на день отображены, можно приступить к выполнению</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Не выявлены</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Обработать нераспределённые задачи и свои</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--mid">7</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">В течение рабочего дня</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Есть задачи, которые нужно взять в работу или выполнить по своим клиентам</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Появление новых задач, плановая работа</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Готовность к работе, понимание ответственности</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Задачи взяты в работу, выполнены или делегированы</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Задачи отмечены как выполненные, при необходимости переход в СУБО завершён</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Для исполнения задач часто нужно переходить в СУБО/продуктовую систему. Потом возвращаться в ФРКК для отметки выполнения. Двойная работа</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Обработать ДСФ</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--mid">6</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">При поступлении обращений через ДСФ</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Клиент отправил обращение через дистанционные каналы</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Поступило обращение ДСФ</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Понимание срочности, желание быстро помочь клиенту</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Обращение обработано, задача выполнена</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">ДСФ закрыт, клиент получил ответ/услугу</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Переход в СУБО/систему для исполнения, затем возврат в ФРКК для отметки. Разрыв процесса</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Найти и обработать ДСФ конкретного клиента</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--mid">5</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">По звонку клиента или обращению смежника/КЦ</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Клиент позвонил с вопросом по своему обращению, нужно найти его ДСФ</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Звонок клиента, запрос от КЦ или смежника</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Срочность, желание быстро найти информацию и помочь</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">ДСФ клиента найден, вопрос решён</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Обращение найдено по ИНН клиента, обработано</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Нужно искать через карточку клиента, переходить в закладку ДСФ, фильтровать обращения</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Найти информацию в Бизнес-википедии</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--none">—</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">При необходимости уточнить процедуру или регламент</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">ПМ не уверен в порядке действий, нужна справочная информация</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Возник вопрос по процессу, нужна инструкция</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Неуверенность, желание найти ответ быстро</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Найдена нужная статья с инструкцией</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Вопрос прояснён, можно продолжить работу</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Не выявлены</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Выполнить задачу от руководителя</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--none">—</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">При поступлении управленческой задачи</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Руководитель поставил задачу через систему</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Получена задача от руководителя</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Ответственность, понимание приоритетности</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Задача выполнена, результат отчитан</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Задача отмечена как выполненная</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Не выявлены</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="v3-jtbd-col" id="jtbdCenter">
+        <div class="v3-jtbd-col-head">
+          <span class="v3-jtbd-col-num">04</span>
+          <span class="v3-jtbd-col-title">Входящий поток</span>
+          <span class="v3-jtbd-col-desc">Обслуживание клиентов, обратившихся в точку продаж</span>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Обслужить действующего клиента (кросс-продажа)</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--mid">6</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">При визите клиента в ТП</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Клиент обратился в офис, нужно идентифицировать его и определить возможности для кросс-продажи</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Клиент пришёл в офис</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Готовность помочь, интерес к возможностям продажи</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Клиент обслужен, выявлены потребности, предложены дополнительные продукты</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Основная операция выполнена, лид на дополнительный продукт создан</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Много закладок для проверки: Продукты-Счета, Закрепление, Предложения, Карточка клиента, Небанковские сервисы. Информация о рекомендованных продуктах разбросана</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Обслужить потенциального клиента (проспект)</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--mid">5</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">При визите нового клиента в ТП</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Пришёл клиент, которого нет в системе как действующего клиента банка</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Новый клиент обратился в офис</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Заинтересованность в новом клиенте, готовность провести полную консультацию</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Проспект идентифицирован, закреплён за ПМ, потребности выявлены</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Проспект закреплён, заявка на сегментацию создана (если нужно), лид создан</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Если у проспекта нет сегмента и закрепления, нужно создавать заявку на сегментацию. Дополнительные шаги</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="v3-jtbd-col">
+        <div class="v3-jtbd-col-head">
+          <span class="v3-jtbd-col-num">05</span>
+          <span class="v3-jtbd-col-title">Консультация клиента</span>
+          <span class="v3-jtbd-col-desc">Консультации по продуктам через Витрину</span>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Провести консультацию по продукту через Витрину</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--none">—</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">При обращении клиента с вопросом о продукте</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Клиент хочет получить информацию о продукте банка (например, об открытии счёта)</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Клиент задал вопрос о продукте</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Готовность помочь, желание качественно проконсультировать</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Клиент получил полную информацию о продукте, условиях, процессе оформления</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Консультация проведена на основе актуальной продуктовой страницы, клиент удовлетворён</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Не выявлены — продуктовая страница содержит всё нужное: условия, презентации, скрипты, FAQ</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Создать лид или активность после консультации</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--none">—</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">После успешной консультации клиента</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Клиент заинтересовался продуктом, нужно зафиксировать интерес</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Клиент проявил интерес к продукту</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Удовлетворение от успешной консультации, желание зафиксировать результат</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Лид или активность созданы прямо из Витрины продуктов</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Интерес клиента зафиксирован в системе</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Не выявлены</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="v3-jtbd-col">
+        <div class="v3-jtbd-col-head">
+          <span class="v3-jtbd-col-num">06</span>
+          <span class="v3-jtbd-col-title">Открытие первого счёта</span>
+          <span class="v3-jtbd-col-desc">Полный процесс открытия расчётного счёта</span>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Найти клиента и перейти к открытию счёта</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--none">—</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">Клиент обратился для открытия счёта без предварительных переговоров</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Клиент пришёл в ТП с документами для открытия счёта</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Клиент выразил желание открыть счёт</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Деловой настрой, готовность к стандартной процедуре</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Клиент найден в системе, инициирован процесс открытия счёта</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Переход в Витрину продуктов, выбран Расчётный счёт, нажата кнопка «Открыть счёт»</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Не выявлены на этом этапе</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Заполнить данные проспекта (ИП или ЮЛ)</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--mid">5</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">После нажатия кнопки «Открыть счёт»</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Система определила тип клиента (ИП/ЮЛ) и показала форму для заполнения</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Открылся экран обновления проспекта</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Сосредоточенность, понимание важности точного заполнения данных</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Основные данные клиента заполнены корректно</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Все обязательные поля заполнены, переход на следующий экран</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Много обязательных полей, данные нужно вводить вручную</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Заполнить адреса и данные Росстат</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--none">—</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">После заполнения основных данных</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Нужно внести адресную информацию и данные из Росстат</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Переход на экран адресов</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Методичность, понимание необходимости полноты данных</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Адреса и данные Росстат заполнены</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Данные приняты системой, переход к СФЛ</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Не выявлены</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Завести связанные лица и подтвердить данные ЕГР</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--low">4</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">После заполнения адресов</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Нужно внести информацию о связанных физических лицах (СФЛ)</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Открылась форма СФЛ</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Внимательность, понимание важности данных для комплаенс</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">СФЛ добавлены, данные ЕГР подтверждены</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Информация по СФЛ сохранена, можно продолжить</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Необходимо подтверждать данные СФЛ по данным ЕГР — дополнительный шаг</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Установить полномочия в ДБО и способ документов</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--none">—</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">После ввода информации по СФЛ</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Нужно настроить доступ в ДБО и указать способ предоставления документов</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Переход на шаг полномочий</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Уверенность в близости завершения процесса</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Полномочия в ДБО установлены, способ документов выбран</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Настройки сохранены, можно резервировать счёт</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Не выявлены</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Зарезервировать счёт и выбрать тип договора</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--none">—</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">После настройки полномочий</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Нужно зарезервировать номер счёта и указать тип договора</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Появилось модальное окно резервирования</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Ожидание успешного завершения, лёгкое напряжение</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Счёт зарезервирован, выбран комплексный или двусторонний договор</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Номер счёта присвоен, можно переходить к открытию</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Не выявлены</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Выбрать счёт списания комиссии и пакет услуг</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--mid">5</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">После резервирования счёта</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Нужно определить финансовые условия обслуживания</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Открылась форма выбора счёта списания</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Деловой подход, консультирование клиента по тарифам</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Счёт списания выбран, пакет услуг определён</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Пакет услуг выбран, условия согласованы с клиентом</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Переход в отдельный СУБО для выбора пакета (1478 Тарифы)</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Заполнить анкету, пройти проверки, подписать</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--mid">6</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">После выбора пакета услуг</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Финальный этап — проверки и подписание</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Открылась анкета основного клиента</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Лёгкое напряжение — проверки могут выявить ограничения</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Проверки пройдены, документы распечатаны и подписаны, счёт открыт</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Счёт открыт, документы загружены, клиент получил реквизиты</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Вторичный онбординг, множество проверок (ограничения, списки, СФЛ). Если выявлены негативные факторы — процесс останавливается</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Сформировать досье и отправить в архив</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--low">4</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">После успешного открытия счёта</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Нужно завершить процесс оформлением документации</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Появилась задача на формирование титульного листа</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Удовлетворение от завершения, желание быстро закрыть формальности</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Титульный лист распечатан, документы подготовлены для архива</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Досье сформировано, лид на РКО закрыт автоматически</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Задача формируется отдельно, нужно искать её по ИНН. Дополнительные действия после основного процесса</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="v3-jtbd-col">
+        <div class="v3-jtbd-col-head">
+          <span class="v3-jtbd-col-num">07</span>
+          <span class="v3-jtbd-col-title">Открытие счёта из лида</span>
+          <span class="v3-jtbd-col-desc">Открытие счёта клиенту, с которым уже велась работа</span>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Найти или создать лид на РКО</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--none">—</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">После идентификации клиента и сбора документов</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Клиент готов к открытию счёта, ранее велась работа через лид</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Наличие всех документов для открытия счёта</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Уверенность, понимание близости сделки</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Лид на РКО найден или создан</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Лид отображается в системе, можно переходить к оформлению</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Не выявлены</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Заполнить форму лида и инициировать открытие</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--none">—</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">В карточке лида</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Нужно заполнить все данные и перейти к оформлению продукта</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Лид открыт, готов к оформлению</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Деловой настрой, ожидание перехода в процесс открытия</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Данные заполнены, осуществлён переход в СУБО для открытия счёта</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Переход в СУБО 1386 выполнен, можно продолжить стандартный процесс</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Не выявлены</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="v3-jtbd-col">
+        <div class="v3-jtbd-col-head">
+          <span class="v3-jtbd-col-num">08</span>
+          <span class="v3-jtbd-col-title">Торговый эквайринг</span>
+          <span class="v3-jtbd-col-desc">Подключение торгового эквайринга</span>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Найти клиента и выбрать представителя</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--none">—</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">ЕИО обратился для подключения торгового эквайринга</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Клиент хочет подключить эквайринг, нужно идентифицировать его и начать процесс</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Обращение клиента с запросом на эквайринг</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Готовность к работе, понимание сложности продукта</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Клиент найден, представитель выбран</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Данные клиента и представителя определены</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Не выявлены на этом этапе</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Выбрать продукт и перейти к заявке</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--low">3</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">После идентификации клиента</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Нужно выбрать тип эквайринга и перейти к оформлению</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Переход в Витрину продуктов → Касса и эквайринг</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Сосредоточенность на выборе правильного продукта</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Выбран Торговый эквайринг, открылась заявка</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Заявка открыта в СУБО 1434</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Разводящая страница для выбора типа эквайринга — дополнительный шаг</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Заполнить заявку на эквайринг и выбрать тарифы</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--mid">5</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">В форме заявки на эквайринг</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Нужно заполнить все поля заявки и подобрать тариф</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Открылась форма заявки</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Методичность, внимание к деталям тарификации</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Заявка заполнена, тарифы рассчитаны и выбраны</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Все обязательные поля заполнены, тарифы согласованы с клиентом</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Много шагов: счёт зачисления, сфера деятельности, расчёт тарифов, доп. опции</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Создать торговые точки и выбрать оборудование</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--low">3</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">После выбора тарифов</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Нужно настроить параметры торговых точек</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Переход на шаг создания торговых точек</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Понимание индивидуальности настройки под клиента</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Торговые точки созданы, оборудование выбрано</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Конфигурация сохранена, можно продолжить</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Возможность создания нескольких торговых точек — удобно, но требует внимания</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Выбрать способ подписания и загрузить документы</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--low">3</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">После настройки торговых точек</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Нужно определить, как клиент подпишет документы</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Появилось модальное окно выбора способа подписания</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Близость завершения, желание успешно закрыть сделку</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Способ подписания выбран, документы загружены</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Заявка создана, документы приложены</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Два варианта подписания (бумага/мобильный банк) — нужно объяснить клиенту разницу</p>
+          </div>
+        </div>
+        <div class="v3-jtbd-job">
+          <div class="v3-jtbd-job-head">
+            <p class="v3-jtbd-job-title">Отслеживать статус заявки и дождаться закрытия лида</p>
+            <span class="v3-jtbd-sev v3-jtbd-sev--low">4</span>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Когда</span>
+            <p class="v3-jtbd-field-value">После создания заявки</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Контекст</span>
+            <p class="v3-jtbd-field-value">Заявка отправлена, нужно контролировать её статус</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Триггер</span>
+            <p class="v3-jtbd-field-value">Заявка создана, ожидание обработки</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Эмоции в точке А</span>
+            <p class="v3-jtbd-field-value">Ожидание, надежда на успешное оформление</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Хочу получить ожидаемый результат</span>
+            <p class="v3-jtbd-field-value">Заявка обработана, лид закрыт автоматически</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Критерии успеха</span>
+            <p class="v3-jtbd-field-value">Статус «Продукт оформлен», лид закрыт</p>
+          </div>
+          <div class="v3-jtbd-field">
+            <span class="v3-jtbd-field-label">Проблемы</span>
+            <p class="v3-jtbd-field-value">Для отслеживания нужно заходить в Историю заявок. Нет push-уведомлений о смене статуса</p>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </section>
+
+
   </section>
 
   <!-- РЕШЕНИЕ -->
@@ -159,6 +1514,7 @@
 
   <script src="/js/images.js"></script>
   <script src="/js/header.js"></script>
+  <script src="/js/jtbd-board.js"></script>
   <script src="/js/edit-mode.js"></script>
   <script src="/js/typography.js"></script>
 </body>
