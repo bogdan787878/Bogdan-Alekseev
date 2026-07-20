@@ -748,28 +748,50 @@ body { padding-top: 80px; }
 .v3-view-toggle-btn.is-active { background: var(--v3-primary-100); color: var(--v3-white); }
 .v3-view-toggle-btn:not(.is-active):hover { background: rgba(40, 38, 139, 0.08); }
 
-/* ── User Flows канвас — та же механика горизонтального скролла и тот
-   же фон (точки), что у JTBD-канваса, но вместо джоб-карточек — целиком
-   готовые флоу-диаграммы (SVG), собранные в той же цветовой палитре. */
+/* ── User Flows канвас — тот же фон (точки), что у JTBD-канваса, но
+   вместо джоб-карточек — готовые флоу-диаграммы (SVG) на бесконечном
+   зумируемом полотне (колесо мыши / пинч — зум, драг — панорама, как
+   в Miro). Само полотно (.v3-flow-canvas) двигает/масштабирует
+   js/flow-zoom.js через CSS transform; .v3-flow-board — только вьюпорт
+   с обрезкой (overflow: hidden). */
 .v3-flow-board {
-  display: flex; align-items: flex-start; gap: 24px;
+  position: relative;
   height: calc(100vh - var(--v3-header-h) + 15vh);
-  overflow-x: auto; overflow-y: auto; scroll-snap-type: x proximity;
+  overflow: hidden;
   padding: 24px var(--v3-side) 32px;
   background:
     radial-gradient(var(--v3-bg-2) 1.5px, transparent 1.5px);
   background-size: 20px 20px;
   background-color: var(--v3-bg-1);
-  scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  cursor: grab;
 }
-.v3-flow-board::-webkit-scrollbar { display: none; }
-.v3-flow-card { flex: 0 0 auto; scroll-snap-align: center; height: 100%; display: flex; flex-direction: column; gap: 12px; }
+.v3-flow-board.is-dragging { cursor: grabbing; }
+.v3-flow-canvas {
+  display: flex; align-items: flex-start; gap: 24px;
+  height: calc(100% - 56px);
+  transform-origin: 0 0;
+  will-change: transform;
+}
+.v3-flow-card { flex: 0 0 auto; height: 100%; display: flex; flex-direction: column; gap: 12px; }
 .v3-flow-card-title {
   align-self: flex-start; font-family: var(--v3-font); font-weight: 600; font-size: 16px;
   color: var(--v3-white); background: var(--v3-primary-100); border-radius: 100px; padding: 8px 20px;
 }
 .v3-flow-card-media { flex: 1 1 auto; min-height: 0; display: flex; }
-.v3-flow-svg { height: 450%; width: auto; max-width: none; display: block; flex: 0 0 auto; }
+.v3-flow-svg { height: 100%; width: auto; max-width: none; display: block; }
+.v3-flow-zoom-controls {
+  position: absolute; right: 24px; bottom: 24px; z-index: 3;
+  display: flex; flex-direction: column; gap: 4px;
+  background: var(--v3-white); border-radius: var(--v3-radius); padding: 4px;
+  box-shadow: 0 2px 12px rgba(40, 38, 139, 0.15);
+}
+.v3-flow-zoom-btn {
+  width: 36px; height: 36px; border: none; background: transparent; border-radius: 8px;
+  font-family: var(--v3-font); font-size: 18px; font-weight: 600; line-height: 1;
+  color: var(--v3-primary-100); cursor: pointer;
+}
+.v3-flow-zoom-btn:hover { background: var(--v3-bg-2); }
+.v3-flow-zoom-btn--reset { font-size: 11px; }
 
 /* Элементы самих SVG-диаграмм — общий словарь фигур для обоих флоу,
    в цветах JTBD-канваса (навy/жёлтый/белый). */
@@ -790,7 +812,8 @@ body { padding-top: 80px; }
 .v3-flow-lane-divider { stroke: var(--v3-bg-2); stroke-width: 2; stroke-dasharray: 4 6; }
 .v3-flow-lane-label { font-family: var(--v3-font); font-size: 13px; font-weight: 600; fill: var(--v3-primary-50); letter-spacing: 0.04em; }
 @media (max-width: 640px) {
-  .v3-flow-board { gap: 12px; padding: 12px 16px 16px; }
+  .v3-flow-board { padding: 12px 16px 16px; }
+  .v3-flow-canvas { gap: 12px; }
   .v3-flow-card-title { font-size: 11px; padding: 6px 12px; }
 }
 
