@@ -753,8 +753,8 @@ body { padding-top: 80px; }
    готовые флоу-диаграммы (SVG), собранные в той же цветовой палитре. */
 .v3-flow-board {
   display: flex; align-items: flex-start; gap: 24px;
-  height: calc((100vh - var(--v3-header-h) + 15vh) * 4.5);
-  overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity;
+  height: calc(100vh - var(--v3-header-h) + 15vh);
+  overflow-x: auto; overflow-y: auto; scroll-snap-type: x proximity;
   padding: 24px var(--v3-side) 32px;
   background:
     radial-gradient(var(--v3-bg-2) 1.5px, transparent 1.5px);
@@ -769,7 +769,7 @@ body { padding-top: 80px; }
   color: var(--v3-white); background: var(--v3-primary-100); border-radius: 100px; padding: 8px 20px;
 }
 .v3-flow-card-media { flex: 1 1 auto; min-height: 0; display: flex; }
-.v3-flow-svg { height: 100%; width: auto; max-width: none; display: block; }
+.v3-flow-svg { height: 450%; width: auto; max-width: none; display: block; flex: 0 0 auto; }
 
 /* Элементы самих SVG-диаграмм — общий словарь фигур для обоих флоу,
    в цветах JTBD-канваса (навy/жёлтый/белый). */
