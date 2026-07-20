@@ -733,6 +733,9 @@ body { padding-top: 80px; }
 .v3-jtbd-board--dim .v3-jtbd-col:has(.v3-jtbd-job--highlight) .v3-jtbd-col-head {
   background: var(--v3-primary-100); color: var(--v3-white);
 }
+.v3-jtbd-board--dim .v3-jtbd-col:has(.v3-jtbd-job--highlight) .v3-jtbd-col-desc {
+  color: var(--v3-white); opacity: 0.8;
+}
 @media (max-width: 640px) {
   /* Карточки канваса в 2 раза меньше на мобилке */
   .v3-jtbd-board { gap: 8px; padding: 12px 16px 16px; }
