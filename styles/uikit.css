@@ -753,7 +753,7 @@ body { padding-top: 80px; }
    готовые флоу-диаграммы (SVG), собранные в той же цветовой палитре. */
 .v3-flow-board {
   display: flex; align-items: flex-start; gap: 24px;
-  height: calc(100vh - var(--v3-header-h) + 15vh);
+  height: calc((100vh - var(--v3-header-h) + 15vh) * 4.5);
   overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity;
   padding: 24px var(--v3-side) 32px;
   background:
