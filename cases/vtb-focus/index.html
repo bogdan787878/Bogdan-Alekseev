@@ -72,16 +72,22 @@
     </div>
   </section>
 
-  <!-- RESEARCH: полный JTBD-канвас, наш сценарий выделен и центрирован -->
-  <section class="v3-section">
-    <div class="v3-text-block" style="margin-bottom: var(--v3-inner);">
+  <!-- RESEARCH: интро + переключатель JTBD-граф / User Flows -->
+  <section class="v3-section" style="padding-bottom: 0;">
+    <div class="v3-text-block">
       <div class="v3-text-block-label"><h3 class="v3-h3">Research</h3></div>
       <div class="v3-text-block-content">
         <p class="v3-body-l">Полная карта JTBD-сценариев по продукту — категория «Проведение активностей» и есть работа с предложениями. Внутри неё отдельно выделен сценарий, который напрямую объясняет проблему выше, остальное — контекст масштаба.</p>
+        <div class="v3-view-toggle" style="margin-top: var(--v3-inner-text);">
+          <button type="button" class="v3-view-toggle-btn is-active" data-view="jtbd">JTBD-граф</button>
+          <button type="button" class="v3-view-toggle-btn" data-view="flows">User Flows</button>
+        </div>
       </div>
     </div>
+  </section>
+
   <!-- JTBD-КАНВАС (карта сценариев из исследования) -->
-  <section class="v3-section" style="padding-top: 0; padding-bottom: 0;">
+  <section class="v3-section" style="padding-top: 0;">
     <div class="v3-jtbd-board v3-jtbd-board--dim" id="jtbdBoard">
 
       <div class="v3-jtbd-col">
@@ -1477,7 +1483,22 @@
     </div>
   </section>
 
-
+  <!-- USER FLOWS (тот же канвас, вместо джоб-карточек — карты пользовательских флоу) -->
+  <section class="v3-section" style="padding-top: 0;">
+    <div class="v3-flow-board" id="flowBoard" style="display: none;">
+      <div class="v3-flow-card">
+        <span class="v3-flow-card-title">Обращение с обогащённым предложением</span>
+        <div class="v3-flow-card-media">
+          <div class="v3-ph" data-slot="vtb-focus-flow-1" data-fit="contain">карта флоу</div>
+        </div>
+      </div>
+      <div class="v3-flow-card">
+        <span class="v3-flow-card-title">Пользовательский путь менеджера</span>
+        <div class="v3-flow-card-media">
+          <div class="v3-ph" data-slot="vtb-focus-flow-2" data-fit="contain">карта флоу</div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- РЕШЕНИЕ -->
@@ -1530,6 +1551,7 @@
   <script src="/js/images.js"></script>
   <script src="/js/header.js"></script>
   <script src="/js/jtbd-board.js"></script>
+  <script src="/js/view-toggle.js"></script>
   <script src="/js/edit-mode.js"></script>
   <script src="/js/typography.js"></script>
 </body>
