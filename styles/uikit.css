@@ -768,7 +768,7 @@ body { padding-top: 80px; }
   align-self: flex-start; font-family: var(--v3-font); font-weight: 600; font-size: 16px;
   color: var(--v3-white); background: var(--v3-primary-100); border-radius: 100px; padding: 8px 20px;
 }
-.v3-flow-card-media { flex: 1 1 auto; min-height: 0; border-radius: var(--v3-radius); overflow: hidden; display: flex; background: var(--v3-white); box-shadow: 0 1px 6px rgba(40, 38, 139, 0.08); }
+.v3-flow-card-media { flex: 1 1 auto; min-height: 0; display: flex; }
 .v3-flow-svg { height: 100%; width: auto; max-width: none; display: block; }
 
 /* Элементы самих SVG-диаграмм — общий словарь фигур для обоих флоу,
