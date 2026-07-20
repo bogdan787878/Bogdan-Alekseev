@@ -62,5 +62,9 @@
   "landa-split1": "images/landa-split1.svg",
   "landa-split3": "images/landa-split3.webp",
   "landa-solution": "images/landa-solution.webp",
-  "vtb-focus-cart-sms": "images/vtb-sms-2.webm"
+  "vtb-focus-cart-sms": "images/vtb-sms-2.webm",
+  "vtb-focus-cart-crosssell": "images/vtb-focus-cart-crosssell.webm",
+  "vtb-focus-cart-basket": "images/vtb-focus-cart-basket.webm",
+  "vtb-focus-solution-frame": "images/vtb-focus-solution-frame.svg",
+  "vtb-focus-solution": "images/vtb-focus-solution.svg"
 }
