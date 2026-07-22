@@ -173,6 +173,11 @@ img, video { display: block; max-width: 100%; }
   margin-left: auto;
   margin-right: auto;
 }
+/* JTBD-канвас — горизонтальный скролл-виджет, должен оставаться на всю
+   ширину окна, не капаться до 1600px вместе с остальным контентом. */
+.v3-body--case .v3-section:has(.v3-jtbd-board) {
+  max-width: none;
+}
 .v3-case-hero-head {
   text-align: center;
   display: flex; flex-direction: column; align-items: center; gap: var(--v3-inner);
