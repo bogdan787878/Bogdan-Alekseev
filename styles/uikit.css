@@ -225,6 +225,13 @@ img, video { display: block; max-width: 100%; }
 .v3-split {
   display: flex; align-items: flex-start; gap: var(--v3-inner);
   padding: 0 var(--v3-side-media) 0 var(--v3-side);
+  /* Текстовая колонка фиксирована, картинка растёт только до своего
+     max-width (--v3-col-wide) — на широких экранах остаток пространства
+     раньше просто оставался пустым справа (flex-start), из-за чего блок
+     выглядел прибитым к левому краю. Раз ширина ряда всё равно не может
+     превысить его собственный контент — капаем и центрируем сам ряд. */
+  max-width: var(--v3-content-max);
+  margin-left: auto; margin-right: auto;
 }
 .v3-split-text {
   flex: 0 0 var(--v3-col-narrow); max-width: var(--v3-col-narrow);
@@ -525,14 +532,17 @@ a.v3-highlight:hover { text-decoration: underline; }
 /* ── БЛОК: книжная полка ──
    Заголовок + несколько горизонтально скроллящихся рядов обложек книг
    фиксированного размера (портированный блок из первой версии портфолио). */
-.v3-books-title { margin-bottom: var(--v3-inner); }
+.v3-books-title { margin-bottom: var(--v3-inner); max-width: var(--v3-content-max); margin-left: auto; margin-right: auto; }
 .v3-books-group { margin-bottom: var(--v3-inner); }
 .v3-books-group:last-child { margin-bottom: 0; }
 .v3-books-row {
   display: flex; gap: 8px; overflow-x: auto; overflow-y: hidden; padding: 0 var(--v3-side) 4px;
   scrollbar-width: none; -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
-  max-width: calc(var(--v3-content-max) + var(--v3-side) * 2); margin: 0 auto;
+  /* Тот же --v3-content-max и та же левая --v3-side, что у .v3-split —
+     иначе левый край книг не совпадает с левым краем текста/картинок
+     в кейсах и «Обо мне» на широких экранах. */
+  max-width: var(--v3-content-max); margin: 0 auto;
 }
 .v3-books-row::-webkit-scrollbar { display: none; }
 .v3-book { flex: 0 0 auto; width: 240px; }
