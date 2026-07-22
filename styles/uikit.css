@@ -161,6 +161,18 @@ img, video { display: block; max-width: 100%; }
 /* ── ХИРО КЕЙСА (одинаковый для всех страниц-кейсов) ──
    H1 + описание + теги по центру, ниже — картинка на всю ширину. */
 .v3-case-hero { padding-top: var(--v3-outer); padding-bottom: var(--v3-outer); }
+
+/* Кейсы (.v3-body--case на <body>) — весь контент (секции + хиро) капается
+   на 1600px и центрируется, иначе на очень широких экранах ряды с фикс.
+   текстовой колонкой + растущей картинкой (см. .v3-split) прилипают к
+   левому краю, оставляя пустоту справа. Хедер/футер full-bleed — их
+   классы сюда не входят, капается только .v3-section/.v3-case-hero. */
+.v3-body--case .v3-section,
+.v3-body--case .v3-case-hero {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .v3-case-hero-head {
   text-align: center;
   display: flex; flex-direction: column; align-items: center; gap: var(--v3-inner);
