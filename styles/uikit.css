@@ -230,14 +230,17 @@ img, video { display: block; max-width: 100%; }
 .v3-split {
   display: flex; align-items: flex-start; gap: var(--v3-inner);
   padding: 0 var(--v3-side-media) 0 var(--v3-side);
-  /* Текстовая колонка фиксирована, картинка растёт только до своего
-     max-width (--v3-col-wide) — на широких экранах остаток пространства
-     раньше просто оставался пустым справа (flex-start), из-за чего блок
-     выглядел прибитым к левому краю. Раз ширина ряда всё равно не может
-     превысить его собственный контент — капаем и центрируем сам ряд. */
+  min-width: 0;
+}
+/* .v3-split вне уже закапанного контейнера (сейчас — только «Обо мне» на
+   главной) капаем и центрируем сами, иначе на широких экранах остаток
+   пространства просто пустует справа (flex-start). Внутри .v3-projects-list
+   и .v3-body--case .v3-section контейнер уже капает ширину сам — повторное
+   центрирование здесь сдвинуло бы левый край вглубь (разные --v3-content-max
+   и 1600px не совпадают). */
+#about .v3-split {
   max-width: var(--v3-content-max);
   margin-left: auto; margin-right: auto;
-  min-width: 0; width: 100%;
 }
 .v3-split-text {
   flex: 0 0 var(--v3-col-narrow); max-width: var(--v3-col-narrow); min-width: 0;
