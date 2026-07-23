@@ -45,7 +45,7 @@
      жёсткого выравнивания текст/картинка (список кейсов, книжная полка),
      иначе на очень широких экранах они прилипают к левому краю вместо
      центрирования. */
-  --v3-content-max: 1376px;
+  --v3-content-max: 1600px;
   --v3-full-media-h-mobile: 340px;
   --v3-split-media-ratio: 4 / 3;   /* пропорции картинки в split на десктопе/планшете */
   --v3-split-media-h-mobile: 640px; /* высота картинки в split на мобилке (без стики) */
@@ -169,7 +169,7 @@ img, video { display: block; max-width: 100%; }
    классы сюда не входят, капается только .v3-section/.v3-case-hero. */
 .v3-body--case .v3-section,
 .v3-body--case .v3-case-hero {
-  max-width: 1600px;
+  max-width: var(--v3-content-max);
   margin-left: auto;
   margin-right: auto;
 }
@@ -254,6 +254,14 @@ img, video { display: block; max-width: 100%; }
 .v3-split-media {
   flex: 1 1 auto; min-width: 0;
   max-width: var(--v3-col-wide);
+}
+/* Карточки кейсов на главной и «Обо мне» — картинка растёт вместе с
+   контейнером (капанным на --v3-content-max), а не останавливается на
+   --v3-col-wide, иначе внутри 1600px-обёртки остаётся пустота справа
+   и отступ от края экрана визуально становится больше 80px. */
+.v3-projects-list .v3-split-media,
+#about .v3-split-media {
+  max-width: none;
 }
 .v3-split-media img, .v3-split-media video,
 .v3-split-media > [data-slot] {
