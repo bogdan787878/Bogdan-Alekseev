@@ -482,23 +482,24 @@ img, video { display: block; max-width: 100%; }
 
 /* ── БЛОК: заголовок + сетка карточек-проблем ──
    В отличие от .v3-text-block, ярлык идёт НЕ сбоку, а над контентом на
-   всю ширину; ниже — N карточек в ряд, каждая: жирный лид-заголовок
-   (32/32/-4%/600) + обычный параграф. */
+   всю ширину; ниже — N карточек в ряд. Внутри карточки — единый текст
+   32/32/-4%: жирный лид-фрагмент (strong, белый 100%) продолжается
+   обычным (белый 50%) в том же абзаце, без разрыва на заголовок+текст. */
 .v3-problem-section {
   display: flex; flex-direction: column; gap: var(--v3-inner);
   padding: 0 var(--v3-side);
 }
 .v3-problem-grid { display: flex; flex-wrap: wrap; gap: var(--v3-inner); }
-.v3-problem-card { flex: 1 1 200px; display: flex; flex-direction: column; gap: 8px; }
-.v3-problem-card-title {
-  font-family: var(--v3-font); font-weight: 600; font-size: 32px; line-height: 32px;
-  letter-spacing: -0.04em; color: var(--v3-primary-100);
+.v3-problem-card { flex: 1 1 200px; }
+.v3-problem-card-text {
+  font-family: var(--v3-font); font-weight: 500; font-size: 32px; line-height: 32px;
+  letter-spacing: -0.04em; color: color-mix(in srgb, var(--v3-primary-100) 50%, transparent);
 }
-.v3-problem-card p.v3-body-l2 { color: color-mix(in srgb, var(--v3-primary-100) 50%, transparent); }
+.v3-problem-card-text strong { font-weight: 600; color: var(--v3-primary-100); }
 @media (max-width: 640px) {
   .v3-problem-section { padding: 0 var(--v3-side); }
   .v3-problem-card { flex: 1 1 100%; }
-  .v3-problem-card-title { font-size: 24px; line-height: 24px; }
+  .v3-problem-card-text { font-size: 24px; line-height: 26px; }
 }
 
 /* ── КАРТОЧКИ: отзывы ──
