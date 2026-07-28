@@ -23,9 +23,24 @@
       --v3-white: #15181A;         /* было белый (фон тегов/кнопок) → тёмная поверхность */
     }
     .v3-body--sber .v3-case-hero {
-      background:
-        radial-gradient(60% 50% at 50% 0%, rgba(53, 208, 127, 0.22), transparent 70%),
-        var(--v3-bg-1);
+      position: relative;
+      overflow: hidden;
+      background: var(--v3-bg-1);
+    }
+    /* Свечение хиро — верхний эллипс (первый слой из нескольких). */
+    .v3-body--sber .v3-case-hero::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: -799px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1070px;
+      height: 942px;
+      border-radius: 50%;
+      background: #00920F;
+      filter: blur(400px);
+      pointer-events: none;
     }
     .v3-body--sber .v3-header-back,
     .v3-body--sber .v3-header-name { color: var(--v3-primary-100); }
