@@ -39,6 +39,9 @@
         var(--v3-bg-1);
     }
     .v3-body--sber .v3-tag { box-shadow: inset 0 0 0 1px rgba(245, 247, 245, 0.12); }
+    /* Вместо зелёного .v3-highlight — контраст белым: база 50%, акцент 100%. */
+    .v3-body--sber .v3-muted-emphasis { color: color-mix(in srgb, var(--v3-primary-100) 50%, transparent); }
+    .v3-body--sber .v3-emphasis-white { color: var(--v3-primary-100); }
     .v3-body--sber .v3-case-hero-desc { opacity: 0.7; }
   </style>
 </head>
@@ -64,7 +67,7 @@
     <div class="v3-text-block">
       <div class="v3-text-block-label"><h3 class="v3-h3">Research</h3></div>
       <div class="v3-text-block-content">
-        <h2 class="v3-h2">После 2022 года ключевая ставка ЦБ выросла, сделав классический кредит недоступным по цене — <span class="v3-highlight">BNPL стал способом продолжать тратить на впечатления и заботу о себе, не залезая в дорогой долг</span></h2>
+        <h2 class="v3-h2 v3-muted-emphasis">После 2022 года ключевая ставка ЦБ выросла, сделав классический кредит недоступным по цене — <br> <span class="v3-emphasis-white">BNPL стал способом продолжать тратить на впечатления и заботу о себе, не залезая в дорогой долг</span></h2>
       </div>
     </div>
   </section>
