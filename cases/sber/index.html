@@ -53,6 +53,31 @@
     .v3-body--sber .v3-muted-emphasis { color: color-mix(in srgb, var(--v3-primary-100) 50%, transparent); }
     .v3-body--sber .v3-emphasis-white { color: var(--v3-primary-100); }
     .v3-body--sber .v3-case-hero-desc { opacity: 0.7; }
+    /* Такое же свечение, как в хиро, но на блоке с картинкой после хиро —
+       800x800, "утоплен" на треть (видна нижняя треть эллипса), blur 800,
+       opacity 60%. */
+    .v3-body--sber .v3-glow-block {
+      position: relative;
+    }
+    .v3-body--sber .v3-glow-block::before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: -533px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      background: #00920F;
+      filter: blur(800px);
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    .v3-body--sber .v3-glow-block .v3-full-media {
+      position: relative;
+      z-index: 2;
+    }
   </style>
 </head>
 <body class="v3-body--case v3-body--sber">
@@ -65,7 +90,7 @@
   </section>
 
   <!-- КАРТИНКА НА ВСЮ ШИРИНУ (16px по бокам) -->
-  <section class="v3-section" style="padding-top: 0;">
+  <section class="v3-section v3-glow-block" style="padding-top: 0;">
     <div class="v3-full-media">
       <div class="v3-ph" data-slot="sber-hero-1" data-fit="cover" style="aspect-ratio: 16/9;">картинка</div>
     </div>
