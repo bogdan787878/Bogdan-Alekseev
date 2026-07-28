@@ -487,6 +487,7 @@ img, video { display: block; max-width: 100%; }
   flex-direction: row; flex-wrap: wrap; gap: var(--v3-inner);
 }
 .v3-problem-card { flex: 1 1 200px; }
+.v3-problem-card p { color: color-mix(in srgb, var(--v3-primary-100) 50%, transparent); }
 .v3-problem-card strong { color: var(--v3-primary-100); font-weight: 600; }
 @media (max-width: 640px) {
   .v3-problem-card { flex: 1 1 100%; }
