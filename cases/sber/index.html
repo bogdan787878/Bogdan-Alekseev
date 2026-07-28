@@ -35,7 +35,7 @@
       content: '';
       position: absolute;
       z-index: 1;
-      top: -471px;
+      top: -800px;
       left: 50%;
       transform: translateX(-50%);
       width: 1070px;
@@ -83,7 +83,15 @@
       z-index: 2;
     }
     .v3-body--sber .v3-solution-title { font-size: 56px; line-height: 56px; }
-    .v3-body--sber .v3-split-media .v3-inset-box > [data-slot] { border-radius: 24px; }
+    /* Видео в решениях не телефонного формата — раньше внутренний слот
+       инсет-бокса форсировал портретные 9:19.5 (--v3-inset-media-ratio),
+       из-за чего видео кропалось по верху/низу под чужую пропорцию.
+       Отдаём слоту всю площадь инсет-бокса (его собственные 4:3) —
+       object-fit:contain (уже стоит в data-fit) впишет видео без кропа. */
+    .v3-body--sber .v3-split-media .v3-inset-box > [data-slot] {
+      width: 100%; height: 100%; aspect-ratio: auto;
+      border-radius: 24px;
+    }
   </style>
 </head>
 <body class="v3-body--case v3-body--sber">
