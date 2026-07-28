@@ -186,6 +186,18 @@ img, video { display: block; max-width: 100%; }
 .v3-case-hero-desc { max-width: 62ch; color: var(--v3-primary-100); }
 .v3-case-hero-head .v3-tags { justify-content: center; }
 
+/* Ряд из нескольких телефонных мокапов в хиро кейса (без серой подложки
+   инсет-бокса — сами картинки уже содержат кадр телефона). */
+.v3-hero-phones { display: flex; justify-content: center; gap: var(--v3-inner-text); flex-wrap: wrap; }
+.v3-hero-phones > [data-slot] {
+  width: 220px; max-width: 100%; aspect-ratio: 9 / 19.5;
+  border-radius: var(--v3-radius); background: var(--v3-bg-2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+@media (max-width: 860px) {
+  .v3-hero-phones > [data-slot] { width: 150px; }
+}
+
 /* ── ХИРО ГЛАВНОЙ ──
    Фото + имя + роль + описание + кнопки, всё по центру. */
 .v3-home-hero {
@@ -466,6 +478,18 @@ img, video { display: block; max-width: 100%; }
   background: var(--v3-bg-2);
   border-radius: var(--v3-radius);
   display: flex; flex-direction: column; gap: 8px;
+}
+
+/* ── БЛОК: заголовок + сетка карточек-проблем ──
+   Тот же .v3-text-block (ярлык слева), справа вместо одного текста —
+   N карточек в ряд, каждая с жирным лид-предложением внутри параграфа. */
+.v3-text-block-content.v3-problem-grid {
+  flex-direction: row; flex-wrap: wrap; gap: var(--v3-inner);
+}
+.v3-problem-card { flex: 1 1 200px; }
+.v3-problem-card strong { color: var(--v3-primary-100); font-weight: 600; }
+@media (max-width: 640px) {
+  .v3-problem-card { flex: 1 1 100%; }
 }
 
 /* ── КАРТОЧКИ: отзывы ──

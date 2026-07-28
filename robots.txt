@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /kit/
 Disallow: /cases/vtb-focus/
+Disallow: /cases/sber/
