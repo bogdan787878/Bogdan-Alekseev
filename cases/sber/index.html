@@ -23,8 +23,10 @@
       --v3-white: #1A1A1A;         /* было белый (фон тегов/кнопок) → тёмная поверхность */
       padding-top: 0; /* хедера на странице нет — не нужен отступ под фикс. хедер */
     }
-    /* Свечение хиро — эллипс 1070x942 / y:-799 / #00920F / blur 400 из
-       макета, явный слой z-index:1 под контентом хиро (z-index:2). */
+    /* Свечение хиро — эллипс 1070x942 / #00920F / blur 400, центр строго
+       на верхней границе хиро (видна ровно нижняя половина), слой
+       z-index:1 под контентом хиро (z-index:2) — по схеме шва между
+       блоками. */
     .v3-body--sber .v3-case-hero {
       position: relative;
       background: var(--v3-bg-1);
@@ -33,7 +35,7 @@
       content: '';
       position: absolute;
       z-index: 1;
-      top: -799px;
+      top: -471px;
       left: 50%;
       transform: translateX(-50%);
       width: 1070px;
@@ -54,8 +56,8 @@
     .v3-body--sber .v3-emphasis-white { color: var(--v3-primary-100); }
     .v3-body--sber .v3-case-hero-desc { opacity: 0.7; }
     /* Такое же свечение, как в хиро, но на блоке с картинкой после хиро —
-       800x800, "утоплен" на треть (видна нижняя треть эллипса), blur 800,
-       opacity 60%. */
+       800x800, blur 800, opacity 60%, центр строго на нижней границе
+       блока (видна ровно верхняя половина) — зеркально шву в хиро. */
     .v3-body--sber .v3-glow-block {
       position: relative;
     }
@@ -63,7 +65,7 @@
       content: '';
       position: absolute;
       z-index: 1;
-      bottom: -533px;
+      bottom: -400px;
       left: 50%;
       transform: translateX(-50%);
       width: 800px;
@@ -136,7 +138,7 @@
   <section class="v3-section" style="padding-top: var(--v3-inner);">
     <div class="v3-split">
       <div class="v3-split-text">
-        <h2 class="v3-h2 v3-solution-title">Рефрейм с долга на доступность</h2>
+        <h2 class="v3-h2 v3-solution-title">Рефрейм с долга<br>на доступность</h2>
         <p class="v3-body-l2">Это блок выполняет и роль графичного элемента, и роль мини-дашборда для контроля финансов и кнопки-карты для перехода в детали по карте.</p>
       </div>
       <div class="v3-split-media">
