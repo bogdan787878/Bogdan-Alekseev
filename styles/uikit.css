@@ -100,9 +100,9 @@ img, video { display: block; max-width: 100%; }
 }
 
 /* ── Типографика (веб) ── */
-.v3-h1 { font-family: var(--v3-font); font-weight: 600; font-size: 80px; line-height: 80px; letter-spacing: -0.06em; }
-.v3-h2 { font-family: var(--v3-font); font-weight: 600; font-size: 40px; line-height: 40px; letter-spacing: -0.06em; }
-.v3-h3 { font-family: var(--v3-font); font-weight: 600; font-size: 32px; line-height: 32px; letter-spacing: -0.06em; }
+.v3-h1 { font-family: var(--v3-font); font-weight: 600; font-size: 80px; line-height: 80px; letter-spacing: -0.04em; }
+.v3-h2 { font-family: var(--v3-font); font-weight: 600; font-size: 40px; line-height: 40px; letter-spacing: -0.04em; }
+.v3-h3 { font-family: var(--v3-font); font-weight: 600; font-size: 32px; line-height: 32px; letter-spacing: -0.04em; }
 .v3-body-l { font-family: var(--v3-font); font-weight: 400; font-size: 24px; line-height: 28px; letter-spacing: -0.02em; }
 .v3-body-l2 { font-family: var(--v3-font); font-weight: 400; font-size: 20px; line-height: 24px; letter-spacing: -0.02em; }
 .v3-body-xl { font-family: var(--v3-font); font-weight: 400; font-size: 32px; line-height: 32px; letter-spacing: -0.06em; }
